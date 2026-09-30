@@ -42,14 +42,6 @@ export interface ApkSample {
   kotlinEquivalent: string;
 }
 
-export interface GradleBuildStep {
-  task: string;
-  description: string;
-  durationMs: number;
-  status: 'pending' | 'running' | 'done';
-  logs: string[];
-}
-
 export interface AndroidApiFeature {
   apiLevel: number;
   codename: string;
@@ -59,4 +51,48 @@ export interface AndroidApiFeature {
   securityRules: string;
   ndkRequirement: string;
   isCurrentTarget: boolean;
+}
+
+export interface ProjectService {
+  id: string;
+  title: string;
+  tagline: string;
+  category: 'web' | 'android' | 'combo' | 'maintenance';
+  priceStarting: string;
+  description: string;
+  features: string[];
+  deliverables: string[];
+  iconName: string;
+}
+
+export interface PortfolioItem {
+  id: string;
+  title: string;
+  category: 'Web App' | 'Android APK' | 'Full Ecosystem (Web + APK)';
+  client: string;
+  thumbnail: string;
+  problem: string;
+  solution: string;
+  techStack: string[];
+  features: string[];
+  results: string;
+  isPopular?: boolean;
+}
+
+export interface PricingPlan {
+  id: string;
+  name: string;
+  badge?: string;
+  price: string;
+  priceNote: string;
+  description: string;
+  features: string[];
+  isPopular?: boolean;
+  ctaText: string;
+  timeline: string;
+}
+
+export interface FaqItem {
+  question: string;
+  answer: string;
 }

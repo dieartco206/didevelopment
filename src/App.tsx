@@ -1,16 +1,17 @@
 import React, { useState } from 'react';
 import { Navbar } from './components/navbar/Navbar';
-import { HeroSection } from './components/hero/HeroSection';
-import { ApkAnalyzerTool } from './components/tools/ApkAnalyzerTool';
-import { GradleBuildSimulator } from './components/tools/GradleBuildSimulator';
-import { ArchitectureMatrix } from './components/architecture/ArchitectureMatrix';
-import { AndroidMatrix15 } from './components/compatibility/AndroidMatrix15';
-import { EngineeringCaseStudies } from './components/portfolio/EngineeringCaseStudies';
-import { ApkEstimator } from './components/calculator/ApkEstimator';
+import { HeroPromo } from './components/hero/HeroPromo';
+import { ServicesSection } from './components/services/ServicesSection';
+import { ProjectCalculator } from './components/calculator/ProjectCalculator';
+import { PortfolioSection } from './components/portfolio/PortfolioSection';
+import { PricingSection } from './components/pricing/PricingSection';
+import { WorkflowSection } from './components/workflow/WorkflowSection';
+import { FaqSection } from './components/faq/FaqSection';
 import { Footer } from './components/footer/Footer';
+import { FloatingWhatsApp } from './components/cta/FloatingWhatsApp';
 
 export const App: React.FC = () => {
-  const [activeSection, setActiveSection] = useState('hero-3d');
+  const [activeSection, setActiveSection] = useState('hero');
 
   const handleNavigate = (sectionId: string) => {
     setActiveSection(sectionId);
@@ -21,36 +22,39 @@ export const App: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-[#050811] text-[#E2E8F0] selection:bg-[#3DDC84] selection:text-[#050811] font-mono">
-      {/* Top Cyber Navigation Bar */}
+    <div className="min-h-screen bg-[#F8FAFC] text-[#0F172A] selection:bg-blue-600 selection:text-white font-sans">
+      {/* Top Header Navigation */}
       <Navbar onNavigate={handleNavigate} activeSection={activeSection} />
 
-      {/* Main Content Sections */}
+      {/* Main Agency Sections */}
       <main className="w-full">
-        {/* 1. Hero 3D WebGL Scene & Exploded APK Inspector */}
-        <HeroSection onNavigate={handleNavigate} />
+        {/* 1. Hero Section with 3D Laptop & Smartphone Showcase */}
+        <HeroPromo onNavigate={handleNavigate} />
 
-        {/* 2. Interactive Reverse Engineering APK & Bytecode Analyzer */}
-        <ApkAnalyzerTool />
+        {/* 2. Core Services (Web, Android APK, Combo, Web-to-APK) */}
+        <ServicesSection />
 
-        {/* 3. Interactive Gradle Build Engine & Terminal Simulator */}
-        <GradleBuildSimulator />
+        {/* 3. Interactive Project Cost & Timeline Calculator */}
+        <ProjectCalculator />
 
-        {/* 4. Native Android Architecture Blueprint & 3D Dalvik Vortex */}
-        <ArchitectureMatrix />
+        {/* 4. Client Portfolio & Real Case Studies */}
+        <PortfolioSection />
 
-        {/* 5. Android 15 (API 35) Compatibility Lab & 16KB Page Size Audit */}
-        <AndroidMatrix15 />
+        {/* 5. Transparent Pricing Packages */}
+        <PricingSection />
 
-        {/* 6. Production Case Studies & Hardware Benchmarks */}
-        <EngineeringCaseStudies />
+        {/* 6. Professional 5-Step Workflow */}
+        <WorkflowSection />
 
-        {/* 7. Interactive Project Architecture Estimator & Blueprint Generator */}
-        <ApkEstimator />
+        {/* 7. Frequently Asked Questions (FAQ) */}
+        <FaqSection />
       </main>
 
-      {/* Footer & ADB Cheatsheet */}
+      {/* Footer */}
       <Footer />
+
+      {/* Floating Instant WhatsApp Button */}
+      <FloatingWhatsApp />
     </div>
   );
 };
