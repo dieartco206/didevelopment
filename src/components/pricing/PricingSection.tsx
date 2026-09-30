@@ -153,16 +153,6 @@ export const PricingSection: React.FC = () => {
       <div className="absolute inset-0 artistic-dot-grid opacity-25 pointer-events-none" />
       <div className="absolute top-10 left-1/2 -translate-x-1/2 w-[700px] h-[350px] bg-gradient-to-b from-blue-500/10 to-transparent rounded-full blur-3xl pointer-events-none" />
 
-      {/* Decorative Technical Coordinates */}
-      <div className="absolute top-8 left-8 hidden xl:flex items-center gap-2 text-[10px] font-mono text-slate-400/60 pointer-events-none">
-        <span className="text-[#2563EB] font-bold">TIER.SPEC</span>
-        <span>// FULLY_MANAGED_INFRASTRUCTURE</span>
-      </div>
-      <div className="absolute top-8 right-8 hidden xl:flex items-center gap-2 text-[10px] font-mono text-slate-400/60 pointer-events-none">
-        <span>SLA: 99.9% UPTIME</span>
-        <span className="text-[#10B981] font-bold">● ACTIVE</span>
-      </div>
-
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Section Header with Bold Value Proposition */}

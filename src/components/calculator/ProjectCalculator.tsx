@@ -110,16 +110,6 @@ export const ProjectCalculator: React.FC = () => {
       <div className="absolute top-10 left-10 w-[550px] h-[550px] bg-blue-500/12 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-10 right-10 w-[550px] h-[550px] bg-sky-400/12 rounded-full blur-3xl pointer-events-none" />
 
-      {/* Technical Lab Blueprint Accents */}
-      <div className="absolute top-8 left-8 hidden xl:flex items-center gap-2 text-[10px] font-mono text-slate-400/70 pointer-events-none">
-        <span className="text-[#2563EB] font-bold">CALCULATOR.LAB</span>
-        <span>// DYNAMIC_COSTING_MATRIX</span>
-      </div>
-      <div className="absolute top-8 right-8 hidden xl:flex items-center gap-2 text-[10px] font-mono text-slate-400/70 pointer-events-none">
-        <span>ESTIMATE: REAL_TIME</span>
-        <span className="text-[#10B981] font-bold">⚡ INSTANT</span>
-      </div>
-
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Section Header */}

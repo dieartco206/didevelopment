@@ -67,16 +67,6 @@ export const WorkflowSection: React.FC = () => {
       {/* Subtle Dot Matrix & Blueprint Texture on White */}
       <div className="absolute inset-0 artistic-dot-grid opacity-25 pointer-events-none" />
 
-      {/* Decorative Technical Coordinates */}
-      <div className="absolute top-8 left-8 hidden xl:flex items-center gap-2 text-[10px] font-mono text-slate-400/60 pointer-events-none">
-        <span className="text-[#2563EB] font-bold">PIPELINE.SPEC</span>
-        <span>// AGILE_DELIVERY_PROTOCOL</span>
-      </div>
-      <div className="absolute top-8 right-8 hidden xl:flex items-center gap-2 text-[10px] font-mono text-slate-400/60 pointer-events-none">
-        <span>SLA: ON_TIME_GUARANTEE</span>
-        <span className="text-[#10B981] font-bold">100%</span>
-      </div>
-
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Section Header */}

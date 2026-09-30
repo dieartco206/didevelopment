@@ -91,16 +91,6 @@ export const PortfolioSection: React.FC = () => {
       <div className="absolute top-20 right-10 w-[600px] h-[600px] bg-blue-500/12 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-10 left-10 w-[600px] h-[600px] bg-indigo-500/10 rounded-full blur-3xl pointer-events-none" />
 
-      {/* Subtle Technical Blueprint Accents */}
-      <div className="absolute top-8 left-8 hidden xl:flex items-center gap-2 text-[10px] font-mono text-slate-400/70 pointer-events-none">
-        <span className="text-[#2563EB] font-bold">PORTFOLIO.DIR</span>
-        <span>// VERIFIED_PRODUCTION_CASES</span>
-      </div>
-      <div className="absolute top-8 right-8 hidden xl:flex items-center gap-2 text-[10px] font-mono text-slate-400/70 pointer-events-none">
-        <span className="text-emerald-500 font-bold">●</span>
-        <span>STATUS: LIVE_DEVICES</span>
-      </div>
-
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Section Header */}

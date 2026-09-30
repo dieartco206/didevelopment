@@ -7,7 +7,10 @@ import {
   AlertTriangle, 
   MessageSquare,
   Camera,
-  Database
+  Database,
+  Wifi,
+  Battery,
+  Signal
 } from 'lucide-react';
 import { soundFx } from '../../utils/audio';
 
@@ -22,16 +25,6 @@ export const ServicesSection: React.FC = () => {
     <section id="services" className="py-16 sm:py-24 bg-white border-b border-slate-200 relative overflow-hidden">
       {/* Subtle Texture & Blueprint Watermark on White */}
       <div className="absolute inset-0 artistic-dot-grid opacity-25 pointer-events-none" />
-
-      {/* Decorative Technical Coordinates */}
-      <div className="absolute top-8 left-8 hidden xl:flex items-center gap-2 text-[10px] font-mono text-slate-400/60 pointer-events-none">
-        <span className="text-[#2563EB] font-bold">#01</span>
-        <span>MODULAR_SYSTEM_MATRIX // FULL_STACK</span>
-      </div>
-      <div className="absolute top-8 right-8 hidden xl:flex items-center gap-2 text-[10px] font-mono text-slate-400/60 pointer-events-none">
-        <span>ARCH: MICRO_SERVICES</span>
-        <span className="text-[#10B981] font-bold">✓ SCALABLE</span>
-      </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
@@ -218,61 +211,138 @@ export const ServicesSection: React.FC = () => {
             </div>
           </div>
 
-          {/* Mockup Smartphone Android */}
+          {/* Mockup Smartphone Android Flagship (Desain Realistis Flagship) */}
           <div className="lg:col-span-6 flex justify-center relative">
-            <div className="absolute -inset-4 bg-gradient-to-br from-emerald-500/18 via-teal-400/15 to-transparent rounded-full blur-2xl -z-10 opacity-75 pointer-events-none" />
-            <div className="w-full max-w-[340px] rounded-[36px] bg-slate-900 p-3 shadow-2xl border-4 border-slate-800">
-              {/* Phone Speaker */}
-              <div className="w-20 h-4 bg-slate-800 rounded-full mx-auto mb-2 flex items-center justify-center">
-                <span className="w-2 h-2 rounded-full bg-slate-700" />
-              </div>
+            {/* Ambient Aura Lighting */}
+            <div className="absolute -inset-4 bg-gradient-to-br from-emerald-500/20 via-teal-400/15 to-transparent rounded-full blur-2xl -z-10 opacity-75 pointer-events-none" />
+            
+            {/* Real Flagship Android Chassis */}
+            <div className="w-full max-w-[310px] relative rounded-[48px] bg-slate-950 p-2.5 shadow-[0_25px_60px_-15px_rgba(15,23,42,0.4)] ring-1 ring-slate-800 border-[3px] border-slate-700/80">
+              
+              {/* Hardware Physical Buttons */}
+              {/* Volume Buttons (Left) */}
+              <div className="absolute -left-[5px] top-24 w-[3.5px] h-10 bg-slate-600 rounded-l-sm" />
+              <div className="absolute -left-[5px] top-38 w-[3.5px] h-10 bg-slate-600 rounded-l-sm" />
+              {/* Power Button (Right) */}
+              <div className="absolute -right-[5px] top-28 w-[3.5px] h-12 bg-slate-600 rounded-r-sm" />
 
-              {/* Smartphone UI */}
-              <div className="rounded-[24px] bg-white p-4 text-slate-900">
-                <div className="flex items-center justify-between pb-2 border-b border-slate-100 mb-3">
-                  <div>
-                    <span className="text-[10px] text-slate-500 whitespace-nowrap">Tugas Pengantaran Hari Ini</span>
-                    <div className="text-xs font-bold text-[#0F172A] whitespace-nowrap">Resi #EXP-99201</div>
+              {/* Edge Glare Reflection */}
+              <div className="absolute inset-0 rounded-[46px] pointer-events-none ring-1 ring-inset ring-white/10" />
+
+              {/* Inner Smartphone Screen */}
+              <div className="rounded-[40px] overflow-hidden bg-[#F8FAFC] border border-slate-900 flex flex-col relative select-none">
+                
+                {/* 1. Android Status Bar with Real Punch-Hole Camera */}
+                <div className="px-5 pt-2.5 pb-1 flex items-center justify-between bg-white text-slate-800 text-[10px] font-semibold border-b border-slate-100">
+                  <span className="font-bold text-slate-900 tracking-tight">09:41</span>
+                  
+                  {/* Punch Hole Front Camera */}
+                  <div className="w-3.5 h-3.5 rounded-full bg-slate-950 ring-1 ring-slate-800 flex items-center justify-center -mt-0.5">
+                    <span className="w-1 h-1 rounded-full bg-blue-900/80" />
                   </div>
-                  <span className="px-2 py-0.5 rounded bg-emerald-100 text-emerald-800 text-[10px] font-bold whitespace-nowrap shrink-0">
-                    DALAM PERJALANAN
+
+                  {/* Status Bar Icons */}
+                  <div className="flex items-center gap-1.5 text-slate-700">
+                    <Signal className="w-3 h-3 text-slate-700" />
+                    <Wifi className="w-3 h-3 text-slate-700" />
+                    <Battery className="w-3.5 h-3.5 text-emerald-600 fill-emerald-500" />
+                  </div>
+                </div>
+
+                {/* 2. Mobile App Header */}
+                <div className="px-4 py-2.5 bg-white border-b border-slate-100 flex items-center justify-between">
+                  <div className="flex items-center gap-2">
+                    <div className="w-7 h-7 rounded-lg bg-emerald-500 text-white flex items-center justify-center font-bold text-xs shadow-2xs">
+                      ⚡
+                    </div>
+                    <div>
+                      <div className="text-[11px] font-extrabold text-[#0F172A] leading-tight">
+                        Kurir Kilat Android
+                      </div>
+                      <div className="text-[9px] text-emerald-600 font-semibold flex items-center gap-1">
+                        <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
+                        GPS Aktif & Terlacak
+                      </div>
+                    </div>
+                  </div>
+                  <span className="text-[9px] px-2 py-0.5 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-800 font-bold whitespace-nowrap shrink-0">
+                    ONLINE
                   </span>
                 </div>
 
-                {/* Map Geofencing & Camera Simulation */}
-                <div className="p-3 rounded-xl bg-slate-50 border border-slate-200 mb-3 space-y-2">
-                  <div className="flex items-center gap-2 text-xs font-semibold text-slate-800">
-                    <MapPin className="w-4 h-4 text-rose-500 shrink-0" />
-                    <span>Tujuan: Jl. Basuki Rahmat No. 42</span>
+                {/* 3. Screen Body Content */}
+                <div className="p-3.5 space-y-2.5 bg-[#F8FAFC]">
+                  {/* Assignment Header Card */}
+                  <div className="p-3 rounded-2xl bg-white border border-slate-200/90 shadow-2xs">
+                    <div className="flex items-center justify-between pb-1.5 border-b border-slate-100 mb-2">
+                      <span className="text-[10px] font-bold text-slate-500 uppercase tracking-wide">
+                        TUGAS PENGANTARAN
+                      </span>
+                      <span className="text-[10px] font-mono font-extrabold text-[#2563EB]">
+                        #EXP-99201
+                      </span>
+                    </div>
+
+                    {/* Geofence GPS Route Card */}
+                    <div className="space-y-1.5">
+                      <div className="flex items-start gap-2 text-[11px] font-semibold text-slate-800 leading-snug">
+                        <MapPin className="w-3.5 h-3.5 text-rose-500 shrink-0 mt-0.5" />
+                        <span>Jl. Basuki Rahmat No. 42, Surabaya</span>
+                      </div>
+                      <div className="p-2 rounded-xl bg-emerald-50/90 border border-emerald-200 flex items-center justify-between text-[10px]">
+                        <span className="text-emerald-900 font-medium">Radius: <strong>8m dari titik</strong></span>
+                        <span className="font-extrabold text-emerald-700 bg-white px-1.5 py-0.5 rounded border border-emerald-200">
+                          ✓ LOKASI VALID
+                        </span>
+                      </div>
+                    </div>
                   </div>
-                  <div className="p-2 rounded-lg bg-emerald-50 border border-emerald-200 text-[10px] text-emerald-800 font-medium flex items-center justify-between">
-                    <span className="whitespace-nowrap">Radius dari Lokasi: <strong>8 Meter</strong></span>
-                    <span className="font-bold text-emerald-600 whitespace-nowrap shrink-0">✓ VALID</span>
+
+                  {/* Camera Face / Signature Simulation */}
+                  <div className="p-3 rounded-2xl bg-white border border-slate-200/90 shadow-2xs">
+                    <div className="text-[10px] font-bold text-slate-500 uppercase tracking-wide mb-2 flex items-center justify-between">
+                      <span>BUKTI PENERIMAAN (POD)</span>
+                      <span className="text-emerald-600 font-bold">100% LENGKAP</span>
+                    </div>
+
+                    <div className="p-2.5 rounded-xl bg-blue-50/80 border border-blue-200 flex items-center gap-3">
+                      <div className="w-10 h-10 rounded-xl bg-[#2563EB] text-white flex items-center justify-center shrink-0 shadow-sm">
+                        <Camera className="w-5 h-5" />
+                      </div>
+                      <div className="text-left">
+                        <div className="text-[11px] font-bold text-slate-900 leading-tight">
+                          Swafoto + Tanda Tangan
+                        </div>
+                        <div className="text-[9px] text-slate-500 mt-0.5 leading-snug">
+                          Watermark timestamp & koordinat GPS otomatis
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Offline Cache Status */}
+                  <div className="px-2 flex items-center justify-between text-[10px] text-slate-500">
+                    <span className="flex items-center gap-1.5 font-medium">
+                      <Database className="w-3 h-3 text-[#2563EB] shrink-0" />
+                      Database SQLite Lokal
+                    </span>
+                    <span className="text-emerald-600 font-bold">✓ Tersimpan Aman</span>
+                  </div>
+
+                  {/* Primary Mobile Action Button */}
+                  <div className="w-full py-2.5 px-3 bg-[#10B981] text-white rounded-xl text-center font-bold text-xs shadow-md shadow-emerald-500/20 flex items-center justify-center gap-1.5 whitespace-nowrap shrink-0">
+                    <Printer className="w-3.5 h-3.5 shrink-0" />
+                    <span>Selesaikan & Cetak Struk</span>
                   </div>
                 </div>
 
-                {/* Camera Face / Signature Simulation */}
-                <div className="p-3 rounded-xl bg-blue-50/70 border border-blue-200 mb-3 text-center">
-                  <div className="w-12 h-12 rounded-full bg-blue-600 text-white mx-auto mb-1 flex items-center justify-center shadow-sm">
-                    <Camera className="w-6 h-6" />
-                  </div>
-                  <span className="text-[11px] font-bold text-blue-900 block whitespace-nowrap">Swafoto Penerima + Tanda Tangan</span>
-                  <span className="text-[9px] text-blue-700">Tersimpan otomatis dengan timestamp & koordinat GPS</span>
+                {/* 4. Android Bottom Gesture Pill Bar */}
+                <div className="pt-2 pb-2 bg-[#F8FAFC] flex justify-center">
+                  <div className="w-24 h-1 bg-slate-300 rounded-full" />
                 </div>
 
-                {/* Offline Cache & Submit Button */}
-                <div className="text-[10px] text-slate-500 flex items-center justify-between mb-2">
-                  <span className="flex items-center gap-1 whitespace-nowrap shrink-0">
-                    <Database className="w-3 h-3 text-[#2563EB] shrink-0" />
-                    Cache Offline SQLite
-                  </span>
-                  <span className="text-emerald-600 font-bold whitespace-nowrap shrink-0">Siap Sinkron</span>
-                </div>
-
-                <div className="w-full py-2.5 bg-[#10B981] text-white rounded-xl text-center font-bold text-xs shadow-sm whitespace-nowrap shrink-0">
-                  ✓ Selesaikan Pengiriman & Cetak Struk
-                </div>
               </div>
+
             </div>
           </div>
         </div>

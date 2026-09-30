@@ -38,16 +38,6 @@ export const HeroPromo: React.FC<HeroPromoProps> = ({ onNavigate }) => {
       <div className="absolute top-1/4 -right-24 w-[500px] h-[500px] bg-blue-600/12 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute -bottom-20 -left-20 w-[450px] h-[450px] bg-emerald-500/10 rounded-full blur-3xl pointer-events-none" />
 
-      {/* Subtle Technical Blueprint Accents */}
-      <div className="absolute top-8 left-8 hidden xl:flex items-center gap-2 text-[10px] font-mono font-semibold text-slate-400/70 select-none pointer-events-none">
-        <span className="text-[#2563EB] font-bold">+</span>
-        <span>SYS.SPEC // DIDEV_STUDIO_V4</span>
-      </div>
-      <div className="absolute top-8 right-8 hidden xl:flex items-center gap-2 text-[10px] font-mono font-semibold text-slate-400/70 select-none pointer-events-none">
-        <span>LAT: -7.2575 • LON: 112.7521</span>
-        <span className="text-[#10B981] font-bold">● ONLINE</span>
-      </div>
-
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
           
