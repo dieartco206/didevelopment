@@ -10,7 +10,11 @@ import {
   ShieldCheck,
   Laptop,
   Code2,
-  Users
+  Users,
+  Signal,
+  Wifi,
+  Battery,
+  Camera
 } from 'lucide-react';
 import { soundFx } from '../../utils/audio';
 
@@ -225,44 +229,103 @@ export const HeroPromo: React.FC<HeroPromoProps> = ({ onNavigate }) => {
                 </div>
               </div>
 
-              {/* LAYER 2: Overlapping Smartphone Android (Menumpuk Elegan di Depan Kanan Bawah) */}
-              <div className="hidden sm:block absolute -bottom-6 -right-5 w-[230px] rounded-[28px] bg-slate-900 p-2 shadow-2xl border-4 border-slate-800 rotate-1 hover:rotate-0 transition-transform duration-300">
-                {/* Phone Speaker & Camera Notch */}
-                <div className="w-16 h-3 bg-slate-800 rounded-full mx-auto mb-1.5 flex items-center justify-center">
-                  <span className="w-1.5 h-1.5 rounded-full bg-slate-700" />
-                </div>
+              {/* LAYER 2: Overlapping Real Flagship Smartphone Android (Menumpuk Elegan di Depan Kanan Bawah) */}
+              <div className="hidden sm:block absolute -bottom-10 -right-6 w-[215px] sm:w-[220px] h-[440px] rounded-[40px] bg-slate-950 p-2 shadow-[0_25px_60px_-15px_rgba(15,23,42,0.55)] border-[2.5px] border-slate-700/90 ring-1 ring-slate-800 rotate-2 hover:rotate-0 transition-all duration-300">
+                {/* Physical Hardware Buttons */}
+                {/* Volume Buttons (Left) */}
+                <div className="absolute -left-[3.5px] top-20 w-[2.5px] h-7 bg-slate-600 rounded-l-xs" />
+                <div className="absolute -left-[3.5px] top-29 w-[2.5px] h-7 bg-slate-600 rounded-l-xs" />
+                {/* Power Button (Right) */}
+                <div className="absolute -right-[3.5px] top-24 w-[2.5px] h-9 bg-slate-600 rounded-r-xs" />
 
-                {/* Smartphone Screen Content */}
-                <div className="rounded-[20px] bg-white p-3 text-slate-900 text-xs overflow-hidden">
-                  <div className="flex items-center justify-between pb-1.5 border-b border-slate-100 mb-2">
-                    <span className="text-[9px] font-bold text-[#2563EB] whitespace-nowrap shrink-0">APK HADIRSMART</span>
-                    <span className="text-[9px] font-mono text-slate-500 whitespace-nowrap shrink-0">07:42 WIB</span>
-                  </div>
+                {/* Edge Glare Ring */}
+                <div className="absolute inset-0 rounded-[38px] pointer-events-none ring-1 ring-inset ring-white/10" />
 
-                  {/* Selfie & Location Verification */}
-                  <div className="p-2 rounded-xl bg-slate-50 border border-slate-200 mb-2 text-center">
-                    <div className="w-10 h-10 rounded-full bg-gradient-to-tr from-blue-600 to-emerald-500 mx-auto mb-1 flex items-center justify-center text-white font-bold text-xs ring-2 ring-emerald-400">
-                      AF
+                {/* Inner Smartphone Screen */}
+                <div className="rounded-[32px] overflow-hidden bg-[#F8FAFC] border border-slate-900 flex flex-col justify-between h-full relative select-none">
+                  {/* 1. Android Status Bar with Real Punch-Hole Camera */}
+                  <div className="px-3.5 pt-2 pb-1 bg-white flex items-center justify-between border-b border-slate-100 text-[9px] font-bold text-slate-800">
+                    <span>07:42</span>
+                    {/* Centered Punch-Hole Camera */}
+                    <div className="w-2.5 h-2.5 rounded-full bg-slate-950 ring-1 ring-slate-800 flex items-center justify-center -mt-0.5">
+                      <span className="w-0.5 h-0.5 rounded-full bg-blue-900/90" />
                     </div>
-                    <div className="text-[11px] font-bold text-[#0F172A] whitespace-nowrap">Ahmad Fauzi</div>
-                    <div className="text-[9px] text-slate-500 whitespace-nowrap">Staf Kurir & Lapangan</div>
-                  </div>
-
-                  {/* Geofencing Card */}
-                  <div className="p-2 rounded-xl bg-emerald-50 border border-emerald-200 mb-2.5">
-                    <div className="flex items-center gap-1 text-[10px] font-bold text-emerald-800 whitespace-nowrap shrink-0">
-                      <MapPin className="w-3 h-3 text-emerald-600 shrink-0" />
-                      <span className="whitespace-nowrap">Radius Kantor: 12 Meter</span>
-                    </div>
-                    <div className="text-[9px] text-emerald-700 mt-0.5 font-medium whitespace-nowrap">
-                      GPS Valid • Anti Mock Location
+                    {/* Real Android Status Icons */}
+                    <div className="flex items-center gap-1 text-slate-700">
+                      <Signal className="w-2.5 h-2.5" />
+                      <Wifi className="w-2.5 h-2.5" />
+                      <Battery className="w-3 h-3 text-emerald-600 fill-emerald-500" />
                     </div>
                   </div>
 
-                  {/* Check-In Success Badge */}
-                  <div className="w-full py-1.5 bg-[#10B981] text-white rounded-lg text-center font-bold text-[10px] flex items-center justify-center gap-1 shadow-sm whitespace-nowrap shrink-0">
-                    <CheckCircle2 className="w-3 h-3 shrink-0" />
-                    <span className="whitespace-nowrap">Hadir Tepat Waktu</span>
+                  {/* 2. App Mini Header */}
+                  <div className="px-3 py-1.5 bg-white border-b border-slate-100 flex items-center justify-between">
+                    <div className="flex items-center gap-1.5">
+                      <div className="w-5 h-5 rounded-md bg-[#2563EB] text-white flex items-center justify-center font-bold text-[10px] shadow-2xs">
+                        ⚡
+                      </div>
+                      <div className="text-[10px] font-extrabold text-[#0F172A] leading-tight">
+                        HadirSmart APK
+                      </div>
+                    </div>
+                    <span className="text-[8px] px-1.5 py-0.5 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-800 font-bold whitespace-nowrap shrink-0">
+                      ONLINE
+                    </span>
+                  </div>
+
+                  {/* 3. Screen Body Content */}
+                  <div className="p-2.5 space-y-2 flex-1 flex flex-col justify-between bg-[#F8FAFC]">
+                    {/* User Profile Card */}
+                    <div className="p-2 rounded-xl bg-white border border-slate-200/90 shadow-2xs text-center">
+                      <div className="w-9 h-9 rounded-full bg-gradient-to-tr from-blue-600 to-emerald-500 mx-auto mb-1 flex items-center justify-center text-white font-bold text-xs ring-2 ring-emerald-400">
+                        AF
+                      </div>
+                      <div className="text-[11px] font-bold text-[#0F172A] whitespace-nowrap">Ahmad Fauzi</div>
+                      <div className="text-[8px] text-slate-500 whitespace-nowrap">Staf Kurir & Lapangan</div>
+                      <div className="mt-1 pt-1 border-t border-slate-100 text-[8px] text-slate-400 font-mono">
+                        ID: #EMP-0429 • Shift Pagi
+                      </div>
+                    </div>
+
+                    {/* Geofence Verification Card */}
+                    <div className="p-2 rounded-xl bg-white border border-slate-200/90 shadow-2xs">
+                      <div className="flex items-center gap-1 text-[9px] font-bold text-slate-700 mb-1">
+                        <MapPin className="w-3 h-3 text-rose-500 shrink-0" />
+                        <span className="whitespace-nowrap">Kantor Pusat Surabaya</span>
+                      </div>
+                      <div className="p-1.5 rounded-lg bg-emerald-50 border border-emerald-200 flex items-center justify-between text-[8px]">
+                        <span className="text-emerald-900 font-medium">Radius: <strong>12m</strong></span>
+                        <span className="font-extrabold text-emerald-700 bg-white px-1 py-0.5 rounded border border-emerald-200 text-[8px]">
+                          ✓ GPS VALID
+                        </span>
+                      </div>
+                    </div>
+
+                    {/* Facial Recognition / Camera Verification */}
+                    <div className="p-2 rounded-xl bg-blue-50/70 border border-blue-200 flex items-center gap-2">
+                      <div className="w-7 h-7 rounded-lg bg-[#2563EB] text-white flex items-center justify-center shrink-0 shadow-2xs">
+                        <Camera className="w-3.5 h-3.5" />
+                      </div>
+                      <div className="text-left flex-1 min-w-0">
+                        <div className="text-[9px] font-bold text-slate-900 leading-tight">
+                          Swafoto Wajah Valid
+                        </div>
+                        <div className="text-[7.5px] text-slate-500 font-mono">
+                          Anti Fake GPS • Terkunci
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Primary Action Check-In Success */}
+                    <div className="w-full py-2 bg-[#10B981] text-white rounded-xl text-center font-bold text-[10px] flex items-center justify-center gap-1 shadow-sm whitespace-nowrap shrink-0">
+                      <CheckCircle2 className="w-3 h-3 shrink-0" />
+                      <span className="whitespace-nowrap">Hadir Tepat Waktu</span>
+                    </div>
+                  </div>
+
+                  {/* 4. Android Bottom Gesture Pill Bar */}
+                  <div className="pt-1 pb-2 bg-[#F8FAFC] flex justify-center">
+                    <div className="w-16 h-1 bg-slate-300 rounded-full" />
                   </div>
                 </div>
               </div>
