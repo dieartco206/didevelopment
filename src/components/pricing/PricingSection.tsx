@@ -13,6 +13,8 @@ interface PricingTier {
   badge: string;
   isPopular?: boolean;
   price: string;
+  priceLabel: string;
+  monthlyMaintenance: string;
   priceNote: string;
   targetAudience: string;
   timeline: string;
@@ -27,19 +29,21 @@ const PRICING_TIERS: PricingTier[] = [
     name: 'Paket Starter: Toko & Kasir POS',
     badge: 'STARTER UMKM',
     price: 'Rp 1.500.000',
-    priceNote: 'Sekali bayar • Tanpa sewa bulanan',
+    priceLabel: 'Biaya Setup Pembuatan Awal',
+    monthlyMaintenance: 'Rp 150.000 / bln',
+    priceNote: 'Sudah termasuk Cloud Server & Maintenance Rutin',
     targetAudience: 'Cocok untuk toko retail, coffee shop, butik, atau UMKM yang ingin pencatatan rapi.',
     timeline: '5 - 7 Hari Kerja',
     features: [
       'Pilih Web Dashboard atau Aplikasi Android APK',
       'Dukungan cetak struk printer Bluetooth thermal',
       'Pencatatan kasir, riwayat pesanan & stok barang',
-      'Gratis domain .COM & SSL security 1 tahun',
-      'Laporan omset harian langsung rekap otomatis',
-      '100% Hak milik penuh source code diserahkan',
-      'Garansi resmi bebas bug selama 1 tahun',
+      'Cloud Server VPS terkelola & domain resmi aktif',
+      'Backup database transaksi berkala otomatis',
+      'Pemeliharaan bug & update keamanan bulanan',
+      'Bantuan teknis via WhatsApp fast-response',
     ],
-    deliverables: 'Source Code / Master APK • Garansi 1 Th',
+    deliverables: 'Setup Sistem Siap Pakai • Cloud Server & Maintenance Aktif',
     ctaText: 'Pilih Paket Starter',
   },
   {
@@ -48,7 +52,9 @@ const PRICING_TIERS: PricingTier[] = [
     badge: 'PALING BANYAK DIPILIH',
     isPopular: true,
     price: 'Rp 4.500.000',
-    priceNote: 'Sekali bayar • Solusi operasional lengkap',
+    priceLabel: 'Biaya Setup Pembuatan Awal',
+    monthlyMaintenance: 'Rp 300.000 / bln',
+    priceNote: 'High-Speed Cloud VPS, Multi-Cabang & Monitoring 24/7',
     targetAudience: 'Paling ideal untuk bisnis berkembang, multi-cabang, absensi staf, dan armada lapangan.',
     timeline: '14 - 21 Hari Kerja',
     features: [
@@ -58,11 +64,11 @@ const PRICING_TIERS: PricingTier[] = [
       'Multi-Role (Owner, Admin, Kasir, Kurir, Staf)',
       'Fitur GPS Geofencing, swafoto & scan barcode kamera',
       'Integrasi payment gateway QRIS & Virtual Account bank',
-      'Laporan keuangan & analitik laba export Excel/PDF',
+      'Cloud Server VPS kapasitas tinggi & monitoring 24/7',
+      'Backup otomatis berkala & penanganan bug kilat',
       'Bantuan publikasi ke Google Play Store resmi',
-      'Garansi resmi bebas bug & prioritas teknis 1 tahun',
     ],
-    deliverables: 'Web Admin + Master APK • Setup Cloud VPS • Garansi 1 Th',
+    deliverables: 'Web Admin + Master APK • Cloud VPS Dedicated • Maintenance Rutin',
     ctaText: 'Pilih Paket Bisnis Terpadu',
   },
   {
@@ -70,20 +76,22 @@ const PRICING_TIERS: PricingTier[] = [
     name: 'Paket Custom Enterprise: Sistem & ERP',
     badge: 'KUSTOM 100% SOP',
     price: 'Mulai Rp 7.500.000',
-    priceNote: 'Sekali bayar • Arsitektur skala besar',
+    priceLabel: 'Biaya Rekayasa Sistem Awal',
+    monthlyMaintenance: 'Mulai Rp 600.000 / bln',
+    priceNote: 'Dedicated VPS Cloud Instance • SLA Prioritas Tinggi',
     targetAudience: 'Untuk perusahaan, pabrik manufaktur, yayasan sekolah, atau sistem dengan alur unik.',
     timeline: '21 - 35 Hari Kerja',
     features: [
       'Rekayasa arsitektur 100% custom sesuai SOP perusahaan',
       'WhatsApp Gateway Bot notifikasi invoice, resi & OTP',
       'Modernisasi sistem lama & migrasi database terenkripsi',
-      'Server VPS cloud tangguh berkapasitas ribuan user',
-      'Dokumentasi API lengkap, Git repository & buku panduan',
-      'Sesi pelatihan tatap muka / online sampai tim mahir',
+      'Dedicated Cloud VPS berkapasitas ribuan pengguna aktif',
+      'Jaminan SLA uptime 99.9% & monitoring log server',
+      'Backup snapshot otomatis harian & pemulihan darurat',
+      'Sesi pelatihan berkala & pendampingan teknis prioritas',
       'Penandatanganan Perjanjian Kerahasiaan (NDA) resmi',
-      'Garansi resmi pemeliharaan sistem selama 1 tahun',
     ],
-    deliverables: 'Full Custom Codebase • Cloud Deployment • NDA Resmi',
+    deliverables: 'Custom Architecture • Dedicated Enterprise Cloud • SLA Maintenance',
     ctaText: 'Konsultasi Kebutuhan Enterprise',
   },
 ];
@@ -92,7 +100,7 @@ export const PricingSection: React.FC = () => {
   const handleSelectPlan = (plan: PricingTier) => {
     soundFx.playSuccess();
     const text = encodeURIComponent(
-      `Halo DiDev Studio, saya tertarik memesan "${plan.name}" (${plan.price}). Mohon informasi jadwal ketersediaan pengerjaan dan proses pembayarannya.`
+      `Halo DiDev Studio, saya tertarik memesan "${plan.name}" (Setup ${plan.price} + Server & Maintenance ${plan.monthlyMaintenance}). Mohon informasi jadwal ketersediaan pengerjaan dan detail layanannya.`
     );
     window.open(`https://wa.me/6281234567890?text=${text}`, '_blank');
   };
@@ -112,11 +120,11 @@ export const PricingSection: React.FC = () => {
           
           {/* Key Value Guarantee Badge */}
           <div className="mt-4 inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-slate-100 text-[#0F172A] font-mono text-xs sm:text-sm font-bold border border-slate-200 whitespace-nowrap shrink-0 overflow-x-auto max-w-full">
-            <span className="text-[#10B981] shrink-0">✓</span> <span className="whitespace-nowrap shrink-0">SEKALI BAYAR</span>
+            <span className="text-[#10B981] shrink-0">✓</span> <span className="whitespace-nowrap shrink-0">FULLY MANAGED</span>
             <span className="text-slate-300 shrink-0">•</span>
-            <span className="text-[#10B981] shrink-0">✓</span> <span className="whitespace-nowrap shrink-0">100% HAK MILIK</span>
+            <span className="text-[#10B981] shrink-0">✓</span> <span className="whitespace-nowrap shrink-0">CLOUD SERVER CEPAT</span>
             <span className="text-slate-300 shrink-0">•</span>
-            <span className="text-[#10B981] shrink-0">✓</span> <span className="whitespace-nowrap shrink-0">TANPA BIAYA BULANAN</span>
+            <span className="text-[#10B981] shrink-0">✓</span> <span className="whitespace-nowrap shrink-0">MAINTENANCE & BACKUP RUTIN</span>
           </div>
         </div>
 
@@ -167,10 +175,19 @@ export const PricingSection: React.FC = () => {
 
                   {/* Price Box */}
                   <div className="p-4 rounded-xl bg-white border border-slate-200 mb-6 shadow-2xs">
+                    <div className="text-[10px] font-bold text-slate-500 uppercase tracking-wide mb-1 whitespace-nowrap">
+                      {tier.priceLabel}
+                    </div>
                     <div className="text-3xl font-extrabold text-[#0F172A] font-mono whitespace-nowrap">
                       {tier.price}
                     </div>
-                    <div className="text-xs text-emerald-600 font-semibold mt-1 whitespace-nowrap shrink-0">
+                    <div className="mt-2.5 pt-2 border-t border-slate-100 flex items-center justify-between text-xs">
+                      <span className="text-slate-600 font-semibold whitespace-nowrap">Server & Maintenance:</span>
+                      <span className="font-mono font-bold text-[#2563EB] bg-blue-50 px-2 py-0.5 rounded border border-blue-200 text-[11px] whitespace-nowrap shrink-0">
+                        {tier.monthlyMaintenance}
+                      </span>
+                    </div>
+                    <div className="text-[11px] text-emerald-600 font-semibold mt-2 whitespace-nowrap shrink-0">
                       {tier.priceNote}
                     </div>
                   </div>

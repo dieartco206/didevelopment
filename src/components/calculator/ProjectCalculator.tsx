@@ -94,9 +94,10 @@ export const ProjectCalculator: React.FC = () => {
       `📌 *Kategori Sistem:* ${selectedType.name}%0A` +
       `⚡ *Jalur Pengerjaan:* ${isExpress ? 'Express Prioritas (+25%)' : 'Standar Reguler'}%0A` +
       `🧩 *Modul Tambahan:*%0A- ${addonNames || 'Tanpa modul tambahan'}%0A%0A` +
-      `💰 *Total Estimasi Biaya:* ${formatRupiah(price)}%0A` +
+      `💰 *Estimasi Biaya Setup Awal:* ${formatRupiah(price)}%0A` +
+      `🖥️ *Biaya Server & Maintenance:* Mulai Rp 150.000 / bulan%0A` +
       `⏱️ *Estimasi Durasi:* ${days} Hari Kerja%0A%0A` +
-      `Boleh minta info jadwal ketersediaan pengerjaan dan langkah selanjutnya? Terima kasih!`;
+      `Boleh minta info jadwal ketersediaan pengerjaan dan detail paket layanannya? Terima kasih!`;
 
     window.open(`https://wa.me/6281234567890?text=${text}`, '_blank');
   };
@@ -271,11 +272,17 @@ export const ProjectCalculator: React.FC = () => {
 
               {/* Total Investment Box */}
               <div className="p-5 rounded-2xl bg-blue-50/80 border-2 border-blue-200 mb-6 text-center">
-                <div className="text-xs font-semibold text-[#475569] whitespace-nowrap">Estimasi Nilai Investasi:</div>
+                <div className="text-xs font-semibold text-[#475569] whitespace-nowrap">Estimasi Biaya Setup Pembuatan:</div>
                 <div className="text-3xl sm:text-4xl font-extrabold text-[#0F172A] font-mono mt-1 whitespace-nowrap">
                   {formatRupiah(price)}
                 </div>
-                <div className="text-xs font-bold text-[#2563EB] mt-2 flex items-center justify-center gap-1.5 whitespace-nowrap shrink-0">
+                <div className="mt-2.5 pt-2 border-t border-blue-200/60 flex items-center justify-between text-xs">
+                  <span className="text-slate-600 font-semibold whitespace-nowrap">Server & Maintenance:</span>
+                  <span className="font-mono font-bold text-[#2563EB] bg-white px-2 py-0.5 rounded border border-blue-200 text-[11px] whitespace-nowrap shrink-0">
+                    Mulai Rp 150.000 / bln
+                  </span>
+                </div>
+                <div className="text-xs font-bold text-[#2563EB] mt-2.5 flex items-center justify-center gap-1.5 whitespace-nowrap shrink-0">
                   <Clock className="w-4 h-4 shrink-0" />
                   <span className="whitespace-nowrap">Estimasi Pengerjaan: {days} Hari Kerja</span>
                 </div>
@@ -285,11 +292,11 @@ export const ProjectCalculator: React.FC = () => {
               <div className="space-y-2.5 text-xs text-[#334155] mb-6 font-semibold">
                 <div className="flex items-center gap-2">
                   <CheckCircle2 className="w-4 h-4 text-[#10B981] shrink-0" />
-                  <span>100% Hak Milik Source Code Lengkap</span>
+                  <span>Cloud Server VPS Cepat & Terkelola</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <CheckCircle2 className="w-4 h-4 text-[#10B981] shrink-0" />
-                  <span>Garansi Bebas Bug Resmi Selama 1 Tahun</span>
+                  <span>Backup Database Otomatis & Pemeliharaan Rutin</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <CheckCircle2 className="w-4 h-4 text-[#10B981] shrink-0" />

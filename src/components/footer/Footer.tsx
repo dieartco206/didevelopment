@@ -33,7 +33,7 @@ export const Footer: React.FC = () => {
             </div>
             
             <p className="text-slate-400 font-normal text-xs sm:text-sm leading-relaxed max-w-sm mb-5">
-              Agensi rekayasa perangkat lunak spesialis pembuatan Website Operasional dan Aplikasi Mobile Android (APK) kustom bergaransi resmi 1 tahun. 100% Hak milik source code diserahkan penuh tanpa biaya sewa bulanan.
+              Agensi rekayasa perangkat lunak spesialis pembuatan Website Operasional dan Aplikasi Mobile Android (APK) kustom. Layanan sistem terkelola penuh (fully managed) dengan cloud server cepat, backup otomatis, dan pemeliharaan rutin.
             </p>
 
             <div className="flex items-center gap-2 text-xs text-emerald-400 font-semibold">
@@ -104,7 +104,7 @@ export const Footer: React.FC = () => {
               </li>
               <li className="flex items-center gap-2.5 pt-2 text-slate-300 font-medium">
                 <ShieldCheck className="w-4 h-4 text-[#2563EB] shrink-0" />
-                <span>Garansi Resmi 1 Tahun & Hak Milik Source Code</span>
+                <span>Cloud Server Terkelola, Backup Otomatis & Pemeliharaan Rutin</span>
               </li>
             </ul>
           </div>
@@ -114,7 +114,7 @@ export const Footer: React.FC = () => {
         {/* Bottom Bar */}
         <div className="pt-8 border-t border-slate-800/80 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500 text-center sm:text-left">
           <div>
-            © {new Date().getFullYear()} DiDev Studio. All rights reserved. 100% Full Source Code Hak Milik Klien.
+            © {new Date().getFullYear()} DiDev Studio. All rights reserved. Fully Managed Digital Platform & Cloud Infrastructure.
           </div>
           <div className="flex items-center gap-3 text-slate-400 font-medium">
             <span>React.js • Golang • Flutter • Android Native</span>

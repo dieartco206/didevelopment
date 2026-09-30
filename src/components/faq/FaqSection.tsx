@@ -9,16 +9,20 @@ interface FaqItem {
 
 const FAQ_LIST: FaqItem[] = [
   {
-    q: 'Apakah seluruh source code diserahkan 100% jadi hak milik kami?',
-    a: 'Ya, mutlak 100%! Seluruh source code aplikasi web, file database, aset desain, dan file master installer APK (.apk) diserahkan penuh tanpa biaya sewa, royalti tahunan, atau sistem sewa yang mengikat.',
+    q: 'Bagaimana skema biaya aplikasi di DiDev Studio, apakah beli putus?',
+    a: 'Skema kami adalah Fully Managed Service: Anda membayar Biaya Setup & Pembuatan Awal untuk perancangan sistem, kemudian biaya bulanan terjangkau untuk operasional Cloud Server VPS berkecepatan tinggi, backup otomatis database, pemantauan uptime 99.9%, serta garansi maintenance rutin. Anda tidak perlu pusing memikirkan teknis server atau menggaji tim IT internal.',
+  },
+  {
+    q: 'Apa saja yang dicakup dalam biaya server dan maintenance bulanan?',
+    a: 'Biaya bulanan mencakup sewa Cloud VPS berkecepatan tinggi, sertifikat keamanan SSL HTTPS, backup otomatis berkala database transaksi, pemantauan server 24/7 (uptime 99.9%), perbaikan bug jika ada error fungsional, serta update security patch berkala agar sistem Anda selalu aman dan stabil.',
   },
   {
     q: 'Berapa lama estimasi pengerjaan aplikasi web dan mobile?',
     a: 'Untuk Website Toko / Landing Page umumnya selesai dalam 5-7 hari kerja. Aplikasi Android APK siap pakai berkisar 10-14 hari kerja. Sedangkan paket komplit Web + Mobile berkisar 14-21 hari kerja sesuai kompleksitas fitur yang Anda minta.',
   },
   {
-    q: 'Bagaimana jika di kemudian hari ditemukan error atau bug?',
-    a: 'Semua proyek kami bergaransi resmi 1 tahun penuh. Jika ada kendala teknis, fungsi error, atau bug yang tidak sesuai dengan kesepakatan awal, tim engineer kami perbaiki secara gratis dan cepat.',
+    q: 'Bagaimana jika di kemudian hari ditemukan error atau kendala teknis?',
+    a: 'Dengan layanan managed server & maintenance kami, sistem Anda mendapatkan jaminan pemeliharaan berkelanjutan. Jika terjadi kendala teknis atau error fungsional, tim software engineer kami siap menangani langsung dengan respon cepat tanpa biaya tambahan.',
   },
   {
     q: 'Bagaimana cara instalasi aplikasi Android APK ke smartphone karyawan?',
@@ -30,7 +34,7 @@ const FAQ_LIST: FaqItem[] = [
   },
   {
     q: 'Bagaimana skema pembayaran dan termin proyek di DiDev Studio?',
-    a: 'Skema sangat transparan: DP 50% di awal saat kick-off dan kesepakatan spesifikasi sistem, kemudian sisa pelunasan 50% dibayarkan setelah aplikasi selesai diuji coba bersama dan siap diserahterimakan.',
+    a: 'Skema sangat transparan: Biaya Setup Awal menggunakan termin DP 50% di awal kick-off dan pelunasan 50% setelah sistem selesai diuji coba bersama & siap serah terima. Biaya cloud server & maintenance bulanan baru mulai dihitung setelah sistem resmi online dan live aktif digunakan.',
   },
   {
     q: 'Sistem lama perusahaan kami ingin diperbarui, apakah bisa?',

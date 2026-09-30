@@ -52,7 +52,7 @@ export const HeroPromo: React.FC<HeroPromoProps> = ({ onNavigate }) => {
 
             {/* Subheadline Solutif */}
             <p className="mt-4 text-sm sm:text-base lg:text-lg text-[#475569] leading-relaxed max-w-xl mx-auto lg:mx-0 font-normal">
-              Hentikan pencatatan manual yang rawan selisih uang dan stok hilang. Kami bangunkan website operasional dan aplikasi Android APK yang pas dengan SOP usaha Anda — <strong className="text-[#0F172A] font-semibold">sekali bayar, 100% hak milik source code, tanpa biaya sewa bulanan</strong>.
+              Hentikan pencatatan manual yang rawan selisih uang dan stok hilang. Kami bangunkan website operasional dan aplikasi Android APK yang pas dengan SOP usaha Anda — <strong className="text-[#0F172A] font-semibold">layanan terkelola penuh (fully managed) dengan cloud server berkecepatan tinggi, backup otomatis, dan maintenance rutin setiap bulan</strong>.
             </p>
 
             {/* CTA Ganda: WhatsApp Hijau + Tombol Hitung Biaya */}
@@ -81,15 +81,15 @@ export const HeroPromo: React.FC<HeroPromoProps> = ({ onNavigate }) => {
             <div className="mt-6 pt-5 border-t border-slate-200/80 grid grid-cols-2 sm:flex sm:flex-wrap items-center justify-center lg:justify-start gap-3 sm:gap-5 text-xs text-[#334155] font-semibold">
               <span className="flex items-center gap-1.5 whitespace-nowrap shrink-0">
                 <CheckCircle2 className="w-4 h-4 text-[#10B981] shrink-0" />
-                <span className="whitespace-nowrap">Sekali Bayar</span>
+                <span className="whitespace-nowrap">Cloud Server Cepat</span>
               </span>
               <span className="flex items-center gap-1.5 whitespace-nowrap shrink-0">
                 <CheckCircle2 className="w-4 h-4 text-[#10B981] shrink-0" />
-                <span className="whitespace-nowrap">100% Source Code Klien</span>
+                <span className="whitespace-nowrap">Backup Otomatis Rutin</span>
               </span>
               <span className="flex items-center gap-1.5 whitespace-nowrap shrink-0">
                 <CheckCircle2 className="w-4 h-4 text-[#10B981] shrink-0" />
-                <span className="whitespace-nowrap">Garansi Bebas Bug 1 Th</span>
+                <span className="whitespace-nowrap">Maintenance & Support</span>
               </span>
               <span className="flex items-center gap-1.5 whitespace-nowrap shrink-0">
                 <CheckCircle2 className="w-4 h-4 text-[#10B981] shrink-0" />
@@ -298,8 +298,8 @@ export const HeroPromo: React.FC<HeroPromoProps> = ({ onNavigate }) => {
               <Code2 className="w-5 h-5" />
             </div>
             <div>
-              <div className="text-xl sm:text-2xl font-extrabold text-[#0F172A] leading-tight whitespace-nowrap shrink-0">100%</div>
-              <div className="text-xs text-[#475569] font-medium mt-0.5 whitespace-nowrap">Hak Milik Source Code</div>
+              <div className="text-xl sm:text-2xl font-extrabold text-[#0F172A] leading-tight whitespace-nowrap shrink-0">99.9%</div>
+              <div className="text-xs text-[#475569] font-medium mt-0.5 whitespace-nowrap">Uptime Server & Monitoring</div>
             </div>
           </div>
 

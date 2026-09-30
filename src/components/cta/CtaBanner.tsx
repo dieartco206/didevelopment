@@ -51,15 +51,15 @@ export const CtaBanner: React.FC = () => {
         <div className="mt-6 flex flex-wrap items-center justify-center gap-4 sm:gap-6 text-xs text-slate-400 font-medium">
           <span className="flex items-center gap-1.5 text-slate-300 whitespace-nowrap shrink-0">
             <ShieldCheck className="w-4 h-4 text-[#10B981] shrink-0" />
-            <span className="whitespace-nowrap">100% Hak Milik Source Code</span>
+            <span className="whitespace-nowrap">Cloud Server Cepat & Terkelola</span>
           </span>
           <span className="flex items-center gap-1.5 text-slate-300 whitespace-nowrap shrink-0">
             <ShieldCheck className="w-4 h-4 text-[#10B981] shrink-0" />
-            <span className="whitespace-nowrap">Garansi Bebas Bug 1 Tahun</span>
+            <span className="whitespace-nowrap">Backup Database Otomatis Rutin</span>
           </span>
           <span className="flex items-center gap-1.5 text-slate-300 whitespace-nowrap shrink-0">
             <ShieldCheck className="w-4 h-4 text-[#10B981] shrink-0" />
-            <span className="whitespace-nowrap">Tanpa Biaya Sewa Bulanan</span>
+            <span className="whitespace-nowrap">Maintenance & Support Prioritas</span>
           </span>
         </div>
 

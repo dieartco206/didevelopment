@@ -48,7 +48,7 @@ export const App: React.FC = () => {
         {/* 6. Kalkulator Estimasi Biaya Finansial Interaktif & Sticky Quote */}
         <ProjectCalculator />
 
-        {/* 7. Paket Investasi / Pricing Terstruktur (Sekali Bayar • 100% Hak Milik) */}
+        {/* 7. Paket Investasi / Pricing Terstruktur (Biaya Setup + Server & Maintenance Bulanan) */}
         <PricingSection />
 
         {/* 8. FAQ Accordion 2 Kolom dengan Dukungan WhatsApp Langsung */}
