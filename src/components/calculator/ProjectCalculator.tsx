@@ -95,7 +95,7 @@ export const ProjectCalculator: React.FC = () => {
       `⚡ *Jalur Pengerjaan:* ${isExpress ? 'Express Prioritas (+25%)' : 'Standar Reguler'}%0A` +
       `🧩 *Modul Tambahan:*%0A- ${addonNames || 'Tanpa modul tambahan'}%0A%0A` +
       `💰 *Estimasi Biaya Setup Awal:* ${formatRupiah(price)}%0A` +
-      `🖥️ *Biaya Server & Maintenance:* Mulai Rp 150.000 / bulan%0A` +
+      `🖥️ *Biaya Server & Maintenance:* Mulai Rp 500.000 / bulan%0A` +
       `⏱️ *Estimasi Durasi:* ${days} Hari Kerja%0A%0A` +
       `Boleh minta info jadwal ketersediaan pengerjaan dan detail paket layanannya? Terima kasih!`;
 
@@ -279,7 +279,7 @@ export const ProjectCalculator: React.FC = () => {
                 <div className="mt-2.5 pt-2 border-t border-blue-200/60 flex items-center justify-between text-xs">
                   <span className="text-slate-600 font-semibold whitespace-nowrap">Server & Maintenance:</span>
                   <span className="font-mono font-bold text-[#2563EB] bg-white px-2 py-0.5 rounded border border-blue-200 text-[11px] whitespace-nowrap shrink-0">
-                    Mulai Rp 150.000 / bln
+                    Mulai Rp 500.000 / bln
                   </span>
                 </div>
                 <div className="text-xs font-bold text-[#2563EB] mt-2.5 flex items-center justify-center gap-1.5 whitespace-nowrap shrink-0">
