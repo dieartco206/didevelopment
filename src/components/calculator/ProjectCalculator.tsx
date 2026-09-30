@@ -271,18 +271,24 @@ export const ProjectCalculator: React.FC = () => {
               </div>
 
               {/* Total Investment Box */}
-              <div className="p-5 rounded-2xl bg-blue-50/80 border-2 border-blue-200 mb-6 text-center">
-                <div className="text-xs font-semibold text-[#475569] whitespace-nowrap">Estimasi Biaya Setup Pembuatan:</div>
-                <div className="text-3xl sm:text-4xl font-extrabold text-[#0F172A] font-mono mt-1 whitespace-nowrap">
+              <div className="p-5 sm:p-6 rounded-2xl bg-blue-50/80 border-2 border-blue-200 mb-6 text-center">
+                <div className="text-xs font-bold text-slate-500 uppercase tracking-wider whitespace-nowrap">
+                  Estimasi Biaya Setup Pembuatan:
+                </div>
+                <div className="text-3xl sm:text-4xl font-extrabold text-[#0F172A] font-mono mt-1.5 whitespace-nowrap">
                   {formatRupiah(price)}
                 </div>
-                <div className="mt-2.5 pt-2 border-t border-blue-200/60 flex items-center justify-between text-xs">
-                  <span className="text-slate-600 font-semibold whitespace-nowrap">Server & Maintenance:</span>
-                  <span className="font-mono font-bold text-[#2563EB] bg-white px-2 py-0.5 rounded border border-blue-200 text-[11px] whitespace-nowrap shrink-0">
+
+                <div className="mt-4 pt-4 border-t border-blue-200/70 text-left bg-white/80 rounded-xl p-3.5 border border-blue-100 shadow-2xs">
+                  <div className="text-[11px] font-bold text-slate-500 uppercase tracking-wider whitespace-nowrap">
+                    Cloud Server & Maintenance:
+                  </div>
+                  <div className="text-lg font-extrabold text-[#2563EB] font-mono mt-0.5 whitespace-nowrap">
                     Mulai Rp 500.000 / bln
-                  </span>
+                  </div>
                 </div>
-                <div className="text-xs font-bold text-[#2563EB] mt-2.5 flex items-center justify-center gap-1.5 whitespace-nowrap shrink-0">
+
+                <div className="text-xs font-bold text-[#2563EB] mt-4 flex items-center justify-center gap-1.5 whitespace-nowrap shrink-0">
                   <Clock className="w-4 h-4 shrink-0" />
                   <span className="whitespace-nowrap">Estimasi Pengerjaan: {days} Hari Kerja</span>
                 </div>

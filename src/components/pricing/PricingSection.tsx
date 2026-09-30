@@ -174,21 +174,26 @@ export const PricingSection: React.FC = () => {
                   </p>
 
                   {/* Price Box */}
-                  <div className="p-4 rounded-xl bg-white border border-slate-200 mb-6 shadow-2xs">
-                    <div className="text-[10px] font-bold text-slate-500 uppercase tracking-wide mb-1 whitespace-nowrap">
+                  <div className="p-5 rounded-2xl bg-white border border-slate-200 mb-6 shadow-xs">
+                    {/* Setup Fee */}
+                    <div className="text-[11px] font-bold text-slate-500 uppercase tracking-wider mb-1 whitespace-nowrap">
                       {tier.priceLabel}
                     </div>
-                    <div className="text-3xl font-extrabold text-[#0F172A] font-mono whitespace-nowrap">
+                    <div className="text-3xl sm:text-4xl font-extrabold text-[#0F172A] font-mono tracking-tight whitespace-nowrap">
                       {tier.price}
                     </div>
-                    <div className="mt-2.5 pt-2 border-t border-slate-100 flex items-center justify-between text-xs">
-                      <span className="text-slate-600 font-semibold whitespace-nowrap">Server & Maintenance:</span>
-                      <span className="font-mono font-bold text-[#2563EB] bg-blue-50 px-2 py-0.5 rounded border border-blue-200 text-[11px] whitespace-nowrap shrink-0">
+
+                    {/* Server & Maintenance Dedicated Section */}
+                    <div className="mt-4 pt-4 border-t border-slate-100">
+                      <div className="text-[11px] font-bold text-slate-500 uppercase tracking-wider mb-1 whitespace-nowrap">
+                        Server & Maintenance:
+                      </div>
+                      <div className="text-xl font-extrabold text-[#2563EB] font-mono tracking-tight whitespace-nowrap">
                         {tier.monthlyMaintenance}
-                      </span>
-                    </div>
-                    <div className="text-[11px] text-emerald-600 font-semibold mt-2 whitespace-nowrap shrink-0">
-                      {tier.priceNote}
+                      </div>
+                      <div className="text-xs text-emerald-600 font-medium mt-1.5 leading-snug">
+                        {tier.priceNote}
+                      </div>
                     </div>
                   </div>
 
