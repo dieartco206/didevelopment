@@ -188,7 +188,7 @@ export const PricingSection: React.FC = () => {
             return (
               <div
                 key={tier.id}
-                className={`rounded-2xl p-6 sm:p-7 flex flex-col justify-between transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl relative ${entranceAnim} ${
+                className={`rounded-2xl p-6 sm:p-7 flex flex-col justify-between transition-all duration-500 ease-out hover:-translate-y-2 hover:shadow-2xl relative ${entranceAnim} ${
                   isFeatured
                     ? 'bg-white border-2 border-[#2563EB] shadow-xl ring-2 ring-blue-500/10 lg:-translate-y-3 hover:lg:-translate-y-5 z-10'
                     : 'bg-[#F8FAFC] border-2 border-slate-200 hover:border-blue-400 shadow-sm'

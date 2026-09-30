@@ -120,7 +120,7 @@ export const HeroPromo: React.FC<HeroPromoProps> = ({ onNavigate }) => {
               </div>
 
               {/* LAYER 1: Web Browser Admin POS (Dekstop Mockup) */}
-              <div className="rounded-2xl bg-white border-2 border-slate-200 shadow-xl overflow-hidden transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
+              <div className="rounded-2xl bg-white border-2 border-slate-200 shadow-xl overflow-hidden transition-all duration-500 ease-out hover:shadow-2xl hover:-translate-y-1">
                 {/* Browser Titlebar */}
                 <div className="bg-slate-100 border-b border-slate-200 px-3.5 py-2.5 flex items-center justify-between">
                   <div className="flex items-center gap-1.5">
@@ -238,7 +238,7 @@ export const HeroPromo: React.FC<HeroPromoProps> = ({ onNavigate }) => {
 
               {/* LAYER 2: Overlapping Real Flagship Smartphone Android (Menumpuk Elegan di Depan Kanan Bawah) */}
               <div className="hidden sm:block absolute -bottom-10 -right-6 z-10 animate-enter-up delay-200">
-                <div className="w-[215px] sm:w-[220px] h-[440px] rounded-[40px] bg-slate-950 p-2 shadow-[0_25px_60px_-15px_rgba(15,23,42,0.55)] border-[2.5px] border-slate-700/90 ring-1 ring-slate-800 animate-float-phone hover:rotate-0 transition-transform duration-300">
+                <div className="w-[215px] sm:w-[220px] h-[440px] rounded-[40px] bg-slate-950 p-2 shadow-[0_25px_60px_-15px_rgba(15,23,42,0.55)] border-[2.5px] border-slate-700/90 ring-1 ring-slate-800 animate-float-phone hover:rotate-0 transition-transform duration-500 ease-out">
                 {/* Physical Hardware Buttons */}
                 {/* Volume Buttons (Left) */}
                 <div className="absolute -left-[3.5px] top-20 w-[2.5px] h-7 bg-slate-600 rounded-l-xs" />
@@ -354,7 +354,7 @@ export const HeroPromo: React.FC<HeroPromoProps> = ({ onNavigate }) => {
 
         {/* Layanan Terukur & Berdampak (4 Poin Pencapaian - Staggered Cascade) */}
         <div className="mt-12 sm:mt-16 pt-8 border-t border-slate-200 grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
-          <div className="p-4 sm:p-5 bg-[#F8FAFC] border border-slate-200 rounded-xl flex items-center gap-3.5 hover:border-[#2563EB] hover:-translate-y-1.5 hover:shadow-lg transition-all duration-300 cursor-default animate-enter-up delay-100">
+          <div className="p-4 sm:p-5 bg-[#F8FAFC] border border-slate-200 rounded-xl flex items-center gap-3.5 hover:border-[#2563EB] hover:-translate-y-1.5 hover:shadow-lg transition-all duration-500 ease-out cursor-default animate-enter-up delay-100">
             <div className="w-11 h-11 rounded-xl bg-blue-50 text-[#2563EB] flex items-center justify-center shrink-0">
               <Laptop className="w-5 h-5" />
             </div>
@@ -364,7 +364,7 @@ export const HeroPromo: React.FC<HeroPromoProps> = ({ onNavigate }) => {
             </div>
           </div>
 
-          <div className="p-4 sm:p-5 bg-[#F8FAFC] border border-slate-200 rounded-xl flex items-center gap-3.5 hover:border-[#2563EB] hover:-translate-y-1.5 hover:shadow-lg transition-all duration-300 cursor-default animate-enter-up delay-200">
+          <div className="p-4 sm:p-5 bg-[#F8FAFC] border border-slate-200 rounded-xl flex items-center gap-3.5 hover:border-[#2563EB] hover:-translate-y-1.5 hover:shadow-lg transition-all duration-500 ease-out cursor-default animate-enter-up delay-200">
             <div className="w-11 h-11 rounded-xl bg-emerald-50 text-[#10B981] flex items-center justify-center shrink-0">
               <ShieldCheck className="w-5 h-5" />
             </div>
@@ -374,7 +374,7 @@ export const HeroPromo: React.FC<HeroPromoProps> = ({ onNavigate }) => {
             </div>
           </div>
 
-          <div className="p-4 sm:p-5 bg-[#F8FAFC] border border-slate-200 rounded-xl flex items-center gap-3.5 hover:border-[#2563EB] hover:-translate-y-1.5 hover:shadow-lg transition-all duration-300 cursor-default animate-enter-up delay-300">
+          <div className="p-4 sm:p-5 bg-[#F8FAFC] border border-slate-200 rounded-xl flex items-center gap-3.5 hover:border-[#2563EB] hover:-translate-y-1.5 hover:shadow-lg transition-all duration-500 ease-out cursor-default animate-enter-up delay-300">
             <div className="w-11 h-11 rounded-xl bg-indigo-50 text-[#4F46E5] flex items-center justify-center shrink-0">
               <Code2 className="w-5 h-5" />
             </div>
@@ -384,7 +384,7 @@ export const HeroPromo: React.FC<HeroPromoProps> = ({ onNavigate }) => {
             </div>
           </div>
 
-          <div className="p-4 sm:p-5 bg-[#F8FAFC] border border-slate-200 rounded-xl flex items-center gap-3.5 hover:border-[#2563EB] hover:-translate-y-1.5 hover:shadow-lg transition-all duration-300 cursor-default animate-enter-up delay-400">
+          <div className="p-4 sm:p-5 bg-[#F8FAFC] border border-slate-200 rounded-xl flex items-center gap-3.5 hover:border-[#2563EB] hover:-translate-y-1.5 hover:shadow-lg transition-all duration-500 ease-out cursor-default animate-enter-up delay-400">
             <div className="w-11 h-11 rounded-xl bg-sky-50 text-[#0284C7] flex items-center justify-center shrink-0">
               <Users className="w-5 h-5" />
             </div>

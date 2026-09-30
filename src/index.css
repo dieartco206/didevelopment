@@ -141,42 +141,42 @@
   color: #FFFFFF;
 }
 
-/* Floating Animations */
+/* Floating Animations - Silky Smooth 60fps & Gentle Floating */
 @keyframes floatSlow {
   0%, 100% { transform: translateY(0px) rotate(0deg); }
-  50% { transform: translateY(-8px) rotate(0.8deg); }
+  50% { transform: translateY(-6px) rotate(0.4deg); }
 }
 
 @keyframes floatReverse {
   0%, 100% { transform: translateY(0px) rotate(0deg); }
-  50% { transform: translateY(8px) rotate(-0.8deg); }
+  50% { transform: translateY(6px) rotate(-0.4deg); }
 }
 
 @keyframes pulseRadar {
-  0% { transform: scale(0.9); opacity: 0.8; }
-  50% { transform: scale(1.15); opacity: 0.3; }
-  100% { transform: scale(0.9); opacity: 0.8; }
+  0% { transform: scale(0.92); opacity: 0.7; }
+  50% { transform: scale(1.1); opacity: 0.25; }
+  100% { transform: scale(0.92); opacity: 0.7; }
 }
 
 .animate-float-slow {
-  animation: floatSlow 5s ease-in-out infinite;
+  animation: floatSlow 8s ease-in-out infinite;
 }
 
 .animate-float-reverse {
-  animation: floatReverse 6s ease-in-out infinite;
+  animation: floatReverse 9s ease-in-out infinite;
 }
 
 @keyframes floatPhone {
   0%, 100% {
-    transform: translateY(0px) rotate(2deg);
+    transform: translateY(0px) rotate(1.8deg);
   }
   50% {
-    transform: translateY(-12px) rotate(0.8deg);
+    transform: translateY(-8px) rotate(0.6deg);
   }
 }
 
 .animate-float-phone {
-  animation: floatPhone 6s ease-in-out infinite;
+  animation: floatPhone 8.5s ease-in-out infinite;
 }
 
 @keyframes floatBadge {
@@ -184,12 +184,12 @@
     transform: translateY(0px);
   }
   50% {
-    transform: translateY(-8px);
+    transform: translateY(-5px);
   }
 }
 
 .animate-float-badge {
-  animation: floatBadge 4.5s ease-in-out infinite;
+  animation: floatBadge 7s ease-in-out infinite;
 }
 
 @keyframes floatBadgeSlow {
@@ -197,12 +197,12 @@
     transform: translateY(0px);
   }
   50% {
-    transform: translateY(6px);
+    transform: translateY(5px);
   }
 }
 
 .animate-float-badge-slow {
-  animation: floatBadgeSlow 5.5s ease-in-out infinite;
+  animation: floatBadgeSlow 8.5s ease-in-out infinite;
 }
 
 @keyframes laserScan {
@@ -212,7 +212,7 @@
   }
   50% {
     top: 85%;
-    opacity: 1;
+    opacity: 0.9;
   }
   100% {
     top: 5%;
@@ -221,26 +221,26 @@
 }
 
 .animate-laser-scan {
-  animation: laserScan 2.5s ease-in-out infinite;
+  animation: laserScan 3.5s ease-in-out infinite;
 }
 
 @keyframes auraBreathe {
   0%, 100% {
-    transform: scale(0.96);
-    opacity: 0.55;
+    transform: scale(0.97);
+    opacity: 0.5;
   }
   50% {
-    transform: scale(1.08);
-    opacity: 0.85;
+    transform: scale(1.06);
+    opacity: 0.8;
   }
 }
 
 .animate-aura-breathe {
-  animation: auraBreathe 5s ease-in-out infinite;
+  animation: auraBreathe 7.5s ease-in-out infinite;
 }
 
 .animate-radar {
-  animation: pulseRadar 2.5s ease-in-out infinite;
+  animation: pulseRadar 3.2s ease-in-out infinite;
 }
 
 /* Gradient Text Shimmer */
@@ -267,12 +267,15 @@
 
 /* ========================================================
    PAGE RELOAD & VIEWPORT ENTRANCE ANIMATIONS
-   Smooth 60fps hardware-accelerated transitions
+   Ultra-Smooth, Silky 60fps Decelerating Glide (Apple/Linear Easing)
    ======================================================== */
 @keyframes enterFromRight {
   0% {
     opacity: 0;
-    transform: translate3d(80px, 0, 0);
+    transform: translate3d(48px, 0, 0);
+  }
+  60% {
+    opacity: 0.9;
   }
   100% {
     opacity: 1;
@@ -283,7 +286,10 @@
 @keyframes enterFromLeft {
   0% {
     opacity: 0;
-    transform: translate3d(-80px, 0, 0);
+    transform: translate3d(-48px, 0, 0);
+  }
+  60% {
+    opacity: 0.9;
   }
   100% {
     opacity: 1;
@@ -294,7 +300,10 @@
 @keyframes enterFromUp {
   0% {
     opacity: 0;
-    transform: translate3d(0, 45px, 0);
+    transform: translate3d(0, 36px, 0);
+  }
+  60% {
+    opacity: 0.9;
   }
   100% {
     opacity: 1;
@@ -305,7 +314,10 @@
 @keyframes enterScale {
   0% {
     opacity: 0;
-    transform: scale(0.92) translate3d(0, 25px, 0);
+    transform: scale(0.96) translate3d(0, 20px, 0);
+  }
+  60% {
+    opacity: 0.9;
   }
   100% {
     opacity: 1;
@@ -314,27 +326,32 @@
 }
 
 .animate-enter-right {
-  animation: enterFromRight 0.85s cubic-bezier(0.16, 1, 0.3, 1) both;
+  animation: enterFromRight 1.4s cubic-bezier(0.22, 1, 0.36, 1) both;
+  will-change: transform, opacity;
 }
 
 .animate-enter-left {
-  animation: enterFromLeft 0.85s cubic-bezier(0.16, 1, 0.3, 1) both;
+  animation: enterFromLeft 1.4s cubic-bezier(0.22, 1, 0.36, 1) both;
+  will-change: transform, opacity;
 }
 
 .animate-enter-up {
-  animation: enterFromUp 0.85s cubic-bezier(0.16, 1, 0.3, 1) both;
+  animation: enterFromUp 1.4s cubic-bezier(0.22, 1, 0.36, 1) both;
+  will-change: transform, opacity;
 }
 
 .animate-enter-scale {
-  animation: enterScale 0.85s cubic-bezier(0.16, 1, 0.3, 1) both;
+  animation: enterScale 1.4s cubic-bezier(0.22, 1, 0.36, 1) both;
+  will-change: transform, opacity;
 }
 
-.delay-75 { animation-delay: 75ms; }
-.delay-100 { animation-delay: 100ms; }
-.delay-150 { animation-delay: 150ms; }
-.delay-200 { animation-delay: 200ms; }
-.delay-300 { animation-delay: 300ms; }
-.delay-400 { animation-delay: 400ms; }
-.delay-500 { animation-delay: 500ms; }
-.delay-600 { animation-delay: 600ms; }
+/* Stagger Delays with Gentle Rhythmic Pacing */
+.delay-75 { animation-delay: 80ms; }
+.delay-100 { animation-delay: 150ms; }
+.delay-150 { animation-delay: 220ms; }
+.delay-200 { animation-delay: 300ms; }
+.delay-300 { animation-delay: 450ms; }
+.delay-400 { animation-delay: 600ms; }
+.delay-500 { animation-delay: 750ms; }
+.delay-600 { animation-delay: 900ms; }
 

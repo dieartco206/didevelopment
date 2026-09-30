@@ -57,7 +57,7 @@ export const ServicesSection: React.FC = () => {
               <span className="text-emerald-700 bg-emerald-50 border border-emerald-200 text-[8.5px] px-1.5 py-0.5 rounded font-bold">TERKONEKSI</span>
             </div>
 
-            <div className="rounded-2xl bg-white border-2 border-slate-200 shadow-xl overflow-hidden hover:-translate-y-1.5 hover:shadow-2xl transition-all duration-300">
+            <div className="rounded-2xl bg-white border-2 border-slate-200 shadow-xl overflow-hidden hover:-translate-y-1.5 hover:shadow-2xl transition-all duration-500 ease-out">
               {/* Window Bar */}
               <div className="bg-slate-100 border-b border-slate-200 px-4 py-2.5 flex items-center justify-between">
                 <div className="flex items-center gap-1.5">
@@ -398,7 +398,7 @@ export const ServicesSection: React.FC = () => {
                 <span className="text-emerald-700 bg-emerald-50 border border-emerald-200 text-[8.5px] px-1.5 py-0.5 rounded font-bold">100% HIJAU</span>
               </div>
 
-              <div className="rounded-2xl bg-white border-2 border-slate-200 shadow-xl overflow-hidden hover:-translate-y-1.5 hover:shadow-2xl transition-all duration-300">
+              <div className="rounded-2xl bg-white border-2 border-slate-200 shadow-xl overflow-hidden hover:-translate-y-1.5 hover:shadow-2xl transition-all duration-500 ease-out">
               <div className="bg-slate-100 border-b border-slate-200 px-4 py-2.5 flex items-center justify-between">
                 <div className="flex items-center gap-1.5">
                   <span className="w-2.5 h-2.5 rounded-full bg-rose-500 inline-block" />
