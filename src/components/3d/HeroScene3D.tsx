@@ -17,7 +17,7 @@ export const APK_LAYERS: ApkLayerInfo[] = [
     fileName: 'AndroidManifest.xml (Binary AXML)',
     sizeMb: 0.12,
     description: 'Root configuration binary declaring components, activities, intent filters, and strict permission models for Android OS.',
-    color: '#00F0FF', // Neon Cyan
+    color: '#0284C7', // Sky Blue
     techDetails: [
       { label: 'Format', value: 'Binary XML compiled by AAPT2' },
       { label: 'Components', value: '18 Activities, 4 Services, 3 Receivers' },
@@ -32,7 +32,7 @@ export const APK_LAYERS: ApkLayerInfo[] = [
     fileName: 'classes.dex & classes2.dex',
     sizeMb: 5.84,
     description: 'R8-compiled Dalvik Executable bytecode. Minified, tree-shaken, and optimized with ProGuard dictionary obfuscation.',
-    color: '#3DDC84', // Android Green
+    color: '#2563EB', // Royal Blue
     techDetails: [
       { label: 'Method Count', value: '42,810 methods (Multidex enabled)' },
       { label: 'Optimizer', value: 'R8 Compiler in Full Mode' },
@@ -47,7 +47,7 @@ export const APK_LAYERS: ApkLayerInfo[] = [
     fileName: 'libvulkan_engine.so, libcrypto_vault.so',
     sizeMb: 3.42,
     description: 'Native Shared Objects compiled via Clang C++20 and CMake. Direct JNI bridge for zero-overhead Vulkan 1.3 frame pacing.',
-    color: '#A855F7', // Neon Violet
+    color: '#4F46E5', // Indigo Sapphire
     techDetails: [
       { label: 'Architecture', value: 'arm64-v8a (64-bit strictly enforced)' },
       { label: '16KB Page Size', value: 'ELF 16KB max-page-size aligned' },
@@ -62,7 +62,7 @@ export const APK_LAYERS: ApkLayerInfo[] = [
     fileName: 'resources.arsc & res/drawable-xxxhdpi',
     sizeMb: 2.15,
     description: 'Pre-indexed resource table and compressed assets. Vector drawables and WebP lossless textures with density qualifiers.',
-    color: '#F59E0B', // Amber
+    color: '#0EA5E9', // Electric Sky
     techDetails: [
       { label: 'Format', value: 'Binary Resource Table (resources.arsc)' },
       { label: 'Asset Compression', value: 'Lossless WebP + FlatBuffers' },
@@ -77,7 +77,7 @@ export const APK_LAYERS: ApkLayerInfo[] = [
     fileName: 'CERT.RSA, CERT.SF, MANIFEST.MF',
     sizeMb: 0.08,
     description: 'Cryptographic keystore block. Whole-file signature hashes protecting bytecode and assets from runtime tampering.',
-    color: '#EF4444', // Red Security
+    color: '#1D4ED8', // Deep Cobalt
     techDetails: [
       { label: 'Signing Scheme', value: 'v2, v3, and v4 streaming enabled' },
       { label: 'Digest Algorithm', value: 'SHA-256 with 4096-bit RSA' },
@@ -137,7 +137,6 @@ export const HeroScene3D: React.FC<HeroScene3DProps> = ({
 
       mouseState.current.targetRotY += deltaX * 0.008;
       mouseState.current.targetRotX += deltaY * 0.008;
-      // Clamp vertical rotation
       mouseState.current.targetRotX = Math.max(-1.0, Math.min(1.0, mouseState.current.targetRotX));
     }
   };
@@ -193,44 +192,47 @@ export const HeroScene3D: React.FC<HeroScene3DProps> = ({
     renderer.setSize(width, height);
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
     renderer.toneMapping = THREE.ACESFilmicToneMapping;
-    renderer.toneMappingExposure = 1.2;
+    renderer.toneMappingExposure = 1.1;
     container.appendChild(renderer.domElement);
     rendererRef.current = renderer;
 
-    // --- Lighting ---
-    const ambientLight = new THREE.AmbientLight(0xffffff, 0.9);
+    // --- Bright Studio Lighting for Light Mode ---
+    const ambientLight = new THREE.AmbientLight(0xffffff, 1.2);
     scene.add(ambientLight);
 
-    const dirLight1 = new THREE.DirectionalLight(0x00f0ff, 2.5);
-    dirLight1.position.set(5, 6, 6);
+    const dirLight1 = new THREE.DirectionalLight(0x2563eb, 3.2); // Royal Blue
+    dirLight1.position.set(6, 6, 6);
     scene.add(dirLight1);
 
-    const dirLight2 = new THREE.DirectionalLight(0x3ddc84, 2.8);
+    const dirLight2 = new THREE.DirectionalLight(0x0ea5e9, 2.5); // Sky Blue
     dirLight2.position.set(-6, -4, 5);
     scene.add(dirLight2);
 
-    const pointLight = new THREE.PointLight(0xa855f7, 3.0, 15);
-    pointLight.position.set(0, 0, 3);
+    const topWhiteLight = new THREE.DirectionalLight(0xffffff, 1.8);
+    topWhiteLight.position.set(0, 8, 4);
+    scene.add(topWhiteLight);
+
+    const pointLight = new THREE.PointLight(0x3b82f6, 3.5, 15);
+    pointLight.position.set(0, 0, 3.5);
     scene.add(pointLight);
 
     // --- Master Root Group ---
     const masterGroup = new THREE.Group();
     scene.add(masterGroup);
 
-    // 1. --- Smartphone Chassis ---
+    // 1. --- Smartphone Chassis (Frosted Platinum Aluminum) ---
     const chassisGroup = new THREE.Group();
     chassisGroupRef.current = chassisGroup;
     masterGroup.add(chassisGroup);
 
-    // Phone Frame (Titanium rounded box)
     const phoneWidth = 2.4;
     const phoneHeight = 4.8;
     const phoneDepth = 0.22;
 
     const frameGeo = new THREE.BoxGeometry(phoneWidth, phoneHeight, phoneDepth);
     const frameMat = new THREE.MeshStandardMaterial({
-      color: 0x090e17,
-      metalness: 0.9,
+      color: 0x1e293b, // Sleek Navy Titanium
+      metalness: 0.85,
       roughness: 0.25,
       wireframe: false,
     });
@@ -240,22 +242,22 @@ export const HeroScene3D: React.FC<HeroScene3DProps> = ({
     // Screen Bezel & Display
     const screenGeo = new THREE.PlaneGeometry(phoneWidth - 0.14, phoneHeight - 0.24);
     
-    // Dynamic Texture for Android Screen (Procedural Canvas)
+    // Dynamic Texture for Android Screen (Clean Crisp High-Contrast Light Tech UI)
     const screenCanvas = document.createElement('canvas');
     screenCanvas.width = 512;
     screenCanvas.height = 1024;
     const ctx = screenCanvas.getContext('2d');
     if (ctx) {
-      // Background gradient
+      // Crisp light gradient
       const grad = ctx.createLinearGradient(0, 0, 0, 1024);
-      grad.addColorStop(0, '#040d1a');
-      grad.addColorStop(0.5, '#07162c');
-      grad.addColorStop(1, '#02070f');
+      grad.addColorStop(0, '#f8fafc');
+      grad.addColorStop(0.5, '#f1f5f9');
+      grad.addColorStop(1, '#e2e8f0');
       ctx.fillStyle = grad;
       ctx.fillRect(0, 0, 512, 1024);
 
-      // Grid lines
-      ctx.strokeStyle = 'rgba(61, 220, 132, 0.12)';
+      // Subtle blue grid lines
+      ctx.strokeStyle = 'rgba(37, 99, 235, 0.1)';
       ctx.lineWidth = 1;
       for (let x = 0; x < 512; x += 32) {
         ctx.beginPath();
@@ -271,35 +273,35 @@ export const HeroScene3D: React.FC<HeroScene3DProps> = ({
       }
 
       // Android 15 Status Bar
-      ctx.fillStyle = '#3ddc84';
+      ctx.fillStyle = '#1e3a8a';
       ctx.font = 'bold 22px monospace';
       ctx.fillText('09:41', 36, 44);
-      ctx.fillStyle = '#94a3b8';
+      ctx.fillStyle = '#475569';
       ctx.font = '16px monospace';
       ctx.fillText('API 35 • 120Hz • ART V7', 220, 44);
 
       // System Header Card
-      ctx.fillStyle = 'rgba(15, 23, 42, 0.85)';
-      ctx.strokeStyle = '#3ddc84';
-      ctx.lineWidth = 2;
+      ctx.fillStyle = '#ffffff';
+      ctx.strokeStyle = '#2563eb';
+      ctx.lineWidth = 2.5;
       ctx.roundRect(24, 70, 464, 180, 16);
       ctx.fill();
       ctx.stroke();
 
-      ctx.fillStyle = '#3ddc84';
+      ctx.fillStyle = '#1d4ed8';
       ctx.font = 'bold 28px sans-serif';
       ctx.fillText('DIDEV RUNTIME', 48, 118);
-      ctx.fillStyle = '#38bdf8';
+      ctx.fillStyle = '#0284c7';
       ctx.font = '18px monospace';
       ctx.fillText('Vulkan 1.3 Pipeline: ACTIVE', 48, 150);
-      ctx.fillStyle = '#e2e8f0';
+      ctx.fillStyle = '#334155';
       ctx.font = '16px monospace';
       ctx.fillText('16KB Page Alignment: PASS', 48, 180);
-      ctx.fillStyle = '#a855f7';
+      ctx.fillStyle = '#4f46e5';
       ctx.fillText('Dalvik JIT/AOT: Optimized', 48, 210);
 
-      // Waveform / FPS Monitor
-      ctx.strokeStyle = '#00f0ff';
+      // Waveform / FPS Monitor in Electric Blue
+      ctx.strokeStyle = '#2563eb';
       ctx.lineWidth = 3;
       ctx.beginPath();
       for (let i = 0; i < 464; i += 8) {
@@ -309,24 +311,24 @@ export const HeroScene3D: React.FC<HeroScene3DProps> = ({
       }
       ctx.stroke();
 
-      // APK Package Signature Verified Badge
-      ctx.fillStyle = 'rgba(61, 220, 132, 0.15)';
-      ctx.strokeStyle = '#3ddc84';
+      // APK Package Signature Verified Badge (Blue Theme)
+      ctx.fillStyle = 'rgba(37, 99, 235, 0.08)';
+      ctx.strokeStyle = '#2563eb';
       ctx.roundRect(24, 380, 464, 90, 12);
       ctx.fill();
       ctx.stroke();
-      ctx.fillStyle = '#3ddc84';
+      ctx.fillStyle = '#1d4ed8';
       ctx.font = 'bold 20px monospace';
       ctx.fillText('APK SIGNATURE SCHEME: V4', 48, 424);
-      ctx.fillStyle = '#cbd5e1';
+      ctx.fillStyle = '#475569';
       ctx.font = '15px monospace';
       ctx.fillText('Keystore: SHA-256 Verified', 48, 452);
 
-      // Terminal Log simulation
+      // Terminal Log card
       ctx.fillStyle = '#0f172a';
       ctx.roundRect(24, 500, 464, 460, 14);
       ctx.fill();
-      ctx.fillStyle = '#3ddc84';
+      ctx.fillStyle = '#38bdf8';
       ctx.font = '15px monospace';
       ctx.fillText('$ adb shell dumpsys gfxinfo', 40, 540);
       ctx.fillStyle = '#94a3b8';
@@ -335,10 +337,10 @@ export const HeroScene3D: React.FC<HeroScene3DProps> = ({
       ctx.fillText('90th percentile: 6.2ms', 40, 635);
       ctx.fillText('95th percentile: 7.1ms', 40, 665);
       ctx.fillText('99th percentile: 8.0ms (120 FPS)', 40, 695);
-      ctx.fillStyle = '#38bdf8';
+      ctx.fillStyle = '#60a5fa';
       ctx.fillText('NDK Memory Pool: 4.8MB RSS', 40, 740);
       ctx.fillText('Choreographer: VSYNC Locked', 40, 770);
-      ctx.fillStyle = '#f59e0b';
+      ctx.fillStyle = '#38bdf8';
       ctx.fillText('Zero AI Slop • 100% Native Code', 40, 830);
     }
 
@@ -354,29 +356,28 @@ export const HeroScene3D: React.FC<HeroScene3DProps> = ({
     // Camera punch hole
     const cameraRing = new THREE.Mesh(
       new THREE.RingGeometry(0.04, 0.07, 32),
-      new THREE.MeshBasicMaterial({ color: 0x020617 })
+      new THREE.MeshBasicMaterial({ color: 0x0f172a })
     );
     cameraRing.position.set(0, phoneHeight / 2 - 0.28, phoneDepth / 2 + 0.005);
     chassisGroup.add(cameraRing);
 
-    // 2. --- Motherboard PCB (Inside Circuit View) ---
+    // 2. --- Motherboard PCB (Deep Navy & Blue Tracks) ---
     const pcbGroup = new THREE.Group();
     pcbGroupRef.current = pcbGroup;
     masterGroup.add(pcbGroup);
     pcbGroup.visible = false;
 
-    // PCB Board
     const pcbMat = new THREE.MeshStandardMaterial({
-      color: 0x052e16,
-      roughness: 0.4,
-      metalness: 0.5,
+      color: 0x0f172a, // Deep Navy
+      roughness: 0.35,
+      metalness: 0.6,
     });
     const pcbBoard = new THREE.Mesh(new THREE.BoxGeometry(phoneWidth - 0.3, phoneHeight - 0.4, 0.08), pcbMat);
     pcbGroup.add(pcbBoard);
 
-    // CPU / Qualcomm Snapdragon / Tensor Chipset in 3D
+    // CPU Chipset
     const cpuMat = new THREE.MeshStandardMaterial({
-      color: 0x0f172a,
+      color: 0x1e3a8a, // Cobalt Blue
       roughness: 0.2,
       metalness: 0.9,
     });
@@ -384,20 +385,19 @@ export const HeroScene3D: React.FC<HeroScene3DProps> = ({
     cpuMesh.position.set(0, 0.6, 0.08);
     pcbGroup.add(cpuMesh);
 
-    // Glowing CPU Core Die
-    const dieMat = new THREE.MeshBasicMaterial({ color: 0x00f0ff });
+    // Glowing CPU Core Die in Sky Blue
+    const dieMat = new THREE.MeshBasicMaterial({ color: 0x38bdf8 });
     const dieMesh = new THREE.Mesh(new THREE.BoxGeometry(0.45, 0.45, 0.16), dieMat);
     dieMesh.position.set(0, 0.6, 0.08);
     pcbGroup.add(dieMesh);
 
-    // 3. --- Exploded 3D APK Package Layers ---
+    // 3. --- Exploded 3D APK Package Layers (All Blue / Sky / Indigo Hues) ---
     layerMeshesRef.current.clear();
 
     APK_LAYERS.forEach((layer, idx) => {
       const layerGroup = new THREE.Group();
       layerGroup.userData = { layerId: layer.id };
 
-      // Holographic Glass Plate
       const plateWidth = 2.6;
       const plateHeight = 4.2;
       const plateGeo = new THREE.PlaneGeometry(plateWidth, plateHeight);
@@ -405,11 +405,11 @@ export const HeroScene3D: React.FC<HeroScene3DProps> = ({
       const plateMat = new THREE.MeshPhysicalMaterial({
         color: new THREE.Color(layer.color),
         transparent: true,
-        opacity: 0.25,
+        opacity: 0.32,
         roughness: 0.1,
-        metalness: 0.3,
-        transmission: 0.8,
-        ior: 1.4,
+        metalness: 0.4,
+        transmission: 0.85,
+        ior: 1.45,
         side: THREE.DoubleSide,
       });
       const plate = new THREE.Mesh(plateGeo, plateMat);
@@ -422,15 +422,14 @@ export const HeroScene3D: React.FC<HeroScene3DProps> = ({
         color: new THREE.Color(layer.color),
         linewidth: 2,
         transparent: true,
-        opacity: 0.8,
+        opacity: 0.9,
       });
       const wireframe = new THREE.LineSegments(edges, lineMat);
       layerGroup.add(wireframe);
 
-      // Inner Technical Graphic / Chip Circuit Lines on Plate
+      // Inner Technical Graphic Circuit Lines
       const innerLineGeo = new THREE.BufferGeometry();
       const points: number[] = [];
-      // Generate unique pattern per layer
       for (let p = 0; p < 12; p++) {
         const x1 = (Math.random() - 0.5) * (plateWidth - 0.4);
         const y1 = (Math.random() - 0.5) * (plateHeight - 0.6);
@@ -443,7 +442,7 @@ export const HeroScene3D: React.FC<HeroScene3DProps> = ({
       innerLineGeo.setAttribute('position', new THREE.Float32BufferAttribute(points, 3));
       const innerLines = new THREE.LineSegments(
         innerLineGeo,
-        new THREE.LineBasicMaterial({ color: new THREE.Color(layer.color), transparent: true, opacity: 0.6 })
+        new THREE.LineBasicMaterial({ color: new THREE.Color(layer.color), transparent: true, opacity: 0.7 })
       );
       layerGroup.add(innerLines);
 
@@ -453,8 +452,8 @@ export const HeroScene3D: React.FC<HeroScene3DProps> = ({
       const coreMat = new THREE.MeshStandardMaterial({
         color: new THREE.Color(layer.color),
         emissive: new THREE.Color(layer.color),
-        emissiveIntensity: 0.5,
-        metalness: 0.8,
+        emissiveIntensity: 0.6,
+        metalness: 0.85,
         roughness: 0.2,
       });
       const core = new THREE.Mesh(coreGeo, coreMat);
@@ -462,23 +461,22 @@ export const HeroScene3D: React.FC<HeroScene3DProps> = ({
       core.userData = { layerId: layer.id };
       layerGroup.add(core);
 
-      // Initial Z position in exploded layout
-      const targetZ = (idx - 2) * 1.05; // -2.1, -1.05, 0, 1.05, 2.1
+      const targetZ = (idx - 2) * 1.05;
       layerGroup.position.set(0, 0, targetZ);
 
       masterGroup.add(layerGroup);
       layerMeshesRef.current.set(layer.id, layerGroup);
     });
 
-    // 4. --- Floating Ambient Bytecode Particles ---
+    // 4. --- Floating Ambient Bytecode Particles (Blue Tones) ---
     const particleCount = 280;
     const particleGeo = new THREE.BufferGeometry();
     const particlePos = new Float32Array(particleCount * 3);
     const particleColors = new Float32Array(particleCount * 3);
 
-    const c1 = new THREE.Color(0x3ddc84); // Android green
-    const c2 = new THREE.Color(0x00f0ff); // Cyan
-    const c3 = new THREE.Color(0xa855f7); // Violet
+    const c1 = new THREE.Color(0x2563eb); // Royal Blue
+    const c2 = new THREE.Color(0x0ea5e9); // Sky Blue
+    const c3 = new THREE.Color(0x38bdf8); // Light Cyan
 
     for (let i = 0; i < particleCount; i++) {
       particlePos[i * 3] = (Math.random() - 0.5) * 12;
@@ -499,7 +497,7 @@ export const HeroScene3D: React.FC<HeroScene3DProps> = ({
       size: 0.07,
       vertexColors: true,
       transparent: true,
-      opacity: 0.75,
+      opacity: 0.85,
       blending: THREE.AdditiveBlending,
     });
 
@@ -514,11 +512,9 @@ export const HeroScene3D: React.FC<HeroScene3DProps> = ({
       animFrameRef.current = requestAnimationFrame(animate);
       const elapsedTime = clock.getElapsedTime();
 
-      // Smooth mouse rotation dampening
       mouseState.current.rotX += (mouseState.current.targetRotX - mouseState.current.rotX) * 0.08;
       mouseState.current.rotY += (mouseState.current.targetRotY - mouseState.current.rotY) * 0.08;
 
-      // Subtle autonomous floating oscillation
       const floatAngle = elapsedTime * 0.7;
       const floatOffsetY = Math.sin(floatAngle) * 0.08;
 
@@ -526,13 +522,11 @@ export const HeroScene3D: React.FC<HeroScene3DProps> = ({
       masterGroup.rotation.x = mouseState.current.rotX + Math.sin(elapsedTime * 0.5) * 0.02;
       masterGroup.rotation.y = mouseState.current.rotY + Math.cos(elapsedTime * 0.4) * 0.03;
 
-      // Animate particles
       if (particlesRef.current) {
         particlesRef.current.rotation.y = elapsedTime * 0.03;
         particlesRef.current.rotation.x = elapsedTime * 0.015;
       }
 
-      // Layer hover raycasting
       const raycaster = new THREE.Raycaster();
       raycaster.setFromCamera(
         new THREE.Vector2(mouseState.current.mouseNormX, mouseState.current.mouseNormY),
@@ -549,7 +543,6 @@ export const HeroScene3D: React.FC<HeroScene3DProps> = ({
           foundHover = APK_LAYERS.find((l) => l.id === layerId)?.name || null;
         }
 
-        // Slight breathing/highlight effect
         const scaleTarget = isHovered || isSelected ? 1.05 : 1.0;
         group.scale.lerp(new THREE.Vector3(scaleTarget, scaleTarget, scaleTarget), 0.15);
       });
@@ -561,7 +554,6 @@ export const HeroScene3D: React.FC<HeroScene3DProps> = ({
 
     animate();
 
-    // Handle Window Resize
     const handleResize = () => {
       if (!container || !rendererRef.current || !cameraRef.current) return;
       const newWidth = container.clientWidth;
@@ -585,7 +577,6 @@ export const HeroScene3D: React.FC<HeroScene3DProps> = ({
     };
   }, []);
 
-  // Update view mode transitions smoothly
   useEffect(() => {
     soundFx.playLayerSwitch();
     const chassis = chassisGroupRef.current;
@@ -602,7 +593,6 @@ export const HeroScene3D: React.FC<HeroScene3DProps> = ({
         const idx = APK_LAYERS.findIndex((l) => l.id === id);
         const targetZ = (idx - 2) * 1.05;
         group.position.set(0, 0, targetZ);
-        // Ensure standard materials
         group.traverse((child) => {
           if (child instanceof THREE.Mesh && child.material) {
             const mat = child.material as THREE.MeshStandardMaterial;
@@ -654,44 +644,44 @@ export const HeroScene3D: React.FC<HeroScene3DProps> = ({
   return (
     <div
       ref={containerRef}
-      className="relative w-full h-[540px] md:h-[620px] lg:h-[680px] cursor-grab active:cursor-grabbing select-none overflow-hidden rounded-2xl bg-gradient-to-b from-[#080d1a]/80 to-[#02050c]/90 border border-slate-800 shadow-2xl"
+      className="relative w-full h-[540px] md:h-[620px] lg:h-[680px] cursor-grab active:cursor-grabbing select-none overflow-hidden rounded-2xl bg-gradient-to-b from-white/95 via-slate-50/90 to-blue-50/40 border border-slate-200 shadow-xl"
       onPointerDown={handlePointerDown}
       onPointerMove={handlePointerMove}
       onPointerUp={handlePointerUp}
       onClick={handleClick}
     >
-      {/* High-tech HUD Overlay Elements */}
+      {/* Light HUD Overlay Elements */}
       <div className="absolute top-4 left-4 z-10 pointer-events-none flex flex-col gap-1.5">
         <div className="flex items-center gap-2">
           <span className="relative flex h-2.5 w-2.5">
-            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#3DDC84] opacity-75"></span>
-            <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-[#3DDC84]"></span>
+            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-600 opacity-75"></span>
+            <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-blue-600"></span>
           </span>
-          <span className="text-xs font-mono font-bold tracking-wider text-[#3DDC84] uppercase">
+          <span className="text-xs font-mono font-bold tracking-wider text-blue-700 uppercase">
             3D WebGL Engine • 60 FPS
           </span>
         </div>
-        <div className="text-[11px] font-mono text-slate-400">
-          MODE: <span className="text-cyan-400 font-bold uppercase">{viewMode}</span>
+        <div className="text-[11px] font-mono text-slate-500">
+          MODE: <span className="text-blue-600 font-bold uppercase">{viewMode}</span>
         </div>
         {hoveredLayerName && (
-          <div className="mt-1 px-2.5 py-1 bg-slate-900/90 border border-cyan-500/40 rounded text-xs font-mono text-cyan-300">
-            Click to inspect: <span className="font-semibold text-white">{hoveredLayerName}</span>
+          <div className="mt-1 px-2.5 py-1 bg-white/95 border border-blue-300 rounded shadow text-xs font-mono text-blue-700">
+            Click to inspect: <span className="font-semibold text-slate-900">{hoveredLayerName}</span>
           </div>
         )}
       </div>
 
       {/* Interactive Helper Overlay */}
-      <div className="absolute bottom-4 right-4 z-10 pointer-events-none flex items-center gap-2 px-3 py-1.5 bg-slate-950/80 border border-slate-800 rounded-lg text-[11px] font-mono text-slate-400">
-        <svg className="w-4 h-4 text-emerald-400 animate-spin" style={{ animationDuration: '6s' }} fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <div className="absolute bottom-4 right-4 z-10 pointer-events-none flex items-center gap-2 px-3 py-1.5 bg-white/90 border border-slate-200 shadow-sm rounded-lg text-[11px] font-mono text-slate-600">
+        <svg className="w-4 h-4 text-blue-600 animate-spin" style={{ animationDuration: '6s' }} fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
         </svg>
         <span>Drag to rotate • Click layers to inspect</span>
       </div>
 
       {/* Tactical Corner Crosshairs */}
-      <div className="absolute top-2 right-2 w-4 h-4 border-t-2 border-r-2 border-emerald-500/40 pointer-events-none" />
-      <div className="absolute bottom-2 left-2 w-4 h-4 border-b-2 border-l-2 border-emerald-500/40 pointer-events-none" />
+      <div className="absolute top-2 right-2 w-4 h-4 border-t-2 border-r-2 border-blue-400/50 pointer-events-none" />
+      <div className="absolute bottom-2 left-2 w-4 h-4 border-b-2 border-l-2 border-blue-400/50 pointer-events-none" />
     </div>
   );
 };

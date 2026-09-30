@@ -31,7 +31,7 @@ const ARCH_LAYERS: ArchLayer[] = [
     name: 'Declarative UI Layer',
     subtitle: 'Jetpack Compose & Material 3 Dynamic Engine',
     icon: Smartphone,
-    color: '#3DDC84',
+    color: '#2563EB',
     badge: '120Hz VSYNC Locked',
     features: [
       'Strong Skipping Mode enabled via Kotlin 2.1 compiler',
@@ -65,7 +65,7 @@ fun FinancialChartNode(
     name: 'Domain & Concurrency Layer',
     subtitle: 'Coroutines Flow & Structured Clean Architecture',
     icon: Workflow,
-    color: '#00F0FF',
+    color: '#0EA5E9',
     badge: 'Non-Blocking IO',
     features: [
       'StateFlow and SharedFlow for cold/hot reactive state pipelines',
@@ -96,7 +96,7 @@ class SyncCryptographicLedgerUseCase @Inject constructor(
     name: 'Data & Persistence Layer',
     subtitle: 'Offline-First Room SQLite & Zero-Copy Protocol Buffers',
     icon: Database,
-    color: '#F59E0B',
+    color: '#4F46E5',
     badge: 'Microsecond Queries',
     features: [
       'Room 2.7 with native SQLite driver and compile-time SQL verification',
@@ -120,7 +120,7 @@ interface TelemetryRecordDao {
     name: 'C++ NDK & Hardware Core',
     subtitle: 'Vulkan 1.3 & SIMD Vectorized Compute Bridge',
     icon: Cpu,
-    color: '#A855F7',
+    color: '#1D4ED8',
     badge: '16KB Page Aligned',
     features: [
       'Clang C++20 cross-compilation for arm64-v8a architectures',
@@ -151,18 +151,18 @@ export const ArchitectureMatrix: React.FC = () => {
   };
 
   return (
-    <section id="architecture" className="py-20 bg-[#050811] border-t border-slate-800/80 relative">
+    <section id="architecture" className="py-20 bg-[#F1F5F9] border-t border-slate-200 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="mb-12">
-          <div className="flex items-center gap-2 text-xs font-mono text-[#3DDC84] uppercase tracking-wider mb-2">
+          <div className="flex items-center gap-2 text-xs font-mono text-blue-600 uppercase tracking-wider mb-2">
             <Layers className="w-4 h-4" />
             <span>CORE BLUEPRINT // 100% NATIVE PERFORMANCE MATRICES</span>
           </div>
-          <h2 className="text-2xl sm:text-4xl font-extrabold text-white tracking-tight font-sans">
+          <h2 className="text-2xl sm:text-4xl font-extrabold text-slate-900 tracking-tight font-sans">
             MODERN ANDROID ENGINEERING ARCHITECTURE
           </h2>
-          <p className="mt-2 text-sm sm:text-base text-slate-400 max-w-3xl">
+          <p className="mt-2 text-sm sm:text-base text-slate-600 max-w-3xl font-sans">
             Arsitektur software kelas enterprise yang dibangun untuk stabilitas puluhan juta pengguna. 
             Mulai dari deklaratif UI murni, pipeline async tanpa memory leak, hingga akselerasi hardware via C++ NDK.
           </p>
@@ -179,8 +179,8 @@ export const ArchitectureMatrix: React.FC = () => {
                 onClick={() => handleSelect(layer)}
                 className={`p-4 rounded-2xl border text-left transition-all cursor-pointer ${
                   isSelected
-                    ? 'bg-slate-900 border-[#3DDC84] shadow-lg shadow-[#3DDC84]/15'
-                    : 'bg-slate-950/70 border-slate-800 hover:border-slate-700'
+                    ? 'bg-blue-50 border-blue-600 shadow-md shadow-blue-500/10'
+                    : 'bg-white border-slate-200 hover:border-slate-300 shadow-2xs'
                 }`}
               >
                 <div className="flex items-center justify-between mb-2">
@@ -190,14 +190,14 @@ export const ArchitectureMatrix: React.FC = () => {
                   >
                     <Icon className="w-5 h-5" />
                   </div>
-                  <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-800 text-slate-300 border border-slate-700">
+                  <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-100 text-slate-700 border border-slate-200">
                     {layer.badge}
                   </span>
                 </div>
-                <div className="text-sm font-mono font-bold text-white truncate">
+                <div className="text-sm font-mono font-bold text-slate-900 truncate">
                   {layer.name}
                 </div>
-                <div className="text-xs text-slate-400 font-sans truncate mt-0.5">
+                <div className="text-xs text-slate-500 font-sans truncate mt-0.5">
                   {layer.subtitle}
                 </div>
               </button>
@@ -208,7 +208,7 @@ export const ArchitectureMatrix: React.FC = () => {
         {/* Selected Layer Deep Dive Workbench */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
           {/* Left Details Card */}
-          <div className="lg:col-span-6 flex flex-col justify-between p-6 bg-slate-950/90 border border-slate-800 rounded-3xl">
+          <div className="lg:col-span-6 flex flex-col justify-between p-6 bg-white border border-slate-200 rounded-3xl shadow-sm">
             <div>
               <div className="flex items-center gap-3 mb-4">
                 <span
@@ -216,19 +216,19 @@ export const ArchitectureMatrix: React.FC = () => {
                   style={{ backgroundColor: selectedLayer.color }}
                 />
                 <div>
-                  <h3 className="text-xl font-bold font-sans text-white">
+                  <h3 className="text-xl font-bold font-sans text-slate-900">
                     {selectedLayer.name}
                   </h3>
-                  <div className="text-xs font-mono text-slate-400">
+                  <div className="text-xs font-mono text-slate-500">
                     {selectedLayer.subtitle}
                   </div>
                 </div>
               </div>
 
               {/* Performance Impact Box */}
-              <div className="p-3.5 bg-emerald-950/20 border border-emerald-500/30 rounded-xl mb-5 flex items-start gap-3">
-                <Zap className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
-                <div className="text-xs font-mono text-emerald-300">
+              <div className="p-3.5 bg-blue-50 border border-blue-200 rounded-xl mb-5 flex items-start gap-3">
+                <Zap className="w-4 h-4 text-blue-600 shrink-0 mt-0.5" />
+                <div className="text-xs font-mono text-blue-900">
                   <span className="font-bold">IMPACT: </span>
                   {selectedLayer.performanceBenefit}
                 </div>
@@ -237,8 +237,8 @@ export const ArchitectureMatrix: React.FC = () => {
               {/* Feature Points */}
               <div className="space-y-2.5 mb-6">
                 {selectedLayer.features.map((feat, idx) => (
-                  <div key={idx} className="flex items-start gap-2.5 text-xs font-sans text-slate-300">
-                    <CheckCircle2 className="w-4 h-4 text-[#3DDC84] shrink-0 mt-0.5" />
+                  <div key={idx} className="flex items-start gap-2.5 text-xs font-sans text-slate-700">
+                    <CheckCircle2 className="w-4 h-4 text-blue-600 shrink-0 mt-0.5" />
                     <span>{feat}</span>
                   </div>
                 ))}
@@ -254,7 +254,7 @@ export const ArchitectureMatrix: React.FC = () => {
                 {selectedLayer.techStack.map((tech, idx) => (
                   <span
                     key={idx}
-                    className="px-2.5 py-1 rounded-lg bg-slate-900 border border-slate-800 text-xs font-mono text-slate-200"
+                    className="px-2.5 py-1 rounded-lg bg-slate-100 border border-slate-200 text-xs font-mono text-slate-800"
                   >
                     {tech}
                   </span>
@@ -266,26 +266,26 @@ export const ArchitectureMatrix: React.FC = () => {
           {/* Right Code & 3D Opcode Preview */}
           <div className="lg:col-span-6 flex flex-col gap-4">
             {/* Code Snippet Card */}
-            <div className="rounded-2xl border border-slate-800 bg-[#060a14] overflow-hidden flex flex-col shadow-xl">
-              <div className="px-4 py-2.5 bg-[#0a0f1d] border-b border-slate-800 flex items-center justify-between text-xs font-mono">
-                <div className="flex items-center gap-2 text-slate-300">
-                  <Code2 className="w-4 h-4 text-cyan-400" />
+            <div className="rounded-2xl border border-slate-800 bg-[#0B1528] overflow-hidden flex flex-col shadow-xl">
+              <div className="px-4 py-2.5 bg-[#132238] border-b border-slate-700 flex items-center justify-between text-xs font-mono">
+                <div className="flex items-center gap-2 text-slate-200">
+                  <Code2 className="w-4 h-4 text-sky-400" />
                   <span>Production Implementation Spec</span>
                 </div>
-                <span className="text-[10px] text-slate-500">100% Typed • Zero Stubs</span>
+                <span className="text-[10px] text-slate-400">100% Typed • Zero Stubs</span>
               </div>
-              <pre className="p-4 text-xs font-mono text-slate-300 overflow-x-auto leading-relaxed bg-[#060a14] h-[260px]">
+              <pre className="p-4 text-xs font-mono text-slate-200 overflow-x-auto leading-relaxed bg-[#0B1528] h-[260px]">
                 {selectedLayer.codeSnippet}
               </pre>
             </div>
 
             {/* Mini 3D Execution Ring Card */}
-            <div className="h-[180px] bg-slate-950/80 border border-slate-800 rounded-2xl relative overflow-hidden flex items-center justify-between px-6">
+            <div className="h-[180px] bg-white border border-slate-200 rounded-2xl relative overflow-hidden flex items-center justify-between px-6 shadow-sm">
               <div className="z-10 max-w-[280px]">
-                <div className="text-xs font-mono font-bold text-white">
+                <div className="text-xs font-mono font-bold text-slate-900">
                   3D Dalvik Runtime Vortex
                 </div>
-                <div className="text-[11px] text-slate-400 font-sans mt-1">
+                <div className="text-[11px] text-slate-600 font-sans mt-1">
                   Visualisasi simpul eksekusi bytecode register-based ART VM yang berjalan mulus tanpa runtime reflection.
                 </div>
               </div>

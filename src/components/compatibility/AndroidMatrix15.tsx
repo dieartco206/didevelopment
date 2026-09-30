@@ -81,18 +81,18 @@ export const AndroidMatrix15: React.FC = () => {
   };
 
   return (
-    <section id="android-matrix" className="py-20 bg-[#080d1a] border-t border-slate-800/80 relative">
+    <section id="android-matrix" className="py-20 bg-[#F8FAFC] border-t border-slate-200 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="mb-12">
-          <div className="flex items-center gap-2 text-xs font-mono text-[#3DDC84] uppercase tracking-wider mb-2">
+          <div className="flex items-center gap-2 text-xs font-mono text-blue-600 uppercase tracking-wider mb-2">
             <Activity className="w-4 h-4" />
             <span>COMPATIBILITY LAB // OS KERNEL & APIS</span>
           </div>
-          <h2 className="text-2xl sm:text-4xl font-extrabold text-white tracking-tight font-sans">
+          <h2 className="text-2xl sm:text-4xl font-extrabold text-slate-900 tracking-tight font-sans">
             ANDROID 15 (API 35) & OS MATRIX READINESS
           </h2>
-          <p className="mt-2 text-sm sm:text-base text-slate-400 max-w-3xl">
+          <p className="mt-2 text-sm sm:text-base text-slate-600 max-w-3xl font-sans">
             Aplikasi Android modern tidak boleh sekadar &quot;berjalan di emulator&quot;. Kami memastikan setiap baris kode
             memenuhi regulasi keamanan ketat Android 15: proteksi 16KB memory page size, edge-to-edge insets, 
             dan sandbox foreground service compliance.
@@ -109,21 +109,21 @@ export const AndroidMatrix15: React.FC = () => {
                 onClick={() => handleSelect(item)}
                 className={`p-4 rounded-2xl border text-left transition-all cursor-pointer ${
                   isSelected
-                    ? 'bg-slate-900 border-cyan-400 shadow-lg shadow-cyan-500/10'
-                    : 'bg-slate-950/70 border-slate-800 hover:border-slate-700'
+                    ? 'bg-blue-50 border-blue-600 shadow-md shadow-blue-500/10'
+                    : 'bg-white border-slate-200 hover:border-slate-300 shadow-2xs'
                 }`}
               >
                 <div className="flex items-center justify-between mb-1">
-                  <span className="font-mono font-bold text-sm text-white">
+                  <span className="font-mono font-bold text-sm text-slate-900">
                     {item.version}
                   </span>
                   {item.isCurrentTarget && (
-                    <span className="px-1.5 py-0.5 rounded text-[9px] font-mono font-bold bg-[#3DDC84]/20 text-[#3DDC84] border border-[#3DDC84]/40">
+                    <span className="px-1.5 py-0.5 rounded text-[9px] font-mono font-bold bg-blue-100 text-blue-700 border border-blue-200">
                       TARGET
                     </span>
                   )}
                 </div>
-                <div className="text-xs font-mono text-cyan-400 font-semibold">
+                <div className="text-xs font-mono text-blue-600 font-semibold">
                   API {item.apiLevel} • {item.codename}
                 </div>
                 <div className="text-[10px] text-slate-500 font-mono mt-1">
@@ -137,30 +137,30 @@ export const AndroidMatrix15: React.FC = () => {
         {/* Selected API Deep Dive Box */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
           {/* Main Key Requirements */}
-          <div className="lg:col-span-8 p-6 bg-slate-950/90 border border-slate-800 rounded-3xl">
-            <div className="flex items-center justify-between border-b border-slate-800 pb-4 mb-4">
+          <div className="lg:col-span-8 p-6 bg-white border border-slate-200 rounded-3xl shadow-sm">
+            <div className="flex items-center justify-between border-b border-slate-200 pb-4 mb-4">
               <div>
-                <h3 className="text-lg font-bold font-sans text-white">
+                <h3 className="text-lg font-bold font-sans text-slate-900">
                   Spesifikasi Wajib {selectedApi.version} ({selectedApi.codename})
                 </h3>
-                <span className="text-xs font-mono text-slate-400">
+                <span className="text-xs font-mono text-slate-500">
                   Target SDK API {selectedApi.apiLevel} Compliance Blueprint
                 </span>
               </div>
 
-              <div className="flex items-center gap-1.5 px-3 py-1 bg-emerald-950/40 border border-emerald-500/40 rounded-xl text-xs font-mono text-emerald-400">
-                <CheckCircle2 className="w-3.5 h-3.5" />
+              <div className="flex items-center gap-1.5 px-3 py-1 bg-blue-50 border border-blue-200 rounded-xl text-xs font-mono text-blue-700 font-semibold">
+                <CheckCircle2 className="w-3.5 h-3.5 text-blue-600" />
                 <span>100% Tested Ready</span>
               </div>
             </div>
 
             <div className="space-y-3 mb-6">
               {selectedApi.keyChanges.map((change, idx) => (
-                <div key={idx} className="flex items-start gap-3 p-3 rounded-xl bg-slate-900/60 border border-slate-800/80">
-                  <div className="w-5 h-5 rounded-full bg-cyan-500/10 text-cyan-400 border border-cyan-500/30 flex items-center justify-center shrink-0 mt-0.5 text-[11px] font-mono font-bold">
+                <div key={idx} className="flex items-start gap-3 p-3 rounded-xl bg-slate-50 border border-slate-200">
+                  <div className="w-5 h-5 rounded-full bg-blue-100 text-blue-700 border border-blue-200 flex items-center justify-center shrink-0 mt-0.5 text-[11px] font-mono font-bold">
                     {idx + 1}
                   </div>
-                  <div className="text-xs text-slate-300 font-sans leading-relaxed">
+                  <div className="text-xs text-slate-700 font-sans leading-relaxed">
                     {change}
                   </div>
                 </div>
@@ -169,61 +169,61 @@ export const AndroidMatrix15: React.FC = () => {
 
             {/* Hardware & NDK Banner */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs font-mono">
-              <div className="p-3 bg-slate-900/90 border border-slate-800 rounded-xl">
-                <div className="text-slate-400 flex items-center gap-1.5 mb-1">
-                  <Lock className="w-3.5 h-3.5 text-rose-400" />
+              <div className="p-3 bg-slate-50 border border-slate-200 rounded-xl">
+                <div className="text-slate-500 flex items-center gap-1.5 mb-1">
+                  <Lock className="w-3.5 h-3.5 text-blue-600" />
                   <span>Security Sandbox Rule:</span>
                 </div>
-                <div className="text-slate-200 font-semibold">{selectedApi.securityRules}</div>
+                <div className="text-slate-800 font-semibold">{selectedApi.securityRules}</div>
               </div>
 
-              <div className="p-3 bg-slate-900/90 border border-slate-800 rounded-xl">
-                <div className="text-slate-400 flex items-center gap-1.5 mb-1">
-                  <Cpu className="w-3.5 h-3.5 text-purple-400" />
+              <div className="p-3 bg-slate-50 border border-slate-200 rounded-xl">
+                <div className="text-slate-500 flex items-center gap-1.5 mb-1">
+                  <Cpu className="w-3.5 h-3.5 text-indigo-600" />
                   <span>NDK Linker Requirement:</span>
                 </div>
-                <div className="text-slate-200 font-semibold">{selectedApi.ndkRequirement}</div>
+                <div className="text-slate-800 font-semibold">{selectedApi.ndkRequirement}</div>
               </div>
             </div>
           </div>
 
           {/* Right Checklist Box */}
-          <div className="lg:col-span-4 p-6 bg-slate-950/90 border border-slate-800 rounded-3xl flex flex-col justify-between">
+          <div className="lg:col-span-4 p-6 bg-white border border-slate-200 rounded-3xl shadow-sm flex flex-col justify-between">
             <div>
-              <div className="text-sm font-mono font-bold text-white mb-4 flex items-center gap-2">
-                <ShieldCheck className="w-4 h-4 text-[#3DDC84]" />
+              <div className="text-sm font-mono font-bold text-slate-900 mb-4 flex items-center gap-2">
+                <ShieldCheck className="w-4 h-4 text-blue-600" />
                 <span>Pre-Launch Hardening Checklist</span>
               </div>
 
-              <div className="space-y-3 text-xs font-mono text-slate-300">
+              <div className="space-y-3 text-xs font-mono text-slate-700">
                 <div className="flex items-center gap-2.5">
-                  <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
+                  <CheckCircle2 className="w-4 h-4 text-blue-600 shrink-0" />
                   <span>Strict android:exported flags checked</span>
                 </div>
                 <div className="flex items-center gap-2.5">
-                  <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
+                  <CheckCircle2 className="w-4 h-4 text-blue-600 shrink-0" />
                   <span>Edge-to-edge window insets padding</span>
                 </div>
                 <div className="flex items-center gap-2.5">
-                  <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
+                  <CheckCircle2 className="w-4 h-4 text-blue-600 shrink-0" />
                   <span>16KB native elf page size verified</span>
                 </div>
                 <div className="flex items-center gap-2.5">
-                  <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
+                  <CheckCircle2 className="w-4 h-4 text-blue-600 shrink-0" />
                   <span>LeakCanary zero memory leaks verified</span>
                 </div>
                 <div className="flex items-center gap-2.5">
-                  <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
+                  <CheckCircle2 className="w-4 h-4 text-blue-600 shrink-0" />
                   <span>Predictive back gesture enabled</span>
                 </div>
                 <div className="flex items-center gap-2.5">
-                  <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
+                  <CheckCircle2 className="w-4 h-4 text-blue-600 shrink-0" />
                   <span>v2, v3, and v4 signing key validation</span>
                 </div>
               </div>
             </div>
 
-            <div className="mt-6 p-3 rounded-xl bg-[#3DDC84]/10 border border-[#3DDC84]/30 text-xs font-mono text-[#3DDC84]">
+            <div className="mt-6 p-3 rounded-xl bg-blue-50 border border-blue-200 text-xs font-mono text-blue-800">
               Google Play 2025 Target SDK Mandate: 100% Passed.
             </div>
           </div>

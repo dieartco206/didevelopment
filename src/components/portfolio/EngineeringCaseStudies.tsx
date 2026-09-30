@@ -24,7 +24,7 @@ const CASE_STUDIES: CaseStudy[] = [
     title: 'HyperSpeed 4K Vulkan Frame Pacing Engine',
     category: 'Graphics & NDK',
     clientIndustry: 'Computer Vision & Media Streaming',
-    badgeColor: '#A855F7',
+    badgeColor: '#2563EB',
     metrics: [
       { label: 'Frame Pacing', value: '120 FPS Locked' },
       { label: 'Janky Frames', value: '0.00%' },
@@ -45,7 +45,7 @@ const CASE_STUDIES: CaseStudy[] = [
     title: 'Tier-1 Banking Keymaster StrongBox APK',
     category: 'Security & Keystore',
     clientIndustry: 'Fintech & Payment Gateway',
-    badgeColor: '#3DDC84',
+    badgeColor: '#1D4ED8',
     metrics: [
       { label: 'Play Integrity', value: 'STRONG_INTEGRITY' },
       { label: 'Tamper Detection', value: '100% Intercept' },
@@ -66,7 +66,7 @@ const CASE_STUDIES: CaseStudy[] = [
     title: 'Sub-5ms Ultra-Low Latency Audio Workstation',
     category: 'Realtime Audio NDK',
     clientIndustry: 'Music Production & Hardware Controllers',
-    badgeColor: '#00F0FF',
+    badgeColor: '#0284C7',
     metrics: [
       { label: 'Roundtrip Latency', value: '4.2 ms' },
       { label: 'Buffer Underruns', value: '0 Glitches' },
@@ -86,7 +86,7 @@ const CASE_STUDIES: CaseStudy[] = [
     title: 'Offline-First Mission Critical GIS Mapping APK',
     category: 'Data & Systems',
     clientIndustry: 'Mining & Emergency Response',
-    badgeColor: '#F59E0B',
+    badgeColor: '#4F46E5',
     metrics: [
       { label: 'Vector Nodes', value: '500,000+ Nodes' },
       { label: 'Offline Sync', value: 'Zero Data Loss' },
@@ -112,18 +112,18 @@ export const EngineeringCaseStudies: React.FC = () => {
   };
 
   return (
-    <section id="case-studies" className="py-20 bg-[#050811] border-t border-slate-800/80 relative">
+    <section id="case-studies" className="py-20 bg-[#F1F5F9] border-t border-slate-200 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="mb-12">
-          <div className="flex items-center gap-2 text-xs font-mono text-[#3DDC84] uppercase tracking-wider mb-2">
+          <div className="flex items-center gap-2 text-xs font-mono text-blue-600 uppercase tracking-wider mb-2">
             <ShieldCheck className="w-4 h-4" />
             <span>PRODUCTION BENCHMARKS // PROVEN TRACK RECORD</span>
           </div>
-          <h2 className="text-2xl sm:text-4xl font-extrabold text-white tracking-tight font-sans">
+          <h2 className="text-2xl sm:text-4xl font-extrabold text-slate-900 tracking-tight font-sans">
             ENGINEERING CASE STUDIES
           </h2>
-          <p className="mt-2 text-sm sm:text-base text-slate-400 max-w-3xl">
+          <p className="mt-2 text-sm sm:text-base text-slate-600 max-w-3xl font-sans">
             Bukan studi kasus fiktif atau landing page mockup. Ini adalah bukti rekayasa perangkat lunak Android
             tingkat tinggi yang menyelesaikan masalah nyata performa, memori, dan keamanan biner.
           </p>
@@ -139,23 +139,23 @@ export const EngineeringCaseStudies: React.FC = () => {
                 onClick={() => handleSelect(item)}
                 className={`p-5 rounded-2xl border text-left transition-all cursor-pointer ${
                   isSelected
-                    ? 'bg-slate-900 border-[#3DDC84] shadow-xl shadow-[#3DDC84]/15'
-                    : 'bg-slate-950/70 border-slate-800 hover:border-slate-700'
+                    ? 'bg-blue-50 border-blue-600 shadow-md shadow-blue-500/10'
+                    : 'bg-white border-slate-200 hover:border-slate-300 shadow-2xs'
                 }`}
               >
                 <div className="flex items-center justify-between mb-2">
                   <span
                     className="text-[10px] font-mono px-2 py-0.5 rounded font-bold"
-                    style={{ backgroundColor: `${item.badgeColor}20`, color: item.badgeColor }}
+                    style={{ backgroundColor: `${item.badgeColor}15`, color: item.badgeColor }}
                   >
                     {item.category}
                   </span>
-                  <ArrowUpRight className="w-4 h-4 text-slate-500" />
+                  <ArrowUpRight className="w-4 h-4 text-slate-400" />
                 </div>
-                <h3 className="font-sans font-bold text-sm text-white line-clamp-2 mt-1">
+                <h3 className="font-sans font-bold text-sm text-slate-900 line-clamp-2 mt-1">
                   {item.title}
                 </h3>
-                <div className="text-[11px] font-mono text-slate-400 mt-2 truncate">
+                <div className="text-[11px] font-mono text-slate-500 mt-2 truncate">
                   {item.clientIndustry}
                 </div>
               </button>
@@ -164,19 +164,19 @@ export const EngineeringCaseStudies: React.FC = () => {
         </div>
 
         {/* Selected Case Deep Dive Card */}
-        <div className="p-6 sm:p-8 bg-slate-950/90 border border-slate-800 rounded-3xl">
-          <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4 border-b border-slate-800 pb-6 mb-6">
+        <div className="p-6 sm:p-8 bg-white border border-slate-200 rounded-3xl shadow-sm">
+          <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4 border-b border-slate-200 pb-6 mb-6">
             <div>
               <div className="flex items-center gap-2 mb-1">
                 <span
                   className="w-3 h-3 rounded-full"
                   style={{ backgroundColor: selectedCase.badgeColor }}
                 />
-                <span className="text-xs font-mono font-semibold text-slate-400">
+                <span className="text-xs font-mono font-semibold text-slate-500">
                   {selectedCase.category} • {selectedCase.clientIndustry}
                 </span>
               </div>
-              <h3 className="text-xl sm:text-2xl font-bold font-sans text-white">
+              <h3 className="text-xl sm:text-2xl font-bold font-sans text-slate-900">
                 {selectedCase.title}
               </h3>
             </div>
@@ -186,7 +186,7 @@ export const EngineeringCaseStudies: React.FC = () => {
               {selectedCase.techStack.map((tech, idx) => (
                 <span
                   key={idx}
-                  className="px-2.5 py-1 rounded-lg bg-slate-900 border border-slate-800 text-xs font-mono text-slate-300"
+                  className="px-2.5 py-1 rounded-lg bg-slate-100 border border-slate-200 text-xs font-mono text-slate-700"
                 >
                   {tech}
                 </span>
@@ -199,12 +199,12 @@ export const EngineeringCaseStudies: React.FC = () => {
             {selectedCase.metrics.map((metric, idx) => (
               <div
                 key={idx}
-                className="p-4 rounded-2xl bg-slate-900/60 border border-slate-800/80 text-center"
+                className="p-4 rounded-2xl bg-slate-50 border border-slate-200 text-center"
               >
-                <div className="text-xl sm:text-2xl font-bold font-mono text-[#3DDC84]">
+                <div className="text-xl sm:text-2xl font-bold font-mono text-blue-600">
                   {metric.value}
                 </div>
-                <div className="text-xs font-mono text-slate-400 mt-1">
+                <div className="text-xs font-mono text-slate-500 mt-1">
                   {metric.label}
                 </div>
               </div>
@@ -214,24 +214,24 @@ export const EngineeringCaseStudies: React.FC = () => {
           {/* Problem vs Engineering Solution */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
             {/* Problem */}
-            <div className="p-5 rounded-2xl bg-rose-950/20 border border-rose-500/30">
-              <div className="text-xs font-mono font-bold text-rose-400 uppercase tracking-wide mb-2">
+            <div className="p-5 rounded-2xl bg-rose-50 border border-rose-200">
+              <div className="text-xs font-mono font-bold text-rose-700 uppercase tracking-wide mb-2">
                 TANTANGAN TEKNIS AWAL:
               </div>
-              <p className="text-xs sm:text-sm text-slate-300 font-sans leading-relaxed">
+              <p className="text-xs sm:text-sm text-slate-700 font-sans leading-relaxed">
                 {selectedCase.problem}
               </p>
             </div>
 
             {/* Solution */}
-            <div className="p-5 rounded-2xl bg-slate-900/80 border border-slate-800">
-              <div className="text-xs font-mono font-bold text-[#3DDC84] uppercase tracking-wide mb-3">
+            <div className="p-5 rounded-2xl bg-blue-50 border border-blue-200">
+              <div className="text-xs font-mono font-bold text-blue-900 uppercase tracking-wide mb-3">
                 REKAYASA ARSITEKTUR KAMI:
               </div>
               <div className="space-y-2">
                 {selectedCase.engineeringSolution.map((sol, idx) => (
-                  <div key={idx} className="flex items-start gap-2.5 text-xs text-slate-300 font-sans">
-                    <CheckCircle2 className="w-4 h-4 text-[#3DDC84] shrink-0 mt-0.5" />
+                  <div key={idx} className="flex items-start gap-2.5 text-xs text-slate-800 font-sans">
+                    <CheckCircle2 className="w-4 h-4 text-blue-600 shrink-0 mt-0.5" />
                     <span>{sol}</span>
                   </div>
                 ))}

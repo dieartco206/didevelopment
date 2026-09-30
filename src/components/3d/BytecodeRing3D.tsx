@@ -21,33 +21,33 @@ export const BytecodeRing3D: React.FC = () => {
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
     container.appendChild(renderer.domElement);
 
-    // Torus Knot for Dalvik Execution Ring
+    // Torus Knot for Dalvik Execution Ring (Electric Blue)
     const torusGeo = new THREE.TorusKnotGeometry(1.2, 0.28, 128, 32, 2, 3);
     const torusMat = new THREE.MeshStandardMaterial({
-      color: 0x3ddc84,
+      color: 0x2563eb,
       wireframe: true,
-      emissive: 0x073042,
+      emissive: 0x1e3a8a,
       roughness: 0.2,
-      metalness: 0.9,
+      metalness: 0.85,
     });
     const knot = new THREE.Mesh(torusGeo, torusMat);
     scene.add(knot);
 
-    // Inner Glowing Core Sphere
+    // Inner Glowing Core Sphere (Sky Blue)
     const coreGeo = new THREE.IcosahedronGeometry(0.65, 2);
     const coreMat = new THREE.MeshBasicMaterial({
-      color: 0x00f0ff,
+      color: 0x0ea5e9,
       wireframe: true,
     });
     const core = new THREE.Mesh(coreGeo, coreMat);
     scene.add(core);
 
     // Lighting
-    const light1 = new THREE.PointLight(0x3ddc84, 4, 10);
+    const light1 = new THREE.PointLight(0x2563eb, 4.5, 10);
     light1.position.set(3, 3, 3);
     scene.add(light1);
 
-    const light2 = new THREE.PointLight(0x00f0ff, 4, 10);
+    const light2 = new THREE.PointLight(0x0ea5e9, 4.5, 10);
     light2.position.set(-3, -3, 3);
     scene.add(light2);
 

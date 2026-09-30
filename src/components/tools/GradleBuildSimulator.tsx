@@ -43,7 +43,7 @@ export const GradleBuildSimulator: React.FC = () => {
     { name: ':app:kspReleaseKotlin', duration: 420, log: 'Running Kotlin Symbol Processing (KSP) for Room & Hilt...' },
     { name: ':app:compileReleaseKotlin', duration: 520, log: 'Kotlin 2.1 Strong Skipping Compose compiler enabled.' },
     { name: ':app:externalNativeBuildRelease', duration: 600, log: options.pageAlign16Kb ? 'Clang C++20 compiling libvulkan.so with -Wl,-z,max-page-size=16384' : 'Clang C++20 compiling default 4KB page size' },
-    { name: ':app:mergeReleaseShaders', duration: 200, log: 'GLSL -> SPIR-V bytecode bytecode compiling.' },
+    { name: ':app:mergeReleaseShaders', duration: 200, log: 'GLSL -> SPIR-V bytecode compiling.' },
     { name: ':app:minifyReleaseWithR8', duration: 750, log: options.r8FullMode ? 'R8 FULL MODE: Dead code elimination & Dictionary obfuscation (-48% size).' : 'R8 compatibility mode.' },
     { name: ':app:shrinkReleaseResources', duration: 380, log: options.shrinkResources ? 'AAPT2: Stripped 412 unused vector drawables & layout XMLs.' : 'Resource shrinking disabled.' },
     { name: ':app:packageRelease', duration: 340, log: 'Creating uncompressed classes.dex and zip aligning byte boundaries...' },
@@ -80,7 +80,6 @@ export const GradleBuildSimulator: React.FC = () => {
 
       return () => clearTimeout(timer);
     } else {
-      // Completed!
       const finishTimer = setTimeout(() => {
         setIsBuilding(false);
         setIsCompleted(true);
@@ -89,7 +88,7 @@ export const GradleBuildSimulator: React.FC = () => {
           particleCount: 80,
           spread: 70,
           origin: { y: 0.6 },
-          colors: ['#3DDC84', '#00F0FF', '#A855F7', '#FFFFFF'],
+          colors: ['#2563EB', '#0EA5E9', '#38BDF8', '#FFFFFF'],
         });
         setBuildLogs((prev) => [
           ...prev,
@@ -125,19 +124,19 @@ export const GradleBuildSimulator: React.FC = () => {
   };
 
   return (
-    <section id="gradle-build" className="py-20 bg-[#080d1a] border-t border-slate-800/80 relative">
+    <section id="gradle-build" className="py-20 bg-[#F8FAFC] border-t border-slate-200 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8">
           <div>
-            <div className="flex items-center gap-2 text-xs font-mono text-[#3DDC84] uppercase tracking-wider mb-2">
+            <div className="flex items-center gap-2 text-xs font-mono text-blue-600 uppercase tracking-wider mb-2">
               <Terminal className="w-4 h-4" />
               <span>CI/CD PIPELINE // HEADLESS GRADLE COMPILER</span>
             </div>
-            <h2 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight font-sans">
+            <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight font-sans">
               INTERACTIVE GRADLE ENGINE TERMINAL
             </h2>
-            <p className="mt-2 text-sm text-slate-400 max-w-2xl">
+            <p className="mt-2 text-sm text-slate-600 max-w-2xl font-sans">
               Uji langsung siklus kompilasi rilis APK dengan optimasi R8, KSP, C++ NDK 16KB linking, 
               dan verifikasi skema tanda tangan v4. Lihat bagaimana ukuran APK menyusut drastis secara real-time.
             </p>
@@ -145,14 +144,14 @@ export const GradleBuildSimulator: React.FC = () => {
 
           {/* Quick Metrics */}
           <div className="flex items-center gap-3">
-            <div className="p-3 bg-slate-900 border border-slate-800 rounded-xl font-mono text-xs">
-              <span className="text-slate-400">Original APK:</span>
-              <span className="text-rose-400 font-bold ml-2 line-through">48.0 MB</span>
+            <div className="p-3 bg-white border border-slate-200 rounded-xl font-mono text-xs shadow-xs">
+              <span className="text-slate-500">Original APK:</span>
+              <span className="text-rose-500 font-bold ml-2 line-through">48.0 MB</span>
             </div>
-            <div className="p-3 bg-emerald-950/40 border border-emerald-500/40 rounded-xl font-mono text-xs">
-              <span className="text-emerald-400 font-bold">Optimized APK:</span>
-              <span className="text-white font-bold ml-2">{calculatedSize()} MB</span>
-              <span className="text-emerald-400 text-[10px] ml-1">
+            <div className="p-3 bg-blue-50 border border-blue-200 rounded-xl font-mono text-xs shadow-xs">
+              <span className="text-blue-700 font-bold">Optimized APK:</span>
+              <span className="text-slate-900 font-bold ml-2">{calculatedSize()} MB</span>
+              <span className="text-blue-600 font-semibold text-[10px] ml-1">
                 (-{(((48.0 - parseFloat(calculatedSize())) / 48.0) * 100).toFixed(0)}%)
               </span>
             </div>
@@ -162,74 +161,74 @@ export const GradleBuildSimulator: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
           {/* Controls & Compiler Switches */}
           <div className="lg:col-span-4 flex flex-col gap-4">
-            <div className="p-5 bg-slate-950/90 border border-slate-800 rounded-2xl">
-              <div className="flex items-center gap-2 mb-4 text-xs font-mono font-bold text-slate-200 uppercase">
-                <Sliders className="w-4 h-4 text-[#3DDC84]" />
+            <div className="p-5 bg-white border border-slate-200 rounded-2xl shadow-sm">
+              <div className="flex items-center gap-2 mb-4 text-xs font-mono font-bold text-slate-900 uppercase">
+                <Sliders className="w-4 h-4 text-blue-600" />
                 <span>Compiler Optimization Flags</span>
               </div>
 
               <div className="space-y-3">
                 <label 
                   onClick={() => toggleOption('r8FullMode')}
-                  className="flex items-start justify-between p-3 rounded-xl bg-slate-900/70 border border-slate-800 hover:border-slate-700 cursor-pointer transition-all"
+                  className="flex items-start justify-between p-3 rounded-xl bg-slate-50 border border-slate-200 hover:border-blue-300 cursor-pointer transition-all"
                 >
                   <div className="pr-2">
-                    <div className="text-xs font-mono font-bold text-white">R8 Full Mode Shrinking</div>
-                    <div className="text-[11px] text-slate-400 font-sans mt-0.5">Aggressive tree-shaking & ProGuard symbol scrambling</div>
+                    <div className="text-xs font-mono font-bold text-slate-900">R8 Full Mode Shrinking</div>
+                    <div className="text-[11px] text-slate-500 font-sans mt-0.5">Aggressive tree-shaking & symbol scrambling</div>
                   </div>
                   <input
                     type="checkbox"
                     checked={options.r8FullMode}
                     readOnly
-                    className="mt-1 accent-[#3DDC84] w-4 h-4"
+                    className="mt-1 accent-blue-600 w-4 h-4"
                   />
                 </label>
 
                 <label 
                   onClick={() => toggleOption('shrinkResources')}
-                  className="flex items-start justify-between p-3 rounded-xl bg-slate-900/70 border border-slate-800 hover:border-slate-700 cursor-pointer transition-all"
+                  className="flex items-start justify-between p-3 rounded-xl bg-slate-50 border border-slate-200 hover:border-blue-300 cursor-pointer transition-all"
                 >
                   <div className="pr-2">
-                    <div className="text-xs font-mono font-bold text-white">AAPT2 Resource Stripping</div>
-                    <div className="text-[11px] text-slate-400 font-sans mt-0.5">Discards unused drawables, layouts, and string pools</div>
+                    <div className="text-xs font-mono font-bold text-slate-900">AAPT2 Resource Stripping</div>
+                    <div className="text-[11px] text-slate-500 font-sans mt-0.5">Discards unused drawables, layouts, and strings</div>
                   </div>
                   <input
                     type="checkbox"
                     checked={options.shrinkResources}
                     readOnly
-                    className="mt-1 accent-[#3DDC84] w-4 h-4"
+                    className="mt-1 accent-blue-600 w-4 h-4"
                   />
                 </label>
 
                 <label 
                   onClick={() => toggleOption('pageAlign16Kb')}
-                  className="flex items-start justify-between p-3 rounded-xl bg-slate-900/70 border border-slate-800 hover:border-slate-700 cursor-pointer transition-all"
+                  className="flex items-start justify-between p-3 rounded-xl bg-slate-50 border border-slate-200 hover:border-blue-300 cursor-pointer transition-all"
                 >
                   <div className="pr-2">
-                    <div className="text-xs font-mono font-bold text-white">16KB ELF Page Boundary</div>
-                    <div className="text-[11px] text-slate-400 font-sans mt-0.5">Compliant with Android 15 kernel architecture</div>
+                    <div className="text-xs font-mono font-bold text-slate-900">16KB ELF Page Boundary</div>
+                    <div className="text-[11px] text-slate-500 font-sans mt-0.5">Compliant with Android 15 kernel architecture</div>
                   </div>
                   <input
                     type="checkbox"
                     checked={options.pageAlign16Kb}
                     readOnly
-                    className="mt-1 accent-[#3DDC84] w-4 h-4"
+                    className="mt-1 accent-blue-600 w-4 h-4"
                   />
                 </label>
 
                 <label 
                   onClick={() => toggleOption('v4Signing')}
-                  className="flex items-start justify-between p-3 rounded-xl bg-slate-900/70 border border-slate-800 hover:border-slate-700 cursor-pointer transition-all"
+                  className="flex items-start justify-between p-3 rounded-xl bg-slate-50 border border-slate-200 hover:border-blue-300 cursor-pointer transition-all"
                 >
                   <div className="pr-2">
-                    <div className="text-xs font-mono font-bold text-white">APK Signature Scheme v4</div>
-                    <div className="text-[11px] text-slate-400 font-sans mt-0.5">Streaming fs-verity signature block (.apk.idsig)</div>
+                    <div className="text-xs font-mono font-bold text-slate-900">APK Signature Scheme v4</div>
+                    <div className="text-[11px] text-slate-500 font-sans mt-0.5">Streaming fs-verity signature block (.apk.idsig)</div>
                   </div>
                   <input
                     type="checkbox"
                     checked={options.v4Signing}
                     readOnly
-                    className="mt-1 accent-[#3DDC84] w-4 h-4"
+                    className="mt-1 accent-blue-600 w-4 h-4"
                   />
                 </label>
               </div>
@@ -241,13 +240,13 @@ export const GradleBuildSimulator: React.FC = () => {
                   onClick={handleStartBuild}
                   className={`w-full py-3.5 rounded-xl font-mono font-bold text-xs flex items-center justify-center gap-2 transition-all cursor-pointer ${
                     isBuilding
-                      ? 'bg-slate-800 text-slate-400 cursor-not-allowed'
-                      : 'bg-[#3DDC84] hover:bg-[#34c977] text-[#050811] shadow-lg shadow-[#3DDC84]/20 active:scale-98'
+                      ? 'bg-slate-200 text-slate-500 cursor-not-allowed'
+                      : 'bg-blue-600 hover:bg-blue-700 text-white shadow-lg shadow-blue-500/25 active:scale-98'
                   }`}
                 >
                   {isBuilding ? (
                     <>
-                      <RefreshCw className="w-4 h-4 animate-spin text-[#3DDC84]" />
+                      <RefreshCw className="w-4 h-4 animate-spin text-blue-600" />
                       <span>COMPILING GRADLE TASKS...</span>
                     </>
                   ) : (
@@ -262,14 +261,14 @@ export const GradleBuildSimulator: React.FC = () => {
 
             {/* Build Success Artifact Card */}
             {isCompleted && (
-              <div className="p-4 bg-emerald-950/30 border border-emerald-500/40 rounded-2xl flex items-center justify-between">
+              <div className="p-4 bg-blue-50 border border-blue-200 rounded-2xl flex items-center justify-between shadow-xs">
                 <div className="flex items-center gap-3">
-                  <div className="p-2.5 rounded-xl bg-emerald-500/15 text-emerald-400 border border-emerald-500/30">
+                  <div className="p-2.5 rounded-xl bg-blue-100 text-blue-700 border border-blue-200">
                     <FileCheck className="w-5 h-5" />
                   </div>
                   <div>
-                    <div className="text-xs font-mono font-bold text-white">app-release.apk</div>
-                    <div className="text-[10px] font-mono text-emerald-300">
+                    <div className="text-xs font-mono font-bold text-slate-900">app-release.apk</div>
+                    <div className="text-[10px] font-mono text-blue-700">
                       Signed & ZipAligned • {calculatedSize()} MB
                     </div>
                   </div>
@@ -280,7 +279,7 @@ export const GradleBuildSimulator: React.FC = () => {
                     soundFx.playClick(900, 0.05);
                     alert(`Simulated Artifact Download:\n\nFile: app-release.apk\nSize: ${calculatedSize()} MB\nSignature: v4 Certified\n16KB Page: Aligned`);
                   }}
-                  className="p-2.5 bg-emerald-500 hover:bg-emerald-400 text-[#050811] rounded-xl font-mono text-xs font-bold transition-all shadow cursor-pointer"
+                  className="p-2.5 bg-blue-600 hover:bg-blue-700 text-white rounded-xl font-mono text-xs font-bold transition-all shadow cursor-pointer"
                   title="Download Compiled Artifact"
                 >
                   <Download className="w-4 h-4" />
@@ -291,19 +290,19 @@ export const GradleBuildSimulator: React.FC = () => {
 
           {/* Right Column: Terminal Window */}
           <div className="lg:col-span-8 flex flex-col">
-            <div className="rounded-2xl border border-slate-800 bg-[#040711] overflow-hidden flex flex-col h-[520px] shadow-2xl">
+            <div className="rounded-2xl border border-slate-300 bg-[#0B1528] overflow-hidden flex flex-col h-[520px] shadow-2xl">
               {/* Terminal Title Bar */}
-              <div className="px-4 py-3 bg-[#0a0f1d] border-b border-slate-800 flex items-center justify-between select-none">
+              <div className="px-4 py-3 bg-[#132238] border-b border-slate-700 flex items-center justify-between select-none">
                 <div className="flex items-center gap-2">
                   <div className="w-3 h-3 rounded-full bg-rose-500/80" />
                   <div className="w-3 h-3 rounded-full bg-amber-500/80" />
-                  <div className="w-3 h-3 rounded-full bg-emerald-500/80" />
-                  <span className="ml-2 text-xs font-mono text-slate-400 font-semibold">
+                  <div className="w-3 h-3 rounded-full bg-blue-500/80" />
+                  <span className="ml-2 text-xs font-mono text-slate-300 font-semibold">
                     daemon@didev-runner: ~/workspace/android-core
                   </span>
                 </div>
 
-                <div className="flex items-center gap-3 text-xs font-mono text-slate-500">
+                <div className="flex items-center gap-3 text-xs font-mono text-slate-400">
                   <span>AGP 8.8.0</span>
                   <span>JDK 21 (Temurin)</span>
                 </div>
@@ -311,9 +310,9 @@ export const GradleBuildSimulator: React.FC = () => {
 
               {/* Progress Bar during build */}
               {isBuilding && (
-                <div className="w-full bg-slate-900 h-1 overflow-hidden">
+                <div className="w-full bg-slate-900 h-1.5 overflow-hidden">
                   <div
-                    className="h-full bg-gradient-to-r from-[#3DDC84] to-cyan-400 transition-all duration-300"
+                    className="h-full bg-gradient-to-r from-blue-600 via-sky-400 to-cyan-300 transition-all duration-300"
                     style={{ width: `${((currentTaskIndex + 1) / tasks.length) * 100}%` }}
                   />
                 </div>
@@ -323,11 +322,11 @@ export const GradleBuildSimulator: React.FC = () => {
               <div className="p-4 flex-1 overflow-y-auto font-mono text-xs space-y-1.5 leading-relaxed">
                 {buildLogs.map((log, idx) => {
                   let color = 'text-slate-300';
-                  if (log.startsWith('$') || log.startsWith('Type:')) color = 'text-cyan-400 font-semibold';
-                  else if (log.includes('> Task')) color = 'text-[#3DDC84] font-bold';
-                  else if (log.includes('BUILD SUCCESSFUL')) color = 'text-emerald-400 font-bold bg-emerald-950/40 p-1.5 rounded inline-block';
-                  else if (log.includes('Output:')) color = 'text-cyan-300 font-semibold';
-                  else if (log.includes('R8 FULL MODE')) color = 'text-purple-300 font-medium';
+                  if (log.startsWith('$') || log.startsWith('Type:')) color = 'text-sky-300 font-semibold';
+                  else if (log.includes('> Task')) color = 'text-blue-400 font-bold';
+                  else if (log.includes('BUILD SUCCESSFUL')) color = 'text-blue-300 font-bold bg-blue-950/80 p-1.5 rounded inline-block border border-blue-500/40';
+                  else if (log.includes('Output:')) color = 'text-sky-300 font-semibold';
+                  else if (log.includes('R8 FULL MODE')) color = 'text-indigo-300 font-medium';
 
                   return (
                     <div key={idx} className={`${color} whitespace-pre-wrap break-all`}>
@@ -339,9 +338,9 @@ export const GradleBuildSimulator: React.FC = () => {
               </div>
 
               {/* Terminal Bottom Status */}
-              <div className="px-4 py-2 bg-[#0a0f1d] border-t border-slate-800/80 flex items-center justify-between text-[11px] font-mono text-slate-400">
+              <div className="px-4 py-2 bg-[#132238] border-t border-slate-700 flex items-center justify-between text-[11px] font-mono text-slate-300">
                 <div className="flex items-center gap-2">
-                  <span className={`w-2 h-2 rounded-full ${isBuilding ? 'bg-amber-400 animate-pulse' : 'bg-[#3DDC84]'}`} />
+                  <span className={`w-2 h-2 rounded-full ${isBuilding ? 'bg-amber-400 animate-pulse' : 'bg-blue-500'}`} />
                   <span>{isBuilding ? 'COMPILE IN PROGRESS...' : isCompleted ? 'STATUS: SUCCESS' : 'DAEMON IDLE'}</span>
                 </div>
                 <span>JVM Memory: 1.2GB / 4.0GB Heap</span>
