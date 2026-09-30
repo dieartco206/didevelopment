@@ -28,11 +28,25 @@ export const HeroPromo: React.FC<HeroPromoProps> = ({ onNavigate }) => {
   };
 
   return (
-    <section id="hero" className="relative pt-6 pb-14 sm:pt-10 sm:pb-20 lg:py-20 overflow-hidden bg-white border-b border-slate-200">
-      {/* Background Soft Accent Grid */}
-      <div className="absolute inset-0 bg-tech-grid opacity-15 pointer-events-none" />
-      <div className="absolute top-0 right-0 w-[550px] h-[550px] bg-blue-100/40 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-0 left-0 w-[450px] h-[450px] bg-sky-50/50 rounded-full blur-3xl pointer-events-none" />
+    <section id="hero" className="relative pt-6 pb-14 sm:pt-10 sm:pb-20 lg:py-24 overflow-hidden bg-mesh-hero border-b border-slate-200">
+      {/* Artistic Background Layers */}
+      <div className="absolute inset-0 artistic-dot-grid opacity-70 pointer-events-none" />
+      <div className="absolute inset-0 artistic-blueprint-grid opacity-40 pointer-events-none" />
+      
+      {/* Luminous Ambient Glow Orbs */}
+      <div className="absolute -top-32 left-1/2 -translate-x-1/2 w-[850px] h-[550px] bg-gradient-to-b from-blue-500/20 via-sky-400/12 to-transparent rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute top-1/4 -right-24 w-[500px] h-[500px] bg-blue-600/12 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute -bottom-20 -left-20 w-[450px] h-[450px] bg-emerald-500/10 rounded-full blur-3xl pointer-events-none" />
+
+      {/* Subtle Technical Blueprint Accents */}
+      <div className="absolute top-8 left-8 hidden xl:flex items-center gap-2 text-[10px] font-mono font-semibold text-slate-400/70 select-none pointer-events-none">
+        <span className="text-[#2563EB] font-bold">+</span>
+        <span>SYS.SPEC // DIDEV_STUDIO_V4</span>
+      </div>
+      <div className="absolute top-8 right-8 hidden xl:flex items-center gap-2 text-[10px] font-mono font-semibold text-slate-400/70 select-none pointer-events-none">
+        <span>LAT: -7.2575 • LON: 112.7521</span>
+        <span className="text-[#10B981] font-bold">● ONLINE</span>
+      </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
@@ -101,6 +115,8 @@ export const HeroPromo: React.FC<HeroPromoProps> = ({ onNavigate }) => {
           {/* Kolom Kanan: Layered High-Fidelity UI Showcase (Pengganti 3D Pucat) */}
           <div className="lg:col-span-6 relative w-full flex justify-center lg:justify-end">
             <div className="relative w-full max-w-[540px]">
+              {/* Artistic Ambient Glow Behind Mockup */}
+              <div className="absolute -inset-3 bg-gradient-to-tr from-blue-600/20 via-sky-400/20 to-emerald-400/15 rounded-3xl blur-2xl -z-10 opacity-75 pointer-events-none" />
               
               {/* LAYER 1: Web Browser Admin POS (Dekstop Mockup) */}
               <div className="rounded-2xl bg-white border-2 border-slate-200 shadow-xl overflow-hidden transition-transform duration-300 hover:shadow-2xl">

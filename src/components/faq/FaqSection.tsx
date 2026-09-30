@@ -56,8 +56,23 @@ export const FaqSection: React.FC = () => {
   };
 
   return (
-    <section id="faq" className="py-16 sm:py-24 bg-[#F8FAFC] border-b border-slate-200">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="faq" className="py-16 sm:py-24 bg-mesh-faq border-b border-slate-200 relative overflow-hidden">
+      {/* Artistic Dot Grid & Ambient Glow */}
+      <div className="absolute inset-0 artistic-dot-grid opacity-50 pointer-events-none" />
+      <div className="absolute top-1/4 right-0 w-[550px] h-[550px] bg-blue-500/10 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-0 left-10 w-[450px] h-[450px] bg-sky-400/10 rounded-full blur-3xl pointer-events-none" />
+
+      {/* Decorative Technical Coordinates */}
+      <div className="absolute top-8 left-8 hidden xl:flex items-center gap-2 text-[10px] font-mono text-slate-400/70 pointer-events-none">
+        <span className="text-[#2563EB] font-bold">FAQ.DATABASE</span>
+        <span>// KNOWLEDGE_BASE_V4</span>
+      </div>
+      <div className="absolute top-8 right-8 hidden xl:flex items-center gap-2 text-[10px] font-mono text-slate-400/70 pointer-events-none">
+        <span>SUPPORT: LIVE_CHAT</span>
+        <span className="text-[#10B981] font-bold">● FAST_RESPONSE</span>
+      </div>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="flex flex-col lg:flex-row lg:items-start justify-between gap-10 lg:gap-16">
           
           {/* Sisi Kiri: Headline Ramah + Kotak Bantuan Langsung */}

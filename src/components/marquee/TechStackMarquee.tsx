@@ -30,10 +30,17 @@ const TECH_ITEMS: TechItem[] = [
 
 export const TechStackMarquee: React.FC = () => {
   return (
-    <div className="py-4 bg-[#F8FAFC] border-y border-slate-200 text-slate-700 relative overflow-hidden">
-      <div className="flex items-center">
+    <div className="py-4.5 bg-gradient-to-r from-slate-100/90 via-blue-50/60 to-slate-100/90 border-y border-slate-200 text-slate-700 relative overflow-hidden backdrop-blur-xs">
+      {/* Subtle Dot Matrix Texture */}
+      <div className="absolute inset-0 artistic-dot-grid opacity-35 pointer-events-none" />
+
+      {/* Edge Fade Gradients for Cinematic Flow */}
+      <div className="absolute left-0 top-0 bottom-0 w-16 sm:w-28 bg-gradient-to-r from-[#F8FAFC] to-transparent z-10 pointer-events-none" />
+      <div className="absolute right-0 top-0 bottom-0 w-16 sm:w-28 bg-gradient-to-l from-[#F8FAFC] to-transparent z-10 pointer-events-none" />
+
+      <div className="flex items-center relative z-20">
         {/* Left Fixed Badge (Desktop only) */}
-        <div className="hidden lg:flex items-center gap-2 pl-6 pr-4 shrink-0 border-r border-slate-200 bg-[#F8FAFC] z-10">
+        <div className="hidden lg:flex items-center gap-2 pl-6 pr-4 shrink-0 border-r border-slate-200/80 bg-white/80 backdrop-blur-md rounded-r-xl py-1 shadow-2xs z-30">
           <span className="flex h-2 w-2 relative">
             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#2563EB] opacity-75"></span>
             <span className="relative inline-flex rounded-full h-2 w-2 bg-[#2563EB]"></span>

@@ -12,10 +12,12 @@ export const CtaBanner: React.FC = () => {
   };
 
   return (
-    <section className="py-16 sm:py-24 bg-[#0F172A] text-white relative overflow-hidden">
-      {/* Background Decorative Rings */}
-      <div className="absolute top-0 right-1/4 w-96 h-96 bg-blue-600/15 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none" />
+    <section className="py-16 sm:py-24 bg-[#0A101D] text-white relative overflow-hidden border-t border-slate-800">
+      {/* Background Decorative Rings & Circuit Grid */}
+      <div className="absolute inset-0 bg-circuit-lines opacity-15 pointer-events-none" />
+      <div className="absolute -top-24 right-1/4 w-[500px] h-[500px] bg-blue-600/20 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute -bottom-24 left-1/4 w-[500px] h-[500px] bg-emerald-500/15 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[350px] bg-indigo-500/10 rounded-full blur-3xl pointer-events-none" />
 
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
         

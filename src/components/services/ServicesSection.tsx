@@ -19,8 +19,25 @@ export const ServicesSection: React.FC = () => {
   };
 
   return (
-    <section id="services" className="py-16 sm:py-24 bg-white border-b border-slate-200">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="services" className="py-16 sm:py-24 bg-mesh-services border-b border-slate-200 relative overflow-hidden">
+      {/* Artistic Blueprint Grid & Ambient Radiant Orbs */}
+      <div className="absolute inset-0 artistic-blueprint-grid opacity-60 pointer-events-none" />
+      <div className="absolute inset-0 artistic-dot-grid opacity-40 pointer-events-none" />
+      <div className="absolute top-1/4 -left-32 w-[600px] h-[600px] bg-blue-500/12 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute top-2/3 -right-32 w-[600px] h-[600px] bg-sky-400/12 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute -bottom-20 left-1/3 w-[450px] h-[450px] bg-emerald-500/8 rounded-full blur-3xl pointer-events-none" />
+
+      {/* Decorative Technical Coordinates */}
+      <div className="absolute top-8 left-8 hidden xl:flex items-center gap-2 text-[10px] font-mono text-slate-400/70 pointer-events-none">
+        <span className="text-[#2563EB] font-bold">#01</span>
+        <span>MODULAR_SYSTEM_MATRIX // FULL_STACK</span>
+      </div>
+      <div className="absolute top-8 right-8 hidden xl:flex items-center gap-2 text-[10px] font-mono text-slate-400/70 pointer-events-none">
+        <span>ARCH: MICRO_SERVICES</span>
+        <span className="text-[#10B981] font-bold">✓ SCALABLE</span>
+      </div>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16 sm:mb-20">
@@ -41,7 +58,8 @@ export const ServicesSection: React.FC = () => {
            ======================================================== */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center mb-20 sm:mb-28">
           {/* Mockup Antarmuka Web Dashboard Kasir & Stok */}
-          <div className="lg:col-span-6 order-2 lg:order-1">
+          <div className="lg:col-span-6 order-2 lg:order-1 relative">
+            <div className="absolute -inset-3 bg-gradient-to-tr from-blue-600/15 via-sky-400/15 to-transparent rounded-3xl blur-2xl -z-10 opacity-75 pointer-events-none" />
             <div className="rounded-2xl bg-white border-2 border-slate-200 shadow-xl overflow-hidden">
               {/* Window Bar */}
               <div className="bg-slate-100 border-b border-slate-200 px-4 py-2.5 flex items-center justify-between">
@@ -205,7 +223,8 @@ export const ServicesSection: React.FC = () => {
           </div>
 
           {/* Mockup Smartphone Android */}
-          <div className="lg:col-span-6 flex justify-center">
+          <div className="lg:col-span-6 flex justify-center relative">
+            <div className="absolute -inset-4 bg-gradient-to-br from-emerald-500/18 via-teal-400/15 to-transparent rounded-full blur-2xl -z-10 opacity-75 pointer-events-none" />
             <div className="w-full max-w-[340px] rounded-[36px] bg-slate-900 p-3 shadow-2xl border-4 border-slate-800">
               {/* Phone Speaker */}
               <div className="w-20 h-4 bg-slate-800 rounded-full mx-auto mb-2 flex items-center justify-center">
@@ -268,7 +287,8 @@ export const ServicesSection: React.FC = () => {
            ======================================================== */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
           {/* Mockup Portal Web ERP / Company */}
-          <div className="lg:col-span-6 order-2 lg:order-1">
+          <div className="lg:col-span-6 order-2 lg:order-1 relative">
+            <div className="absolute -inset-3 bg-gradient-to-tr from-indigo-600/18 via-blue-500/15 to-transparent rounded-3xl blur-2xl -z-10 opacity-75 pointer-events-none" />
             <div className="rounded-2xl bg-white border-2 border-slate-200 shadow-xl overflow-hidden">
               <div className="bg-slate-100 border-b border-slate-200 px-4 py-2.5 flex items-center justify-between">
                 <div className="flex items-center gap-1.5">
