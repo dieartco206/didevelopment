@@ -68,8 +68,8 @@ export const WorkflowSection: React.FC = () => {
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-14 sm:mb-20">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 bg-blue-50 border border-blue-200 text-[#2563EB] rounded-full text-xs font-bold uppercase tracking-wider mb-3">
-            <span>ROADMAP KERJA TRANSPARAN</span>
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 bg-blue-50 border border-blue-200 text-[#2563EB] rounded-full text-xs font-bold uppercase tracking-wider mb-3 whitespace-nowrap shrink-0">
+            <span className="whitespace-nowrap">ROADMAP KERJA TRANSPARAN</span>
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#0F172A] tracking-tight font-sans">
             5 Tahap Pasti Menuju Sistem Siap Pakai
@@ -98,10 +98,10 @@ export const WorkflowSection: React.FC = () => {
                   <div className="w-full bg-[#F8FAFC] border border-slate-200 group-hover:border-[#2563EB] rounded-2xl p-5 shadow-2xs transition-all duration-200 flex flex-col justify-between h-[210px]">
                     <div>
                       <div className="flex items-center justify-between mb-2">
-                        <span className="text-xl font-extrabold font-mono text-[#2563EB]">
+                        <span className="text-xl font-extrabold font-mono text-[#2563EB] whitespace-nowrap shrink-0">
                           {s.number}
                         </span>
-                        <span className="text-[10px] font-bold px-2 py-0.5 rounded bg-blue-50 text-[#2563EB]">
+                        <span className="text-[10px] font-bold px-2 py-0.5 rounded bg-blue-50 text-[#2563EB] whitespace-nowrap shrink-0">
                           {s.timeline}
                         </span>
                       </div>
@@ -133,10 +133,10 @@ export const WorkflowSection: React.FC = () => {
                 {/* Content Card */}
                 <div className="flex-1 bg-[#F8FAFC] border border-slate-200 rounded-xl p-4 shadow-2xs">
                   <div className="flex items-center justify-between mb-1.5">
-                    <span className="text-base font-extrabold font-mono text-[#2563EB]">
+                    <span className="text-base font-extrabold font-mono text-[#2563EB] whitespace-nowrap shrink-0">
                       LANGKAH {s.number}
                     </span>
-                    <span className="text-[10px] font-bold px-2 py-0.5 rounded bg-blue-50 text-[#2563EB]">
+                    <span className="text-[10px] font-bold px-2 py-0.5 rounded bg-blue-50 text-[#2563EB] whitespace-nowrap shrink-0">
                       {s.timeline}
                     </span>
                   </div>
@@ -170,10 +170,10 @@ export const WorkflowSection: React.FC = () => {
 
           <button
             onClick={openWhatsApp}
-            className="w-full md:w-auto px-6 py-3.5 bg-[#10B981] hover:bg-[#059669] text-white rounded-xl font-bold text-sm flex items-center justify-center gap-2 shadow-md transition-all active:scale-98 cursor-pointer shrink-0"
+            className="w-full md:w-auto px-6 py-3.5 bg-[#10B981] hover:bg-[#059669] text-white rounded-xl font-bold text-sm flex items-center justify-center gap-2 shadow-md transition-all active:scale-98 cursor-pointer shrink-0 whitespace-nowrap"
           >
-            <span>Mulai Konsultasi Langkah 01</span>
-            <ArrowRight className="w-4 h-4" />
+            <span className="whitespace-nowrap">Mulai Konsultasi Langkah 01</span>
+            <ArrowRight className="w-4 h-4 shrink-0" />
           </button>
         </div>
 

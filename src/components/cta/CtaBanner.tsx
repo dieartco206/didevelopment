@@ -20,9 +20,9 @@ export const CtaBanner: React.FC = () => {
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
         
         {/* Top Mini Pill */}
-        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 border border-white/15 text-emerald-400 text-xs font-bold uppercase tracking-wider mb-6">
-          <span className="w-2 h-2 rounded-full bg-[#10B981] animate-pulse" />
-          <span>MULAI PROYEK DIGITAL ANDA HARI INI</span>
+        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 border border-white/15 text-emerald-400 text-xs font-bold uppercase tracking-wider mb-6 whitespace-nowrap shrink-0">
+          <span className="w-2 h-2 rounded-full bg-[#10B981] animate-pulse shrink-0" />
+          <span className="whitespace-nowrap">MULAI PROYEK DIGITAL ANDA HARI INI</span>
         </div>
 
         {/* Big Contrast Headline */}
@@ -39,27 +39,27 @@ export const CtaBanner: React.FC = () => {
         <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
           <button
             onClick={openWhatsApp}
-            className="w-full sm:w-auto px-8 py-4 bg-[#10B981] hover:bg-[#059669] text-white font-bold text-base sm:text-lg rounded-xl shadow-xl shadow-emerald-500/25 hover:shadow-emerald-500/35 transition-all flex items-center justify-center gap-3 cursor-pointer active:scale-98"
+            className="w-full sm:w-auto px-8 py-4 bg-[#10B981] hover:bg-[#059669] text-white font-bold text-base sm:text-lg rounded-xl shadow-xl shadow-emerald-500/25 hover:shadow-emerald-500/35 transition-all flex items-center justify-center gap-3 cursor-pointer active:scale-98 whitespace-nowrap shrink-0"
           >
-            <MessageSquare className="w-6 h-6 fill-current" />
-            <span>Chat WhatsApp Sekarang (Respon Cepat)</span>
-            <ArrowRight className="w-5 h-5" />
+            <MessageSquare className="w-6 h-6 fill-current shrink-0" />
+            <span className="whitespace-nowrap">Chat WhatsApp Sekarang (Respon Cepat)</span>
+            <ArrowRight className="w-5 h-5 shrink-0" />
           </button>
         </div>
 
         {/* Trust Points */}
         <div className="mt-6 flex flex-wrap items-center justify-center gap-4 sm:gap-6 text-xs text-slate-400 font-medium">
-          <span className="flex items-center gap-1.5 text-slate-300">
-            <ShieldCheck className="w-4 h-4 text-[#10B981]" />
-            100% Hak Milik Source Code
+          <span className="flex items-center gap-1.5 text-slate-300 whitespace-nowrap shrink-0">
+            <ShieldCheck className="w-4 h-4 text-[#10B981] shrink-0" />
+            <span className="whitespace-nowrap">100% Hak Milik Source Code</span>
           </span>
-          <span className="flex items-center gap-1.5 text-slate-300">
-            <ShieldCheck className="w-4 h-4 text-[#10B981]" />
-            Garansi Bebas Bug 1 Tahun
+          <span className="flex items-center gap-1.5 text-slate-300 whitespace-nowrap shrink-0">
+            <ShieldCheck className="w-4 h-4 text-[#10B981] shrink-0" />
+            <span className="whitespace-nowrap">Garansi Bebas Bug 1 Tahun</span>
           </span>
-          <span className="flex items-center gap-1.5 text-slate-300">
-            <ShieldCheck className="w-4 h-4 text-[#10B981]" />
-            Tanpa Biaya Sewa Bulanan
+          <span className="flex items-center gap-1.5 text-slate-300 whitespace-nowrap shrink-0">
+            <ShieldCheck className="w-4 h-4 text-[#10B981] shrink-0" />
+            <span className="whitespace-nowrap">Tanpa Biaya Sewa Bulanan</span>
           </span>
         </div>
 

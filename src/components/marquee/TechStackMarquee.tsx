@@ -54,11 +54,11 @@ export const TechStackMarquee: React.FC = () => {
                   className="group flex items-center gap-2 px-3.5 py-1.5 rounded-lg bg-white border border-slate-200 text-xs font-sans font-medium text-slate-700 shrink-0 shadow-2xs hover:border-slate-400 hover:shadow-xs transition-all duration-200 cursor-default"
                 >
                   <Icon 
-                    className="w-4 h-4 text-slate-400 group-hover:scale-110 transition-transform duration-200" 
+                    className="w-4 h-4 text-slate-400 group-hover:scale-110 transition-transform duration-200 shrink-0" 
                     style={{ color: item.brandColor }}
                   />
-                  <span className="font-bold text-[#0F172A] whitespace-nowrap">{item.name}</span>
-                  <span className="text-[10px] px-1.5 py-0.5 rounded bg-slate-100 text-slate-500 font-medium">
+                  <span className="font-bold text-[#0F172A] whitespace-nowrap shrink-0">{item.name}</span>
+                  <span className="text-[10px] px-1.5 py-0.5 rounded bg-slate-100 text-slate-500 font-medium whitespace-nowrap shrink-0">
                     {item.category}
                   </span>
                 </div>

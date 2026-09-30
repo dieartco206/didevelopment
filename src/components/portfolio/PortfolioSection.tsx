@@ -91,7 +91,7 @@ export const PortfolioSection: React.FC = () => {
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12 sm:mb-16">
           <div>
-            <div className="inline-block text-xs font-bold text-[#2563EB] uppercase tracking-wider mb-2">
+            <div className="inline-block text-xs font-bold text-[#2563EB] uppercase tracking-wider mb-2 whitespace-nowrap shrink-0">
               STUDI KASUS PRODUKSI NYATA
             </div>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#0F172A] tracking-tight font-sans">
@@ -116,13 +116,13 @@ export const PortfolioSection: React.FC = () => {
                   soundFx.playClick(650, 0.03);
                   setActiveTab(tab.id as PortfolioCategory);
                 }}
-                className={`px-3.5 py-1.5 rounded-lg text-xs font-bold transition-all whitespace-nowrap cursor-pointer ${
+                className={`px-3.5 py-1.5 rounded-lg text-xs font-bold transition-all whitespace-nowrap shrink-0 cursor-pointer ${
                   activeTab === tab.id
                     ? 'bg-[#2563EB] text-white shadow-xs'
                     : 'text-slate-600 hover:text-[#2563EB] hover:bg-slate-50'
                 }`}
               >
-                {tab.label}
+                <span className="whitespace-nowrap">{tab.label}</span>
               </button>
             ))}
           </div>
@@ -143,24 +143,24 @@ export const PortfolioSection: React.FC = () => {
                   <div className="rounded-xl bg-white border border-slate-200 p-3.5 shadow-sm text-xs">
                     <div className="flex items-center justify-between pb-2 mb-2 border-b border-slate-100">
                       <div className="flex items-center gap-2">
-                        <span className="w-2.5 h-2.5 rounded-full bg-emerald-500" />
-                        <span className="font-bold text-[#0F172A]">Kasir Tablet POS • Shift Pagi</span>
+                        <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 shrink-0" />
+                        <span className="font-bold text-[#0F172A] whitespace-nowrap">Kasir Tablet POS • Shift Pagi</span>
                       </div>
-                      <span className="font-mono text-[10px] text-slate-500">Printer Bluetooth 58mm: OK</span>
+                      <span className="font-mono text-[10px] text-slate-500 whitespace-nowrap shrink-0">Printer Bluetooth 58mm: OK</span>
                     </div>
                     <div className="grid grid-cols-2 gap-2 text-[11px] mb-2.5">
                       <div className="p-2 rounded bg-slate-50 border border-slate-100">
-                        <span className="text-slate-500 block text-[9px]">Pesanan Aktif</span>
-                        <span className="font-bold text-[#0F172A]">2x Caramel Latte (Rp 68k)</span>
+                        <span className="text-slate-500 block text-[9px] whitespace-nowrap">Pesanan Aktif</span>
+                        <span className="font-bold text-[#0F172A] whitespace-nowrap">2x Caramel Latte (Rp 68k)</span>
                       </div>
                       <div className="p-2 rounded bg-emerald-50 border border-emerald-100">
-                        <span className="text-emerald-700 block text-[9px]">Status Pembayaran</span>
-                        <span className="font-bold text-emerald-700">QRIS BCA LUNAS</span>
+                        <span className="text-emerald-700 block text-[9px] whitespace-nowrap">Status Pembayaran</span>
+                        <span className="font-bold text-emerald-700 whitespace-nowrap shrink-0">QRIS BCA LUNAS</span>
                       </div>
                     </div>
                     <div className="flex items-center justify-between pt-1.5 border-t border-slate-100 text-[10px]">
-                      <span className="text-slate-500">Struk otomatis tercetak ke meja pelanggan</span>
-                      <span className="px-2 py-0.5 rounded bg-blue-50 text-[#2563EB] font-bold">1-Klik Cetak</span>
+                      <span className="text-slate-500 whitespace-nowrap">Struk otomatis tercetak ke meja pelanggan</span>
+                      <span className="px-2 py-0.5 rounded bg-blue-50 text-[#2563EB] font-bold whitespace-nowrap shrink-0">1-Klik Cetak</span>
                     </div>
                   </div>
                 )}
@@ -169,11 +169,11 @@ export const PortfolioSection: React.FC = () => {
                 {item.uiPreviewType === 'attendance' && (
                   <div className="rounded-xl bg-white border border-slate-200 p-3.5 shadow-sm text-xs">
                     <div className="flex items-center justify-between pb-2 mb-2 border-b border-slate-100">
-                      <div className="flex items-center gap-1.5 text-[#2563EB] font-bold">
-                        <MapPin className="w-4 h-4 text-rose-500" />
-                        <span>Validasi Geofencing & Wajah</span>
+                      <div className="flex items-center gap-1.5 text-[#2563EB] font-bold whitespace-nowrap shrink-0">
+                        <MapPin className="w-4 h-4 text-rose-500 shrink-0" />
+                        <span className="whitespace-nowrap">Validasi Geofencing & Wajah</span>
                       </div>
-                      <span className="text-[10px] font-mono bg-emerald-100 text-emerald-800 px-2 py-0.5 rounded font-bold">
+                      <span className="text-[10px] font-mono bg-emerald-100 text-emerald-800 px-2 py-0.5 rounded font-bold whitespace-nowrap shrink-0">
                         RADIUS 9 METER (VALID)
                       </span>
                     </div>
@@ -182,13 +182,13 @@ export const PortfolioSection: React.FC = () => {
                         BS
                       </div>
                       <div>
-                        <div className="font-bold text-[#0F172A]">Bambang Setiawan</div>
-                        <div className="text-[10px] text-slate-500">Proyek Gedung A • Presensi 07:55:12 WIB</div>
+                        <div className="font-bold text-[#0F172A] whitespace-nowrap">Bambang Setiawan</div>
+                        <div className="text-[10px] text-slate-500 whitespace-nowrap">Proyek Gedung A • Presensi 07:55:12 WIB</div>
                       </div>
                     </div>
-                    <div className="text-[10px] text-emerald-700 font-semibold flex items-center gap-1">
-                      <CheckCircle2 className="w-3.5 h-3.5" />
-                      <span>Terverifikasi Anti-Mock GPS • Payroll Tersinkron</span>
+                    <div className="text-[10px] text-emerald-700 font-semibold flex items-center gap-1 whitespace-nowrap shrink-0">
+                      <CheckCircle2 className="w-3.5 h-3.5 shrink-0" />
+                      <span className="whitespace-nowrap">Terverifikasi Anti-Mock GPS • Payroll Tersinkron</span>
                     </div>
                   </div>
                 )}
@@ -197,27 +197,27 @@ export const PortfolioSection: React.FC = () => {
                 {item.uiPreviewType === 'logistics' && (
                   <div className="rounded-xl bg-white border border-slate-200 p-3.5 shadow-sm text-xs">
                     <div className="flex items-center justify-between pb-2 mb-2 border-b border-slate-100">
-                      <div className="flex items-center gap-1.5 text-slate-800 font-bold">
-                        <Truck className="w-4 h-4 text-[#2563EB]" />
-                        <span>Resi #KRG-881920 • Jakarta - Malang</span>
+                      <div className="flex items-center gap-1.5 text-slate-800 font-bold whitespace-nowrap shrink-0">
+                        <Truck className="w-4 h-4 text-[#2563EB] shrink-0" />
+                        <span className="whitespace-nowrap">Resi #KRG-881920 • Jakarta - Malang</span>
                       </div>
-                      <span className="text-[10px] bg-blue-100 text-blue-800 px-2 py-0.5 rounded font-bold">
+                      <span className="text-[10px] bg-blue-100 text-blue-800 px-2 py-0.5 rounded font-bold whitespace-nowrap shrink-0">
                         TERKIRIM
                       </span>
                     </div>
                     <div className="space-y-1.5 p-2 rounded bg-slate-50 border border-slate-100 text-[11px] mb-2">
                       <div className="flex justify-between">
-                        <span className="text-slate-500">Penerima:</span>
-                        <span className="font-bold text-[#0F172A]">Ibu Ratna S.</span>
+                        <span className="text-slate-500 whitespace-nowrap">Penerima:</span>
+                        <span className="font-bold text-[#0F172A] whitespace-nowrap">Ibu Ratna S.</span>
                       </div>
                       <div className="flex justify-between">
-                        <span className="text-slate-500">Tanda Tangan Digital:</span>
-                        <span className="text-emerald-600 font-bold">✓ Tervalidasi</span>
+                        <span className="text-slate-500 whitespace-nowrap">Tanda Tangan Digital:</span>
+                        <span className="text-emerald-600 font-bold whitespace-nowrap shrink-0">✓ Tervalidasi</span>
                       </div>
                     </div>
                     <div className="text-[10px] text-slate-500 flex items-center justify-between">
-                      <span>Notifikasi WA pelanggan: Terkirim</span>
-                      <span className="font-mono text-slate-400">14:22 WIB</span>
+                      <span className="whitespace-nowrap">Notifikasi WA pelanggan: Terkirim</span>
+                      <span className="font-mono text-slate-400 whitespace-nowrap shrink-0">14:22 WIB</span>
                     </div>
                   </div>
                 )}
@@ -226,24 +226,24 @@ export const PortfolioSection: React.FC = () => {
                 {item.uiPreviewType === 'exam' && (
                   <div className="rounded-xl bg-white border border-slate-200 p-3.5 shadow-sm text-xs">
                     <div className="flex items-center justify-between pb-2 mb-2 border-b border-slate-100">
-                      <div className="flex items-center gap-1.5 text-amber-700 font-bold">
-                        <Lock className="w-4 h-4 text-amber-600" />
-                        <span>Kiosk Mode Aktif (Terkunci)</span>
+                      <div className="flex items-center gap-1.5 text-amber-700 font-bold whitespace-nowrap shrink-0">
+                        <Lock className="w-4 h-4 text-amber-600 shrink-0" />
+                        <span className="whitespace-nowrap">Kiosk Mode Aktif (Terkunci)</span>
                       </div>
-                      <span className="text-[10px] bg-amber-100 text-amber-800 px-2 py-0.5 rounded font-bold">
+                      <span className="text-[10px] bg-amber-100 text-amber-800 px-2 py-0.5 rounded font-bold whitespace-nowrap shrink-0">
                         ANTI-PINDAH TAB
                       </span>
                     </div>
                     <div className="p-2 rounded bg-slate-50 border border-slate-100 text-[11px] mb-2 flex items-center justify-between">
                       <div>
-                        <span className="text-slate-500 block text-[9px]">Ujian Matematika Terapan</span>
-                        <span className="font-bold text-[#0F172A]">Soal 28 / 50 • Acak Butir Soal</span>
+                        <span className="text-slate-500 block text-[9px] whitespace-nowrap">Ujian Matematika Terapan</span>
+                        <span className="font-bold text-[#0F172A] whitespace-nowrap">Soal 28 / 50 • Acak Butir Soal</span>
                       </div>
-                      <span className="font-mono font-bold text-rose-600">Sisa 38:40</span>
+                      <span className="font-mono font-bold text-rose-600 whitespace-nowrap shrink-0">Sisa 38:40</span>
                     </div>
-                    <div className="text-[10px] text-emerald-700 font-semibold flex items-center gap-1">
-                      <ShieldCheck className="w-3.5 h-3.5" />
-                      <span>Cache Offline SQLite: Jawaban Tersimpan Aman</span>
+                    <div className="text-[10px] text-emerald-700 font-semibold flex items-center gap-1 whitespace-nowrap shrink-0">
+                      <ShieldCheck className="w-3.5 h-3.5 shrink-0" />
+                      <span className="whitespace-nowrap">Cache Offline SQLite: Jawaban Tersimpan Aman</span>
                     </div>
                   </div>
                 )}
@@ -254,7 +254,7 @@ export const PortfolioSection: React.FC = () => {
                 <div>
                   {/* Category & Industry */}
                   <div className="flex items-center justify-between gap-2 mb-2.5">
-                    <span className="px-2.5 py-0.5 rounded-full bg-blue-50 text-[#2563EB] text-[11px] font-bold">
+                    <span className="px-2.5 py-0.5 rounded-full bg-blue-50 text-[#2563EB] text-[11px] font-bold whitespace-nowrap shrink-0">
                       {item.categoryLabel}
                     </span>
                     <span className="text-xs text-slate-500 font-medium truncate max-w-[200px]">
@@ -268,9 +268,9 @@ export const PortfolioSection: React.FC = () => {
                   </h3>
 
                   {/* Impact Highlight Badge */}
-                  <div className="p-2.5 rounded-xl bg-emerald-50 border border-emerald-200 text-emerald-900 text-xs font-bold flex items-center gap-2 mb-3.5">
+                  <div className="p-2.5 rounded-xl bg-emerald-50 border border-emerald-200 text-emerald-900 text-xs font-bold flex items-center gap-2 mb-3.5 whitespace-nowrap shrink-0 overflow-x-auto max-w-full">
                     <TrendingUp className="w-4 h-4 text-emerald-600 shrink-0" />
-                    <span>HASIL NYATA: {item.impactHighlight}</span>
+                    <span className="whitespace-nowrap">HASIL NYATA: {item.impactHighlight}</span>
                   </div>
 
                   {/* Solution Narrative */}
@@ -285,7 +285,7 @@ export const PortfolioSection: React.FC = () => {
                     {item.techStack.map((tech, idx) => (
                       <span
                         key={idx}
-                        className="px-2 py-0.5 rounded bg-slate-100 text-slate-700 text-[10px] font-bold font-mono"
+                        className="px-2 py-0.5 rounded bg-slate-100 text-slate-700 text-[10px] font-bold font-mono whitespace-nowrap shrink-0"
                       >
                         {tech}
                       </span>
@@ -294,10 +294,10 @@ export const PortfolioSection: React.FC = () => {
 
                   <button
                     onClick={() => consultProject(item.title)}
-                    className="w-full sm:w-auto inline-flex items-center justify-center gap-1.5 px-4 py-2 bg-[#2563EB] hover:bg-[#1D4ED8] text-white rounded-lg text-xs font-bold transition-colors cursor-pointer shrink-0"
+                    className="w-full sm:w-auto inline-flex items-center justify-center gap-1.5 px-4 py-2 bg-[#2563EB] hover:bg-[#1D4ED8] text-white rounded-lg text-xs font-bold transition-colors cursor-pointer shrink-0 whitespace-nowrap"
                   >
-                    <span>Bikin Serupa</span>
-                    <ArrowUpRight className="w-3.5 h-3.5" />
+                    <span className="whitespace-nowrap">Bikin Serupa</span>
+                    <ArrowUpRight className="w-3.5 h-3.5 shrink-0" />
                   </button>
                 </div>
               </div>

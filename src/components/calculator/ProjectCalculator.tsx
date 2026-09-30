@@ -107,8 +107,8 @@ export const ProjectCalculator: React.FC = () => {
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 bg-blue-50 border border-blue-200 text-[#2563EB] rounded-full text-xs font-bold uppercase tracking-wider mb-3">
-            <span>KALKULATOR ESTIMASI FINANSIAL</span>
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 bg-blue-50 border border-blue-200 text-[#2563EB] rounded-full text-xs font-bold uppercase tracking-wider mb-3 whitespace-nowrap shrink-0">
+            <span className="whitespace-nowrap">KALKULATOR ESTIMASI FINANSIAL</span>
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#0F172A] tracking-tight font-sans">
             Hitung Estimasi Biaya Pembuatan Aplikasi
@@ -125,7 +125,7 @@ export const ProjectCalculator: React.FC = () => {
             
             {/* Step 1: Base System Package */}
             <div className="p-6 bg-white border-2 border-slate-200 rounded-2xl shadow-sm">
-              <label className="block text-xs font-extrabold text-[#0F172A] uppercase mb-4 tracking-wider">
+              <label className="block text-xs font-extrabold text-[#0F172A] uppercase mb-4 tracking-wider whitespace-nowrap">
                 1. PILIH KATEGORI SISTEM UTAMA:
               </label>
               <div className="space-y-3">
@@ -158,11 +158,11 @@ export const ProjectCalculator: React.FC = () => {
                         </div>
                       </div>
 
-                      <div className="text-right shrink-0">
-                        <div className="text-sm sm:text-base font-extrabold text-[#2563EB] font-mono">
+                      <div className="text-right shrink-0 whitespace-nowrap">
+                        <div className="text-sm sm:text-base font-extrabold text-[#2563EB] font-mono whitespace-nowrap">
                           {formatRupiah(pt.basePrice)}
                         </div>
-                        <div className="text-[11px] text-slate-500 font-medium">
+                        <div className="text-[11px] text-slate-500 font-medium whitespace-nowrap">
                           ~{pt.days} hari kerja
                         </div>
                       </div>
@@ -174,7 +174,7 @@ export const ProjectCalculator: React.FC = () => {
 
             {/* Step 2: Addon Modules */}
             <div className="p-6 bg-white border-2 border-slate-200 rounded-2xl shadow-sm">
-              <label className="block text-xs font-extrabold text-[#0F172A] uppercase mb-4 tracking-wider">
+              <label className="block text-xs font-extrabold text-[#0F172A] uppercase mb-4 tracking-wider whitespace-nowrap">
                 2. PILIH MODUL TAMBAHAN (OPSIONAL):
               </label>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
@@ -203,7 +203,7 @@ export const ProjectCalculator: React.FC = () => {
                         <div className="text-[11px] text-[#475569] mt-1">
                           {addon.desc}
                         </div>
-                        <div className="text-xs font-extrabold text-[#2563EB] mt-1.5 font-mono">
+                        <div className="text-xs font-extrabold text-[#2563EB] mt-1.5 font-mono whitespace-nowrap shrink-0">
                           +{formatRupiah(addon.price)}
                         </div>
                       </div>
@@ -215,7 +215,7 @@ export const ProjectCalculator: React.FC = () => {
 
             {/* Step 3: Pacing Priority */}
             <div className="p-6 bg-white border-2 border-slate-200 rounded-2xl shadow-sm">
-              <label className="block text-xs font-extrabold text-[#0F172A] uppercase mb-4 tracking-wider">
+              <label className="block text-xs font-extrabold text-[#0F172A] uppercase mb-4 tracking-wider whitespace-nowrap">
                 3. PRIORITAS KECEPATAN PENGERJAAN:
               </label>
               <div className="grid grid-cols-2 gap-3">
@@ -228,7 +228,7 @@ export const ProjectCalculator: React.FC = () => {
                       : 'bg-white border-slate-200 text-slate-700 hover:bg-slate-50'
                   }`}
                 >
-                  <div className="text-sm font-bold text-[#0F172A]">Standar Reguler</div>
+                  <div className="text-sm font-bold text-[#0F172A] whitespace-nowrap">Standar Reguler</div>
                   <div className="text-xs text-[#475569] mt-0.5">Alur jadwal standar terstruktur</div>
                 </button>
 
@@ -242,8 +242,8 @@ export const ProjectCalculator: React.FC = () => {
                   }`}
                 >
                   <div className="text-sm font-bold text-[#0F172A] flex items-center justify-between">
-                    <span>Express Prioritas</span>
-                    <span className="px-2 py-0.5 rounded text-[10px] bg-[#2563EB] text-white font-bold">+25%</span>
+                    <span className="whitespace-nowrap">Express Prioritas</span>
+                    <span className="px-2 py-0.5 rounded text-[10px] bg-[#2563EB] text-white font-bold whitespace-nowrap shrink-0">+25%</span>
                   </div>
                   <div className="text-xs text-[#475569] mt-0.5">Diselesaikan ~40% lebih kilat</div>
                 </button>
@@ -259,25 +259,25 @@ export const ProjectCalculator: React.FC = () => {
               {/* Header Quote */}
               <div className="border-b border-slate-200 pb-4 mb-5 flex items-center justify-between">
                 <div>
-                  <span className="text-[11px] font-bold text-[#2563EB] uppercase tracking-wider block">
+                  <span className="text-[11px] font-bold text-[#2563EB] uppercase tracking-wider block whitespace-nowrap shrink-0">
                     ESTIMASI RESMI DIDEV STUDIO
                   </span>
                   <h3 className="text-lg font-bold text-[#0F172A] mt-0.5">
                     {selectedType.name}
                   </h3>
                 </div>
-                <Receipt className="w-6 h-6 text-[#2563EB]" />
+                <Receipt className="w-6 h-6 text-[#2563EB] shrink-0" />
               </div>
 
               {/* Total Investment Box */}
               <div className="p-5 rounded-2xl bg-blue-50/80 border-2 border-blue-200 mb-6 text-center">
-                <div className="text-xs font-semibold text-[#475569]">Estimasi Nilai Investasi:</div>
-                <div className="text-3xl sm:text-4xl font-extrabold text-[#0F172A] font-mono mt-1">
+                <div className="text-xs font-semibold text-[#475569] whitespace-nowrap">Estimasi Nilai Investasi:</div>
+                <div className="text-3xl sm:text-4xl font-extrabold text-[#0F172A] font-mono mt-1 whitespace-nowrap">
                   {formatRupiah(price)}
                 </div>
-                <div className="text-xs font-bold text-[#2563EB] mt-2 flex items-center justify-center gap-1.5">
-                  <Clock className="w-4 h-4" />
-                  <span>Estimasi Pengerjaan: {days} Hari Kerja</span>
+                <div className="text-xs font-bold text-[#2563EB] mt-2 flex items-center justify-center gap-1.5 whitespace-nowrap shrink-0">
+                  <Clock className="w-4 h-4 shrink-0" />
+                  <span className="whitespace-nowrap">Estimasi Pengerjaan: {days} Hari Kerja</span>
                 </div>
               </div>
 
@@ -304,11 +304,11 @@ export const ProjectCalculator: React.FC = () => {
               {/* Action Button: Send Quote to WhatsApp */}
               <button
                 onClick={sendToWhatsApp}
-                className="w-full py-4 bg-[#10B981] hover:bg-[#059669] text-white rounded-xl font-bold text-sm flex items-center justify-center gap-2 shadow-md hover:shadow-lg transition-all active:scale-98 cursor-pointer"
+                className="w-full py-4 bg-[#10B981] hover:bg-[#059669] text-white rounded-xl font-bold text-sm flex items-center justify-center gap-2 shadow-md hover:shadow-lg transition-all active:scale-98 cursor-pointer whitespace-nowrap shrink-0"
               >
-                <MessageSquare className="w-5 h-5 fill-current" />
-                <span>Konsultasikan Estimasi Ini via WA</span>
-                <ArrowRight className="w-4 h-4" />
+                <MessageSquare className="w-5 h-5 fill-current shrink-0" />
+                <span className="whitespace-nowrap">Konsultasikan Estimasi Ini via WA</span>
+                <ArrowRight className="w-4 h-4 shrink-0" />
               </button>
 
               <p className="text-[11px] text-center text-slate-500 mt-3 font-normal">

@@ -103,20 +103,20 @@ export const PricingSection: React.FC = () => {
         
         {/* Section Header with Bold Value Proposition */}
         <div className="text-center max-w-3xl mx-auto mb-14 sm:mb-20">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 bg-blue-50 border border-blue-200 text-[#2563EB] rounded-full text-xs font-bold uppercase tracking-wider mb-3">
-            <span>PAKET INVESTASI RESMI</span>
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 bg-blue-50 border border-blue-200 text-[#2563EB] rounded-full text-xs font-bold uppercase tracking-wider mb-3 whitespace-nowrap shrink-0">
+            <span className="whitespace-nowrap">PAKET INVESTASI RESMI</span>
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#0F172A] tracking-tight font-sans">
             Pilihan Paket Transparan Tanpa Biaya Tersembunyi
           </h2>
           
           {/* Key Value Guarantee Badge */}
-          <div className="mt-4 inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-slate-100 text-[#0F172A] font-mono text-xs sm:text-sm font-bold border border-slate-200">
-            <span className="text-[#10B981]">✓</span> SEKALI BAYAR
-            <span className="text-slate-300">•</span>
-            <span className="text-[#10B981]">✓</span> 100% HAK MILIK
-            <span className="text-slate-300">•</span>
-            <span className="text-[#10B981]">✓</span> TANPA BIAYA BULANAN
+          <div className="mt-4 inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-slate-100 text-[#0F172A] font-mono text-xs sm:text-sm font-bold border border-slate-200 whitespace-nowrap shrink-0 overflow-x-auto max-w-full">
+            <span className="text-[#10B981] shrink-0">✓</span> <span className="whitespace-nowrap shrink-0">SEKALI BAYAR</span>
+            <span className="text-slate-300 shrink-0">•</span>
+            <span className="text-[#10B981] shrink-0">✓</span> <span className="whitespace-nowrap shrink-0">100% HAK MILIK</span>
+            <span className="text-slate-300 shrink-0">•</span>
+            <span className="text-[#10B981] shrink-0">✓</span> <span className="whitespace-nowrap shrink-0">TANPA BIAYA BULANAN</span>
           </div>
         </div>
 
@@ -136,9 +136,9 @@ export const PricingSection: React.FC = () => {
               >
                 {/* Popular Recommendation Header Ribbon */}
                 {isFeatured && (
-                  <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-[#2563EB] text-white text-[11px] font-bold px-4 py-1 rounded-full uppercase tracking-wider shadow-md flex items-center gap-1.5">
-                    <Sparkles className="w-3.5 h-3.5" />
-                    <span>{tier.badge}</span>
+                  <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-[#2563EB] text-white text-[11px] font-bold px-4 py-1 rounded-full uppercase tracking-wider shadow-md flex items-center justify-center gap-1.5 whitespace-nowrap shrink-0">
+                    <Sparkles className="w-3.5 h-3.5 shrink-0" />
+                    <span className="whitespace-nowrap">{tier.badge}</span>
                   </div>
                 )}
 
@@ -146,14 +146,14 @@ export const PricingSection: React.FC = () => {
                   {/* Top Badge & Duration */}
                   <div className="flex items-center justify-between mb-4">
                     {!isFeatured && (
-                      <span className="text-[10px] font-bold px-2.5 py-1 rounded-full bg-slate-200 text-slate-700 uppercase tracking-wide">
+                      <span className="text-[10px] font-bold px-2.5 py-1 rounded-full bg-slate-200 text-slate-700 uppercase tracking-wide whitespace-nowrap shrink-0">
                         {tier.badge}
                       </span>
                     )}
                     {isFeatured && <div />}
-                    <div className="flex items-center gap-1 text-xs text-slate-500 font-semibold">
-                      <Clock className="w-3.5 h-3.5 text-[#2563EB]" />
-                      <span>{tier.timeline}</span>
+                    <div className="flex items-center gap-1 text-xs text-slate-500 font-semibold whitespace-nowrap shrink-0">
+                      <Clock className="w-3.5 h-3.5 text-[#2563EB] shrink-0" />
+                      <span className="whitespace-nowrap">{tier.timeline}</span>
                     </div>
                   </div>
 
@@ -167,17 +167,17 @@ export const PricingSection: React.FC = () => {
 
                   {/* Price Box */}
                   <div className="p-4 rounded-xl bg-white border border-slate-200 mb-6 shadow-2xs">
-                    <div className="text-3xl font-extrabold text-[#0F172A] font-mono">
+                    <div className="text-3xl font-extrabold text-[#0F172A] font-mono whitespace-nowrap">
                       {tier.price}
                     </div>
-                    <div className="text-xs text-emerald-600 font-semibold mt-1">
+                    <div className="text-xs text-emerald-600 font-semibold mt-1 whitespace-nowrap shrink-0">
                       {tier.priceNote}
                     </div>
                   </div>
 
                   {/* Features List */}
                   <div className="space-y-3 mb-8">
-                    <div className="text-[11px] font-bold text-slate-400 uppercase tracking-wide">
+                    <div className="text-[11px] font-bold text-slate-400 uppercase tracking-wide whitespace-nowrap shrink-0">
                       SUDAH TERMASUK:
                     </div>
                     {tier.features.map((feat, idx) => (
@@ -197,14 +197,14 @@ export const PricingSection: React.FC = () => {
 
                   <button
                     onClick={() => handleSelectPlan(tier)}
-                    className={`w-full py-3.5 rounded-xl font-bold text-sm flex items-center justify-center gap-2 transition-all cursor-pointer active:scale-98 ${
+                    className={`w-full py-3.5 rounded-xl font-bold text-sm flex items-center justify-center gap-2 transition-all cursor-pointer active:scale-98 whitespace-nowrap shrink-0 ${
                       isFeatured
                         ? 'bg-[#10B981] hover:bg-[#059669] text-white shadow-lg shadow-emerald-500/25'
                         : 'bg-white hover:bg-slate-50 text-[#0F172A] border-2 border-slate-200 hover:border-[#2563EB]'
                     }`}
                   >
-                    <span>{tier.ctaText}</span>
-                    <ArrowRight className="w-4 h-4" />
+                    <span className="whitespace-nowrap">{tier.ctaText}</span>
+                    <ArrowRight className="w-4 h-4 shrink-0" />
                   </button>
                 </div>
 

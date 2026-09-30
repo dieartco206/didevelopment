@@ -40,9 +40,9 @@ export const HeroPromo: React.FC<HeroPromoProps> = ({ onNavigate }) => {
           {/* Kolom Kiri: Pitch Tajam, Human-First Copywriting */}
           <div className="lg:col-span-6 flex flex-col justify-center text-center lg:text-left">
             {/* Top Pill Badge */}
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 bg-blue-50 border border-blue-200 text-[#2563EB] rounded-full text-xs font-bold w-fit mx-auto lg:mx-0 mb-4 shadow-2xs">
-              <span className="text-amber-500 font-extrabold">⚡</span>
-              <span className="tracking-wide">Jasa Pembuatan Website & Aplikasi Android Kustom</span>
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 bg-blue-50 border border-blue-200 text-[#2563EB] rounded-full text-xs font-bold w-fit mx-auto lg:mx-0 mb-4 shadow-2xs whitespace-nowrap shrink-0">
+              <span className="text-amber-500 font-extrabold shrink-0">⚡</span>
+              <span className="tracking-wide whitespace-nowrap">Jasa Pembuatan Website & Aplikasi Android Kustom</span>
             </div>
 
             {/* Headline Kuat & Tegas */}
@@ -59,11 +59,11 @@ export const HeroPromo: React.FC<HeroPromoProps> = ({ onNavigate }) => {
             <div className="mt-6 sm:mt-8 flex flex-wrap items-center justify-center lg:justify-start gap-3 sm:gap-4">
               <button
                 onClick={openWhatsApp}
-                className="inline-flex items-center justify-center gap-2.5 px-6 py-3.5 sm:py-4 bg-[#10B981] hover:bg-[#059669] text-white font-sans font-bold text-sm sm:text-base rounded-xl shadow-lg shadow-emerald-500/25 hover:shadow-emerald-500/35 transition-all duration-200 active:scale-98 cursor-pointer"
+                className="inline-flex items-center justify-center gap-2.5 px-6 py-3.5 sm:py-4 bg-[#10B981] hover:bg-[#059669] text-white font-sans font-bold text-sm sm:text-base rounded-xl shadow-lg shadow-emerald-500/25 hover:shadow-emerald-500/35 transition-all duration-200 active:scale-98 cursor-pointer whitespace-nowrap shrink-0"
               >
-                <MessageSquare className="w-5 h-5 fill-current" />
-                <span>Konsultasi Gratis via WhatsApp</span>
-                <ArrowRight className="w-4 h-4" />
+                <MessageSquare className="w-5 h-5 fill-current shrink-0" />
+                <span className="whitespace-nowrap">Konsultasi Gratis via WhatsApp</span>
+                <ArrowRight className="w-4 h-4 shrink-0" />
               </button>
 
               <button
@@ -71,29 +71,29 @@ export const HeroPromo: React.FC<HeroPromoProps> = ({ onNavigate }) => {
                   soundFx.playClick(600, 0.05);
                   onNavigate('calculator');
                 }}
-                className="inline-flex items-center justify-center px-5 py-3.5 sm:py-4 bg-white hover:bg-slate-50 text-[#0F172A] border-2 border-slate-200 hover:border-[#2563EB] font-sans font-bold text-sm sm:text-base rounded-xl transition-all duration-200 cursor-pointer shadow-2xs"
+                className="inline-flex items-center justify-center px-5 py-3.5 sm:py-4 bg-white hover:bg-slate-50 text-[#0F172A] border-2 border-slate-200 hover:border-[#2563EB] font-sans font-bold text-sm sm:text-base rounded-xl transition-all duration-200 cursor-pointer shadow-2xs whitespace-nowrap shrink-0"
               >
-                Hitung Estimasi Biaya
+                <span className="whitespace-nowrap">Hitung Estimasi Biaya</span>
               </button>
             </div>
 
             {/* Trust Checklist Bar */}
             <div className="mt-6 pt-5 border-t border-slate-200/80 grid grid-cols-2 sm:flex sm:flex-wrap items-center justify-center lg:justify-start gap-3 sm:gap-5 text-xs text-[#334155] font-semibold">
-              <span className="flex items-center gap-1.5">
+              <span className="flex items-center gap-1.5 whitespace-nowrap shrink-0">
                 <CheckCircle2 className="w-4 h-4 text-[#10B981] shrink-0" />
-                Sekali Bayar
+                <span className="whitespace-nowrap">Sekali Bayar</span>
               </span>
-              <span className="flex items-center gap-1.5">
+              <span className="flex items-center gap-1.5 whitespace-nowrap shrink-0">
                 <CheckCircle2 className="w-4 h-4 text-[#10B981] shrink-0" />
-                100% Source Code Klien
+                <span className="whitespace-nowrap">100% Source Code Klien</span>
               </span>
-              <span className="flex items-center gap-1.5">
+              <span className="flex items-center gap-1.5 whitespace-nowrap shrink-0">
                 <CheckCircle2 className="w-4 h-4 text-[#10B981] shrink-0" />
-                Garansi Bebas Bug 1 Th
+                <span className="whitespace-nowrap">Garansi Bebas Bug 1 Th</span>
               </span>
-              <span className="flex items-center gap-1.5">
+              <span className="flex items-center gap-1.5 whitespace-nowrap shrink-0">
                 <CheckCircle2 className="w-4 h-4 text-[#10B981] shrink-0" />
-                Siap Rilis Play Store
+                <span className="whitespace-nowrap">Siap Rilis Play Store</span>
               </span>
             </div>
           </div>
@@ -115,9 +115,9 @@ export const HeroPromo: React.FC<HeroPromoProps> = ({ onNavigate }) => {
                     <Lock className="w-3 h-3 text-[#10B981]" />
                     <span>pos.didev.studio/dashboard</span>
                   </div>
-                  <div className="flex items-center gap-1">
-                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
-                    <span className="text-[9px] font-bold text-emerald-700">ONLINE</span>
+                  <div className="flex items-center gap-1 whitespace-nowrap shrink-0">
+                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse shrink-0" />
+                    <span className="text-[9px] font-bold text-emerald-700 whitespace-nowrap">ONLINE</span>
                   </div>
                 </div>
 
@@ -133,7 +133,7 @@ export const HeroPromo: React.FC<HeroPromoProps> = ({ onNavigate }) => {
                         Shift Aktif: Kasir Budi S. • Sinkron Cloud Real-time
                       </div>
                     </div>
-                    <span className="px-2 py-0.5 rounded bg-blue-50 border border-blue-200 text-[#2563EB] text-[10px] font-bold">
+                    <span className="px-2 py-0.5 rounded bg-blue-50 border border-blue-200 text-[#2563EB] text-[10px] font-bold whitespace-nowrap shrink-0">
                       VERSI 3.2
                     </span>
                   </div>
@@ -141,24 +141,24 @@ export const HeroPromo: React.FC<HeroPromoProps> = ({ onNavigate }) => {
                   {/* Stat Cards: Omset & Transaksi */}
                   <div className="grid grid-cols-2 gap-3 mb-3.5">
                     <div className="p-3 rounded-xl bg-white border border-slate-200 shadow-2xs">
-                      <div className="text-[10px] text-slate-500 font-medium">Omset Hari Ini</div>
-                      <div className="text-base sm:text-xl font-extrabold text-[#0F172A] mt-0.5 font-mono">
+                      <div className="text-[10px] text-slate-500 font-medium whitespace-nowrap">Omset Hari Ini</div>
+                      <div className="text-base sm:text-xl font-extrabold text-[#0F172A] mt-0.5 font-mono whitespace-nowrap">
                         Rp 18.500.000
                       </div>
-                      <div className="flex items-center gap-1 text-[10px] font-bold text-emerald-600 mt-1">
-                        <TrendingUp className="w-3 h-3" />
-                        <span>+24.5% vs kemarin</span>
+                      <div className="flex items-center gap-1 text-[10px] font-bold text-emerald-600 mt-1 whitespace-nowrap shrink-0">
+                        <TrendingUp className="w-3 h-3 shrink-0" />
+                        <span className="whitespace-nowrap">+24.5% vs kemarin</span>
                       </div>
                     </div>
 
                     <div className="p-3 rounded-xl bg-white border border-slate-200 shadow-2xs">
-                      <div className="text-[10px] text-slate-500 font-medium">Total Pesanan</div>
-                      <div className="text-base sm:text-xl font-extrabold text-[#0F172A] mt-0.5 font-mono">
+                      <div className="text-[10px] text-slate-500 font-medium whitespace-nowrap">Total Pesanan</div>
+                      <div className="text-base sm:text-xl font-extrabold text-[#0F172A] mt-0.5 font-mono whitespace-nowrap">
                         248 Struk
                       </div>
-                      <div className="flex items-center gap-1 text-[10px] font-semibold text-blue-600 mt-1">
-                        <Printer className="w-3 h-3" />
-                        <span>Cetak Struk Bluetooth OK</span>
+                      <div className="flex items-center gap-1 text-[10px] font-semibold text-blue-600 mt-1 whitespace-nowrap shrink-0">
+                        <Printer className="w-3 h-3 shrink-0" />
+                        <span className="whitespace-nowrap">Cetak Struk Bluetooth OK</span>
                       </div>
                     </div>
                   </div>
@@ -166,8 +166,8 @@ export const HeroPromo: React.FC<HeroPromoProps> = ({ onNavigate }) => {
                   {/* Mini Sales Bar Chart Simulation */}
                   <div className="p-3 rounded-xl bg-white border border-slate-200 mb-3.5 shadow-2xs">
                     <div className="flex items-center justify-between mb-2">
-                      <span className="text-[10px] font-bold text-slate-700 uppercase">Grafik Penjualan 7 Hari</span>
-                      <span className="text-[9px] font-semibold text-slate-400">Rata-rata Rp 16.2 Juta/hari</span>
+                      <span className="text-[10px] font-bold text-slate-700 uppercase whitespace-nowrap">Grafik Penjualan 7 Hari</span>
+                      <span className="text-[9px] font-semibold text-slate-400 whitespace-nowrap">Rata-rata Rp 16.2 Juta/hari</span>
                     </div>
                     <div className="flex items-end justify-between gap-1.5 h-14 pt-2 border-b border-slate-100">
                       {[
@@ -194,15 +194,15 @@ export const HeroPromo: React.FC<HeroPromoProps> = ({ onNavigate }) => {
 
                   {/* Recent Real Transactions */}
                   <div className="space-y-1.5">
-                    <div className="text-[10px] font-bold text-slate-600 uppercase">Transaksi Terkini:</div>
+                    <div className="text-[10px] font-bold text-slate-600 uppercase whitespace-nowrap">Transaksi Terkini:</div>
                     <div className="p-2 rounded-lg bg-white border border-slate-200 flex items-center justify-between text-[11px] shadow-2xs">
                       <div>
                         <span className="font-bold text-[#0F172A]">2x Caramel Latte + 1x Toast</span>
                         <span className="block text-[9px] text-slate-400">#ORD-9982 • Meja 04</span>
                       </div>
-                      <div className="text-right">
-                        <span className="font-mono font-bold text-[#0F172A]">Rp 74.000</span>
-                        <span className="block text-[9px] font-bold text-emerald-600">QRIS LUNAS</span>
+                      <div className="text-right shrink-0">
+                        <span className="font-mono font-bold text-[#0F172A] whitespace-nowrap">Rp 74.000</span>
+                        <span className="block text-[9px] font-bold text-emerald-600 whitespace-nowrap shrink-0">QRIS LUNAS</span>
                       </div>
                     </div>
                     <div className="p-2 rounded-lg bg-white border border-slate-200 flex items-center justify-between text-[11px] shadow-2xs">
@@ -210,9 +210,9 @@ export const HeroPromo: React.FC<HeroPromoProps> = ({ onNavigate }) => {
                         <span className="font-bold text-[#0F172A]">1x V60 Gayo + Croissant</span>
                         <span className="block text-[9px] text-slate-400">#ORD-9981 • Takeaway</span>
                       </div>
-                      <div className="text-right">
-                        <span className="font-mono font-bold text-[#0F172A]">Rp 52.000</span>
-                        <span className="block text-[9px] font-bold text-emerald-600">TUNAI LUNAS</span>
+                      <div className="text-right shrink-0">
+                        <span className="font-mono font-bold text-[#0F172A] whitespace-nowrap">Rp 52.000</span>
+                        <span className="block text-[9px] font-bold text-emerald-600 whitespace-nowrap shrink-0">TUNAI LUNAS</span>
                       </div>
                     </div>
                   </div>
@@ -229,8 +229,8 @@ export const HeroPromo: React.FC<HeroPromoProps> = ({ onNavigate }) => {
                 {/* Smartphone Screen Content */}
                 <div className="rounded-[20px] bg-white p-3 text-slate-900 text-xs overflow-hidden">
                   <div className="flex items-center justify-between pb-1.5 border-b border-slate-100 mb-2">
-                    <span className="text-[9px] font-bold text-[#2563EB]">APK HADIRSMART</span>
-                    <span className="text-[9px] font-mono text-slate-500">07:42 WIB</span>
+                    <span className="text-[9px] font-bold text-[#2563EB] whitespace-nowrap shrink-0">APK HADIRSMART</span>
+                    <span className="text-[9px] font-mono text-slate-500 whitespace-nowrap shrink-0">07:42 WIB</span>
                   </div>
 
                   {/* Selfie & Location Verification */}
@@ -238,33 +238,33 @@ export const HeroPromo: React.FC<HeroPromoProps> = ({ onNavigate }) => {
                     <div className="w-10 h-10 rounded-full bg-gradient-to-tr from-blue-600 to-emerald-500 mx-auto mb-1 flex items-center justify-center text-white font-bold text-xs ring-2 ring-emerald-400">
                       AF
                     </div>
-                    <div className="text-[11px] font-bold text-[#0F172A]">Ahmad Fauzi</div>
-                    <div className="text-[9px] text-slate-500">Staf Kurir & Lapangan</div>
+                    <div className="text-[11px] font-bold text-[#0F172A] whitespace-nowrap">Ahmad Fauzi</div>
+                    <div className="text-[9px] text-slate-500 whitespace-nowrap">Staf Kurir & Lapangan</div>
                   </div>
 
                   {/* Geofencing Card */}
                   <div className="p-2 rounded-xl bg-emerald-50 border border-emerald-200 mb-2.5">
-                    <div className="flex items-center gap-1 text-[10px] font-bold text-emerald-800">
+                    <div className="flex items-center gap-1 text-[10px] font-bold text-emerald-800 whitespace-nowrap shrink-0">
                       <MapPin className="w-3 h-3 text-emerald-600 shrink-0" />
-                      <span>Radius Kantor: 12 Meter</span>
+                      <span className="whitespace-nowrap">Radius Kantor: 12 Meter</span>
                     </div>
-                    <div className="text-[9px] text-emerald-700 mt-0.5 font-medium">
+                    <div className="text-[9px] text-emerald-700 mt-0.5 font-medium whitespace-nowrap">
                       GPS Valid • Anti Mock Location
                     </div>
                   </div>
 
                   {/* Check-In Success Badge */}
-                  <div className="w-full py-1.5 bg-[#10B981] text-white rounded-lg text-center font-bold text-[10px] flex items-center justify-center gap-1 shadow-sm">
-                    <CheckCircle2 className="w-3 h-3" />
-                    <span>Hadir Tepat Waktu</span>
+                  <div className="w-full py-1.5 bg-[#10B981] text-white rounded-lg text-center font-bold text-[10px] flex items-center justify-center gap-1 shadow-sm whitespace-nowrap shrink-0">
+                    <CheckCircle2 className="w-3 h-3 shrink-0" />
+                    <span className="whitespace-nowrap">Hadir Tepat Waktu</span>
                   </div>
                 </div>
               </div>
 
               {/* Floating Badge Tag: APK Siap Pakai */}
-              <div className="absolute -top-3 -left-3 bg-[#0F172A] text-white px-3 py-1.5 rounded-lg shadow-lg border border-slate-700 text-[10px] font-mono font-bold flex items-center gap-1.5">
-                <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-                <span>APK RELEASE READY • ANDROID 8 - 15</span>
+              <div className="absolute -top-3 -left-3 bg-[#0F172A] text-white px-3 py-1.5 rounded-lg shadow-lg border border-slate-700 text-[10px] font-mono font-bold flex items-center gap-1.5 whitespace-nowrap shrink-0">
+                <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse shrink-0" />
+                <span className="whitespace-nowrap">APK RELEASE READY • ANDROID 8 - 15</span>
               </div>
             </div>
           </div>
@@ -278,8 +278,8 @@ export const HeroPromo: React.FC<HeroPromoProps> = ({ onNavigate }) => {
               <Laptop className="w-5 h-5" />
             </div>
             <div>
-              <div className="text-xl sm:text-2xl font-extrabold text-[#0F172A] leading-tight">100+</div>
-              <div className="text-xs text-[#475569] font-medium mt-0.5">Proyek Web & APK Selesai</div>
+              <div className="text-xl sm:text-2xl font-extrabold text-[#0F172A] leading-tight whitespace-nowrap shrink-0">100+</div>
+              <div className="text-xs text-[#475569] font-medium mt-0.5 whitespace-nowrap">Proyek Web & APK Selesai</div>
             </div>
           </div>
 
@@ -288,8 +288,8 @@ export const HeroPromo: React.FC<HeroPromoProps> = ({ onNavigate }) => {
               <ShieldCheck className="w-5 h-5" />
             </div>
             <div>
-              <div className="text-xl sm:text-2xl font-extrabold text-[#0F172A] leading-tight">1 Tahun</div>
-              <div className="text-xs text-[#475569] font-medium mt-0.5">Garansi Resmi Bebas Bug</div>
+              <div className="text-xl sm:text-2xl font-extrabold text-[#0F172A] leading-tight whitespace-nowrap shrink-0">1 Tahun</div>
+              <div className="text-xs text-[#475569] font-medium mt-0.5 whitespace-nowrap">Garansi Resmi Bebas Bug</div>
             </div>
           </div>
 
@@ -298,8 +298,8 @@ export const HeroPromo: React.FC<HeroPromoProps> = ({ onNavigate }) => {
               <Code2 className="w-5 h-5" />
             </div>
             <div>
-              <div className="text-xl sm:text-2xl font-extrabold text-[#0F172A] leading-tight">100%</div>
-              <div className="text-xs text-[#475569] font-medium mt-0.5">Hak Milik Source Code</div>
+              <div className="text-xl sm:text-2xl font-extrabold text-[#0F172A] leading-tight whitespace-nowrap shrink-0">100%</div>
+              <div className="text-xs text-[#475569] font-medium mt-0.5 whitespace-nowrap">Hak Milik Source Code</div>
             </div>
           </div>
 
@@ -308,8 +308,8 @@ export const HeroPromo: React.FC<HeroPromoProps> = ({ onNavigate }) => {
               <Users className="w-5 h-5" />
             </div>
             <div>
-              <div className="text-xl sm:text-2xl font-extrabold text-[#0F172A] leading-tight">99.8%</div>
-              <div className="text-xs text-[#475569] font-medium mt-0.5">Tingkat Kepuasan Klien</div>
+              <div className="text-xl sm:text-2xl font-extrabold text-[#0F172A] leading-tight whitespace-nowrap shrink-0">99.8%</div>
+              <div className="text-xs text-[#475569] font-medium mt-0.5 whitespace-nowrap">Tingkat Kepuasan Klien</div>
             </div>
           </div>
         </div>

@@ -24,8 +24,8 @@ export const ServicesSection: React.FC = () => {
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16 sm:mb-20">
-          <div className="inline-flex items-center gap-2 px-3 py-1 bg-blue-50 border border-blue-200 text-[#2563EB] rounded-full text-xs font-bold uppercase tracking-wider mb-3">
-            <span>LAYANAN SPESIALIS KUSTOM</span>
+          <div className="inline-flex items-center gap-2 px-3 py-1 bg-blue-50 border border-blue-200 text-[#2563EB] rounded-full text-xs font-bold uppercase tracking-wider mb-3 whitespace-nowrap shrink-0">
+            <span className="whitespace-nowrap">LAYANAN SPESIALIS KUSTOM</span>
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#0F172A] tracking-tight font-sans">
             Solusi Rekayasa Software Nyata untuk Operasional Bisnis Anda
@@ -53,7 +53,7 @@ export const ServicesSection: React.FC = () => {
                 <span className="text-[11px] font-mono text-slate-500 font-semibold truncate">
                   pos.didev.studio/cabang-surabaya
                 </span>
-                <span className="text-[10px] px-2 py-0.5 rounded bg-emerald-100 text-emerald-800 font-bold">
+                <span className="text-[10px] px-2 py-0.5 rounded bg-emerald-100 text-emerald-800 font-bold whitespace-nowrap shrink-0">
                   SINKRON 100%
                 </span>
               </div>
@@ -63,42 +63,42 @@ export const ServicesSection: React.FC = () => {
                 {/* Real-time Sales Metrics */}
                 <div className="grid grid-cols-2 gap-3">
                   <div className="p-3 rounded-xl bg-white border border-slate-200">
-                    <span className="text-[10px] text-slate-500 font-medium">Laba Bersih Hari Ini</span>
-                    <div className="text-lg sm:text-xl font-extrabold text-[#0F172A] font-mono mt-0.5">
+                    <span className="text-[10px] text-slate-500 font-medium whitespace-nowrap">Laba Bersih Hari Ini</span>
+                    <div className="text-lg sm:text-xl font-extrabold text-[#0F172A] font-mono mt-0.5 whitespace-nowrap">
                       Rp 4.850.000
                     </div>
-                    <span className="text-[10px] text-emerald-600 font-bold">Margin Laba 38%</span>
+                    <span className="text-[10px] text-emerald-600 font-bold whitespace-nowrap shrink-0">Margin Laba 38%</span>
                   </div>
                   <div className="p-3 rounded-xl bg-white border border-slate-200">
-                    <span className="text-[10px] text-slate-500 font-medium">Struk Tercetak</span>
-                    <div className="text-lg sm:text-xl font-extrabold text-[#0F172A] font-mono mt-0.5">
+                    <span className="text-[10px] text-slate-500 font-medium whitespace-nowrap">Struk Tercetak</span>
+                    <div className="text-lg sm:text-xl font-extrabold text-[#0F172A] font-mono mt-0.5 whitespace-nowrap">
                       184 Nota
                     </div>
-                    <span className="text-[10px] text-[#2563EB] font-bold">Printer Thermal 58mm</span>
+                    <span className="text-[10px] text-[#2563EB] font-bold whitespace-nowrap shrink-0">Printer Thermal 58mm</span>
                   </div>
                 </div>
 
                 {/* Stock Table with Alert */}
                 <div className="rounded-xl bg-white border border-slate-200 p-3">
                   <div className="flex items-center justify-between pb-2 mb-2 border-b border-slate-100 text-[11px] font-bold text-slate-700">
-                    <span>Manajemen Stok Bahan Baku</span>
-                    <span className="text-[10px] text-slate-400">Update Tiap Transaksi</span>
+                    <span className="whitespace-nowrap">Manajemen Stok Bahan Baku</span>
+                    <span className="text-[10px] text-slate-400 whitespace-nowrap shrink-0">Update Tiap Transaksi</span>
                   </div>
                   <div className="space-y-2 text-xs">
                     <div className="flex items-center justify-between text-slate-700">
                       <span>Biji Kopi House Blend (1kg)</span>
-                      <span className="font-mono font-semibold text-slate-900">28 Pcs (Aman)</span>
+                      <span className="font-mono font-semibold text-slate-900 whitespace-nowrap shrink-0">28 Pcs (Aman)</span>
                     </div>
                     <div className="flex items-center justify-between p-1.5 rounded-lg bg-amber-50 text-amber-900 border border-amber-200">
                       <span className="flex items-center gap-1 font-semibold text-[11px]">
                         <AlertTriangle className="w-3.5 h-3.5 text-amber-600 shrink-0" />
                         Susu UHT Full Cream (1L)
                       </span>
-                      <span className="font-mono font-bold text-amber-700 text-[11px]">Sisa 3 Dus (Peringatan)</span>
+                      <span className="font-mono font-bold text-amber-700 text-[11px] whitespace-nowrap shrink-0">Sisa 3 Dus (Peringatan)</span>
                     </div>
                     <div className="flex items-center justify-between text-slate-700">
                       <span>Sirup Caramel Signature</span>
-                      <span className="font-mono font-semibold text-slate-900">14 Botol</span>
+                      <span className="font-mono font-semibold text-slate-900 whitespace-nowrap shrink-0">14 Botol</span>
                     </div>
                   </div>
                 </div>
@@ -106,14 +106,14 @@ export const ServicesSection: React.FC = () => {
                 {/* Live Checkout Simulation */}
                 <div className="p-3 rounded-xl bg-blue-50/70 border border-blue-200 flex items-center justify-between text-xs">
                   <div>
-                    <span className="text-[10px] text-blue-700 font-bold block uppercase">Cetak Nota Otomatis:</span>
+                    <span className="text-[10px] text-blue-700 font-bold block uppercase whitespace-nowrap">Cetak Nota Otomatis:</span>
                     <span className="font-bold text-[#0F172A]">Kasir Meja 03 • 2x Iced Latte</span>
                   </div>
-                  <div className="flex items-center gap-2">
-                    <span className="px-2 py-1 rounded bg-[#10B981] text-white font-bold text-[10px]">
+                  <div className="flex items-center gap-2 shrink-0">
+                    <span className="px-2 py-1 rounded bg-[#10B981] text-white font-bold text-[10px] whitespace-nowrap shrink-0">
                       QRIS LUNAS
                     </span>
-                    <Printer className="w-4 h-4 text-[#2563EB]" />
+                    <Printer className="w-4 h-4 text-[#2563EB] shrink-0" />
                   </div>
                 </div>
               </div>
@@ -122,7 +122,7 @@ export const ServicesSection: React.FC = () => {
 
           {/* Penjelasan Solusi */}
           <div className="lg:col-span-6 order-1 lg:order-2">
-            <span className="text-xs font-bold text-[#2563EB] uppercase tracking-wider block mb-2">
+            <span className="text-xs font-bold text-[#2563EB] uppercase tracking-wider block mb-2 whitespace-nowrap shrink-0">
               01 • SISTEM KASIR & MANAJEMEN RETAIL
             </span>
             <h3 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#0F172A] leading-tight font-sans">
@@ -150,12 +150,12 @@ export const ServicesSection: React.FC = () => {
             <div className="mt-8 flex items-center gap-4">
               <button
                 onClick={() => openWhatsApp('Sistem Kasir POS & Web Dashboard Toko')}
-                className="inline-flex items-center gap-2 px-5 py-3 bg-[#2563EB] hover:bg-[#1D4ED8] text-white rounded-xl font-sans font-bold text-xs sm:text-sm shadow-md transition-colors cursor-pointer"
+                className="inline-flex items-center gap-2 px-5 py-3 bg-[#2563EB] hover:bg-[#1D4ED8] text-white rounded-xl font-sans font-bold text-xs sm:text-sm shadow-md transition-colors cursor-pointer whitespace-nowrap shrink-0"
               >
-                <span>Konsultasi Sistem Kasir Toko</span>
-                <ArrowRight className="w-4 h-4" />
+                <span className="whitespace-nowrap">Konsultasi Sistem Kasir Toko</span>
+                <ArrowRight className="w-4 h-4 shrink-0" />
               </button>
-              <span className="text-xs text-slate-500 font-medium">Mulai Rp 1.500.000</span>
+              <span className="text-xs text-slate-500 font-medium whitespace-nowrap shrink-0">Mulai Rp 1.500.000</span>
             </div>
           </div>
         </div>
@@ -167,7 +167,7 @@ export const ServicesSection: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center mb-20 sm:mb-28">
           {/* Penjelasan Solusi */}
           <div className="lg:col-span-6">
-            <span className="text-xs font-bold text-[#10B981] uppercase tracking-wider block mb-2">
+            <span className="text-xs font-bold text-[#10B981] uppercase tracking-wider block mb-2 whitespace-nowrap shrink-0">
               02 • APLIKASI ANDROID (APK RELEASE)
             </span>
             <h3 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#0F172A] leading-tight font-sans">
@@ -195,12 +195,12 @@ export const ServicesSection: React.FC = () => {
             <div className="mt-8 flex items-center gap-4">
               <button
                 onClick={() => openWhatsApp('Aplikasi Android Lapangan (Absensi / Kurir / Sales)')}
-                className="inline-flex items-center gap-2 px-5 py-3 bg-[#10B981] hover:bg-[#059669] text-white rounded-xl font-sans font-bold text-xs sm:text-sm shadow-md transition-colors cursor-pointer"
+                className="inline-flex items-center gap-2 px-5 py-3 bg-[#10B981] hover:bg-[#059669] text-white rounded-xl font-sans font-bold text-xs sm:text-sm shadow-md transition-colors cursor-pointer whitespace-nowrap shrink-0"
               >
-                <span>Konsultasi Aplikasi Android</span>
-                <ArrowRight className="w-4 h-4" />
+                <span className="whitespace-nowrap">Konsultasi Aplikasi Android</span>
+                <ArrowRight className="w-4 h-4 shrink-0" />
               </button>
-              <span className="text-xs text-slate-500 font-medium">Mulai Rp 2.500.000</span>
+              <span className="text-xs text-slate-500 font-medium whitespace-nowrap shrink-0">Mulai Rp 2.500.000</span>
             </div>
           </div>
 
@@ -216,10 +216,10 @@ export const ServicesSection: React.FC = () => {
               <div className="rounded-[24px] bg-white p-4 text-slate-900">
                 <div className="flex items-center justify-between pb-2 border-b border-slate-100 mb-3">
                   <div>
-                    <span className="text-[10px] text-slate-500">Tugas Pengantaran Hari Ini</span>
-                    <div className="text-xs font-bold text-[#0F172A]">Resi #EXP-99201</div>
+                    <span className="text-[10px] text-slate-500 whitespace-nowrap">Tugas Pengantaran Hari Ini</span>
+                    <div className="text-xs font-bold text-[#0F172A] whitespace-nowrap">Resi #EXP-99201</div>
                   </div>
-                  <span className="px-2 py-0.5 rounded bg-emerald-100 text-emerald-800 text-[10px] font-bold">
+                  <span className="px-2 py-0.5 rounded bg-emerald-100 text-emerald-800 text-[10px] font-bold whitespace-nowrap shrink-0">
                     DALAM PERJALANAN
                   </span>
                 </div>
@@ -231,8 +231,8 @@ export const ServicesSection: React.FC = () => {
                     <span>Tujuan: Jl. Basuki Rahmat No. 42</span>
                   </div>
                   <div className="p-2 rounded-lg bg-emerald-50 border border-emerald-200 text-[10px] text-emerald-800 font-medium flex items-center justify-between">
-                    <span>Radius dari Lokasi: <strong>8 Meter</strong></span>
-                    <span className="font-bold text-emerald-600">✓ VALID</span>
+                    <span className="whitespace-nowrap">Radius dari Lokasi: <strong>8 Meter</strong></span>
+                    <span className="font-bold text-emerald-600 whitespace-nowrap shrink-0">✓ VALID</span>
                   </div>
                 </div>
 
@@ -241,20 +241,20 @@ export const ServicesSection: React.FC = () => {
                   <div className="w-12 h-12 rounded-full bg-blue-600 text-white mx-auto mb-1 flex items-center justify-center shadow-sm">
                     <Camera className="w-6 h-6" />
                   </div>
-                  <span className="text-[11px] font-bold text-blue-900 block">Swafoto Penerima + Tanda Tangan</span>
+                  <span className="text-[11px] font-bold text-blue-900 block whitespace-nowrap">Swafoto Penerima + Tanda Tangan</span>
                   <span className="text-[9px] text-blue-700">Tersimpan otomatis dengan timestamp & koordinat GPS</span>
                 </div>
 
                 {/* Offline Cache & Submit Button */}
                 <div className="text-[10px] text-slate-500 flex items-center justify-between mb-2">
-                  <span className="flex items-center gap-1">
-                    <Database className="w-3 h-3 text-[#2563EB]" />
+                  <span className="flex items-center gap-1 whitespace-nowrap shrink-0">
+                    <Database className="w-3 h-3 text-[#2563EB] shrink-0" />
                     Cache Offline SQLite
                   </span>
-                  <span className="text-emerald-600 font-bold">Siap Sinkron</span>
+                  <span className="text-emerald-600 font-bold whitespace-nowrap shrink-0">Siap Sinkron</span>
                 </div>
 
-                <div className="w-full py-2.5 bg-[#10B981] text-white rounded-xl text-center font-bold text-xs shadow-sm">
+                <div className="w-full py-2.5 bg-[#10B981] text-white rounded-xl text-center font-bold text-xs shadow-sm whitespace-nowrap shrink-0">
                   ✓ Selesaikan Pengiriman & Cetak Struk
                 </div>
               </div>
@@ -279,7 +279,7 @@ export const ServicesSection: React.FC = () => {
                 <span className="text-[11px] font-mono text-slate-500 font-semibold truncate">
                   portal.perusahaan.co.id
                 </span>
-                <span className="text-[10px] px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold">
+                <span className="text-[10px] px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold whitespace-nowrap shrink-0">
                   SEO SCORE 98
                 </span>
               </div>
@@ -288,25 +288,25 @@ export const ServicesSection: React.FC = () => {
                 {/* Performance Speed Badge */}
                 <div className="p-3 rounded-xl bg-white border border-slate-200 flex items-center justify-between">
                   <div className="flex items-center gap-2">
-                    <div className="w-8 h-8 rounded-lg bg-emerald-100 text-emerald-700 flex items-center justify-center font-extrabold text-xs">
+                    <div className="w-8 h-8 rounded-lg bg-emerald-100 text-emerald-700 flex items-center justify-center font-extrabold text-xs shrink-0">
                       98
                     </div>
                     <div>
-                      <span className="text-xs font-bold text-[#0F172A] block">Google PageSpeed Score</span>
-                      <span className="text-[10px] text-slate-500">Loading kencang di bawah 0.5 detik</span>
+                      <span className="text-xs font-bold text-[#0F172A] block whitespace-nowrap">Google PageSpeed Score</span>
+                      <span className="text-[10px] text-slate-500 whitespace-nowrap">Loading kencang di bawah 0.5 detik</span>
                     </div>
                   </div>
-                  <span className="text-xs font-bold text-emerald-600">SANGAT CEPAT</span>
+                  <span className="text-xs font-bold text-emerald-600 whitespace-nowrap shrink-0">SANGAT CEPAT</span>
                 </div>
 
                 {/* WhatsApp Bot Gateway Simulation */}
                 <div className="p-3 rounded-xl bg-emerald-50 border border-emerald-200 space-y-1.5">
                   <div className="flex items-center justify-between text-[11px] font-bold text-emerald-900">
-                    <span className="flex items-center gap-1">
-                      <MessageSquare className="w-3.5 h-3.5 text-emerald-600" />
+                    <span className="flex items-center gap-1 whitespace-nowrap shrink-0">
+                      <MessageSquare className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
                       WhatsApp Gateway Bot Otomatis
                     </span>
-                    <span className="text-[9px] bg-emerald-200 text-emerald-900 px-1.5 py-0.2 rounded font-mono">TERKIRIM</span>
+                    <span className="text-[9px] bg-emerald-200 text-emerald-900 px-1.5 py-0.2 rounded font-mono whitespace-nowrap shrink-0">TERKIRIM</span>
                   </div>
                   <p className="text-[11px] text-emerald-800 bg-white p-2 rounded-lg border border-emerald-100 leading-relaxed font-sans">
                     "Halo Bapak Dian, pesanan Anda #INV-8890 telah diverifikasi lunas via QRIS. Resi pengiriman dapat dilacak pada tautan berikut: didev.to/track/8890."
@@ -316,10 +316,10 @@ export const ServicesSection: React.FC = () => {
                 {/* Multi-Level Role Access */}
                 <div className="p-3 rounded-xl bg-white border border-slate-200 flex items-center justify-between text-xs">
                   <div>
-                    <span className="text-[10px] text-slate-500 font-medium">Keamanan & Hak Akses Berjenjang</span>
-                    <div className="font-bold text-[#0F172A] mt-0.5">Role: Direksi, Finance, HRD & Staf</div>
+                    <span className="text-[10px] text-slate-500 font-medium whitespace-nowrap">Keamanan & Hak Akses Berjenjang</span>
+                    <div className="font-bold text-[#0F172A] mt-0.5 whitespace-nowrap">Role: Direksi, Finance, HRD & Staf</div>
                   </div>
-                  <span className="text-xs font-bold text-[#2563EB] bg-blue-50 px-2 py-1 rounded">
+                  <span className="text-xs font-bold text-[#2563EB] bg-blue-50 px-2 py-1 rounded whitespace-nowrap shrink-0">
                     ENKRIPSI SSL
                   </span>
                 </div>
@@ -329,7 +329,7 @@ export const ServicesSection: React.FC = () => {
 
           {/* Penjelasan Solusi */}
           <div className="lg:col-span-6 order-1 lg:order-2">
-            <span className="text-xs font-bold text-[#4F46E5] uppercase tracking-wider block mb-2">
+            <span className="text-xs font-bold text-[#4F46E5] uppercase tracking-wider block mb-2 whitespace-nowrap shrink-0">
               03 • PORTAL PERUSAHAAN & ERP TERPADU
             </span>
             <h3 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#0F172A] leading-tight font-sans">
@@ -357,12 +357,12 @@ export const ServicesSection: React.FC = () => {
             <div className="mt-8 flex items-center gap-4">
               <button
                 onClick={() => openWhatsApp('Portal ERP / Company Profile / Web E-Commerce')}
-                className="inline-flex items-center gap-2 px-5 py-3 bg-[#4F46E5] hover:bg-[#4338CA] text-white rounded-xl font-sans font-bold text-xs sm:text-sm shadow-md transition-colors cursor-pointer"
+                className="inline-flex items-center gap-2 px-5 py-3 bg-[#4F46E5] hover:bg-[#4338CA] text-white rounded-xl font-sans font-bold text-xs sm:text-sm shadow-md transition-colors cursor-pointer whitespace-nowrap shrink-0"
               >
-                <span>Konsultasi Portal Perusahaan</span>
-                <ArrowRight className="w-4 h-4" />
+                <span className="whitespace-nowrap">Konsultasi Portal Perusahaan</span>
+                <ArrowRight className="w-4 h-4 shrink-0" />
               </button>
-              <span className="text-xs text-slate-500 font-medium">Mulai Rp 3.000.000</span>
+              <span className="text-xs text-slate-500 font-medium whitespace-nowrap shrink-0">Mulai Rp 3.000.000</span>
             </div>
           </div>
         </div>

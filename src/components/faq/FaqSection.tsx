@@ -58,8 +58,8 @@ export const FaqSection: React.FC = () => {
           
           {/* Sisi Kiri: Headline Ramah + Kotak Bantuan Langsung */}
           <div className="lg:w-[38%] flex flex-col justify-start">
-            <div className="inline-block text-xs font-bold text-[#2563EB] uppercase tracking-wider mb-2">
-              TANYA JAWAB UMUM (FAQ)
+            <div className="inline-block text-xs font-bold text-[#2563EB] uppercase tracking-wider mb-2 whitespace-nowrap shrink-0">
+              <span className="whitespace-nowrap">TANYA JAWAB UMUM (FAQ)</span>
             </div>
             <h2 className="text-3xl sm:text-4xl font-extrabold text-[#0F172A] tracking-tight font-sans leading-tight">
               Ada Pertanyaan Sebelum Memulai?
@@ -71,14 +71,14 @@ export const FaqSection: React.FC = () => {
             {/* Kotak Bantuan Langsung WhatsApp */}
             <div className="mt-8 p-6 rounded-2xl bg-white border-2 border-slate-200 shadow-sm">
               <div className="flex items-center gap-3 mb-3">
-                <div className="w-10 h-10 rounded-xl bg-emerald-50 text-[#10B981] flex items-center justify-center">
+                <div className="w-10 h-10 rounded-xl bg-emerald-50 text-[#10B981] flex items-center justify-center shrink-0">
                   <MessageSquare className="w-5 h-5 fill-current" />
                 </div>
                 <div>
-                  <h4 className="text-sm font-bold text-[#0F172A]">
+                  <h4 className="text-sm font-bold text-[#0F172A] whitespace-nowrap">
                     Butuh Diskusi Teknis Khusus?
                   </h4>
-                  <span className="text-[11px] text-slate-500 font-medium">Engineer kami siap menjawab via WA</span>
+                  <span className="text-[11px] text-slate-500 font-medium whitespace-nowrap">Engineer kami siap menjawab via WA</span>
                 </div>
               </div>
               <p className="text-xs text-[#475569] mb-4 leading-relaxed">
@@ -86,11 +86,11 @@ export const FaqSection: React.FC = () => {
               </p>
               <button
                 onClick={openWhatsAppFaq}
-                className="w-full py-3 px-4 bg-[#10B981] hover:bg-[#059669] text-white rounded-xl font-bold text-xs sm:text-sm flex items-center justify-center gap-2 shadow-md transition-all active:scale-98 cursor-pointer"
+                className="w-full py-3 px-4 bg-[#10B981] hover:bg-[#059669] text-white rounded-xl font-bold text-xs sm:text-sm flex items-center justify-center gap-2 shadow-md transition-all active:scale-98 cursor-pointer whitespace-nowrap shrink-0"
               >
-                <MessageSquare className="w-4 h-4 fill-current" />
-                <span>Tanya Engineer via WhatsApp</span>
-                <ArrowRight className="w-4 h-4" />
+                <MessageSquare className="w-4 h-4 fill-current shrink-0" />
+                <span className="whitespace-nowrap">Tanya Engineer via WhatsApp</span>
+                <ArrowRight className="w-4 h-4 shrink-0" />
               </button>
             </div>
           </div>

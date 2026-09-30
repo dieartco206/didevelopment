@@ -64,14 +64,14 @@ export const Navbar: React.FC<NavbarProps> = ({ onNavigate, activeSection }) => 
             </div>
             <div>
               <div className="flex items-center gap-1.5">
-                <span className="font-sans font-extrabold text-lg sm:text-xl text-[#0F172A] tracking-tight">
+                <span className="font-sans font-extrabold text-lg sm:text-xl text-[#0F172A] tracking-tight whitespace-nowrap">
                   DiDev<span className="text-[#2563EB]">.Studio</span>
                 </span>
-                <span className="hidden sm:inline-block px-1.5 py-0.2 bg-emerald-50 border border-emerald-200 text-emerald-700 text-[9px] font-bold rounded">
+                <span className="hidden sm:inline-block px-1.5 py-0.2 bg-emerald-50 border border-emerald-200 text-emerald-700 text-[9px] font-bold rounded whitespace-nowrap shrink-0">
                   OFFICIAL
                 </span>
               </div>
-              <div className="text-[10px] font-medium text-slate-500 tracking-wide uppercase">
+              <div className="text-[10px] font-medium text-slate-500 tracking-wide uppercase whitespace-nowrap">
                 Web & Android App Studio
               </div>
             </div>
@@ -85,46 +85,46 @@ export const Navbar: React.FC<NavbarProps> = ({ onNavigate, activeSection }) => 
                 <button
                   key={item.id}
                   onClick={() => handleNavClick(item.id)}
-                  className={`px-3.5 py-2 rounded-lg text-sm font-semibold transition-colors cursor-pointer ${
+                  className={`px-3.5 py-2 rounded-lg text-sm font-semibold transition-colors cursor-pointer whitespace-nowrap shrink-0 ${
                     isActive
                       ? 'text-[#2563EB] bg-blue-50/80 font-bold'
                       : 'text-[#475569] hover:text-[#2563EB] hover:bg-slate-50'
                   }`}
                 >
-                  <span>{item.label}</span>
+                  <span className="whitespace-nowrap">{item.label}</span>
                 </button>
               );
             })}
           </nav>
 
           {/* Right Action Bar */}
-          <div className="flex items-center gap-2.5">
+          <div className="flex items-center gap-2.5 shrink-0">
             {/* Audio Toggle */}
             <button
               onClick={toggleSound}
               title={isMuted ? 'Aktifkan Suara' : 'Matikan Suara'}
-              className="p-2.5 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-500 hover:text-[#2563EB] transition-colors cursor-pointer"
+              className="p-2.5 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-500 hover:text-[#2563EB] transition-colors cursor-pointer shrink-0"
               aria-label="Toggle audio effects"
             >
-              {isMuted ? <VolumeX className="w-4 h-4 text-slate-400" /> : <Volume2 className="w-4 h-4 text-[#2563EB]" />}
+              {isMuted ? <VolumeX className="w-4 h-4 text-slate-400 shrink-0" /> : <Volume2 className="w-4 h-4 text-[#2563EB] shrink-0" />}
             </button>
 
             {/* Direct Emerald Green WhatsApp Button */}
             <button
               onClick={openWhatsApp}
-              className="hidden sm:inline-flex items-center gap-2 px-4 py-2.5 bg-[#10B981] hover:bg-[#059669] active:scale-98 text-white font-sans font-bold text-xs sm:text-sm rounded-xl transition-all shadow-md shadow-emerald-500/20 cursor-pointer"
+              className="hidden sm:inline-flex items-center gap-2 px-4 py-2.5 bg-[#10B981] hover:bg-[#059669] active:scale-98 text-white font-sans font-bold text-xs sm:text-sm rounded-xl transition-all shadow-md shadow-emerald-500/20 cursor-pointer whitespace-nowrap shrink-0"
             >
-              <MessageSquare className="w-4 h-4 fill-current" />
-              <span>Chat WhatsApp</span>
+              <MessageSquare className="w-4 h-4 fill-current shrink-0" />
+              <span className="whitespace-nowrap">Chat WhatsApp</span>
             </button>
 
             {/* Mobile Menu Button */}
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="lg:hidden p-2.5 rounded-lg bg-slate-100 text-[#0F172A] hover:bg-slate-200 cursor-pointer"
+              className="lg:hidden p-2.5 rounded-lg bg-slate-100 text-[#0F172A] hover:bg-slate-200 cursor-pointer shrink-0"
               aria-label="Toggle menu"
             >
-              {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+              {mobileMenuOpen ? <X className="w-5 h-5 shrink-0" /> : <Menu className="w-5 h-5 shrink-0" />}
             </button>
           </div>
         </div>
@@ -144,7 +144,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onNavigate, activeSection }) => 
                       : 'text-[#475569] hover:bg-slate-50'
                   }`}
                 >
-                  <span>{item.label}</span>
+                  <span className="whitespace-nowrap">{item.label}</span>
                   <span className="text-slate-400">→</span>
                 </button>
               );
@@ -152,10 +152,10 @@ export const Navbar: React.FC<NavbarProps> = ({ onNavigate, activeSection }) => 
             <div className="pt-2 px-3">
               <button
                 onClick={openWhatsApp}
-                className="w-full py-3 bg-[#10B981] hover:bg-[#059669] text-white font-sans font-bold text-sm rounded-xl flex items-center justify-center gap-2 shadow-md shadow-emerald-500/20 active:scale-98 cursor-pointer"
+                className="w-full py-3 bg-[#10B981] hover:bg-[#059669] text-white font-sans font-bold text-sm rounded-xl flex items-center justify-center gap-2 shadow-md shadow-emerald-500/20 active:scale-98 cursor-pointer whitespace-nowrap shrink-0"
               >
-                <MessageSquare className="w-4 h-4 fill-current" />
-                <span>Konsultasi Gratis via WhatsApp</span>
+                <MessageSquare className="w-4 h-4 fill-current shrink-0" />
+                <span className="whitespace-nowrap">Konsultasi Gratis via WhatsApp</span>
               </button>
             </div>
           </div>
