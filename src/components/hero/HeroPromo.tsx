@@ -112,8 +112,15 @@ export const HeroPromo: React.FC<HeroPromoProps> = ({ onNavigate }) => {
               {/* Artistic Ambient Glow Behind Mockup */}
               <div className="absolute -inset-3 bg-gradient-to-tr from-blue-600/20 via-sky-400/20 to-emerald-400/15 rounded-3xl blur-2xl -z-10 opacity-75 pointer-events-none" />
               
+              {/* Floating Live Transaction Badge */}
+              <div className="hidden sm:flex absolute -top-4 -right-2 bg-white/95 backdrop-blur-md border border-slate-200 shadow-xl px-3.5 py-1.5 rounded-full items-center gap-2 text-[10px] font-bold text-slate-800 animate-float-badge z-20 whitespace-nowrap shrink-0">
+                <span className="w-2 h-2 rounded-full bg-emerald-500 animate-ping shrink-0" />
+                <span className="text-[#0F172A] font-extrabold font-mono">Pesanan Baru +Rp 74.000</span>
+                <span className="text-emerald-700 bg-emerald-50 border border-emerald-200 text-[9px] px-1.5 py-0.5 rounded font-bold">QRIS LUNAS</span>
+              </div>
+
               {/* LAYER 1: Web Browser Admin POS (Dekstop Mockup) */}
-              <div className="rounded-2xl bg-white border-2 border-slate-200 shadow-xl overflow-hidden transition-transform duration-300 hover:shadow-2xl">
+              <div className="rounded-2xl bg-white border-2 border-slate-200 shadow-xl overflow-hidden transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
                 {/* Browser Titlebar */}
                 <div className="bg-slate-100 border-b border-slate-200 px-3.5 py-2.5 flex items-center justify-between">
                   <div className="flex items-center gap-1.5">
@@ -230,7 +237,7 @@ export const HeroPromo: React.FC<HeroPromoProps> = ({ onNavigate }) => {
               </div>
 
               {/* LAYER 2: Overlapping Real Flagship Smartphone Android (Menumpuk Elegan di Depan Kanan Bawah) */}
-              <div className="hidden sm:block absolute -bottom-10 -right-6 w-[215px] sm:w-[220px] h-[440px] rounded-[40px] bg-slate-950 p-2 shadow-[0_25px_60px_-15px_rgba(15,23,42,0.55)] border-[2.5px] border-slate-700/90 ring-1 ring-slate-800 rotate-2 hover:rotate-0 transition-all duration-300">
+              <div className="hidden sm:block absolute -bottom-10 -right-6 w-[215px] sm:w-[220px] h-[440px] rounded-[40px] bg-slate-950 p-2 shadow-[0_25px_60px_-15px_rgba(15,23,42,0.55)] border-[2.5px] border-slate-700/90 ring-1 ring-slate-800 animate-float-phone hover:rotate-0 transition-transform duration-300">
                 {/* Physical Hardware Buttons */}
                 {/* Volume Buttons (Left) */}
                 <div className="absolute -left-[3.5px] top-20 w-[2.5px] h-7 bg-slate-600 rounded-l-xs" />
@@ -301,8 +308,11 @@ export const HeroPromo: React.FC<HeroPromoProps> = ({ onNavigate }) => {
                       </div>
                     </div>
 
-                    {/* Facial Recognition / Camera Verification */}
-                    <div className="p-2 rounded-xl bg-blue-50/70 border border-blue-200 flex items-center gap-2">
+                    {/* Facial Recognition / Camera Verification with Animated Laser Scan */}
+                    <div className="p-2 rounded-xl bg-blue-50/70 border border-blue-200 flex items-center gap-2 relative overflow-hidden">
+                      {/* Laser Scanning Beam */}
+                      <div className="absolute inset-x-0 h-[1.5px] bg-gradient-to-r from-transparent via-blue-500 to-transparent animate-laser-scan shadow-[0_0_8px_rgba(37,99,235,0.8)] pointer-events-none" />
+                      
                       <div className="w-7 h-7 rounded-lg bg-[#2563EB] text-white flex items-center justify-center shrink-0 shadow-2xs">
                         <Camera className="w-3.5 h-3.5" />
                       </div>
@@ -330,8 +340,8 @@ export const HeroPromo: React.FC<HeroPromoProps> = ({ onNavigate }) => {
                 </div>
               </div>
 
-              {/* Floating Badge Tag: APK Siap Pakai */}
-              <div className="absolute -top-3 -left-3 bg-[#0F172A] text-white px-3 py-1.5 rounded-lg shadow-lg border border-slate-700 text-[10px] font-mono font-bold flex items-center gap-1.5 whitespace-nowrap shrink-0">
+              {/* Floating Badge Tag: APK Siap Pakai with Gentle Bobbing */}
+              <div className="absolute -top-3 -left-3 bg-[#0F172A] text-white px-3 py-1.5 rounded-lg shadow-lg border border-slate-700 text-[10px] font-mono font-bold flex items-center gap-1.5 whitespace-nowrap shrink-0 animate-float-badge-slow">
                 <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse shrink-0" />
                 <span className="whitespace-nowrap">APK RELEASE READY • ANDROID 8 - 15</span>
               </div>
@@ -342,7 +352,7 @@ export const HeroPromo: React.FC<HeroPromoProps> = ({ onNavigate }) => {
 
         {/* Layanan Terukur & Berdampak (4 Poin Pencapaian) */}
         <div className="mt-12 sm:mt-16 pt-8 border-t border-slate-200 grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
-          <div className="p-4 sm:p-5 bg-[#F8FAFC] border border-slate-200 rounded-xl flex items-center gap-3.5 hover:border-[#2563EB] transition-colors">
+          <div className="p-4 sm:p-5 bg-[#F8FAFC] border border-slate-200 rounded-xl flex items-center gap-3.5 hover:border-[#2563EB] hover:-translate-y-1.5 hover:shadow-lg transition-all duration-300 cursor-default">
             <div className="w-11 h-11 rounded-xl bg-blue-50 text-[#2563EB] flex items-center justify-center shrink-0">
               <Laptop className="w-5 h-5" />
             </div>
@@ -352,7 +362,7 @@ export const HeroPromo: React.FC<HeroPromoProps> = ({ onNavigate }) => {
             </div>
           </div>
 
-          <div className="p-4 sm:p-5 bg-[#F8FAFC] border border-slate-200 rounded-xl flex items-center gap-3.5 hover:border-[#2563EB] transition-colors">
+          <div className="p-4 sm:p-5 bg-[#F8FAFC] border border-slate-200 rounded-xl flex items-center gap-3.5 hover:border-[#2563EB] hover:-translate-y-1.5 hover:shadow-lg transition-all duration-300 cursor-default">
             <div className="w-11 h-11 rounded-xl bg-emerald-50 text-[#10B981] flex items-center justify-center shrink-0">
               <ShieldCheck className="w-5 h-5" />
             </div>
@@ -362,7 +372,7 @@ export const HeroPromo: React.FC<HeroPromoProps> = ({ onNavigate }) => {
             </div>
           </div>
 
-          <div className="p-4 sm:p-5 bg-[#F8FAFC] border border-slate-200 rounded-xl flex items-center gap-3.5 hover:border-[#2563EB] transition-colors">
+          <div className="p-4 sm:p-5 bg-[#F8FAFC] border border-slate-200 rounded-xl flex items-center gap-3.5 hover:border-[#2563EB] hover:-translate-y-1.5 hover:shadow-lg transition-all duration-300 cursor-default">
             <div className="w-11 h-11 rounded-xl bg-indigo-50 text-[#4F46E5] flex items-center justify-center shrink-0">
               <Code2 className="w-5 h-5" />
             </div>
@@ -372,7 +382,7 @@ export const HeroPromo: React.FC<HeroPromoProps> = ({ onNavigate }) => {
             </div>
           </div>
 
-          <div className="p-4 sm:p-5 bg-[#F8FAFC] border border-slate-200 rounded-xl flex items-center gap-3.5 hover:border-[#2563EB] transition-colors">
+          <div className="p-4 sm:p-5 bg-[#F8FAFC] border border-slate-200 rounded-xl flex items-center gap-3.5 hover:border-[#2563EB] hover:-translate-y-1.5 hover:shadow-lg transition-all duration-300 cursor-default">
             <div className="w-11 h-11 rounded-xl bg-sky-50 text-[#0284C7] flex items-center justify-center shrink-0">
               <Users className="w-5 h-5" />
             </div>

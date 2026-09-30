@@ -98,7 +98,7 @@ export const WorkflowSection: React.FC = () => {
                   </div>
 
                   {/* Step Card */}
-                  <div className="w-full bg-[#F8FAFC] border border-slate-200 group-hover:border-[#2563EB] rounded-2xl p-5 shadow-2xs transition-all duration-200 flex flex-col justify-between h-[210px]">
+                  <div className="w-full bg-[#F8FAFC] border border-slate-200 group-hover:border-[#2563EB] group-hover:-translate-y-2 group-hover:shadow-xl rounded-2xl p-5 shadow-2xs transition-all duration-300 flex flex-col justify-between h-[210px]">
                     <div>
                       <div className="flex items-center justify-between mb-2">
                         <span className="text-xl font-extrabold font-mono text-[#2563EB] whitespace-nowrap shrink-0">

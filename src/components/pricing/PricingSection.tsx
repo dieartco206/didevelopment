@@ -182,16 +182,16 @@ export const PricingSection: React.FC = () => {
             return (
               <div
                 key={tier.id}
-                className={`rounded-2xl p-6 sm:p-7 flex flex-col justify-between transition-all duration-300 relative ${
+                className={`rounded-2xl p-6 sm:p-7 flex flex-col justify-between transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl relative ${
                   isFeatured
-                    ? 'bg-white border-2 border-[#2563EB] shadow-xl ring-2 ring-blue-500/10 lg:-translate-y-3 z-10'
-                    : 'bg-[#F8FAFC] border-2 border-slate-200 hover:border-slate-300 shadow-sm'
+                    ? 'bg-white border-2 border-[#2563EB] shadow-xl ring-2 ring-blue-500/10 lg:-translate-y-3 hover:lg:-translate-y-5 z-10'
+                    : 'bg-[#F8FAFC] border-2 border-slate-200 hover:border-blue-400 shadow-sm'
                 }`}
               >
                 {/* Popular Recommendation Header Ribbon */}
                 {isFeatured && (
-                  <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-[#2563EB] text-white text-[11px] font-bold px-4 py-1 rounded-full uppercase tracking-wider shadow-md flex items-center justify-center gap-1.5 whitespace-nowrap shrink-0">
-                    <Sparkles className="w-3.5 h-3.5 shrink-0" />
+                  <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-[#2563EB] text-white text-[11px] font-bold px-4 py-1 rounded-full uppercase tracking-wider shadow-md flex items-center justify-center gap-1.5 whitespace-nowrap shrink-0 shadow-blue-500/30">
+                    <Sparkles className="w-3.5 h-3.5 shrink-0 animate-spin" style={{ animationDuration: '8s' }} />
                     <span className="whitespace-nowrap">{tier.badge}</span>
                   </div>
                 )}

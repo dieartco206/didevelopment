@@ -138,7 +138,7 @@ export const PortfolioSection: React.FC = () => {
           {filtered.map((item) => (
             <div
               key={item.id}
-              className="group rounded-2xl bg-white border-2 border-slate-200 hover:border-[#2563EB] shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between overflow-hidden"
+              className="group rounded-2xl bg-white border-2 border-slate-200 hover:border-[#2563EB] shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 flex flex-col justify-between overflow-hidden"
             >
               {/* AREA PREVIEW UI NYATA (Bukan Teks Kosong!) */}
               <div className="bg-slate-100 p-4 border-b border-slate-200">

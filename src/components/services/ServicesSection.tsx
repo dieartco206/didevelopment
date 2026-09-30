@@ -49,7 +49,15 @@ export const ServicesSection: React.FC = () => {
           {/* Mockup Antarmuka Web Dashboard Kasir & Stok */}
           <div className="lg:col-span-6 order-2 lg:order-1 relative">
             <div className="absolute -inset-3 bg-gradient-to-tr from-blue-600/15 via-sky-400/15 to-transparent rounded-3xl blur-2xl -z-10 opacity-75 pointer-events-none" />
-            <div className="rounded-2xl bg-white border-2 border-slate-200 shadow-xl overflow-hidden">
+            
+            {/* Floating Bluetooth Thermal Printer Status */}
+            <div className="hidden sm:flex absolute -bottom-3.5 -right-3 bg-white/95 backdrop-blur-md border border-slate-200 shadow-xl px-3.5 py-1.5 rounded-full items-center gap-2 text-[10px] font-bold text-slate-800 animate-float-badge z-20 whitespace-nowrap shrink-0">
+              <span className="w-2 h-2 rounded-full bg-emerald-500 animate-ping shrink-0" />
+              <span className="font-extrabold text-[#0F172A]">Printer Termal 58mm</span>
+              <span className="text-emerald-700 bg-emerald-50 border border-emerald-200 text-[8.5px] px-1.5 py-0.5 rounded font-bold">TERKONEKSI</span>
+            </div>
+
+            <div className="rounded-2xl bg-white border-2 border-slate-200 shadow-xl overflow-hidden hover:-translate-y-1.5 hover:shadow-2xl transition-all duration-300">
               {/* Window Bar */}
               <div className="bg-slate-100 border-b border-slate-200 px-4 py-2.5 flex items-center justify-between">
                 <div className="flex items-center gap-1.5">
@@ -211,14 +219,20 @@ export const ServicesSection: React.FC = () => {
             </div>
           </div>
 
-          {/* Mockup Smartphone Android Flagship (Desain Realistis Flagship) */}
           {/* Mockup Smartphone Android Flagship (Desain Realistis Flagship 19.5:9) */}
           <div className="lg:col-span-6 flex justify-center relative">
-            {/* Ambient Aura Lighting */}
-            <div className="absolute -inset-4 bg-gradient-to-br from-emerald-500/20 via-teal-400/15 to-transparent rounded-full blur-2xl -z-10 opacity-75 pointer-events-none" />
+            {/* Ambient Aura Lighting with Breathing Animation */}
+            <div className="absolute -inset-4 bg-gradient-to-br from-emerald-500/20 via-teal-400/15 to-transparent rounded-full blur-2xl -z-10 opacity-75 pointer-events-none animate-aura-breathe" />
             
-            {/* Real Flagship Android Chassis (True 19.5:9 Tall Slender Proportions) */}
-            <div className="w-[285px] sm:w-[295px] h-[585px] sm:h-[605px] relative rounded-[44px] bg-slate-950 p-2 shadow-[0_25px_60px_-15px_rgba(15,23,42,0.45)] ring-1 ring-slate-800 border-[2.5px] border-slate-700/90 flex flex-col justify-between">
+            {/* Floating GPS Geofence Status Toast */}
+            <div className="hidden sm:flex absolute -top-4 -right-3 bg-white/95 backdrop-blur-md border border-slate-200 shadow-xl px-3.5 py-1.5 rounded-full items-center gap-2 text-[10px] font-bold text-slate-800 animate-float-badge z-20 whitespace-nowrap shrink-0">
+              <span className="w-2 h-2 rounded-full bg-emerald-500 animate-ping shrink-0" />
+              <span className="font-extrabold text-[#0F172A]">GPS Terkunci (Radius 8m)</span>
+              <span className="text-emerald-700 bg-emerald-50 border border-emerald-200 text-[8.5px] px-1.5 py-0.5 rounded font-bold">ANTI-MOCK</span>
+            </div>
+
+            {/* Real Flagship Android Chassis (True 19.5:9 Tall Slender Proportions with Floating Motion) */}
+            <div className="w-[285px] sm:w-[295px] h-[585px] sm:h-[605px] relative rounded-[44px] bg-slate-950 p-2 shadow-[0_25px_60px_-15px_rgba(15,23,42,0.45)] ring-1 ring-slate-800 border-[2.5px] border-slate-700/90 flex flex-col justify-between animate-float-slow">
               
               {/* Hardware Physical Buttons */}
               {/* Volume Buttons (Left) */}
@@ -316,64 +330,75 @@ export const ServicesSection: React.FC = () => {
                     </div>
                   </div>
 
-                  {/* Camera POD Simulation Card */}
-                  <div className="p-2.5 rounded-xl bg-white border border-slate-200/90 shadow-2xs space-y-1.5">
-                    <div className="text-[9px] font-bold text-slate-500 uppercase tracking-wide flex items-center justify-between pb-1 border-b border-slate-100">
-                      <span>BUKTI PENERIMAAN (POD)</span>
-                      <span className="text-emerald-600 font-bold text-[8.5px]">✓ 100% LENGKAP</span>
+                    {/* Camera POD Simulation Card with Animated Laser Scan */}
+                    <div className="p-2.5 rounded-xl bg-white border border-slate-200/90 shadow-2xs space-y-1.5">
+                      <div className="text-[9px] font-bold text-slate-500 uppercase tracking-wide flex items-center justify-between pb-1 border-b border-slate-100">
+                        <span>BUKTI PENERIMAAN (POD)</span>
+                        <span className="text-emerald-600 font-bold text-[8.5px]">✓ 100% LENGKAP</span>
+                      </div>
+
+                      <div className="p-2 rounded-lg bg-blue-50/80 border border-blue-200 flex items-center gap-2.5 relative overflow-hidden">
+                        {/* Laser Scanning Line */}
+                        <div className="absolute inset-x-0 h-[1.5px] bg-gradient-to-r from-transparent via-blue-500 to-transparent animate-laser-scan shadow-[0_0_8px_rgba(37,99,235,0.8)] pointer-events-none" />
+
+                        <div className="w-8 h-8 rounded-lg bg-[#2563EB] text-white flex items-center justify-center shrink-0 shadow-2xs">
+                          <Camera className="w-4 h-4" />
+                        </div>
+                        <div className="text-left flex-1 min-w-0">
+                          <div className="text-[10px] font-bold text-slate-900 leading-tight truncate">
+                            Swafoto + Tanda Tangan
+                          </div>
+                          <div className="text-[8px] text-slate-500 mt-0.5 font-mono">
+                            30/09 09:41 WIB • -7.2575, 112.7521
+                          </div>
+                        </div>
+                      </div>
                     </div>
 
-                    <div className="p-2 rounded-lg bg-blue-50/80 border border-blue-200 flex items-center gap-2.5">
-                      <div className="w-8 h-8 rounded-lg bg-[#2563EB] text-white flex items-center justify-center shrink-0 shadow-2xs">
-                        <Camera className="w-4 h-4" />
-                      </div>
-                      <div className="text-left flex-1 min-w-0">
-                        <div className="text-[10px] font-bold text-slate-900 leading-tight truncate">
-                          Swafoto + Tanda Tangan
-                        </div>
-                        <div className="text-[8px] text-slate-500 mt-0.5 font-mono">
-                          30/09 09:41 WIB • -7.2575, 112.7521
-                        </div>
-                      </div>
+                    {/* Offline Cache Status */}
+                    <div className="px-1 flex items-center justify-between text-[9.5px] text-slate-500">
+                      <span className="flex items-center gap-1 font-medium">
+                        <Database className="w-3 h-3 text-[#2563EB] shrink-0" />
+                        Database SQLite Offline
+                      </span>
+                      <span className="text-emerald-600 font-bold text-[9px]">✓ Tersimpan Aman</span>
+                    </div>
+
+                    {/* Primary Mobile Action Button */}
+                    <div className="w-full py-2.5 px-3 bg-[#10B981] hover:bg-[#059669] text-white rounded-xl text-center font-bold text-[11px] shadow-md shadow-emerald-500/20 flex items-center justify-center gap-1.5 whitespace-nowrap shrink-0 transition-colors">
+                      <Printer className="w-3.5 h-3.5 shrink-0" />
+                      <span>Selesaikan & Cetak Struk</span>
                     </div>
                   </div>
 
-                  {/* Offline Cache Status */}
-                  <div className="px-1 flex items-center justify-between text-[9.5px] text-slate-500">
-                    <span className="flex items-center gap-1 font-medium">
-                      <Database className="w-3 h-3 text-[#2563EB] shrink-0" />
-                      Database SQLite Offline
-                    </span>
-                    <span className="text-emerald-600 font-bold text-[9px]">✓ Tersimpan Aman</span>
+                  {/* 5. Android Bottom Gesture Pill Bar */}
+                  <div className="pt-1.5 pb-2 bg-[#F8FAFC] flex justify-center">
+                    <div className="w-20 h-1 bg-slate-300 rounded-full" />
                   </div>
 
-                  {/* Primary Mobile Action Button */}
-                  <div className="w-full py-2.5 px-3 bg-[#10B981] hover:bg-[#059669] text-white rounded-xl text-center font-bold text-[11px] shadow-md shadow-emerald-500/20 flex items-center justify-center gap-1.5 whitespace-nowrap shrink-0 transition-colors">
-                    <Printer className="w-3.5 h-3.5 shrink-0" />
-                    <span>Selesaikan & Cetak Struk</span>
-                  </div>
-                </div>
-
-                {/* 5. Android Bottom Gesture Pill Bar */}
-                <div className="pt-1.5 pb-2 bg-[#F8FAFC] flex justify-center">
-                  <div className="w-20 h-1 bg-slate-300 rounded-full" />
                 </div>
 
               </div>
-
             </div>
           </div>
-        </div>
 
-        {/* ========================================================
-            SPOTLIGHT 3: Company Profile & Portal ERP Terpadu
-            (Kiri: Mockup Portal Web / Kanan: Penjelasan Solusi)
-           ======================================================== */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
-          {/* Mockup Portal Web ERP / Company */}
-          <div className="lg:col-span-6 order-2 lg:order-1 relative">
-            <div className="absolute -inset-3 bg-gradient-to-tr from-indigo-600/18 via-blue-500/15 to-transparent rounded-3xl blur-2xl -z-10 opacity-75 pointer-events-none" />
-            <div className="rounded-2xl bg-white border-2 border-slate-200 shadow-xl overflow-hidden">
+          {/* ========================================================
+              SPOTLIGHT 3: Company Profile & Portal ERP Terpadu
+              (Kiri: Mockup Portal Web / Kanan: Penjelasan Solusi)
+             ======================================================== */}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+            {/* Mockup Portal Web ERP / Company */}
+            <div className="lg:col-span-6 order-2 lg:order-1 relative">
+              <div className="absolute -inset-3 bg-gradient-to-tr from-indigo-600/18 via-blue-500/15 to-transparent rounded-3xl blur-2xl -z-10 opacity-75 pointer-events-none" />
+              
+              {/* Floating High Speed Performance Toast */}
+              <div className="hidden sm:flex absolute -top-3.5 -right-3 bg-white/95 backdrop-blur-md border border-slate-200 shadow-xl px-3.5 py-1.5 rounded-full items-center gap-2 text-[10px] font-bold text-slate-800 animate-float-badge z-20 whitespace-nowrap shrink-0">
+                <span className="w-2 h-2 rounded-full bg-emerald-500 animate-ping shrink-0" />
+                <span className="font-extrabold text-[#0F172A]">Core Web Vitals</span>
+                <span className="text-emerald-700 bg-emerald-50 border border-emerald-200 text-[8.5px] px-1.5 py-0.5 rounded font-bold">100% HIJAU</span>
+              </div>
+
+              <div className="rounded-2xl bg-white border-2 border-slate-200 shadow-xl overflow-hidden hover:-translate-y-1.5 hover:shadow-2xl transition-all duration-300">
               <div className="bg-slate-100 border-b border-slate-200 px-4 py-2.5 flex items-center justify-between">
                 <div className="flex items-center gap-1.5">
                   <span className="w-2.5 h-2.5 rounded-full bg-rose-500 inline-block" />

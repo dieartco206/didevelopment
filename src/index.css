@@ -166,6 +166,79 @@
   animation: floatReverse 6s ease-in-out infinite;
 }
 
+@keyframes floatPhone {
+  0%, 100% {
+    transform: translateY(0px) rotate(2deg);
+  }
+  50% {
+    transform: translateY(-12px) rotate(0.8deg);
+  }
+}
+
+.animate-float-phone {
+  animation: floatPhone 6s ease-in-out infinite;
+}
+
+@keyframes floatBadge {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.animate-float-badge {
+  animation: floatBadge 4.5s ease-in-out infinite;
+}
+
+@keyframes floatBadgeSlow {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(6px);
+  }
+}
+
+.animate-float-badge-slow {
+  animation: floatBadgeSlow 5.5s ease-in-out infinite;
+}
+
+@keyframes laserScan {
+  0% {
+    top: 5%;
+    opacity: 0.2;
+  }
+  50% {
+    top: 85%;
+    opacity: 1;
+  }
+  100% {
+    top: 5%;
+    opacity: 0.2;
+  }
+}
+
+.animate-laser-scan {
+  animation: laserScan 2.5s ease-in-out infinite;
+}
+
+@keyframes auraBreathe {
+  0%, 100% {
+    transform: scale(0.96);
+    opacity: 0.55;
+  }
+  50% {
+    transform: scale(1.08);
+    opacity: 0.85;
+  }
+}
+
+.animate-aura-breathe {
+  animation: auraBreathe 5s ease-in-out infinite;
+}
+
 .animate-radar {
   animation: pulseRadar 2.5s ease-in-out infinite;
 }
