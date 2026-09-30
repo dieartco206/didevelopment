@@ -2,86 +2,80 @@ import React, { useState } from 'react';
 import type { PortfolioItem } from '../../types';
 import { 
   ArrowUpRight,
-  Briefcase,
-  Zap,
-  TrendingUp,
-  Printer,
-  MapPin,
-  Lock,
-  Truck
+  TrendingUp
 } from 'lucide-react';
 import { soundFx } from '../../utils/audio';
 
 const PORTFOLIO_DATA: PortfolioItem[] = [
   {
     id: 'kasir-pos',
-    title: 'KasirKilat: Tablet POS & Web Cloud',
+    title: 'Aplikasi Kasir POS Tablet & Web Cloud',
     category: 'Full Ecosystem (Web + APK)',
-    client: 'Jaringan Coffee Shop (12 Cabang)',
+    client: 'Jaringan F&B Coffee Shop (12 Cabang)',
     thumbnail: 'pos',
-    problem: 'Pencatatan kasir manual rawan selisih uang dan stok bahan sering hilang.',
-    solution: 'Aplikasi Android APK tablet cetak struk Bluetooth + Web Dashboard pantau omset real-time.',
-    techStack: ['Android APK', 'React 19', 'Bluetooth Print', 'PostgreSQL'],
+    problem: 'Pencatatan kasir manual rawan selisih uang dan data stok antar cabang sering terlambat diperbarui.',
+    solution: 'Aplikasi Android APK tablet kasir cetak struk Bluetooth terintegrasi dengan Web Dashboard owner real-time.',
+    techStack: ['Android APK', 'React', 'Bluetooth Print', 'PostgreSQL'],
     features: [
-      'Cetak Struk Thermal Bluetooth Cepat',
-      'Manajemen Meja & Split Bill',
-      'Laporan Omset & Laba Otomatis',
-      'Peringatan Stok Habis Real-time',
+      'Cetak struk thermal Bluetooth cepat',
+      'Manajemen meja, antrean & split bill',
+      'Laporan omset dan laba kotor otomatis',
+      'Peringatan otomatis stok bahan menipis',
     ],
     results: 'Transaksi 3x Lebih Cepat, Selisih Kas 0%',
     isPopular: true,
   },
   {
     id: 'absensi-gps',
-    title: 'HadirSmart: Absensi Selfie Anti-Fake GPS',
+    title: 'Sistem Absensi Selfie & Validasi Geofencing',
     category: 'Full Ecosystem (Web + APK)',
-    client: 'Perusahaan Konstruksi (350+ Pekerja)',
+    client: 'Perusahaan Konstruksi (350+ Pekerja Lapangan)',
     thumbnail: 'attendance',
-    problem: 'Karyawan lapangan sering titip absen dan memakai aplikasi Fake GPS palsu.',
-    solution: 'Aplikasi APK Android deteksi mock GPS + swafoto wajah & Web Rekap Payroll otomatis.',
-    techStack: ['Kotlin Android', 'Face Selfie', 'Geofencing', 'Web Admin'],
+    problem: 'Karyawan lapangan sering titip absen dan memakai aplikasi Fake GPS palsu di proyek.',
+    solution: 'Aplikasi APK Android anti-fake GPS dengan swafoto kamera HP dan Web Rekap Payroll otomatis.',
+    techStack: ['Android Native', 'Face Selfie', 'Geofencing GPS', 'Web Payroll'],
     features: [
-      'Blokir Otomatis Aplikasi Fake GPS',
-      'Verifikasi Foto Wajah Langsung (Kamera HP)',
-      'Validasi Radius Titik Kantor / Proyek',
-      'Export Rekap Gaji (Payroll) ke Excel',
+      'Deteksi dan pemblokiran otomatis Fake GPS',
+      'Verifikasi foto wajah langsung di lokasi',
+      'Validasi radius geofencing area proyek',
+      'Export rekapitulasi gaji bulanan ke Excel',
     ],
-    results: 'Kecurangan 0%, Hemat 15 Jam Rekap Gaji',
+    results: 'Kecurangan 0%, Hemat 15 Jam Rekap Payroll',
     isPopular: true,
   },
   {
     id: 'logistik-tracking',
-    title: 'KargoNusantara: Portal Resi & APK Kurir',
+    title: 'Portal Tracking Resi & Aplikasi Kurir',
     category: 'Full Ecosystem (Web + APK)',
-    client: 'Perusahaan Ekspedisi Logistik',
+    client: 'Perusahaan Jasa Ekspedisi Logistik',
     thumbnail: 'logistics',
-    problem: 'Pelanggan sering komplain status resi lambat dan bukti tanda terima tercecer.',
-    solution: 'Website tracking resi publik + APK kurir scan barcode kamera & tanda tangan digital di HP.',
-    techStack: ['Next.js Web', 'Camera Barcode', 'Digital Sign', 'Cloud API'],
+    problem: 'Pelanggan sering komplain status resi lambat dan bukti tanda terima pengiriman fisik sering tercecer.',
+    solution: 'Website tracking resi publik terintegrasi APK kurir untuk scan barcode kamera dan tanda tangan digital.',
+    techStack: ['Next.js Web', 'Camera Barcode', 'Digital Signature', 'Cloud API'],
     features: [
-      'Cek Resi Real-time di Website',
-      'Scan Barcode Cepat via Kamera HP',
-      'Tanda Tangan Digital Penerima Paket',
-      'Notifikasi Otomatis Status Pengiriman',
+      'Pelacakan status paket real-time di website',
+      'Scan barcode resi cepat dengan kamera smartphone',
+      'Tanda tangan digital penerima langsung di layar HP',
+      'Notifikasi otomatis pembaruan status ke WhatsApp',
     ],
-    results: 'Komplain Turun 85%, Update 4x Lebih Cepat',
+    results: 'Komplain Pelanggan Turun 85%, Update Instan',
   },
   {
     id: 'cbt-exam',
-    title: 'EduExam: Ujian Sekolah Kiosk Anti-Curang',
+    title: 'Sistem Ujian Sekolah Online Kiosk Anti-Curang',
     category: 'Full Ecosystem (Web + APK)',
     client: 'Yayasan Pendidikan & SMK (1.200 Siswa)',
     thumbnail: 'education',
-    problem: 'Siswa sering curang membuka Google atau chatting saat ujian daring di smartphone.',
-    solution: 'Aplikasi APK Android terkunci (Kiosk Lock) + Web Guru untuk bank soal acak & koreksi otomatis.',
-    techStack: ['Android Kiosk', 'React.js', 'SQLite Cache', 'Socket.IO'],
+    problem: 'Siswa sering curang membuka browser pencari atau chatting saat ujian daring di smartphone.',
+    solution: 'Aplikasi APK Android mode Kiosk Lock terkunci dan Web Guru untuk bank soal acak & penilaian instan.',
+    techStack: ['Android Kiosk', 'React Web', 'SQLite Cache', 'Socket.IO'],
     features: [
-      'Kiosk Mode (Kunci tombol Home & Pindah Tab)',
-      'Bank Soal Acak Pilihan Ganda & Esai',
-      'Ujian Tetap Berjalan saat Internet Putus',
-      'Koreksi Nilai Otomatis & Analisis Butir',
+      'Mode Kiosk terkunci (blokir tombol Home & pindah tab)',
+      'Pengacakan butir soal pilihan ganda & esai',
+      'Ujian tetap lancar saat koneksi internet sekolah putus',
+      'Koreksi nilai otomatis dan analisis daya beda soal',
     ],
-    results: '1.200 Siswa Ujian Serentak Bebas Down',
+    results: '1.200 Siswa Ujian Serentak Tanpa Gangguan Server',
   },
 ];
 
@@ -94,42 +88,41 @@ export const PortfolioSection: React.FC = () => {
 
   const consultProject = (title: string) => {
     soundFx.playClick(900, 0.04);
-    const msg = encodeURIComponent(`Halo DiDev, saya melihat portofolio "${title}" dan tertarik membuat sistem serupa untuk bisnis saya. Boleh diskusi detailnya?`);
+    const msg = encodeURIComponent(`Halo DiDev, saya melihat studi kasus portofolio "${title}" dan tertarik membuat sistem serupa untuk bisnis saya. Boleh diskusi detailnya?`);
     window.open(`https://wa.me/6281234567890?text=${msg}`, '_blank');
   };
 
   return (
-    <section id="portfolio" className="py-12 sm:py-20 bg-mesh-portfolio border-b border-blue-200/60 relative overflow-hidden">
-      <div className="max-w-7xl mx-auto px-3.5 sm:px-6 lg:px-8 relative z-10">
+    <section id="portfolio" className="py-14 sm:py-20 bg-white border-b border-slate-200">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 sm:gap-6 mb-8 sm:mb-12">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10 sm:mb-14">
           <div>
-            <div className="flex items-center gap-2 text-xs font-mono font-bold text-blue-700 uppercase tracking-wider mb-1.5">
-              <Briefcase className="w-3.5 h-3.5 text-blue-600" />
-              <span>REKAM JEJAK SISTEM OPERASIONAL</span>
+            <div className="inline-block text-xs font-bold text-[#256BE0] uppercase tracking-wider mb-2">
+              REKAM JEJAK & PORTOFOLIO
             </div>
-            <h2 className="text-2xl sm:text-4xl font-black text-slate-900 tracking-tight font-sans">
-              STUDI KASUS SISTEM
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#102E61] tracking-tight font-sans">
+              Kumpulan Proyek & Studi Kasus Nyata
             </h2>
-            <p className="mt-1.5 text-xs sm:text-base text-slate-600 max-w-2xl font-sans font-medium">
-              Sistem nyata yang aktif memproses transaksi dan data setiap hari:
+            <p className="mt-2 text-sm sm:text-base text-[#48505E] max-w-2xl font-normal">
+              Sistem perangkat lunak yang telah aktif digunakan untuk memproses transaksi dan aktivitas operasional harian.
             </p>
           </div>
 
           {/* Tab Filter */}
-          <div className="flex items-center gap-1 p-1 bg-white/95 shadow-2xs rounded-xl border border-blue-200">
+          <div className="flex items-center gap-1.5 p-1 bg-slate-100 rounded-xl">
             <button
               onClick={() => { soundFx.playClick(650, 0.03); setActiveTab('all'); }}
-              className={`px-3 py-1 rounded-lg text-xs font-mono font-bold transition-all cursor-pointer ${
-                activeTab === 'all' ? 'bg-blue-600 text-white shadow-xs' : 'text-slate-600 hover:text-blue-600'
+              className={`px-3.5 py-1.5 rounded-lg text-xs font-semibold transition-all cursor-pointer ${
+                activeTab === 'all' ? 'bg-[#256BE0] text-white shadow-xs' : 'text-[#48505E] hover:text-[#256BE0]'
               }`}
             >
               Semua Proyek
             </button>
             <button
               onClick={() => { soundFx.playClick(650, 0.03); setActiveTab('Full Ecosystem (Web + APK)'); }}
-              className={`px-3 py-1 rounded-lg text-xs font-mono font-bold transition-all cursor-pointer ${
-                activeTab === 'Full Ecosystem (Web + APK)' ? 'bg-blue-600 text-white shadow-xs' : 'text-slate-600 hover:text-blue-600'
+              className={`px-3.5 py-1.5 rounded-lg text-xs font-semibold transition-all cursor-pointer ${
+                activeTab === 'Full Ecosystem (Web + APK)' ? 'bg-[#256BE0] text-white shadow-xs' : 'text-[#48505E] hover:text-[#256BE0]'
               }`}
             >
               Web + APK
@@ -138,139 +131,57 @@ export const PortfolioSection: React.FC = () => {
         </div>
 
         {/* Portfolio Cards Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 sm:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
           {filtered.map((item) => (
             <div
               key={item.id}
-              className="group relative rounded-2xl sm:rounded-3xl bg-white border-2 border-blue-200/90 shadow-sm hover:border-blue-600 hover:shadow-xl transition-all duration-300 flex flex-col justify-between overflow-hidden"
+              className="group rounded-2xl bg-white border border-slate-200 p-6 sm:p-7 flex flex-col justify-between hover:border-[#256BE0] hover:shadow-lg transition-all duration-300"
             >
-              {/* Top Accent Line */}
-              <div className="h-1.5 sm:h-2 w-full bg-gradient-to-r from-blue-600 via-sky-400 to-indigo-600" />
-
-              <div className="p-4 sm:p-7">
-                {/* Header Pill */}
-                <div className="flex items-center justify-between gap-3 mb-2.5">
-                  <span className="px-2.5 py-0.5 rounded-full bg-blue-100 border border-blue-200 text-blue-900 text-[10px] sm:text-[11px] font-mono font-bold">
+              <div>
+                {/* Header: Category Badge + Best Case */}
+                <div className="flex items-center justify-between gap-3 mb-3">
+                  <span className="px-2.5 py-1 rounded-full bg-blue-50 text-[#256BE0] text-xs font-semibold">
                     {item.category}
                   </span>
-                  {item.isPopular && (
-                    <span className="text-[10px] sm:text-[11px] font-mono text-blue-700 font-bold flex items-center gap-1">
-                      <Zap className="w-3 h-3 fill-current text-blue-600" /> BEST CASE
-                    </span>
-                  )}
+                  <div className="text-xs text-slate-500 font-medium">
+                    Klien: <strong className="text-[#102E61]">{item.client}</strong>
+                  </div>
                 </div>
 
-                <h3 className="text-lg sm:text-2xl font-bold font-sans text-slate-900 group-hover:text-blue-600 transition-colors mb-0.5">
+                {/* Title */}
+                <h3 className="text-xl font-bold text-[#102E61] group-hover:text-[#256BE0] transition-colors mb-3 leading-snug">
                   {item.title}
                 </h3>
-                <div className="text-[11px] sm:text-xs font-mono text-slate-500 mb-3.5 font-semibold">
-                  Klien: <strong className="text-blue-900">{item.client}</strong>
-                </div>
 
-                {/* Device Mockup Screen */}
-                {item.id === 'kasir-pos' && (
-                  <div className="mb-4 p-3 rounded-xl bg-gradient-to-r from-slate-900 to-blue-950 text-white font-mono text-xs border border-blue-800/80 shadow-inner">
-                    <div className="flex items-center justify-between pb-1.5 border-b border-blue-800/80 mb-1.5">
-                      <div className="flex items-center gap-1.5 text-sky-300 font-bold text-[11px]">
-                        <Printer className="w-3.5 h-3.5" />
-                        <span>KASIR KILAT POS 58MM</span>
-                      </div>
-                      <span className="text-[9px] text-emerald-400 font-bold">STRUK TERCETAK</span>
-                    </div>
-                    <div className="space-y-1 text-[10px] sm:text-[11px] text-slate-300">
-                      <div className="flex justify-between"><span>2x Cold Brew Latte</span><span>Rp 56.000</span></div>
-                      <div className="flex justify-between font-bold text-white pt-1 border-t border-white/10">
-                        <span>TOTAL BAYAR (QRIS)</span>
-                        <span className="text-sky-300">Rp 84.000</span>
-                      </div>
-                    </div>
-                  </div>
-                )}
-
-                {item.id === 'absensi-gps' && (
-                  <div className="mb-4 p-3 rounded-xl bg-gradient-to-r from-blue-950 to-slate-900 text-white font-mono text-xs border border-blue-800/80 shadow-inner">
-                    <div className="flex items-center justify-between pb-1.5 border-b border-blue-800/80 mb-1.5">
-                      <div className="flex items-center gap-1.5 text-sky-300 font-bold text-[11px]">
-                        <MapPin className="w-3.5 h-3.5 text-rose-400" />
-                        <span>GEOFENCING & FACE SCAN</span>
-                      </div>
-                      <span className="text-[9px] text-emerald-400 font-bold">LOKASI VALID</span>
-                    </div>
-                    <div className="grid grid-cols-2 gap-1.5 text-[10px] sm:text-[11px]">
-                      <div className="p-1 rounded bg-white/10 text-center">
-                        <span className="text-slate-400 block text-[8px]">RADIUS</span>
-                        <span className="font-bold text-sky-300">18m (Valid)</span>
-                      </div>
-                      <div className="p-1 rounded bg-white/10 text-center">
-                        <span className="text-slate-400 block text-[8px]">WAJAH</span>
-                        <span className="font-bold text-emerald-400">Cocok 99.8%</span>
-                      </div>
-                    </div>
-                  </div>
-                )}
-
-                {item.id === 'logistik-tracking' && (
-                  <div className="mb-4 p-3 rounded-xl bg-gradient-to-r from-slate-900 to-blue-950 text-white font-mono text-xs border border-blue-800/80 shadow-inner">
-                    <div className="flex items-center justify-between pb-1.5 border-b border-blue-800/80 mb-1.5">
-                      <div className="flex items-center gap-1.5 text-sky-300 font-bold text-[11px]">
-                        <Truck className="w-3.5 h-3.5" />
-                        <span>RESI: #KRG-882910</span>
-                      </div>
-                      <span className="text-[9px] text-sky-300 font-bold">MENGANTAR</span>
-                    </div>
-                    <div className="text-[10px] sm:text-[11px] text-slate-300 flex items-center justify-between p-1 rounded bg-white/10">
-                      <span>Kurir: Ahmad S.</span>
-                      <span className="text-emerald-400 font-bold">TTD Digital: OK</span>
-                    </div>
-                  </div>
-                )}
-
-                {item.id === 'cbt-exam' && (
-                  <div className="mb-4 p-3 rounded-xl bg-gradient-to-r from-blue-950 to-indigo-950 text-white font-mono text-xs border border-blue-800/80 shadow-inner">
-                    <div className="flex items-center justify-between pb-1.5 border-b border-blue-800/80 mb-1.5">
-                      <div className="flex items-center gap-1.5 text-sky-300 font-bold text-[11px]">
-                        <Lock className="w-3.5 h-3.5 text-amber-400" />
-                        <span>KIOSK LOCK (TERKUNCI)</span>
-                      </div>
-                      <span className="text-[9px] text-amber-300 font-bold">ANTI-CURANG</span>
-                    </div>
-                    <div className="text-[10px] sm:text-[11px] text-slate-300 flex items-center justify-between p-1 rounded bg-white/10">
-                      <span>Soal 32 / 50</span>
-                      <span className="text-sky-300 font-bold">Waktu: 42:15</span>
-                    </div>
-                  </div>
-                )}
-
-                {/* Problem vs Solution */}
-                <div className="space-y-1.5 mb-4">
-                  <div className="p-2.5 rounded-xl bg-slate-50 border border-slate-200 text-xs font-sans text-slate-700">
-                    <strong className="text-rose-600 block mb-0.5">Tantangan Klien:</strong>
+                {/* Problem & Solved Narrative */}
+                <div className="space-y-2 mb-5 text-sm text-[#48505E]">
+                  <p className="leading-relaxed">
+                    <strong className="text-[#102E61] font-semibold">Kebutuhan: </strong>
                     {item.problem}
-                  </div>
-
-                  <div className="p-2.5 rounded-xl bg-blue-50/80 border border-blue-200 text-xs font-sans text-slate-800">
-                    <strong className="text-blue-800 block mb-0.5">Solusi DiDev:</strong>
+                  </p>
+                  <p className="leading-relaxed">
+                    <strong className="text-[#256BE0] font-semibold">Solusi DiDev: </strong>
                     {item.solution}
-                  </div>
+                  </p>
                 </div>
 
-                {/* Big Result Badge */}
-                <div className="p-3 rounded-xl sm:rounded-2xl bg-gradient-to-r from-blue-700 via-blue-600 to-indigo-700 text-white text-xs font-mono flex items-center gap-2.5 shadow-md shadow-blue-500/25">
-                  <TrendingUp className="w-4 h-4 sm:w-5 sm:h-5 shrink-0 text-sky-300" />
+                {/* Impact Highlight Box */}
+                <div className="p-3.5 rounded-xl bg-[#F4F8FE] border border-[#D6E4FB] flex items-center gap-3 mb-5">
+                  <TrendingUp className="w-5 h-5 text-[#256BE0] shrink-0" />
                   <div>
-                    <span className="font-bold uppercase tracking-wider block text-[9px] sm:text-[10px] text-sky-200">HASIL NYATA:</span>
-                    <span className="font-bold text-xs sm:text-sm text-white">{item.results}</span>
+                    <span className="text-[10px] font-bold text-[#256BE0] uppercase tracking-wider block">HASIL IMPLEMENTASI:</span>
+                    <span className="text-xs sm:text-sm font-bold text-[#102E61]">{item.results}</span>
                   </div>
                 </div>
               </div>
 
-              {/* Footer Tech Stack & Consultation Button */}
-              <div className="p-4 sm:p-7 pt-3 border-t border-blue-100 bg-blue-50/50 flex flex-col sm:flex-row items-center justify-between gap-3">
-                <div className="flex flex-wrap gap-1 self-start sm:self-auto">
+              {/* Footer Tech Stack & Button */}
+              <div className="pt-4 border-t border-slate-100 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
+                <div className="flex flex-wrap gap-1.5">
                   {item.techStack.map((tech, idx) => (
                     <span
                       key={idx}
-                      className="px-2 py-0.5 rounded bg-white border border-blue-200 text-[9px] sm:text-[10px] font-mono text-blue-900 font-bold"
+                      className="px-2 py-0.5 rounded-md bg-slate-100 text-[#48505E] text-[11px] font-medium"
                     >
                       {tech}
                     </span>
@@ -279,10 +190,10 @@ export const PortfolioSection: React.FC = () => {
 
                 <button
                   onClick={() => consultProject(item.title)}
-                  className="w-full sm:w-auto px-4 py-2.5 bg-blue-600 hover:bg-blue-700 text-white rounded-xl font-mono text-xs font-bold transition-all flex items-center justify-center gap-1.5 shadow-md shadow-blue-500/20 cursor-pointer active:scale-95"
+                  className="w-full sm:w-auto px-4 py-2 bg-blue-50/80 hover:bg-[#256BE0] text-[#256BE0] hover:text-white rounded-lg font-semibold text-xs transition-colors flex items-center justify-center gap-1.5 cursor-pointer shrink-0"
                 >
-                  <span>BUAT SISTEM SERUPA</span>
-                  <ArrowUpRight className="w-4 h-4" />
+                  <span>Buat Serupa</span>
+                  <ArrowUpRight className="w-3.5 h-3.5" />
                 </button>
               </div>
             </div>

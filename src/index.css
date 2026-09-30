@@ -2,13 +2,17 @@
 
 @layer base {
   :root {
-    --color-primary-blue: #2563EB;
-    --color-primary-hover: #1D4ED8;
+    --color-primary-blue: #256BE0;
+    --color-primary-hover: #1D58BD;
+    --color-navy-dark: #102E61;
     --color-sky-accent: #0EA5E9;
-    --color-navy-dark: #0F172A;
     --color-surface: #FFFFFF;
     --color-bg-page: #F8FAFC;
+    --color-bg-soft: #F4F8FE;
     --color-border-subtle: #E2E8F0;
+    --color-border-blue: #D6E4FB;
+    --color-text-main: #2B2F38;
+    --color-text-muted: #48505E;
   }
 
   * {
@@ -18,8 +22,8 @@
   body {
     margin: 0;
     padding: 0;
-    background-color: #F1F5F9;
-    color: #0F172A;
+    background-color: #F8FAFC;
+    color: #2B2F38;
     font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     overflow-x: hidden;
     -webkit-font-smoothing: antialiased;

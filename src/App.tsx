@@ -3,11 +3,13 @@ import { Navbar } from './components/navbar/Navbar';
 import { HeroPromo } from './components/hero/HeroPromo';
 import { TechStackMarquee } from './components/marquee/TechStackMarquee';
 import { ServicesSection } from './components/services/ServicesSection';
-import { ProjectCalculator } from './components/calculator/ProjectCalculator';
+import { ImpactSection } from './components/impact/ImpactSection';
 import { PortfolioSection } from './components/portfolio/PortfolioSection';
-import { PricingSection } from './components/pricing/PricingSection';
 import { WorkflowSection } from './components/workflow/WorkflowSection';
+import { ProjectCalculator } from './components/calculator/ProjectCalculator';
+import { PricingSection } from './components/pricing/PricingSection';
 import { FaqSection } from './components/faq/FaqSection';
+import { CtaBanner } from './components/cta/CtaBanner';
 import { Footer } from './components/footer/Footer';
 import { FloatingWhatsApp } from './components/cta/FloatingWhatsApp';
 
@@ -23,8 +25,8 @@ export const App: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-[#F1F5F9] text-[#0F172A] selection:bg-blue-600 selection:text-white font-sans">
-      {/* Top Header Navigation with Announcement Bar */}
+    <div className="min-h-screen bg-[#F8FAFC] text-[#2B2F38] selection:bg-[#256BE0] selection:text-white font-sans">
+      {/* Top Header Navigation */}
       <Navbar onNavigate={handleNavigate} activeSection={activeSection} />
 
       {/* Main Agency Sections */}
@@ -35,23 +37,29 @@ export const App: React.FC = () => {
         {/* 2. Visual Tech Stack & Engineering Marquee */}
         <TechStackMarquee />
 
-        {/* 3. Core Services with Visual Device Mockups */}
+        {/* 3. Tipe Layanan Pengembangan */}
         <ServicesSection />
 
-        {/* 4. Interactive Project Cost & Timeline Calculator (Executive Blue Card) */}
-        <ProjectCalculator />
+        {/* 4. Komitmen Layanan & Standar Rekayasa */}
+        <ImpactSection />
 
-        {/* 5. Client Portfolio & Real Case Studies with UI Simulation */}
+        {/* 5. Kumpulan Proyek & Portofolio */}
         <PortfolioSection />
 
-        {/* 6. Transparent Pricing Packages with Royal Blue Flagship Card */}
-        <PricingSection />
-
-        {/* 7. Professional 5-Step High-Tech Workflow */}
+        {/* 6. Alur Kerja 5 Tahap */}
         <WorkflowSection />
 
-        {/* 8. Frequently Asked Questions (FAQ) */}
+        {/* 7. Simulasi Estimasi Biaya (Kalkulator) */}
+        <ProjectCalculator />
+
+        {/* 8. Paket Investasi Sistem */}
+        <PricingSection />
+
+        {/* 9. Pertanyaan yang Sering Diajukan (FAQ Accordion ala Sekawan Media) */}
         <FaqSection />
+
+        {/* 10. Efisiensi Bisnis Mulai dari Sini (Banner CTA) */}
+        <CtaBanner />
       </main>
 
       {/* Footer */}

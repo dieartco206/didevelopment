@@ -6,106 +6,126 @@ import {
   RefreshCw, 
   CheckCircle2, 
   ArrowRight,
-  Sparkles,
-  Printer,
-  Database
+  Database,
+  Cpu
 } from 'lucide-react';
 import { soundFx } from '../../utils/audio';
 
 interface ServiceDetail {
   id: string;
-  category: 'all' | 'web' | 'android' | 'combo';
+  category: 'web' | 'android' | 'combo';
   title: string;
   badge: string;
   priceStart: string;
   description: string;
-  popularFor: string;
   icon: React.ElementType;
   techTags: string[];
   features: string[];
-  deliverables: string[];
-  mockupType: 'web' | 'apk' | 'combo' | 'convert';
+  deliverables: string;
 }
 
 const SERVICES_DATA: ServiceDetail[] = [
   {
     id: 'web-dev',
     category: 'web',
-    title: 'Website Modern & Toko Online',
-    badge: 'STARTER UMKM',
+    title: 'Pengembangan Aplikasi Web Kustom',
+    badge: 'WEB APPLICATION',
     priceStart: 'Mulai Rp 1.500.000',
-    description: 'Web kilat, modern, responsif di HP & laptop, SEO ready, dan siap terima order 24 jam.',
-    popularFor: 'Company Profile, Toko Online, Landing Page, Portal',
+    description: 'Sistem aplikasi web responsif untuk digitalisasi proses bisnis: ERP, HRIS, manajemen stok, dan portal perusahaan.',
     icon: Globe,
-    techTags: ['React 19', 'Next.js', 'Tailwind', 'SEO Score 95+'],
+    techTags: ['React', 'Next.js', 'PostgreSQL', 'Tailwind'],
     features: [
-      'Desain Responsif 100% (HP, Tablet, Laptop)',
-      'Loading Cepat (< 0.6 detik Google PageSpeed)',
-      'Gratis Domain .COM & SSL Security 1 Tahun',
-      'Dashboard Admin Kelola Produk & Artikel',
-      'Tombol WhatsApp Order Langsung ke CS',
+      'Tampilan responsif optimal di desktop, tablet, dan smartphone',
+      'Kecepatan akses tinggi (< 1 detik) & arsitektur RESTful API',
+      'Dashboard admin intuitif untuk kelola data & unduh laporan',
+      'Keamanan SSL, enkripsi database, dan backup berkala',
     ],
-    deliverables: ['Full Source Code', 'Domain & Hosting 1 Th', 'Buku Panduan', 'Garansi 1 Tahun'],
-    mockupType: 'web',
+    deliverables: '100% Full Source Code • Garansi 1 Tahun',
   },
   {
     id: 'android-apk',
     category: 'android',
-    title: 'Aplikasi Android APK & Play Store',
-    badge: 'NATIVE & CEPAT',
+    title: 'Aplikasi Mobile Android (APK & Play Store)',
+    badge: 'MOBILE ANDROID',
     priceStart: 'Mulai Rp 2.500.000',
-    description: 'Aplikasi smartphone ringan, cetak struk Bluetooth, barcode scanner, dan GPS tracking.',
-    popularFor: 'Kasir POS, Absensi Karyawan, Aplikasi Kurir, Gudang',
+    description: 'Aplikasi Android native/hybrid ringan untuk kasir POS, absensi karyawan, kurir pengiriman, dan layanan pelanggan.',
     icon: Smartphone,
-    techTags: ['Android Native', 'Bluetooth Print', 'Camera Barcode', 'Offline Cache'],
+    techTags: ['Android Native', 'Bluetooth Print', 'Barcode Scan', 'Offline SQLite'],
     features: [
-      'Master File APK (.apk) siap bagikan & pasang',
-      'Bantuan Upload ke Google Play Store Resmi',
-      'Cetak Struk Printer Thermal Bluetooth',
-      'Scan Barcode / QR & Swafoto Kamera HP',
-      'Kompatibel Android 8 hingga Android 15',
+      'Master installer APK (.apk) siap pasang langsung di smartphone',
+      'Dukungan cetak struk printer thermal Bluetooth (58mm/80mm)',
+      'Integrasi scan barcode kamera, GPS tracking, dan swafoto',
+      'Bantuan publikasi dan verifikasi di Google Play Store resmi',
     ],
-    deliverables: ['File APK Release', 'Full Source Code', 'Keystore Sertifikat', 'Garansi 1 Tahun'],
-    mockupType: 'apk',
+    deliverables: 'Master APK Release • Source Code • Garansi 1 Tahun',
   },
   {
     id: 'combo-ecosystem',
     category: 'combo',
-    title: 'Paket Komplit (Web + Android APK)',
-    badge: 'PALING LARIS & LENGKAP',
+    title: 'Ekosistem Terintegrasi (Web + Android APK)',
+    badge: 'SOLUSI PALING LARIS',
     priceStart: 'Mulai Rp 4.500.000',
-    description: 'Pantau omset di laptop, staf transaksi di HP. Data tersinkron otomatis secara real-time.',
-    popularFor: 'Franchise / Multi-Cabang, E-Learning, Ekspedisi, Absensi',
+    description: 'Solusi terpadu: pantau transaksi di laptop, staf eksekusi di HP Android dengan sinkronisasi data real-time.',
     icon: Layers,
     techTags: ['Web Admin', 'Android APK', 'Cloud Database', 'Real-time Sync'],
     features: [
-      'Sinkronisasi Otomatis Web Laptop & HP Android',
-      'Hak Akses Berjenjang (Owner, Admin, Kasir, Kurir)',
-      'Laporan Keuangan & Grafik Export Excel / PDF',
-      'Integrasi Payment Gateway QRIS & VA Bank Otomatis',
-      'Cloud Server Stabil dengan Backup Rutin',
+      'Sinkronisasi otomatis data transaksi antara web dan aplikasi HP',
+      'Pembagian hak akses multi-level (Owner, Admin, Kasir, Staf)',
+      'Laporan omset, laba, dan inventori otomatis export Excel & PDF',
+      'Integrasi payment gateway QRIS dan Virtual Account Bank',
     ],
-    deliverables: ['Web + APK Mobile', 'Full Source Code', 'Setup Cloud VPS', 'Training Pemakaian'],
-    mockupType: 'combo',
+    deliverables: 'Web + APK Mobile • Setup Cloud VPS • Garansi 1 Tahun',
+  },
+  {
+    id: 'modernize',
+    category: 'web',
+    title: 'Modernisasi Sistem & Migrasi Cloud',
+    badge: 'SYSTEM UPGRADE',
+    priceStart: 'Mulai Rp 3.000.000',
+    description: 'Perbarui sistem lama yang lambat menjadi aplikasi modern berbasis cloud yang lebih cepat, aman, dan siap scale-up.',
+    icon: Database,
+    techTags: ['Cloud VPS', 'Code Refactor', 'Database Migration', 'Security'],
+    features: [
+      'Redesain antarmuka UI/UX modern yang ramah pengguna',
+      'Optimasi database & refactoring kode agar performa lebih cepat',
+      'Migrasi server lokal ke arsitektur cloud terproteksi',
+      'Penambahan fungsi & fitur baru sesuai alur bisnis yang berkembang',
+    ],
+    deliverables: 'Sistem Cloud Modern • Panduan Migrasi • Garansi 1 Tahun',
   },
   {
     id: 'web-to-apk',
     category: 'android',
-    title: 'Konversi Web Jadi Aplikasi Android APK',
-    badge: 'PROSES 1-3 HARI',
+    title: 'Konversi Web ke Aplikasi Android APK',
+    badge: 'PROSES CEPAT 1-3 HARI',
     priceStart: 'Mulai Rp 650.000',
-    description: 'Kemasan website yang sudah ada jadi file APK Android berlogo resmi, siap pasang di HP.',
-    popularFor: 'Toko Online WooCommerce/Shopify, Web Berita, Komunitas',
+    description: 'Kemas website yang sudah berjalan menjadi aplikasi Android APK berlogo resmi, siap pasang di smartphone.',
     icon: RefreshCw,
-    techTags: ['Fast Web2APK', 'Push Notification', 'Offline Handler', 'Icon HD'],
+    techTags: ['Web2APK', 'Push Notification', 'Offline Screen', 'HD Icon'],
     features: [
-      'Splash Screen Logo Elegan & Navigasi Bawah Modern',
-      'Pull to Refresh & Indikator Cerdas saat Offline',
-      'Direct Install tanpa wajib masuk Play Store',
-      'Ukuran APK Sangat Ringan (hanya 4 - 8 MB)',
+      'Splash screen berlogo resmi dan navigasi modern di HP',
+      'Ukuran aplikasi sangat ringan (hanya 4-8 MB) dan hemat kuota',
+      'Fitur notifikasi push dan deteksi koneksi internet cerdas',
+      'File installer APK langsung dikirim dan siap dibagikan',
     ],
-    deliverables: ['File APK Siap Pakai', 'Icon Aplikasi HD', 'Panduan Instalasi', 'Bantuan Update Link'],
-    mockupType: 'convert',
+    deliverables: 'File APK Rilis • Panduan Instalasi • Garansi 1 Tahun',
+  },
+  {
+    id: 'api-hardware',
+    category: 'combo',
+    title: 'Integrasi API, Payment & Hardware',
+    badge: 'INTEGRATION',
+    priceStart: 'Mulai Rp 1.200.000',
+    description: 'Hubungkan sistem aplikasi Anda dengan pihak ketiga: gateway pembayaran QRIS, WhatsApp bot notifikasi, dan hardware kasir.',
+    icon: Cpu,
+    techTags: ['QRIS Payment', 'WhatsApp API', 'Thermal Printer', 'REST API'],
+    features: [
+      'Integrasi pembayaran QRIS dinamis & Virtual Account bank',
+      'WhatsApp Gateway untuk pengiriman nota, resi, dan notifikasi OTP',
+      'Koneksi hardware scanner barcode & printer Bluetooth kasir',
+      'Dokumentasi teknis RESTful API yang rapi dan terstandar',
+    ],
+    deliverables: 'Modul Integrasi Aktif • Dokumentasi API • Garansi 1 Tahun',
   },
 ];
 
@@ -118,222 +138,132 @@ export const ServicesSection: React.FC = () => {
 
   const openWhatsAppService = (serviceName: string) => {
     soundFx.playClick(900, 0.04);
-    const msg = encodeURIComponent(`Halo DiDev, saya berminat dengan layanan "${serviceName}". Boleh minta rincian penawaran dan waktu pengerjaannya?`);
+    const msg = encodeURIComponent(`Halo DiDev, saya berminat konsultasi layanan "${serviceName}". Boleh minta rincian estimasi biaya dan waktu pengerjaannya?`);
     window.open(`https://wa.me/6281234567890?text=${msg}`, '_blank');
   };
 
   return (
-    <section id="services" className="py-12 sm:py-20 bg-mesh-services border-b border-blue-200/60 relative overflow-hidden">
-      <div className="max-w-7xl mx-auto px-3.5 sm:px-6 lg:px-8 relative z-10">
-        {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 sm:gap-6 mb-8 sm:mb-12">
+    <section id="services" className="py-14 sm:py-20 bg-white border-b border-slate-200">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Section Header (Sekawan Media Style) */}
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10 sm:mb-14">
           <div>
-            <div className="flex items-center gap-2 text-xs font-mono font-bold text-blue-700 uppercase tracking-wider mb-1.5">
-              <Sparkles className="w-3.5 h-3.5 text-blue-600" />
-              <span>KATALOG LAYANAN RESMI</span>
+            <div className="inline-block text-xs font-bold text-[#256BE0] uppercase tracking-wider mb-2">
+              TIPE LAYANAN PENGEMBANGAN
             </div>
-            <h2 className="text-2xl sm:text-4xl font-black text-slate-900 tracking-tight font-sans">
-              SOLUSI APLIKASI BISNIS
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#102E61] tracking-tight font-sans">
+              Melayani Berbagai Jasa Pengembangan Sistem
             </h2>
-            <p className="mt-1.5 text-xs sm:text-base text-slate-600 max-w-2xl font-sans font-medium">
-              100% Hak milik source code tanpa biaya sewa tersembunyi. Termasuk garansi resmi 1 tahun:
+            <p className="mt-2 text-sm sm:text-base text-[#48505E] max-w-2xl font-normal">
+              Kami menawarkan software kustom sesuai kebutuhan alur bisnis Anda. 100% hak milik source code tanpa biaya sewa tersembunyi.
             </p>
           </div>
 
-          {/* Filter Tabs (Horizontal Scrollable on Mobile) */}
-          <div className="flex items-center gap-1 p-1 bg-white/95 shadow-2xs rounded-xl border border-blue-200 overflow-x-auto max-w-full">
+          {/* Filter Tabs */}
+          <div className="flex items-center gap-1.5 p-1 bg-slate-100 rounded-xl overflow-x-auto max-w-full">
             <button
               onClick={() => { soundFx.playClick(650, 0.03); setFilter('all'); }}
-              className={`px-3 py-1 rounded-lg text-xs font-mono font-bold transition-all whitespace-nowrap cursor-pointer ${
-                filter === 'all' ? 'bg-blue-600 text-white shadow-xs' : 'text-slate-600 hover:text-blue-600'
+              className={`px-3.5 py-1.5 rounded-lg text-xs font-semibold transition-all whitespace-nowrap cursor-pointer ${
+                filter === 'all' ? 'bg-[#256BE0] text-white shadow-xs' : 'text-[#48505E] hover:text-[#256BE0]'
               }`}
             >
               Semua
             </button>
             <button
               onClick={() => { soundFx.playClick(650, 0.03); setFilter('web'); }}
-              className={`px-3 py-1 rounded-lg text-xs font-mono font-bold transition-all whitespace-nowrap cursor-pointer ${
-                filter === 'web' ? 'bg-blue-600 text-white shadow-xs' : 'text-slate-600 hover:text-blue-600'
+              className={`px-3.5 py-1.5 rounded-lg text-xs font-semibold transition-all whitespace-nowrap cursor-pointer ${
+                filter === 'web' ? 'bg-[#256BE0] text-white shadow-xs' : 'text-[#48505E] hover:text-[#256BE0]'
               }`}
             >
-              Website
+              Aplikasi Web
             </button>
             <button
               onClick={() => { soundFx.playClick(650, 0.03); setFilter('android'); }}
-              className={`px-3 py-1 rounded-lg text-xs font-mono font-bold transition-all whitespace-nowrap cursor-pointer ${
-                filter === 'android' ? 'bg-blue-600 text-white shadow-xs' : 'text-slate-600 hover:text-blue-600'
+              className={`px-3.5 py-1.5 rounded-lg text-xs font-semibold transition-all whitespace-nowrap cursor-pointer ${
+                filter === 'android' ? 'bg-[#256BE0] text-white shadow-xs' : 'text-[#48505E] hover:text-[#256BE0]'
               }`}
             >
               Android APK
             </button>
             <button
               onClick={() => { soundFx.playClick(650, 0.03); setFilter('combo'); }}
-              className={`px-3 py-1 rounded-lg text-xs font-mono font-bold transition-all whitespace-nowrap cursor-pointer ${
-                filter === 'combo' ? 'bg-blue-600 text-white shadow-xs' : 'text-slate-600 hover:text-blue-600'
+              className={`px-3.5 py-1.5 rounded-lg text-xs font-semibold transition-all whitespace-nowrap cursor-pointer ${
+                filter === 'combo' ? 'bg-[#256BE0] text-white shadow-xs' : 'text-[#48505E] hover:text-[#256BE0]'
               }`}
             >
-              Paket Komplit
+              Ekosistem Terintegrasi
             </button>
           </div>
         </div>
 
-        {/* Services Grid with Visual Mockups */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 sm:gap-8">
+        {/* Clean Corporate Service Cards Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
           {filteredServices.map((service) => {
             const Icon = service.icon;
             return (
               <div
                 key={service.id}
-                className="group relative rounded-2xl sm:rounded-3xl bg-white border-2 border-blue-200/90 shadow-sm hover:border-blue-600 hover:shadow-xl transition-all duration-300 flex flex-col justify-between overflow-hidden"
+                className="group rounded-2xl bg-white border border-slate-200 p-6 sm:p-7 flex flex-col justify-between hover:border-[#256BE0] hover:shadow-lg transition-all duration-300"
               >
-                {/* Top Accent Gradient Header */}
-                <div className="h-1.5 sm:h-2 w-full bg-gradient-to-r from-blue-600 via-sky-400 to-indigo-600" />
-
-                <div className="p-4 sm:p-7">
-                  {/* Top Row: Icon + Badge + Price */}
-                  <div className="flex items-start justify-between gap-3 mb-3 sm:mb-4">
-                    <div className="flex items-center gap-2.5 sm:gap-3">
-                      <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl bg-blue-600 text-white flex items-center justify-center shadow-md shadow-blue-500/25 shrink-0">
-                        <Icon className="w-5 h-5 sm:w-6 sm:h-6" />
-                      </div>
-                      <div>
-                        <span className="inline-block px-2 py-0.5 rounded-full bg-blue-100 text-blue-800 text-[9px] sm:text-[10px] font-mono font-bold">
-                          {service.badge}
-                        </span>
-                        <div className="text-sm sm:text-lg font-mono font-black text-blue-900 mt-0.5">
-                          {service.priceStart}
-                        </div>
-                      </div>
+                <div>
+                  {/* Top: Icon + Badge */}
+                  <div className="flex items-center justify-between gap-3 mb-5">
+                    <div className="w-12 h-12 rounded-xl bg-blue-50 text-[#256BE0] flex items-center justify-center shrink-0 group-hover:bg-[#256BE0] group-hover:text-white transition-colors duration-200">
+                      <Icon className="w-6 h-6" />
                     </div>
+                    <span className="px-2.5 py-1 rounded-full bg-slate-100 text-[#102E61] text-[10px] font-semibold tracking-wide uppercase">
+                      {service.badge}
+                    </span>
                   </div>
 
-                  {/* Title & Description */}
-                  <h3 className="text-lg sm:text-2xl font-bold font-sans text-slate-900 group-hover:text-blue-600 transition-colors mb-1.5">
+                  {/* Title & Price */}
+                  <h3 className="text-xl font-bold text-[#102E61] group-hover:text-[#256BE0] transition-colors mb-2 leading-snug">
                     {service.title}
                   </h3>
-                  <p className="text-xs sm:text-sm text-slate-700 font-sans leading-relaxed mb-3.5 font-medium">
+                  <div className="text-sm font-semibold text-[#256BE0] mb-3">
+                    {service.priceStart}
+                  </div>
+
+                  {/* Description */}
+                  <p className="text-sm text-[#48505E] leading-relaxed mb-5 font-normal">
                     {service.description}
                   </p>
 
-                  {/* Visual UI Mockup Box */}
-                  {service.mockupType === 'web' && (
-                    <div className="mb-4 p-3 rounded-xl sm:rounded-2xl bg-gradient-to-br from-slate-900 to-blue-950 text-white font-mono text-xs border border-blue-800/80 shadow-inner">
-                      <div className="flex items-center justify-between pb-1.5 border-b border-blue-800/80 mb-2">
-                        <div className="flex items-center gap-1">
-                          <span className="w-2 h-2 rounded-full bg-red-500" />
-                          <span className="w-2 h-2 rounded-full bg-amber-500" />
-                          <span className="w-2 h-2 rounded-full bg-emerald-500" />
-                        </div>
-                        <span className="text-[9px] sm:text-[10px] text-blue-300 truncate max-w-[150px]">🔒 https://toko-anda.com</span>
-                        <span className="text-[8px] sm:text-[9px] px-1.5 py-0.2 bg-blue-600 rounded text-white font-bold">0.4s SPEED</span>
+                  {/* Features List */}
+                  <div className="space-y-2 mb-6">
+                    {service.features.map((feat, idx) => (
+                      <div key={idx} className="flex items-start gap-2.5 text-xs text-[#2B2F38] font-normal leading-normal">
+                        <CheckCircle2 className="w-4 h-4 text-[#256BE0] shrink-0 mt-0.5" />
+                        <span>{feat}</span>
                       </div>
-                      <div className="grid grid-cols-2 gap-1.5 text-[10px] sm:text-[11px]">
-                        <div className="p-1.5 rounded bg-white/10 flex items-center justify-between">
-                          <span className="text-slate-300">Order:</span>
-                          <span className="font-bold text-sky-400">128 Masuk</span>
-                        </div>
-                        <div className="p-1.5 rounded bg-white/10 flex items-center justify-between">
-                          <span className="text-slate-300">Payment:</span>
-                          <span className="font-bold text-emerald-400">QRIS Aktif</span>
-                        </div>
-                      </div>
-                    </div>
-                  )}
+                    ))}
+                  </div>
 
-                  {service.mockupType === 'apk' && (
-                    <div className="mb-4 p-3 rounded-xl sm:rounded-2xl bg-gradient-to-r from-blue-950 to-slate-900 text-white font-mono text-xs border border-blue-800/80 shadow-inner">
-                      <div className="flex items-center justify-between mb-1.5">
-                        <div className="flex items-center gap-1.5 text-sky-400 font-bold text-[11px]">
-                          <Printer className="w-3.5 h-3.5" />
-                          <span>BLUETOOTH 58MM</span>
-                        </div>
-                        <span className="text-[8px] px-1.5 py-0.2 rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-500/40">
-                          CONNECTED
-                        </span>
-                      </div>
-                      <div className="p-1.5 rounded bg-white/10 flex items-center justify-between text-[10px] sm:text-[11px]">
-                        <span className="text-slate-300">Cetak Nota Kasir:</span>
-                        <span className="font-bold text-sky-300">Auto Print Struk</span>
-                      </div>
-                    </div>
-                  )}
-
-                  {service.mockupType === 'combo' && (
-                    <div className="mb-4 p-3 rounded-xl sm:rounded-2xl bg-gradient-to-r from-blue-900 via-indigo-950 to-slate-900 text-white font-mono text-xs border border-blue-700/60 shadow-inner">
-                      <div className="flex items-center justify-between mb-1.5">
-                        <div className="flex items-center gap-1.5 text-sky-300 font-bold text-[11px]">
-                          <Database className="w-3.5 h-3.5" />
-                          <span>CLOUD DUAL-SYNC</span>
-                        </div>
-                        <span className="text-[8px] px-1.5 py-0.2 rounded-full bg-blue-500/30 text-blue-200 border border-blue-400/40 animate-pulse">
-                          REAL-TIME
-                        </span>
-                      </div>
-                      <div className="flex items-center justify-between text-[10px] sm:text-[11px] p-1.5 rounded bg-white/10">
-                        <span>Web Laptop</span>
-                        <span className="text-sky-400 font-bold">⇄ Auto Sync ⇄</span>
-                        <span>APK Mobile</span>
-                      </div>
-                    </div>
-                  )}
-
-                  {service.mockupType === 'convert' && (
-                    <div className="mb-4 p-3 rounded-xl sm:rounded-2xl bg-gradient-to-r from-slate-900 to-blue-950 text-white font-mono text-xs border border-blue-800/60 shadow-inner">
-                      <div className="flex items-center justify-between mb-1.5">
-                        <span className="text-sky-300 font-bold text-[11px]">WEB-TO-APK PACKAGING</span>
-                        <span className="text-[9px] text-slate-400">~5.4 MB</span>
-                      </div>
-                      <div className="flex items-center justify-between text-[10px] sm:text-[11px] p-1.5 rounded bg-white/10">
-                        <span className="truncate">URL Website</span>
-                        <span className="text-sky-400 font-bold">➔</span>
-                        <span className="font-bold text-emerald-400">app-release.apk</span>
-                      </div>
-                    </div>
-                  )}
-
-                  {/* Tech Stack Pills */}
-                  <div className="flex flex-wrap gap-1 mb-3.5">
+                  {/* Tech Stack Chips */}
+                  <div className="flex flex-wrap gap-1.5 mb-6">
                     {service.techTags.map((tech, i) => (
                       <span
                         key={i}
-                        className="px-2 py-0.5 rounded-md bg-blue-50 border border-blue-200 text-[10px] font-mono text-blue-900 font-bold"
+                        className="px-2 py-0.5 rounded-md bg-slate-100 text-[#48505E] text-[11px] font-medium"
                       >
                         {tech}
                       </span>
                     ))}
                   </div>
-
-                  {/* Features List */}
-                  <div className="space-y-1.5 mb-4">
-                    {service.features.slice(0, 4).map((feat, idx) => (
-                      <div key={idx} className="flex items-start gap-2 text-xs text-slate-800 font-sans font-medium">
-                        <CheckCircle2 className="w-3.5 h-3.5 text-blue-600 shrink-0 mt-0.5" />
-                        <span>{feat}</span>
-                      </div>
-                    ))}
-                  </div>
                 </div>
 
-                {/* Card Footer Deliverables & Button */}
-                <div className="p-4 sm:p-7 pt-3 border-t border-blue-100 bg-blue-50/50 flex flex-col gap-3">
-                  <div className="flex flex-wrap items-center gap-1">
-                    <span className="text-[10px] font-mono text-blue-950 font-bold mr-1">Output:</span>
-                    {service.deliverables.map((deliv, idx) => (
-                      <span
-                        key={idx}
-                        className="px-2 py-0.5 rounded bg-white border border-blue-200 text-[9px] sm:text-[10px] font-mono text-blue-900 font-bold"
-                      >
-                        {deliv}
-                      </span>
-                    ))}
+                {/* Card Footer: Deliverable & Action Button */}
+                <div className="pt-4 border-t border-slate-100 flex flex-col gap-3">
+                  <div className="text-[11px] text-slate-500 font-medium">
+                    Output: <strong className="text-[#102E61]">{service.deliverables}</strong>
                   </div>
 
                   <button
                     onClick={() => openWhatsAppService(service.title)}
-                    className="w-full py-3 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white rounded-xl font-mono text-xs font-bold flex items-center justify-center gap-2 shadow-md shadow-blue-500/20 active:scale-98 transition-all cursor-pointer"
+                    className="w-full py-2.5 bg-blue-50/80 hover:bg-[#256BE0] text-[#256BE0] hover:text-white rounded-lg font-semibold text-xs transition-colors flex items-center justify-center gap-2 cursor-pointer"
                   >
-                    <span>KONSULTASI VIA WHATSAPP</span>
-                    <ArrowRight className="w-4 h-4" />
+                    <span>Konsultasi Layanan</span>
+                    <ArrowRight className="w-3.5 h-3.5" />
                   </button>
                 </div>
               </div>
