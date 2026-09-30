@@ -105,6 +105,48 @@ export const PricingSection: React.FC = () => {
     window.open(`https://wa.me/6281234567890?text=${text}`, '_blank');
   };
 
+  const renderPrice = (priceStr: string) => {
+    const isStartingFrom = priceStr.startsWith('Mulai ');
+    const cleanPrice = isStartingFrom ? priceStr.replace('Mulai ', '') : priceStr;
+
+    return (
+      <div className="flex items-baseline gap-1.5 flex-wrap">
+        {isStartingFrom && (
+          <span className="text-xs sm:text-sm font-bold text-slate-500 uppercase tracking-wide shrink-0">
+            Mulai
+          </span>
+        )}
+        <span className="text-2xl sm:text-3xl font-extrabold text-[#0F172A] tracking-tight font-sans">
+          {cleanPrice}
+        </span>
+      </div>
+    );
+  };
+
+  const renderMaintenance = (maintStr: string) => {
+    const isStarting = maintStr.startsWith('Mulai ');
+    const clean = isStarting ? maintStr.replace('Mulai ', '') : maintStr;
+    const parts = clean.split(' / ');
+    const amount = parts[0];
+    const period = parts[1];
+
+    return (
+      <div className="flex items-baseline gap-1 flex-wrap">
+        {isStarting && (
+          <span className="text-xs font-bold text-slate-500 uppercase shrink-0">Mulai</span>
+        )}
+        <span className="text-lg sm:text-xl font-extrabold text-[#2563EB] tracking-tight font-sans">
+          {amount}
+        </span>
+        {period && (
+          <span className="text-xs text-slate-500 font-semibold shrink-0">
+            / {period}
+          </span>
+        )}
+      </div>
+    );
+  };
+
   return (
     <section id="pricing" className="py-16 sm:py-24 bg-white border-b border-slate-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -136,7 +178,7 @@ export const PricingSection: React.FC = () => {
             return (
               <div
                 key={tier.id}
-                className={`rounded-2xl p-7 sm:p-8 flex flex-col justify-between transition-all duration-300 relative ${
+                className={`rounded-2xl p-6 sm:p-7 flex flex-col justify-between transition-all duration-300 relative ${
                   isFeatured
                     ? 'bg-white border-2 border-[#2563EB] shadow-xl ring-2 ring-blue-500/10 lg:-translate-y-3 z-10'
                     : 'bg-[#F8FAFC] border-2 border-slate-200 hover:border-slate-300 shadow-sm'
@@ -174,24 +216,20 @@ export const PricingSection: React.FC = () => {
                   </p>
 
                   {/* Price Box */}
-                  <div className="p-5 rounded-2xl bg-white border border-slate-200 mb-6 shadow-xs">
+                  <div className="p-4 sm:p-5 rounded-2xl bg-white border border-slate-200 mb-6 shadow-xs overflow-hidden">
                     {/* Setup Fee */}
-                    <div className="text-[11px] font-bold text-slate-500 uppercase tracking-wider mb-1 whitespace-nowrap">
+                    <div className="text-[10px] sm:text-[11px] font-bold text-slate-500 uppercase tracking-wider mb-1.5 whitespace-nowrap">
                       {tier.priceLabel}
                     </div>
-                    <div className="text-3xl sm:text-4xl font-extrabold text-[#0F172A] font-mono tracking-tight whitespace-nowrap">
-                      {tier.price}
-                    </div>
+                    {renderPrice(tier.price)}
 
                     {/* Server & Maintenance Dedicated Section */}
-                    <div className="mt-4 pt-4 border-t border-slate-100">
-                      <div className="text-[11px] font-bold text-slate-500 uppercase tracking-wider mb-1 whitespace-nowrap">
+                    <div className="mt-4 pt-3.5 border-t border-slate-100">
+                      <div className="text-[10px] sm:text-[11px] font-bold text-slate-500 uppercase tracking-wider mb-1 whitespace-nowrap">
                         Server & Maintenance:
                       </div>
-                      <div className="text-xl font-extrabold text-[#2563EB] font-mono tracking-tight whitespace-nowrap">
-                        {tier.monthlyMaintenance}
-                      </div>
-                      <div className="text-xs text-emerald-600 font-medium mt-1.5 leading-snug">
+                      {renderMaintenance(tier.monthlyMaintenance)}
+                      <div className="text-xs text-emerald-600 font-medium mt-1 leading-snug">
                         {tier.priceNote}
                       </div>
                     </div>

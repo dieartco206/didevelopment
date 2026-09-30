@@ -275,7 +275,7 @@ export const ProjectCalculator: React.FC = () => {
                 <div className="text-xs font-bold text-slate-500 uppercase tracking-wider whitespace-nowrap">
                   Estimasi Biaya Setup Pembuatan:
                 </div>
-                <div className="text-3xl sm:text-4xl font-extrabold text-[#0F172A] font-mono mt-1.5 whitespace-nowrap">
+                <div className="text-3xl sm:text-4xl font-extrabold text-[#0F172A] font-sans tracking-tight mt-1.5 whitespace-nowrap">
                   {formatRupiah(price)}
                 </div>
 
@@ -283,7 +283,7 @@ export const ProjectCalculator: React.FC = () => {
                   <div className="text-[11px] font-bold text-slate-500 uppercase tracking-wider whitespace-nowrap">
                     Cloud Server & Maintenance:
                   </div>
-                  <div className="text-lg font-extrabold text-[#2563EB] font-mono mt-0.5 whitespace-nowrap">
+                  <div className="text-lg font-extrabold text-[#2563EB] font-sans tracking-tight mt-0.5 whitespace-nowrap">
                     Mulai Rp 500.000 / bln
                   </div>
                 </div>
