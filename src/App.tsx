@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Navbar } from './components/navbar/Navbar';
 import { HeroPromo } from './components/hero/HeroPromo';
+import { TechStackMarquee } from './components/marquee/TechStackMarquee';
 import { ServicesSection } from './components/services/ServicesSection';
 import { ProjectCalculator } from './components/calculator/ProjectCalculator';
 import { PortfolioSection } from './components/portfolio/PortfolioSection';
@@ -22,8 +23,8 @@ export const App: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-[#F8FAFC] text-[#0F172A] selection:bg-blue-600 selection:text-white font-sans">
-      {/* Top Header Navigation */}
+    <div className="min-h-screen bg-[#F1F5F9] text-[#0F172A] selection:bg-blue-600 selection:text-white font-sans">
+      {/* Top Header Navigation with Announcement Bar */}
       <Navbar onNavigate={handleNavigate} activeSection={activeSection} />
 
       {/* Main Agency Sections */}
@@ -31,22 +32,25 @@ export const App: React.FC = () => {
         {/* 1. Hero Section with 3D Laptop & Smartphone Showcase */}
         <HeroPromo onNavigate={handleNavigate} />
 
-        {/* 2. Core Services (Web, Android APK, Combo, Web-to-APK) */}
+        {/* 2. Visual Tech Stack & Engineering Marquee */}
+        <TechStackMarquee />
+
+        {/* 3. Core Services with Visual Device Mockups */}
         <ServicesSection />
 
-        {/* 3. Interactive Project Cost & Timeline Calculator */}
+        {/* 4. Interactive Project Cost & Timeline Calculator (Executive Blue Card) */}
         <ProjectCalculator />
 
-        {/* 4. Client Portfolio & Real Case Studies */}
+        {/* 5. Client Portfolio & Real Case Studies with UI Simulation */}
         <PortfolioSection />
 
-        {/* 5. Transparent Pricing Packages */}
+        {/* 6. Transparent Pricing Packages with Royal Blue Flagship Card */}
         <PricingSection />
 
-        {/* 6. Professional 5-Step Workflow */}
+        {/* 7. Professional 5-Step High-Tech Workflow */}
         <WorkflowSection />
 
-        {/* 7. Frequently Asked Questions (FAQ) */}
+        {/* 8. Frequently Asked Questions (FAQ) */}
         <FaqSection />
       </main>
 

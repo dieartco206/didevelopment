@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
 import { 
   Calculator, 
-  Check, 
   MessageSquare, 
   Clock, 
   ArrowRight,
   Globe,
   Smartphone,
   Layers,
-  Building2
+  Building2,
+  CheckCircle2
 } from 'lucide-react';
 import { soundFx } from '../../utils/audio';
 
@@ -102,23 +102,22 @@ export const ProjectCalculator: React.FC = () => {
   };
 
   return (
-    <section id="calculator" className="py-16 sm:py-20 bg-[#F8FAFC] border-t border-slate-200/80 relative overflow-hidden">
-      {/* Ambient background glows */}
-      <div className="absolute top-1/2 -left-20 w-80 h-80 bg-blue-100/50 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute top-1/4 -right-20 w-80 h-80 bg-sky-100/50 rounded-full blur-3xl pointer-events-none" />
+    <section id="calculator" className="py-16 sm:py-20 bg-mesh-calculator border-b border-blue-200/60 relative overflow-hidden">
+      {/* Background radial highlight */}
+      <div className="absolute top-1/3 -left-12 w-96 h-96 bg-blue-400/15 rounded-full blur-3xl pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
         <div className="mb-10 sm:mb-12">
-          <div className="flex items-center gap-2 text-xs font-mono font-bold text-blue-600 uppercase tracking-wider mb-2">
+          <div className="flex items-center gap-2 text-xs font-mono font-bold text-blue-700 uppercase tracking-wider mb-2">
             <Calculator className="w-4 h-4 text-blue-600" />
-            <span>KALKULATOR BIAYA TRANSPARAN</span>
+            <span>KALKULATOR BIAYA PROYEK</span>
           </div>
           <h2 className="text-2xl sm:text-4xl font-black text-slate-900 tracking-tight font-sans">
-            SIMULASI BIAYA & WAKTU PENGERJAAN
+            SIMULASI INVESTASI SECARA TRANSPARAN
           </h2>
-          <p className="mt-2 text-sm sm:text-base text-slate-600 max-w-2xl font-sans">
-            Ketahui estimasi biaya sistem Anda secara terbuka. 100% transparan, tanpa biaya tak terduga:
+          <p className="mt-2 text-sm sm:text-base text-slate-600 max-w-2xl font-sans font-medium">
+            Pilih paket dan fitur yang Anda inginkan. Biaya terhitung otomatis secara riil tanpa biaya tersembunyi:
           </p>
         </div>
 
@@ -126,9 +125,9 @@ export const ProjectCalculator: React.FC = () => {
           {/* Form Options (Left 7 Cols) */}
           <div className="lg:col-span-7 space-y-6">
             {/* Step 1: Project Type */}
-            <div className="p-5 sm:p-7 bg-white border border-slate-200 rounded-3xl shadow-xs">
-              <label className="block text-xs font-mono font-bold text-blue-700 uppercase mb-3.5 tracking-wide">
-                1. Pilih Jenis Sistem yang Dibutuhkan:
+            <div className="p-5 sm:p-7 bg-white/95 border-2 border-blue-200/80 rounded-3xl shadow-sm">
+              <label className="block text-xs font-mono font-bold text-blue-900 uppercase mb-3.5 tracking-wide">
+                1. Pilih Kategori Sistem:
               </label>
               <div className="space-y-2.5">
                 {PROJECT_TYPES.map((pt) => {
@@ -138,33 +137,33 @@ export const ProjectCalculator: React.FC = () => {
                     <div
                       key={pt.id}
                       onClick={() => { soundFx.playClick(650, 0.03); setSelectedType(pt); }}
-                      className={`p-4 rounded-2xl border text-left cursor-pointer transition-all duration-200 flex items-center justify-between gap-3 ${
+                      className={`p-4 rounded-2xl border-2 text-left cursor-pointer transition-all duration-200 flex items-center justify-between gap-3 ${
                         isSelected
-                          ? 'bg-blue-50/80 border-blue-600 shadow-sm ring-1 ring-blue-600'
-                          : 'bg-slate-50/60 border-slate-200 hover:border-blue-300 hover:bg-slate-50'
+                          ? 'bg-blue-50 border-blue-600 shadow-md ring-2 ring-blue-500/20'
+                          : 'bg-slate-50/70 border-slate-200 hover:border-blue-300 hover:bg-white'
                       }`}
                     >
-                      <div className="flex items-center gap-3">
-                        <div className={`w-9 h-9 rounded-xl flex items-center justify-center shrink-0 ${
-                          isSelected ? 'bg-blue-600 text-white' : 'bg-white border border-slate-200 text-slate-600'
+                      <div className="flex items-center gap-3.5">
+                        <div className={`w-10 h-10 rounded-xl flex items-center justify-center shrink-0 ${
+                          isSelected ? 'bg-blue-600 text-white shadow-xs' : 'bg-white border border-slate-300 text-slate-700'
                         }`}>
-                          <Icon className="w-4 h-4" />
+                          <Icon className="w-5 h-5" />
                         </div>
                         <div>
                           <div className="text-sm font-bold font-sans text-slate-900">
                             {pt.name}
                           </div>
-                          <div className="text-xs text-slate-500 font-sans">
+                          <div className="text-xs text-slate-600 font-sans mt-0.5">
                             {pt.desc}
                           </div>
                         </div>
                       </div>
 
                       <div className="text-right shrink-0">
-                        <div className="text-xs sm:text-sm font-mono font-black text-blue-700">
+                        <div className="text-sm font-mono font-black text-blue-800">
                           {formatRupiah(pt.basePrice)}
                         </div>
-                        <div className="text-[10px] font-mono text-slate-400">
+                        <div className="text-[10px] font-mono text-slate-500 font-semibold">
                           ~{pt.days} hari
                         </div>
                       </div>
@@ -175,8 +174,8 @@ export const ProjectCalculator: React.FC = () => {
             </div>
 
             {/* Step 2: Addons */}
-            <div className="p-5 sm:p-7 bg-white border border-slate-200 rounded-3xl shadow-xs">
-              <label className="block text-xs font-mono font-bold text-blue-700 uppercase mb-3.5 tracking-wide">
+            <div className="p-5 sm:p-7 bg-white/95 border-2 border-blue-200/80 rounded-3xl shadow-sm">
+              <label className="block text-xs font-mono font-bold text-blue-900 uppercase mb-3.5 tracking-wide">
                 2. Pilih Fitur Tambahan (Opsional):
               </label>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
@@ -186,10 +185,10 @@ export const ProjectCalculator: React.FC = () => {
                     <div
                       key={addon.id}
                       onClick={() => toggleAddon(addon.id)}
-                      className={`p-3.5 rounded-2xl border cursor-pointer transition-all duration-200 flex items-start gap-3 ${
+                      className={`p-3.5 rounded-2xl border-2 cursor-pointer transition-all duration-200 flex items-start gap-3 ${
                         isChecked
-                          ? 'bg-blue-50/80 border-blue-600 shadow-2xs'
-                          : 'bg-slate-50/60 border-slate-200 hover:border-slate-300'
+                          ? 'bg-blue-50 border-blue-600 shadow-2xs'
+                          : 'bg-slate-50/70 border-slate-200 hover:border-slate-300 hover:bg-white'
                       }`}
                     >
                       <input
@@ -202,10 +201,10 @@ export const ProjectCalculator: React.FC = () => {
                         <div className="text-xs font-bold font-sans text-slate-900">
                           {addon.name}
                         </div>
-                        <div className="text-[11px] text-slate-500 font-sans mt-0.5">
+                        <div className="text-[11px] text-slate-600 font-sans mt-0.5">
                           {addon.desc}
                         </div>
-                        <div className="text-xs font-mono font-black text-blue-600 mt-1">
+                        <div className="text-xs font-mono font-black text-blue-700 mt-1">
                           +{formatRupiah(addon.price)}
                         </div>
                       </div>
@@ -215,103 +214,108 @@ export const ProjectCalculator: React.FC = () => {
               </div>
             </div>
 
-            {/* Step 3: Delivery Timeline Speed */}
-            <div className="p-5 sm:p-7 bg-white border border-slate-200 rounded-3xl shadow-xs">
-              <label className="block text-xs font-mono font-bold text-blue-700 uppercase mb-3.5 tracking-wide">
+            {/* Step 3: Speed */}
+            <div className="p-5 sm:p-7 bg-white/95 border-2 border-blue-200/80 rounded-3xl shadow-sm">
+              <label className="block text-xs font-mono font-bold text-blue-900 uppercase mb-3.5 tracking-wide">
                 3. Prioritas Kecepatan Pengerjaan:
               </label>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 <button
                   type="button"
                   onClick={() => { soundFx.playClick(650, 0.03); setIsExpress(false); }}
-                  className={`p-3.5 rounded-2xl border text-left cursor-pointer transition-all ${
+                  className={`p-4 rounded-2xl border-2 text-left cursor-pointer transition-all ${
                     !isExpress
-                      ? 'bg-blue-50/80 border-blue-600 ring-1 ring-blue-600 shadow-2xs'
-                      : 'bg-slate-50 border-slate-200 text-slate-600'
+                      ? 'bg-blue-50 border-blue-600 shadow-2xs'
+                      : 'bg-slate-50 border-slate-200 text-slate-700 hover:bg-white'
                   }`}
                 >
                   <div className="text-xs font-bold text-slate-900 font-sans">Reguler (Standar)</div>
-                  <div className="text-[11px] text-slate-500 font-sans mt-0.5">Sesuai alur tanpa biaya tambahan</div>
+                  <div className="text-[11px] text-slate-500 font-sans mt-0.5">Sesuai alur normal tanpa biaya tambahan</div>
                 </button>
 
                 <button
                   type="button"
                   onClick={() => { soundFx.playClick(650, 0.03); setIsExpress(true); }}
-                  className={`p-3.5 rounded-2xl border text-left cursor-pointer transition-all ${
+                  className={`p-4 rounded-2xl border-2 text-left cursor-pointer transition-all ${
                     isExpress
-                      ? 'bg-blue-50/80 border-blue-600 ring-1 ring-blue-600 shadow-2xs'
-                      : 'bg-slate-50 border-slate-200 text-slate-600'
+                      ? 'bg-blue-50 border-blue-600 shadow-2xs'
+                      : 'bg-slate-50 border-slate-200 text-slate-700 hover:bg-white'
                   }`}
                 >
                   <div className="text-xs font-bold text-slate-900 font-sans flex items-center justify-between">
                     <span>Express Prioritas</span>
-                    <span className="px-1.5 py-0.5 rounded text-[9px] font-mono bg-blue-600 text-white font-bold">+25%</span>
+                    <span className="px-2 py-0.5 rounded-full text-[9px] font-mono bg-blue-600 text-white font-bold">+25%</span>
                   </div>
-                  <div className="text-[11px] text-slate-500 font-sans mt-0.5">Pengerjaan lebih cepat 40%</div>
+                  <div className="text-[11px] text-slate-500 font-sans mt-0.5">Pengerjaan dipacu lebih cepat 40%</div>
                 </button>
               </div>
             </div>
           </div>
 
-          {/* Sticky Summary Card (Right 5 Cols) */}
+          {/* Sticky Summary Card (Right 5 Cols - High-End Blue Theme!) */}
           <div className="lg:col-span-5 lg:sticky lg:top-24">
-            <div className="p-6 sm:p-8 bg-white border border-blue-200 rounded-3xl shadow-[0_16px_50px_-10px_rgba(37,99,235,0.15)] relative overflow-hidden">
-              {/* Top Accent Gradient Line */}
-              <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-blue-600 via-sky-400 to-indigo-600" />
+            <div className="rounded-3xl bg-gradient-to-br from-blue-900 via-blue-800 to-indigo-950 text-white p-6 sm:p-8 shadow-2xl shadow-blue-900/30 border-2 border-blue-500/40 relative overflow-hidden">
+              {/* Decorative background glow */}
+              <div className="absolute top-0 right-0 w-48 h-48 bg-sky-400/20 rounded-full blur-2xl pointer-events-none" />
 
-              <div className="border-b border-slate-100 pb-4 mb-5">
-                <div className="text-xs font-mono font-bold text-blue-600 uppercase tracking-wide">
-                  RINGKASAN ESTIMASI
+              <div className="border-b border-blue-700/80 pb-4 mb-5">
+                <div className="flex items-center justify-between">
+                  <span className="text-xs font-mono font-bold text-sky-300 uppercase tracking-wider">
+                    RINGKASAN ESTIMASI SISTEM
+                  </span>
+                  <span className="px-2 py-0.5 rounded bg-blue-500/30 text-sky-200 text-[10px] font-mono font-semibold">
+                    REAL-TIME
+                  </span>
                 </div>
-                <h3 className="text-lg sm:text-xl font-bold font-sans text-slate-900 mt-1">
+                <h3 className="text-xl sm:text-2xl font-bold font-sans text-white mt-1.5">
                   {selectedType.name}
                 </h3>
               </div>
 
-              {/* Price & Timeline Display */}
-              <div className="p-5 rounded-2xl bg-blue-50/80 border border-blue-200 mb-6 text-center">
-                <div className="text-xs font-mono text-slate-500 font-medium">Total Estimasi Investasi:</div>
-                <div className="text-3xl sm:text-4xl font-black font-mono text-blue-700 mt-1">
+              {/* Price & Timeline Display Box */}
+              <div className="p-5 rounded-2xl bg-white/10 backdrop-blur-md border border-white/15 mb-6 text-center shadow-inner">
+                <div className="text-xs font-mono text-sky-200">Total Estimasi Investasi:</div>
+                <div className="text-3xl sm:text-4xl font-black font-mono text-white mt-1 text-shimmer-light">
                   {formatRupiah(price)}
                 </div>
-                <div className="text-xs font-mono text-slate-600 mt-2 flex items-center justify-center gap-1.5">
-                  <Clock className="w-4 h-4 text-blue-600" />
-                  <span>Durasi: <strong>{days} Hari Kerja</strong></span>
+                <div className="text-xs font-mono text-sky-300 mt-2 flex items-center justify-center gap-1.5">
+                  <Clock className="w-4 h-4 text-sky-400" />
+                  <span>Estimasi Pengerjaan: <strong>{days} Hari Kerja</strong></span>
                 </div>
               </div>
 
-              {/* Inclusions list */}
-              <div className="space-y-2 text-xs font-sans text-slate-700 mb-6">
+              {/* Inclusions checklist */}
+              <div className="space-y-2.5 text-xs font-sans text-blue-100 mb-6 font-medium">
                 <div className="flex items-center gap-2">
-                  <Check className="w-4 h-4 text-blue-600 shrink-0" />
-                  <span>100% Hak Milik Source Code</span>
+                  <CheckCircle2 className="w-4 h-4 text-sky-400 shrink-0" />
+                  <span>100% Hak Milik Source Code (No Rental)</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <Check className="w-4 h-4 text-blue-600 shrink-0" />
-                  <span>Garansi Bebas Bug 1 Tahun</span>
+                  <CheckCircle2 className="w-4 h-4 text-sky-400 shrink-0" />
+                  <span>Garansi Resmi Bebas Bug 1 Tahun</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <Check className="w-4 h-4 text-blue-600 shrink-0" />
-                  <span>File APK Release Siap Pasang</span>
+                  <CheckCircle2 className="w-4 h-4 text-sky-400 shrink-0" />
+                  <span>File Master APK Siap Pasang di Smartphone</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <Check className="w-4 h-4 text-blue-600 shrink-0" />
-                  <span>Panduan & Training Pemakaian</span>
+                  <CheckCircle2 className="w-4 h-4 text-sky-400 shrink-0" />
+                  <span>Panduan & Training Pemakaian Lengkap</span>
                 </div>
               </div>
 
               {/* WhatsApp Action Button */}
               <button
                 onClick={sendToWhatsApp}
-                className="w-full py-4 bg-blue-600 hover:bg-blue-700 text-white rounded-2xl font-mono text-xs sm:text-sm font-bold flex items-center justify-center gap-2 shadow-lg shadow-blue-500/25 active:scale-98 transition-all cursor-pointer"
+                className="w-full py-4 bg-gradient-to-r from-sky-400 to-blue-500 hover:from-sky-300 hover:to-blue-400 text-slate-950 rounded-2xl font-mono text-xs sm:text-sm font-black flex items-center justify-center gap-2 shadow-xl shadow-sky-400/25 active:scale-98 transition-all cursor-pointer"
               >
-                <MessageSquare className="w-4 h-4" />
-                <span>ORDER VIA WHATSAPP</span>
+                <MessageSquare className="w-4 h-4 fill-current" />
+                <span>ORDER RINCIAN VIA WHATSAPP</span>
                 <ArrowRight className="w-4 h-4" />
               </button>
 
-              <p className="text-[11px] text-center text-slate-400 mt-3 font-sans">
-                Konsultasi & diskusi alur kerja 100% Gratis tanpa ikatan.
+              <p className="text-[11px] text-center text-blue-200 mt-3 font-sans">
+                Konsultasi & diskusi kebutuhan 100% Bebas Biaya.
               </p>
             </div>
           </div>

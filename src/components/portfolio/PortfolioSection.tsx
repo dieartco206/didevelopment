@@ -5,7 +5,11 @@ import {
   ArrowUpRight,
   Briefcase,
   Zap,
-  TrendingUp
+  TrendingUp,
+  Printer,
+  MapPin,
+  Lock,
+  Truck
 } from 'lucide-react';
 import { soundFx } from '../../utils/audio';
 
@@ -96,32 +100,32 @@ export const PortfolioSection: React.FC = () => {
   };
 
   return (
-    <section id="portfolio" className="py-16 sm:py-20 bg-white border-t border-slate-200/80 relative overflow-hidden">
+    <section id="portfolio" className="py-16 sm:py-20 bg-mesh-portfolio border-b border-blue-200/60 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10 sm:mb-12">
           <div>
-            <div className="flex items-center gap-2 text-xs font-mono font-bold text-blue-600 uppercase tracking-wider mb-2">
+            <div className="flex items-center gap-2 text-xs font-mono font-bold text-blue-700 uppercase tracking-wider mb-2">
               <Briefcase className="w-4 h-4 text-blue-600" />
-              <span>REKAM JEJAK NYATA</span>
+              <span>REKAM JEJAK SISTEM OPERASIONAL</span>
             </div>
             <h2 className="text-2xl sm:text-4xl font-black text-slate-900 tracking-tight font-sans">
-              PORTOFOLIO SISTEM YANG TELAH BEROPERASI
+              STUDI KASUS & HASIL IMPLEMENTASI
             </h2>
-            <p className="mt-2 text-sm sm:text-base text-slate-600 max-w-2xl font-sans">
-              Bukan sekadar konsep visual. Sistem ini dipakai setiap hari oleh ratusan karyawan dan ribuan pelanggan:
+            <p className="mt-2 text-sm sm:text-base text-slate-600 max-w-2xl font-sans font-medium">
+              Sistem nyata yang aktif memproses transaksi dan data setiap hari:
             </p>
           </div>
 
           {/* Tab Filter */}
-          <div className="flex items-center gap-1.5 p-1.5 bg-slate-100 rounded-2xl border border-slate-200">
+          <div className="flex items-center gap-1.5 p-1.5 bg-white/90 shadow-xs rounded-2xl border border-blue-200">
             <button
               onClick={() => { soundFx.playClick(650, 0.03); setActiveTab('all'); }}
               className={`px-3.5 py-1.5 rounded-xl text-xs font-mono font-bold transition-all cursor-pointer ${
                 activeTab === 'all' ? 'bg-blue-600 text-white shadow-xs' : 'text-slate-600 hover:text-blue-600'
               }`}
             >
-              Semua Studi Kasus
+              Semua Proyek
             </button>
             <button
               onClick={() => { soundFx.playClick(650, 0.03); setActiveTab('Full Ecosystem (Web + APK)'); }}
@@ -139,20 +143,20 @@ export const PortfolioSection: React.FC = () => {
           {filtered.map((item) => (
             <div
               key={item.id}
-              className="group relative rounded-3xl bg-white border border-slate-200/90 shadow-sm hover:border-blue-500 hover:shadow-xl hover:shadow-blue-500/10 transition-all duration-300 flex flex-col justify-between overflow-hidden"
+              className="group relative rounded-3xl bg-white border-2 border-blue-200/90 shadow-md hover:border-blue-600 hover:shadow-2xl hover:shadow-blue-500/15 transition-all duration-300 flex flex-col justify-between overflow-hidden"
             >
               {/* Top Accent Gradient Line */}
-              <div className="h-1.5 w-full bg-gradient-to-r from-blue-600 via-sky-400 to-indigo-600" />
+              <div className="h-2 w-full bg-gradient-to-r from-blue-600 via-sky-400 to-indigo-600" />
 
               <div className="p-6 sm:p-8">
                 {/* Header Pill */}
                 <div className="flex items-center justify-between gap-3 mb-3">
-                  <span className="px-2.5 py-1 rounded-md bg-blue-50 border border-blue-200 text-blue-700 text-[11px] font-mono font-bold">
+                  <span className="px-2.5 py-1 rounded-full bg-blue-100 border border-blue-200 text-blue-900 text-[11px] font-mono font-bold">
                     {item.category}
                   </span>
                   {item.isPopular && (
-                    <span className="text-[11px] font-mono text-blue-600 font-bold flex items-center gap-1">
-                      <Zap className="w-3.5 h-3.5 fill-current" /> BEST CASE
+                    <span className="text-[11px] font-mono text-blue-700 font-bold flex items-center gap-1">
+                      <Zap className="w-3.5 h-3.5 fill-current text-blue-600" /> BEST CASE
                     </span>
                   )}
                 </div>
@@ -160,30 +164,105 @@ export const PortfolioSection: React.FC = () => {
                 <h3 className="text-xl sm:text-2xl font-bold font-sans text-slate-900 group-hover:text-blue-600 transition-colors mb-1">
                   {item.title}
                 </h3>
-                <div className="text-xs font-mono text-slate-500 mb-4">
-                  Klien: <strong className="text-slate-700">{item.client}</strong>
+                <div className="text-xs font-mono text-slate-500 mb-4 font-semibold">
+                  Klien: <strong className="text-blue-900">{item.client}</strong>
                 </div>
 
-                {/* Problem vs Solution (Punchy 1-Liners) */}
-                <div className="space-y-2.5 mb-5">
+                {/* VISUAL DEVICE MOCKUP BOX (Anti-Polos & Super Impressive!) */}
+                {item.id === 'kasir-pos' && (
+                  <div className="mb-5 p-3.5 rounded-2xl bg-gradient-to-r from-slate-900 to-blue-950 text-white font-mono text-xs border border-blue-800/80 shadow-inner">
+                    <div className="flex items-center justify-between pb-2 border-b border-blue-800/80 mb-2">
+                      <div className="flex items-center gap-2 text-sky-300 font-bold">
+                        <Printer className="w-4 h-4" />
+                        <span>KASIR KILAT POS 58MM</span>
+                      </div>
+                      <span className="text-[10px] text-emerald-400 font-bold">STRUK TERCETAK</span>
+                    </div>
+                    <div className="space-y-1 text-[11px] text-slate-300">
+                      <div className="flex justify-between"><span>2x Cold Brew Latte</span><span>Rp 56.000</span></div>
+                      <div className="flex justify-between"><span>1x Butter Croissant</span><span>Rp 28.000</span></div>
+                      <div className="flex justify-between font-bold text-white pt-1 border-t border-white/10">
+                        <span>TOTAL BAYAR (QRIS)</span>
+                        <span className="text-sky-300">Rp 84.000</span>
+                      </div>
+                    </div>
+                  </div>
+                )}
+
+                {item.id === 'absensi-gps' && (
+                  <div className="mb-5 p-3.5 rounded-2xl bg-gradient-to-r from-blue-950 to-slate-900 text-white font-mono text-xs border border-blue-800/80 shadow-inner">
+                    <div className="flex items-center justify-between pb-2 border-b border-blue-800/80 mb-2">
+                      <div className="flex items-center gap-2 text-sky-300 font-bold">
+                        <MapPin className="w-4 h-4 text-rose-400" />
+                        <span>GEOFENCING & FACE SCAN</span>
+                      </div>
+                      <span className="text-[10px] text-emerald-400 font-bold">LOKASI VALID</span>
+                    </div>
+                    <div className="grid grid-cols-2 gap-2 text-[11px]">
+                      <div className="p-1.5 rounded bg-white/10 text-center">
+                        <span className="text-slate-400 block text-[9px]">RADIUS KANTOR</span>
+                        <span className="font-bold text-sky-300">18m (Dalam Area)</span>
+                      </div>
+                      <div className="p-1.5 rounded bg-white/10 text-center">
+                        <span className="text-slate-400 block text-[9px]">VERIFIKASI WAJAH</span>
+                        <span className="font-bold text-emerald-400">Cocok 99.8%</span>
+                      </div>
+                    </div>
+                  </div>
+                )}
+
+                {item.id === 'logistik-tracking' && (
+                  <div className="mb-5 p-3.5 rounded-2xl bg-gradient-to-r from-slate-900 to-blue-950 text-white font-mono text-xs border border-blue-800/80 shadow-inner">
+                    <div className="flex items-center justify-between pb-2 border-b border-blue-800/80 mb-2">
+                      <div className="flex items-center gap-2 text-sky-300 font-bold">
+                        <Truck className="w-4 h-4" />
+                        <span>RESI: #KRG-882910</span>
+                      </div>
+                      <span className="text-[10px] text-sky-300 font-bold">DALAM PENGIRIMAN</span>
+                    </div>
+                    <div className="text-[11px] text-slate-300 flex items-center justify-between p-1.5 rounded bg-white/10">
+                      <span>Kurir: Ahmad S. (Motor)</span>
+                      <span className="text-emerald-400 font-bold">TTD Digital: OK</span>
+                    </div>
+                  </div>
+                )}
+
+                {item.id === 'cbt-exam' && (
+                  <div className="mb-5 p-3.5 rounded-2xl bg-gradient-to-r from-blue-950 to-indigo-950 text-white font-mono text-xs border border-blue-800/80 shadow-inner">
+                    <div className="flex items-center justify-between pb-2 border-b border-blue-800/80 mb-2">
+                      <div className="flex items-center gap-2 text-sky-300 font-bold">
+                        <Lock className="w-4 h-4 text-amber-400" />
+                        <span>KIOSK LOCK (LAYAR TERKUNCI)</span>
+                      </div>
+                      <span className="text-[10px] text-amber-300 font-bold">ANTI-SPLIT SCREEN</span>
+                    </div>
+                    <div className="text-[11px] text-slate-300 flex items-center justify-between p-1.5 rounded bg-white/10">
+                      <span>Soal 32 / 50 • Acak</span>
+                      <span className="text-sky-300 font-bold">Sisa Waktu: 42:15</span>
+                    </div>
+                  </div>
+                )}
+
+                {/* Problem vs Solution */}
+                <div className="space-y-2 mb-5">
                   <div className="p-3 rounded-xl bg-slate-50 border border-slate-200 text-xs font-sans text-slate-700">
-                    <span className="font-bold text-rose-600 block mb-0.5">Tantangan Klien:</span>
+                    <strong className="text-rose-600 block mb-0.5">Tantangan Klien:</strong>
                     {item.problem}
                   </div>
 
-                  <div className="p-3 rounded-xl bg-blue-50/70 border border-blue-200 text-xs font-sans text-slate-800">
-                    <span className="font-bold text-blue-700 block mb-0.5">Solusi DiDev:</span>
+                  <div className="p-3 rounded-xl bg-blue-50/80 border border-blue-200 text-xs font-sans text-slate-800">
+                    <strong className="text-blue-800 block mb-0.5">Solusi DiDev:</strong>
                     {item.solution}
                   </div>
                 </div>
 
                 {/* Features */}
                 <div className="space-y-2 mb-5">
-                  <div className="text-[11px] font-mono text-slate-400 uppercase tracking-wide font-bold">
+                  <div className="text-[11px] font-mono text-slate-500 uppercase tracking-wide font-bold">
                     FITUR UTAMA:
                   </div>
                   {item.features.map((feat, idx) => (
-                    <div key={idx} className="flex items-start gap-2 text-xs font-sans text-slate-700">
+                    <div key={idx} className="flex items-start gap-2 text-xs font-sans text-slate-800 font-medium">
                       <CheckCircle2 className="w-3.5 h-3.5 text-blue-600 shrink-0 mt-0.5" />
                       <span>{feat}</span>
                     </div>
@@ -191,22 +270,22 @@ export const PortfolioSection: React.FC = () => {
                 </div>
 
                 {/* Big Result Badge */}
-                <div className="p-3.5 rounded-2xl bg-gradient-to-r from-blue-600 to-indigo-600 text-white text-xs font-mono flex items-center gap-2.5 shadow-md shadow-blue-500/20">
-                  <TrendingUp className="w-4 h-4 shrink-0" />
+                <div className="p-3.5 rounded-2xl bg-gradient-to-r from-blue-700 via-blue-600 to-indigo-700 text-white text-xs font-mono flex items-center gap-2.5 shadow-md shadow-blue-500/25">
+                  <TrendingUp className="w-5 h-5 shrink-0 text-sky-300" />
                   <div>
-                    <span className="font-bold uppercase tracking-wider block text-[10px] text-blue-100">HASIL TERBUKTI:</span>
-                    <span className="font-bold text-xs sm:text-sm">{item.results}</span>
+                    <span className="font-bold uppercase tracking-wider block text-[10px] text-sky-200">HASIL NYATA:</span>
+                    <span className="font-bold text-xs sm:text-sm text-white">{item.results}</span>
                   </div>
                 </div>
               </div>
 
               {/* Footer Tech Stack & Consultation Button */}
-              <div className="p-6 sm:p-8 pt-4 border-t border-slate-100 bg-slate-50/60 flex flex-col sm:flex-row items-center justify-between gap-3">
+              <div className="p-6 sm:p-8 pt-4 border-t border-blue-100 bg-blue-50/50 flex flex-col sm:flex-row items-center justify-between gap-3">
                 <div className="flex flex-wrap gap-1.5 self-start sm:self-auto">
                   {item.techStack.map((tech, idx) => (
                     <span
                       key={idx}
-                      className="px-2 py-0.5 rounded bg-white border border-slate-200 text-[10px] font-mono text-slate-700 font-medium"
+                      className="px-2 py-0.5 rounded bg-white border border-blue-200 text-[10px] font-mono text-blue-900 font-bold shadow-2xs"
                     >
                       {tech}
                     </span>
@@ -215,9 +294,9 @@ export const PortfolioSection: React.FC = () => {
 
                 <button
                   onClick={() => consultProject(item.title)}
-                  className="w-full sm:w-auto px-4 py-2.5 bg-blue-600 hover:bg-blue-700 text-white rounded-xl font-mono text-xs font-bold transition-all flex items-center justify-center gap-1.5 shadow-xs cursor-pointer active:scale-95"
+                  className="w-full sm:w-auto px-4 py-2.5 bg-blue-600 hover:bg-blue-700 text-white rounded-xl font-mono text-xs font-bold transition-all flex items-center justify-center gap-1.5 shadow-md shadow-blue-500/20 cursor-pointer active:scale-95"
                 >
-                  <span>BUAT SEPERTI INI</span>
+                  <span>BUAT SISTEM SERUPA</span>
                   <ArrowUpRight className="w-4 h-4" />
                 </button>
               </div>
