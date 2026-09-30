@@ -133,13 +133,15 @@ export const PortfolioSection: React.FC = () => {
           </div>
         </div>
 
-        {/* Portfolio Cards Grid */}
+        {/* Portfolio Cards Grid with Left/Right Entrance Animations */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-10">
-          {filtered.map((item) => (
-            <div
-              key={item.id}
-              className="group rounded-2xl bg-white border-2 border-slate-200 hover:border-[#2563EB] shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 flex flex-col justify-between overflow-hidden"
-            >
+          {filtered.map((item, idx) => {
+            const entranceAnim = idx % 2 === 0 ? 'animate-enter-left delay-100' : 'animate-enter-right delay-200';
+            return (
+              <div
+                key={item.id}
+                className={`group rounded-2xl bg-white border-2 border-slate-200 hover:border-[#2563EB] shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 flex flex-col justify-between overflow-hidden ${entranceAnim}`}
+              >
               {/* AREA PREVIEW UI NYATA (Bukan Teks Kosong!) */}
               <div className="bg-slate-100 p-4 border-b border-slate-200">
                 
@@ -307,8 +309,9 @@ export const PortfolioSection: React.FC = () => {
                 </div>
               </div>
             </div>
-          ))}
-        </div>
+          );
+        })}
+      </div>
 
       </div>
     </section>

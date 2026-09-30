@@ -47,7 +47,7 @@ export const ServicesSection: React.FC = () => {
            ======================================================== */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center mb-20 sm:mb-28">
           {/* Mockup Antarmuka Web Dashboard Kasir & Stok */}
-          <div className="lg:col-span-6 order-2 lg:order-1 relative">
+          <div className="lg:col-span-6 order-2 lg:order-1 relative animate-enter-left">
             <div className="absolute -inset-3 bg-gradient-to-tr from-blue-600/15 via-sky-400/15 to-transparent rounded-3xl blur-2xl -z-10 opacity-75 pointer-events-none" />
             
             {/* Floating Bluetooth Thermal Printer Status */}
@@ -136,7 +136,7 @@ export const ServicesSection: React.FC = () => {
           </div>
 
           {/* Penjelasan Solusi */}
-          <div className="lg:col-span-6 order-1 lg:order-2">
+          <div className="lg:col-span-6 order-1 lg:order-2 animate-enter-right delay-100">
             <span className="text-xs font-bold text-[#2563EB] uppercase tracking-wider block mb-2 whitespace-nowrap shrink-0">
               01 • SISTEM KASIR & MANAJEMEN RETAIL
             </span>
@@ -181,7 +181,7 @@ export const ServicesSection: React.FC = () => {
            ======================================================== */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center mb-20 sm:mb-28">
           {/* Penjelasan Solusi */}
-          <div className="lg:col-span-6">
+          <div className="lg:col-span-6 animate-enter-left">
             <span className="text-xs font-bold text-[#10B981] uppercase tracking-wider block mb-2 whitespace-nowrap shrink-0">
               02 • APLIKASI ANDROID (APK RELEASE)
             </span>
@@ -220,7 +220,7 @@ export const ServicesSection: React.FC = () => {
           </div>
 
           {/* Mockup Smartphone Android Flagship (Desain Realistis Flagship 19.5:9) */}
-          <div className="lg:col-span-6 flex justify-center relative">
+          <div className="lg:col-span-6 flex justify-center relative animate-enter-right delay-100">
             {/* Ambient Aura Lighting with Breathing Animation */}
             <div className="absolute -inset-4 bg-gradient-to-br from-emerald-500/20 via-teal-400/15 to-transparent rounded-full blur-2xl -z-10 opacity-75 pointer-events-none animate-aura-breathe" />
             
@@ -388,7 +388,7 @@ export const ServicesSection: React.FC = () => {
              ======================================================== */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
             {/* Mockup Portal Web ERP / Company */}
-            <div className="lg:col-span-6 order-2 lg:order-1 relative">
+            <div className="lg:col-span-6 order-2 lg:order-1 relative animate-enter-left">
               <div className="absolute -inset-3 bg-gradient-to-tr from-indigo-600/18 via-blue-500/15 to-transparent rounded-3xl blur-2xl -z-10 opacity-75 pointer-events-none" />
               
               {/* Floating High Speed Performance Toast */}
@@ -457,7 +457,7 @@ export const ServicesSection: React.FC = () => {
           </div>
 
           {/* Penjelasan Solusi */}
-          <div className="lg:col-span-6 order-1 lg:order-2">
+          <div className="lg:col-span-6 order-1 lg:order-2 animate-enter-right delay-100">
             <span className="text-xs font-bold text-[#4F46E5] uppercase tracking-wider block mb-2 whitespace-nowrap shrink-0">
               03 • PORTAL PERUSAHAAN & ERP TERPADU
             </span>

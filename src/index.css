@@ -265,3 +265,76 @@
   animation-play-state: paused;
 }
 
+/* ========================================================
+   PAGE RELOAD & VIEWPORT ENTRANCE ANIMATIONS
+   Smooth 60fps hardware-accelerated transitions
+   ======================================================== */
+@keyframes enterFromRight {
+  0% {
+    opacity: 0;
+    transform: translate3d(80px, 0, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes enterFromLeft {
+  0% {
+    opacity: 0;
+    transform: translate3d(-80px, 0, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes enterFromUp {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 45px, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes enterScale {
+  0% {
+    opacity: 0;
+    transform: scale(0.92) translate3d(0, 25px, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translate3d(0, 0, 0);
+  }
+}
+
+.animate-enter-right {
+  animation: enterFromRight 0.85s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.animate-enter-left {
+  animation: enterFromLeft 0.85s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.animate-enter-up {
+  animation: enterFromUp 0.85s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.animate-enter-scale {
+  animation: enterScale 0.85s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.delay-75 { animation-delay: 75ms; }
+.delay-100 { animation-delay: 100ms; }
+.delay-150 { animation-delay: 150ms; }
+.delay-200 { animation-delay: 200ms; }
+.delay-300 { animation-delay: 300ms; }
+.delay-400 { animation-delay: 400ms; }
+.delay-500 { animation-delay: 500ms; }
+.delay-600 { animation-delay: 600ms; }
+

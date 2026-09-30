@@ -174,15 +174,21 @@ export const PricingSection: React.FC = () => {
           </div>
         </div>
 
-        {/* 3 Structured Pricing Cards */}
+        {/* 3 Structured Pricing Cards with Directional Entrance Animation */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch">
-          {PRICING_TIERS.map((tier) => {
+          {PRICING_TIERS.map((tier, idx) => {
             const isFeatured = tier.isPopular;
+            const entranceAnim = 
+              idx === 0 
+                ? 'animate-enter-left delay-100' 
+                : idx === 1 
+                  ? 'animate-enter-up delay-200' 
+                  : 'animate-enter-right delay-300';
 
             return (
               <div
                 key={tier.id}
-                className={`rounded-2xl p-6 sm:p-7 flex flex-col justify-between transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl relative ${
+                className={`rounded-2xl p-6 sm:p-7 flex flex-col justify-between transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl relative ${entranceAnim} ${
                   isFeatured
                     ? 'bg-white border-2 border-[#2563EB] shadow-xl ring-2 ring-blue-500/10 lg:-translate-y-3 hover:lg:-translate-y-5 z-10'
                     : 'bg-[#F8FAFC] border-2 border-slate-200 hover:border-blue-400 shadow-sm'
