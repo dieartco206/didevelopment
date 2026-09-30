@@ -34,10 +34,10 @@ export const Navbar: React.FC<NavbarProps> = ({ onNavigate, activeSection }) => 
 
   const navItems = [
     { id: 'services', label: 'Layanan', icon: Layers },
-    { id: 'calculator', label: 'Simulasi Biaya', icon: Calculator },
+    { id: 'calculator', label: 'Hitung Biaya', icon: Calculator },
     { id: 'portfolio', label: 'Portofolio', icon: Briefcase },
-    { id: 'pricing', label: 'Paket Harga', icon: Tag },
-    { id: 'workflow', label: 'Alur Kerja', icon: Laptop },
+    { id: 'pricing', label: 'Harga', icon: Tag },
+    { id: 'workflow', label: 'Alur', icon: Laptop },
     { id: 'faq', label: 'FAQ', icon: HelpCircle },
   ];
 
@@ -57,41 +57,41 @@ export const Navbar: React.FC<NavbarProps> = ({ onNavigate, activeSection }) => 
 
   return (
     <>
-      {/* Top Urgent Micro Announcement Bar */}
-      <div className="bg-gradient-to-r from-blue-700 via-blue-600 to-sky-600 text-white py-1.5 px-4 text-center text-[11px] font-mono font-semibold flex items-center justify-center gap-2 overflow-hidden shadow-xs">
-        <span className="relative flex h-2 w-2">
+      {/* Top Urgent Micro Announcement Bar (Mobile Optimized) */}
+      <div className="bg-gradient-to-r from-blue-700 via-blue-600 to-sky-600 text-white py-1 px-3 text-center text-[10px] sm:text-[11px] font-mono font-bold flex items-center justify-center gap-1.5 shadow-xs">
+        <span className="relative flex h-2 w-2 shrink-0">
           <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-80"></span>
           <span className="relative inline-flex rounded-full h-2 w-2 bg-white"></span>
         </span>
         <span className="truncate">
-          PROMO SPESIAL: Free Domain .COM & Garansi 1 Tahun untuk Setiap Pembuatan Website & APK Android
+          PROMO: Free Domain & Garansi 1 Th untuk Web & APK Android
         </span>
       </div>
 
-      <header className="sticky top-0 z-50 backdrop-blur-xl bg-white/90 border-b border-blue-100 shadow-2xs">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-16">
+      <header className="sticky top-0 z-50 backdrop-blur-xl bg-white/95 border-b border-blue-100 shadow-2xs">
+        <div className="max-w-7xl mx-auto px-3.5 sm:px-6 lg:px-8">
+          <div className="flex items-center justify-between h-14 sm:h-16">
             {/* Logo Brand */}
             <div 
               onClick={() => handleNavClick('hero')}
-              className="flex items-center gap-3 cursor-pointer group"
+              className="flex items-center gap-2.5 cursor-pointer group"
             >
-              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-blue-600 to-sky-500 p-0.5 shadow-md shadow-blue-500/20 group-hover:scale-105 transition-transform duration-200">
+              <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-gradient-to-br from-blue-600 to-sky-500 p-0.5 shadow-md shadow-blue-500/20 group-hover:scale-105 transition-transform duration-200">
                 <div className="w-full h-full bg-white rounded-[10px] flex items-center justify-center">
-                  <Smartphone className="w-5 h-5 text-blue-600 group-hover:rotate-12 transition-transform duration-200" />
+                  <Smartphone className="w-4 h-4 sm:w-5 sm:h-5 text-blue-600 group-hover:rotate-12 transition-transform duration-200" />
                 </div>
               </div>
               <div>
-                <div className="flex items-center gap-2">
-                  <span className="font-mono font-extrabold text-lg text-slate-900 tracking-wider">
+                <div className="flex items-center gap-1.5">
+                  <span className="font-mono font-black text-base sm:text-lg text-slate-900 tracking-wider">
                     DIDEV<span className="text-blue-600">.STUDIO</span>
                   </span>
-                  <span className="hidden sm:inline-block px-1.5 py-0.5 text-[9px] font-mono font-bold bg-blue-50 text-blue-700 border border-blue-200 rounded">
-                    SOFTWARE HOUSE
+                  <span className="hidden xs:inline-block px-1.5 py-0.2 text-[8px] sm:text-[9px] font-mono font-bold bg-blue-100 text-blue-800 rounded">
+                    OFFICIAL
                   </span>
                 </div>
-                <div className="text-[10px] font-mono text-slate-500">
-                  WEBSITE & ANDROID APK RESMI
+                <div className="text-[9px] sm:text-[10px] font-mono text-slate-500 font-medium">
+                  WEB & ANDROID APK STUDIO
                 </div>
               </div>
             </div>
@@ -119,7 +119,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onNavigate, activeSection }) => 
             </nav>
 
             {/* Right Action Bar */}
-            <div className="flex items-center gap-2.5">
+            <div className="flex items-center gap-2">
               {/* Audio Toggle */}
               <button
                 onClick={toggleSound}
@@ -129,28 +129,29 @@ export const Navbar: React.FC<NavbarProps> = ({ onNavigate, activeSection }) => 
                 {isMuted ? <VolumeX className="w-4 h-4 text-slate-400" /> : <Volume2 className="w-4 h-4 text-blue-600" />}
               </button>
 
-              {/* Direct WhatsApp CTA */}
+              {/* Direct WhatsApp CTA (Hidden on tiny screens, icon on mobile) */}
               <button
                 onClick={openWhatsApp}
-                className="hidden sm:flex items-center gap-2 px-4 py-2 bg-blue-600 hover:bg-blue-700 active:scale-95 text-white font-mono font-bold text-xs rounded-xl transition-all shadow-md shadow-blue-500/25 cursor-pointer"
+                className="hidden sm:flex items-center gap-2 px-3.5 py-2 bg-blue-600 hover:bg-blue-700 active:scale-95 text-white font-mono font-bold text-xs rounded-xl transition-all shadow-md shadow-blue-500/25 cursor-pointer"
               >
                 <MessageSquare className="w-3.5 h-3.5" />
-                <span>KONSULTASI GRATIS</span>
+                <span>KONSULTASI WA</span>
               </button>
 
               {/* Mobile Menu Button */}
               <button
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                className="lg:hidden p-2 rounded-xl bg-slate-100 border border-slate-200 text-slate-700 hover:text-blue-600 cursor-pointer"
+                className="lg:hidden p-2 rounded-xl bg-blue-50 border border-blue-200 text-blue-700 hover:bg-blue-100 cursor-pointer"
+                aria-label="Toggle menu"
               >
                 {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
               </button>
             </div>
           </div>
 
-          {/* Mobile Dropdown */}
+          {/* Mobile Drawer */}
           {mobileMenuOpen && (
-            <div className="lg:hidden py-3 border-t border-slate-200 flex flex-col gap-1">
+            <div className="lg:hidden py-3 border-t border-slate-200 flex flex-col gap-1 bg-white/95 backdrop-blur-md rounded-b-2xl shadow-xl">
               {navItems.map((item) => {
                 const Icon = item.icon;
                 const isActive = activeSection === item.id;
@@ -158,10 +159,10 @@ export const Navbar: React.FC<NavbarProps> = ({ onNavigate, activeSection }) => 
                   <button
                     key={item.id}
                     onClick={() => handleNavClick(item.id)}
-                    className={`flex items-center gap-2.5 px-3 py-2.5 rounded-xl text-xs font-mono text-left cursor-pointer ${
+                    className={`flex items-center gap-3 px-4 py-2.5 rounded-xl text-xs font-mono text-left cursor-pointer transition-colors ${
                       isActive
-                        ? 'bg-blue-50 text-blue-700 font-bold'
-                        : 'text-slate-600 hover:bg-slate-50'
+                        ? 'bg-blue-50 text-blue-700 font-bold border-l-4 border-blue-600'
+                        : 'text-slate-700 hover:bg-slate-50'
                     }`}
                   >
                     <Icon className="w-4 h-4 text-blue-600" />
@@ -169,13 +170,15 @@ export const Navbar: React.FC<NavbarProps> = ({ onNavigate, activeSection }) => 
                   </button>
                 );
               })}
-              <button
-                onClick={openWhatsApp}
-                className="mt-2 w-full py-3 bg-blue-600 text-white font-mono font-bold text-xs rounded-xl flex items-center justify-center gap-2 shadow-md shadow-blue-500/20 active:scale-98 cursor-pointer"
-              >
-                <MessageSquare className="w-4 h-4" />
-                <span>CHAT VIA WHATSAPP SEKARANG</span>
-              </button>
+              <div className="pt-2 px-2">
+                <button
+                  onClick={openWhatsApp}
+                  className="w-full py-3 bg-gradient-to-r from-blue-600 to-blue-700 text-white font-mono font-bold text-xs rounded-xl flex items-center justify-center gap-2 shadow-md shadow-blue-500/25 active:scale-98 cursor-pointer"
+                >
+                  <MessageSquare className="w-4 h-4" />
+                  <span>KONSULTASI GRATIS VIA WHATSAPP</span>
+                </button>
+              </div>
             </div>
           )}
         </div>

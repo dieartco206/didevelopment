@@ -9,76 +9,76 @@ export const Footer: React.FC = () => {
   };
 
   return (
-    <footer className="bg-[#0B1528] border-t border-slate-800 text-slate-400 py-16 text-xs font-mono">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
+    <footer className="bg-[#081225] border-t border-blue-900/60 text-slate-400 py-10 sm:py-16 text-xs font-mono">
+      <div className="max-w-7xl mx-auto px-3.5 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-10 sm:mb-12">
           {/* Col 1: Brand & Bio */}
           <div className="md:col-span-2">
-            <div className="flex items-center gap-3 mb-3">
+            <div className="flex items-center gap-2.5 mb-3">
               <div className="w-8 h-8 rounded-lg bg-blue-600 flex items-center justify-center text-white shadow-md shadow-blue-500/20">
                 <Smartphone className="w-4 h-4" />
               </div>
-              <span className="text-white font-extrabold text-base tracking-wider">
+              <span className="text-white font-black text-base sm:text-lg tracking-wider">
                 DIDEV<span className="text-blue-400">.STUDIO</span>
               </span>
             </div>
-            <p className="text-slate-400 font-sans text-xs leading-relaxed max-w-sm mb-4">
-              Jasa pembuatan website profesional dan aplikasi Android (APK) kustom bergaransi resmi. 
-              Membantu bisnis, UMKM, dan perusahaan mentransformasikan operasional manual menjadi sistem digital yang cepat dan efisien.
+            <p className="text-slate-400 font-sans text-xs leading-relaxed max-w-sm mb-3">
+              Jasa pembuatan website profesional dan aplikasi Android (APK) kustom bergaransi resmi 1 tahun. 
+              100% Hak milik source code diserahkan penuh tanpa biaya bulanan.
             </p>
-            <div className="flex items-center gap-2 text-[11px] text-slate-400">
-              <span className="w-2 h-2 rounded-full bg-blue-500 animate-pulse" />
-              <span>Layanan Konsultasi Online Aktif Setiap Hari</span>
+            <div className="flex items-center gap-2 text-[11px] text-sky-400">
+              <span className="w-2 h-2 rounded-full bg-sky-400 animate-pulse" />
+              <span>Konsultasi Online Aktif Setiap Hari (08.00 - 22.00 WIB)</span>
             </div>
           </div>
 
           {/* Col 2: Services List */}
           <div>
-            <div className="text-white font-bold uppercase tracking-wider mb-3">
+            <div className="text-white font-bold uppercase tracking-wider mb-2.5 text-xs">
               LAYANAN UTAMA
             </div>
-            <ul className="space-y-2 text-slate-400 font-sans">
-              <li className="hover:text-blue-400 transition-colors cursor-pointer">
-                Website Company Profile & Toko Online
+            <ul className="space-y-1.5 text-slate-400 font-sans text-xs">
+              <li className="hover:text-sky-300 transition-colors cursor-pointer">
+                Website Toko Online & Landing Page
               </li>
-              <li className="hover:text-blue-400 transition-colors cursor-pointer">
+              <li className="hover:text-sky-300 transition-colors cursor-pointer">
                 Aplikasi Android Kasir (POS) Bluetooth
               </li>
-              <li className="hover:text-blue-400 transition-colors cursor-pointer">
+              <li className="hover:text-sky-300 transition-colors cursor-pointer">
                 Aplikasi Absensi GPS & Foto Selfie
               </li>
-              <li className="hover:text-blue-400 transition-colors cursor-pointer">
-                Jasa Konversi Website ke APK Android
+              <li className="hover:text-sky-300 transition-colors cursor-pointer">
+                Paket Komplit Web + Android APK
               </li>
-              <li className="hover:text-blue-400 transition-colors cursor-pointer">
-                Paket Komplit Web Admin + Android APK
+              <li className="hover:text-sky-300 transition-colors cursor-pointer">
+                Konversi Website ke APK Android
               </li>
             </ul>
           </div>
 
           {/* Col 3: Contact & Guarantees */}
           <div>
-            <div className="text-white font-bold uppercase tracking-wider mb-3">
-              KONTAK & KONSULTASI
+            <div className="text-white font-bold uppercase tracking-wider mb-2.5 text-xs">
+              KONTAK RESMI
             </div>
-            <ul className="space-y-2.5 text-slate-400 font-sans">
+            <ul className="space-y-2 text-slate-400 font-sans text-xs">
               <li 
                 onClick={openWhatsApp}
-                className="flex items-center gap-2 cursor-pointer hover:text-blue-400 transition-colors"
+                className="flex items-center gap-2 cursor-pointer text-sky-300 font-semibold hover:text-white transition-colors"
               >
-                <MessageSquare className="w-4 h-4 text-blue-400 shrink-0" />
+                <MessageSquare className="w-4 h-4 text-sky-400 shrink-0" />
                 <span>WhatsApp: +62 812-3456-7890</span>
               </li>
               <li className="flex items-center gap-2">
-                <Mail className="w-4 h-4 text-blue-400 shrink-0" />
+                <Mail className="w-4 h-4 text-slate-400 shrink-0" />
                 <span>Email: halo@didevelopment.dev</span>
               </li>
               <li className="flex items-center gap-2">
-                <MapPin className="w-4 h-4 text-blue-400 shrink-0" />
-                <span>Indonesia (Layanan Seluruh Wilayah)</span>
+                <MapPin className="w-4 h-4 text-slate-400 shrink-0" />
+                <span>Layanan Klien Seluruh Indonesia</span>
               </li>
-              <li className="flex items-center gap-2 mt-2">
-                <ShieldCheck className="w-4 h-4 text-blue-400 shrink-0" />
+              <li className="flex items-center gap-2 mt-1 text-sky-300">
+                <ShieldCheck className="w-4 h-4 text-sky-400 shrink-0" />
                 <span>Garansi Bebas Bug 1 Tahun</span>
               </li>
             </ul>
@@ -86,14 +86,14 @@ export const Footer: React.FC = () => {
         </div>
 
         {/* Bottom Bar */}
-        <div className="pt-8 border-t border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] text-slate-500">
+        <div className="pt-6 border-t border-blue-950 flex flex-col sm:flex-row items-center justify-between gap-3 text-[10px] sm:text-[11px] text-slate-500 text-center sm:text-left">
           <div>
             © {new Date().getFullYear()} DIDEV STUDIO. All rights reserved. 100% Source Code Milik Klien.
           </div>
-          <div className="flex items-center gap-1.5">
-            <span>Dibuat dengan React & Three.js WebGL</span>
+          <div className="flex items-center gap-1.5 text-sky-400 font-semibold">
+            <span>React 19 & Three.js WebGL</span>
             <span>•</span>
-            <span className="text-blue-400 font-semibold">Bukan Template AI Murahan</span>
+            <span>Software House Resmi</span>
           </div>
         </div>
       </div>

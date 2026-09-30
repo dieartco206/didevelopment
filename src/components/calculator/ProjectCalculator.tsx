@@ -29,9 +29,9 @@ interface FeatureAddon {
 }
 
 const PROJECT_TYPES: ProjectType[] = [
-  { id: 'web_company', name: 'Website Company Profile', basePrice: 1500000, days: 7, desc: 'Profil usaha, portofolio & kontak WA', icon: Globe },
+  { id: 'web_company', name: 'Website Company Profile', basePrice: 1500000, days: 7, desc: 'Profil usaha & kontak WA', icon: Globe },
   { id: 'web_ecommerce', name: 'Website Toko Online (E-Commerce)', basePrice: 2800000, days: 14, desc: 'Katalog, keranjang & hitung ongkir', icon: Globe },
-  { id: 'apk_standalone', name: 'Aplikasi Android APK Standalone', basePrice: 2500000, days: 12, desc: 'Kasir POS, absensi & alat kerja HP', icon: Smartphone },
+  { id: 'apk_standalone', name: 'Aplikasi Android APK Standalone', basePrice: 2500000, days: 12, desc: 'Kasir POS, absensi & staf lapangan', icon: Smartphone },
   { id: 'combo_ecosystem', name: 'Paket Komplit (Web + Android APK)', basePrice: 4500000, days: 21, desc: 'Dashboard laptop + aplikasi HP sinkron', icon: Layers },
   { id: 'custom_saas', name: 'Sistem Custom Enterprise', basePrice: 6500000, days: 30, desc: 'ERP, multi-cabang & database besar', icon: Building2 },
 ];
@@ -102,34 +102,31 @@ export const ProjectCalculator: React.FC = () => {
   };
 
   return (
-    <section id="calculator" className="py-16 sm:py-20 bg-mesh-calculator border-b border-blue-200/60 relative overflow-hidden">
-      {/* Background radial highlight */}
-      <div className="absolute top-1/3 -left-12 w-96 h-96 bg-blue-400/15 rounded-full blur-3xl pointer-events-none" />
-
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <section id="calculator" className="py-12 sm:py-20 bg-mesh-calculator border-b border-blue-200/60 relative overflow-hidden">
+      <div className="max-w-7xl mx-auto px-3.5 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
-        <div className="mb-10 sm:mb-12">
-          <div className="flex items-center gap-2 text-xs font-mono font-bold text-blue-700 uppercase tracking-wider mb-2">
-            <Calculator className="w-4 h-4 text-blue-600" />
+        <div className="mb-8 sm:mb-12">
+          <div className="flex items-center gap-2 text-xs font-mono font-bold text-blue-700 uppercase tracking-wider mb-1.5">
+            <Calculator className="w-3.5 h-3.5 text-blue-600" />
             <span>KALKULATOR BIAYA PROYEK</span>
           </div>
           <h2 className="text-2xl sm:text-4xl font-black text-slate-900 tracking-tight font-sans">
-            SIMULASI INVESTASI SECARA TRANSPARAN
+            SIMULASI INVESTASI TRANSPARAN
           </h2>
-          <p className="mt-2 text-sm sm:text-base text-slate-600 max-w-2xl font-sans font-medium">
-            Pilih paket dan fitur yang Anda inginkan. Biaya terhitung otomatis secara riil tanpa biaya tersembunyi:
+          <p className="mt-1.5 text-xs sm:text-base text-slate-600 max-w-2xl font-sans font-medium">
+            Pilih paket dan fitur yang Anda inginkan. Biaya terhitung otomatis secara riil:
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 sm:gap-8 items-start">
           {/* Form Options (Left 7 Cols) */}
-          <div className="lg:col-span-7 space-y-6">
+          <div className="lg:col-span-7 space-y-4 sm:space-y-6">
             {/* Step 1: Project Type */}
-            <div className="p-5 sm:p-7 bg-white/95 border-2 border-blue-200/80 rounded-3xl shadow-sm">
-              <label className="block text-xs font-mono font-bold text-blue-900 uppercase mb-3.5 tracking-wide">
+            <div className="p-4 sm:p-7 bg-white/95 border-2 border-blue-200/80 rounded-2xl sm:rounded-3xl shadow-xs">
+              <label className="block text-xs font-mono font-bold text-blue-900 uppercase mb-3 tracking-wide">
                 1. Pilih Kategori Sistem:
               </label>
-              <div className="space-y-2.5">
+              <div className="space-y-2">
                 {PROJECT_TYPES.map((pt) => {
                   const isSelected = selectedType.id === pt.id;
                   const Icon = pt.icon;
@@ -137,33 +134,33 @@ export const ProjectCalculator: React.FC = () => {
                     <div
                       key={pt.id}
                       onClick={() => { soundFx.playClick(650, 0.03); setSelectedType(pt); }}
-                      className={`p-4 rounded-2xl border-2 text-left cursor-pointer transition-all duration-200 flex items-center justify-between gap-3 ${
+                      className={`p-3 sm:p-4 rounded-xl sm:rounded-2xl border-2 text-left cursor-pointer transition-all duration-200 flex items-center justify-between gap-2.5 ${
                         isSelected
-                          ? 'bg-blue-50 border-blue-600 shadow-md ring-2 ring-blue-500/20'
+                          ? 'bg-blue-50 border-blue-600 shadow-xs ring-1 ring-blue-500/20'
                           : 'bg-slate-50/70 border-slate-200 hover:border-blue-300 hover:bg-white'
                       }`}
                     >
-                      <div className="flex items-center gap-3.5">
-                        <div className={`w-10 h-10 rounded-xl flex items-center justify-center shrink-0 ${
-                          isSelected ? 'bg-blue-600 text-white shadow-xs' : 'bg-white border border-slate-300 text-slate-700'
+                      <div className="flex items-center gap-2.5 sm:gap-3.5">
+                        <div className={`w-8 h-8 sm:w-10 sm:h-10 rounded-lg sm:rounded-xl flex items-center justify-center shrink-0 ${
+                          isSelected ? 'bg-blue-600 text-white' : 'bg-white border border-slate-300 text-slate-700'
                         }`}>
-                          <Icon className="w-5 h-5" />
+                          <Icon className="w-4 h-4 sm:w-5 sm:h-5" />
                         </div>
                         <div>
-                          <div className="text-sm font-bold font-sans text-slate-900">
+                          <div className="text-xs sm:text-sm font-bold font-sans text-slate-900 leading-snug">
                             {pt.name}
                           </div>
-                          <div className="text-xs text-slate-600 font-sans mt-0.5">
+                          <div className="text-[10px] sm:text-xs text-slate-600 font-sans mt-0.5">
                             {pt.desc}
                           </div>
                         </div>
                       </div>
 
                       <div className="text-right shrink-0">
-                        <div className="text-sm font-mono font-black text-blue-800">
+                        <div className="text-xs sm:text-sm font-mono font-black text-blue-800">
                           {formatRupiah(pt.basePrice)}
                         </div>
-                        <div className="text-[10px] font-mono text-slate-500 font-semibold">
+                        <div className="text-[9px] sm:text-[10px] font-mono text-slate-500 font-semibold">
                           ~{pt.days} hari
                         </div>
                       </div>
@@ -174,18 +171,18 @@ export const ProjectCalculator: React.FC = () => {
             </div>
 
             {/* Step 2: Addons */}
-            <div className="p-5 sm:p-7 bg-white/95 border-2 border-blue-200/80 rounded-3xl shadow-sm">
-              <label className="block text-xs font-mono font-bold text-blue-900 uppercase mb-3.5 tracking-wide">
+            <div className="p-4 sm:p-7 bg-white/95 border-2 border-blue-200/80 rounded-2xl sm:rounded-3xl shadow-xs">
+              <label className="block text-xs font-mono font-bold text-blue-900 uppercase mb-3 tracking-wide">
                 2. Pilih Fitur Tambahan (Opsional):
               </label>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-3">
                 {ADDONS.map((addon) => {
                   const isChecked = selectedAddons.includes(addon.id);
                   return (
                     <div
                       key={addon.id}
                       onClick={() => toggleAddon(addon.id)}
-                      className={`p-3.5 rounded-2xl border-2 cursor-pointer transition-all duration-200 flex items-start gap-3 ${
+                      className={`p-3 rounded-xl sm:rounded-2xl border-2 cursor-pointer transition-all duration-200 flex items-start gap-2.5 ${
                         isChecked
                           ? 'bg-blue-50 border-blue-600 shadow-2xs'
                           : 'bg-slate-50/70 border-slate-200 hover:border-slate-300 hover:bg-white'
@@ -198,10 +195,10 @@ export const ProjectCalculator: React.FC = () => {
                         className="mt-0.5 accent-blue-600 w-4 h-4 cursor-pointer shrink-0"
                       />
                       <div>
-                        <div className="text-xs font-bold font-sans text-slate-900">
+                        <div className="text-xs font-bold font-sans text-slate-900 leading-snug">
                           {addon.name}
                         </div>
-                        <div className="text-[11px] text-slate-600 font-sans mt-0.5">
+                        <div className="text-[10px] sm:text-[11px] text-slate-600 font-sans mt-0.5">
                           {addon.desc}
                         </div>
                         <div className="text-xs font-mono font-black text-blue-700 mt-1">
@@ -215,107 +212,104 @@ export const ProjectCalculator: React.FC = () => {
             </div>
 
             {/* Step 3: Speed */}
-            <div className="p-5 sm:p-7 bg-white/95 border-2 border-blue-200/80 rounded-3xl shadow-sm">
-              <label className="block text-xs font-mono font-bold text-blue-900 uppercase mb-3.5 tracking-wide">
-                3. Prioritas Kecepatan Pengerjaan:
+            <div className="p-4 sm:p-7 bg-white/95 border-2 border-blue-200/80 rounded-2xl sm:rounded-3xl shadow-xs">
+              <label className="block text-xs font-mono font-bold text-blue-900 uppercase mb-3 tracking-wide">
+                3. Prioritas Kecepatan:
               </label>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              <div className="grid grid-cols-2 gap-2 sm:gap-3">
                 <button
                   type="button"
                   onClick={() => { soundFx.playClick(650, 0.03); setIsExpress(false); }}
-                  className={`p-4 rounded-2xl border-2 text-left cursor-pointer transition-all ${
+                  className={`p-3 sm:p-4 rounded-xl sm:rounded-2xl border-2 text-left cursor-pointer transition-all ${
                     !isExpress
                       ? 'bg-blue-50 border-blue-600 shadow-2xs'
                       : 'bg-slate-50 border-slate-200 text-slate-700 hover:bg-white'
                   }`}
                 >
-                  <div className="text-xs font-bold text-slate-900 font-sans">Reguler (Standar)</div>
-                  <div className="text-[11px] text-slate-500 font-sans mt-0.5">Sesuai alur normal tanpa biaya tambahan</div>
+                  <div className="text-xs font-bold text-slate-900 font-sans">Reguler</div>
+                  <div className="text-[10px] sm:text-[11px] text-slate-500 font-sans mt-0.5">Alur standar</div>
                 </button>
 
                 <button
                   type="button"
                   onClick={() => { soundFx.playClick(650, 0.03); setIsExpress(true); }}
-                  className={`p-4 rounded-2xl border-2 text-left cursor-pointer transition-all ${
+                  className={`p-3 sm:p-4 rounded-xl sm:rounded-2xl border-2 text-left cursor-pointer transition-all ${
                     isExpress
                       ? 'bg-blue-50 border-blue-600 shadow-2xs'
                       : 'bg-slate-50 border-slate-200 text-slate-700 hover:bg-white'
                   }`}
                 >
                   <div className="text-xs font-bold text-slate-900 font-sans flex items-center justify-between">
-                    <span>Express Prioritas</span>
-                    <span className="px-2 py-0.5 rounded-full text-[9px] font-mono bg-blue-600 text-white font-bold">+25%</span>
+                    <span>Express</span>
+                    <span className="px-1.5 py-0.2 rounded-full text-[9px] font-mono bg-blue-600 text-white font-bold">+25%</span>
                   </div>
-                  <div className="text-[11px] text-slate-500 font-sans mt-0.5">Pengerjaan dipacu lebih cepat 40%</div>
+                  <div className="text-[10px] sm:text-[11px] text-slate-500 font-sans mt-0.5">Lebih cepat 40%</div>
                 </button>
               </div>
             </div>
           </div>
 
-          {/* Sticky Summary Card (Right 5 Cols - High-End Blue Theme!) */}
+          {/* Summary Card (Right 5 Cols - Executive Blue) */}
           <div className="lg:col-span-5 lg:sticky lg:top-24">
-            <div className="rounded-3xl bg-gradient-to-br from-blue-900 via-blue-800 to-indigo-950 text-white p-6 sm:p-8 shadow-2xl shadow-blue-900/30 border-2 border-blue-500/40 relative overflow-hidden">
-              {/* Decorative background glow */}
-              <div className="absolute top-0 right-0 w-48 h-48 bg-sky-400/20 rounded-full blur-2xl pointer-events-none" />
-
-              <div className="border-b border-blue-700/80 pb-4 mb-5">
+            <div className="rounded-2xl sm:rounded-3xl bg-gradient-to-br from-blue-900 via-blue-800 to-indigo-950 text-white p-5 sm:p-7 shadow-xl shadow-blue-900/30 border-2 border-blue-500/40 relative overflow-hidden">
+              <div className="border-b border-blue-700/80 pb-3 sm:pb-4 mb-4 sm:mb-5">
                 <div className="flex items-center justify-between">
-                  <span className="text-xs font-mono font-bold text-sky-300 uppercase tracking-wider">
-                    RINGKASAN ESTIMASI SISTEM
+                  <span className="text-[11px] font-mono font-bold text-sky-300 uppercase tracking-wider">
+                    RINGKASAN ESTIMASI
                   </span>
-                  <span className="px-2 py-0.5 rounded bg-blue-500/30 text-sky-200 text-[10px] font-mono font-semibold">
+                  <span className="px-2 py-0.5 rounded bg-blue-500/30 text-sky-200 text-[9px] sm:text-[10px] font-mono font-semibold">
                     REAL-TIME
                   </span>
                 </div>
-                <h3 className="text-xl sm:text-2xl font-bold font-sans text-white mt-1.5">
+                <h3 className="text-lg sm:text-2xl font-bold font-sans text-white mt-1">
                   {selectedType.name}
                 </h3>
               </div>
 
               {/* Price & Timeline Display Box */}
-              <div className="p-5 rounded-2xl bg-white/10 backdrop-blur-md border border-white/15 mb-6 text-center shadow-inner">
-                <div className="text-xs font-mono text-sky-200">Total Estimasi Investasi:</div>
-                <div className="text-3xl sm:text-4xl font-black font-mono text-white mt-1 text-shimmer-light">
+              <div className="p-4 sm:p-5 rounded-xl sm:rounded-2xl bg-white/10 backdrop-blur-md border border-white/15 mb-4 sm:mb-6 text-center">
+                <div className="text-[11px] font-mono text-sky-200">Total Estimasi Investasi:</div>
+                <div className="text-2xl sm:text-4xl font-black font-mono text-white mt-0.5">
                   {formatRupiah(price)}
                 </div>
-                <div className="text-xs font-mono text-sky-300 mt-2 flex items-center justify-center gap-1.5">
-                  <Clock className="w-4 h-4 text-sky-400" />
-                  <span>Estimasi Pengerjaan: <strong>{days} Hari Kerja</strong></span>
+                <div className="text-xs font-mono text-sky-300 mt-1.5 flex items-center justify-center gap-1.5">
+                  <Clock className="w-3.5 h-3.5 text-sky-400" />
+                  <span>Durasi: <strong>{days} Hari Kerja</strong></span>
                 </div>
               </div>
 
-              {/* Inclusions checklist */}
-              <div className="space-y-2.5 text-xs font-sans text-blue-100 mb-6 font-medium">
+              {/* Checklist */}
+              <div className="space-y-2 text-xs font-sans text-blue-100 mb-5 font-medium">
                 <div className="flex items-center gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-sky-400 shrink-0" />
-                  <span>100% Hak Milik Source Code (No Rental)</span>
+                  <CheckCircle2 className="w-3.5 h-3.5 text-sky-400 shrink-0" />
+                  <span>100% Hak Milik Source Code</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-sky-400 shrink-0" />
+                  <CheckCircle2 className="w-3.5 h-3.5 text-sky-400 shrink-0" />
                   <span>Garansi Resmi Bebas Bug 1 Tahun</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-sky-400 shrink-0" />
-                  <span>File Master APK Siap Pasang di Smartphone</span>
+                  <CheckCircle2 className="w-3.5 h-3.5 text-sky-400 shrink-0" />
+                  <span>File Master APK Siap Pasang</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-sky-400 shrink-0" />
-                  <span>Panduan & Training Pemakaian Lengkap</span>
+                  <CheckCircle2 className="w-3.5 h-3.5 text-sky-400 shrink-0" />
+                  <span>Panduan & Training Lengkap</span>
                 </div>
               </div>
 
               {/* WhatsApp Action Button */}
               <button
                 onClick={sendToWhatsApp}
-                className="w-full py-4 bg-gradient-to-r from-sky-400 to-blue-500 hover:from-sky-300 hover:to-blue-400 text-slate-950 rounded-2xl font-mono text-xs sm:text-sm font-black flex items-center justify-center gap-2 shadow-xl shadow-sky-400/25 active:scale-98 transition-all cursor-pointer"
+                className="w-full py-3.5 sm:py-4 bg-gradient-to-r from-sky-400 to-blue-500 hover:from-sky-300 hover:to-blue-400 text-slate-950 rounded-xl sm:rounded-2xl font-mono text-xs sm:text-sm font-black flex items-center justify-center gap-2 shadow-lg shadow-sky-400/25 active:scale-98 transition-all cursor-pointer"
               >
                 <MessageSquare className="w-4 h-4 fill-current" />
-                <span>ORDER RINCIAN VIA WHATSAPP</span>
+                <span>ORDER VIA WHATSAPP</span>
                 <ArrowRight className="w-4 h-4" />
               </button>
 
-              <p className="text-[11px] text-center text-blue-200 mt-3 font-sans">
-                Konsultasi & diskusi kebutuhan 100% Bebas Biaya.
+              <p className="text-[10px] text-center text-blue-200 mt-2.5 font-sans">
+                Konsultasi & diskusi 100% Bebas Biaya.
               </p>
             </div>
           </div>

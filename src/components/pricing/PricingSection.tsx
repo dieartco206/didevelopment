@@ -95,24 +95,24 @@ export const PricingSection: React.FC = () => {
   };
 
   return (
-    <section id="pricing" className="py-16 sm:py-20 bg-mesh-pricing border-b border-blue-200/60 relative overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <section id="pricing" className="py-12 sm:py-20 bg-mesh-pricing border-b border-blue-200/60 relative overflow-hidden">
+      <div className="max-w-7xl mx-auto px-3.5 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-14">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 bg-white border border-blue-200 rounded-full text-xs font-mono font-bold text-blue-700 shadow-2xs mb-3">
+        <div className="text-center max-w-3xl mx-auto mb-8 sm:mb-14">
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 bg-white border border-blue-200 rounded-full text-xs font-mono font-bold text-blue-700 shadow-2xs mb-2">
             <Tag className="w-3.5 h-3.5 text-blue-600" />
-            <span>HARGA TRANSPARAN & TANPA BIAYA TERSEMBUNYI</span>
+            <span>HARGA TRANSPARAN & BEBAS BIAYA BULANAN</span>
           </div>
           <h2 className="text-2xl sm:text-4xl font-black text-slate-900 tracking-tight font-sans">
-            PAKET INVESTASI SISTEM BISNIS
+            PAKET INVESTASI SISTEM
           </h2>
-          <p className="mt-2 text-sm sm:text-base text-slate-600 font-sans font-medium">
-            Sekali bayar, 100% hak milik source code tanpa sewa bulanan. Termasuk garansi resmi 1 tahun:
+          <p className="mt-1.5 text-xs sm:text-base text-slate-600 font-sans font-medium">
+            Sekali bayar, 100% hak milik source code tanpa sewa bulanan. Garansi resmi 1 tahun:
           </p>
         </div>
 
         {/* Pricing Cards Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 items-stretch">
           {PRICING_PLANS.map((plan) => {
             const isFeatured = plan.isPopular;
 
@@ -120,47 +120,46 @@ export const PricingSection: React.FC = () => {
               return (
                 <div
                   key={plan.id}
-                  className="rounded-3xl bg-gradient-to-br from-blue-900 via-blue-800 to-indigo-950 text-white p-6 sm:p-7 flex flex-col justify-between relative shadow-2xl shadow-blue-900/35 border-2 border-sky-400 lg:-translate-y-3 z-10 overflow-hidden"
+                  className="rounded-2xl sm:rounded-3xl bg-gradient-to-br from-blue-900 via-blue-800 to-indigo-950 text-white p-5 sm:p-7 flex flex-col justify-between relative shadow-xl shadow-blue-900/35 border-2 border-sky-400 lg:-translate-y-3 z-10 overflow-hidden"
                 >
-                  {/* Glowing ambient orb inside card */}
-                  <div className="absolute top-0 right-0 w-40 h-40 bg-sky-400/25 rounded-full blur-2xl pointer-events-none" />
+                  <div className="absolute top-0 right-0 w-36 h-36 bg-sky-400/25 rounded-full blur-2xl pointer-events-none" />
 
                   <div>
                     {/* Popular Pill */}
-                    <div className="flex items-center justify-between mb-4">
-                      <span className="text-[10px] font-mono px-3 py-1 rounded-full font-black bg-gradient-to-r from-sky-400 to-blue-400 text-slate-950 shadow-md">
+                    <div className="flex items-center justify-between mb-3">
+                      <span className="text-[10px] font-mono px-2.5 py-0.5 rounded-full font-black bg-gradient-to-r from-sky-400 to-blue-400 text-slate-950 shadow-xs">
                         ★ {plan.badge}
                       </span>
                       <div className="flex items-center gap-1 text-[11px] font-mono text-sky-200 font-bold">
-                        <Clock className="w-3.5 h-3.5 text-sky-300" />
+                        <Clock className="w-3 h-3 text-sky-300" />
                         <span>{plan.timeline}</span>
                       </div>
                     </div>
 
-                    <h3 className="text-xl sm:text-2xl font-bold font-sans text-white mb-1.5">
+                    <h3 className="text-xl sm:text-2xl font-bold font-sans text-white mb-1">
                       {plan.name}
                     </h3>
-                    <p className="text-xs text-blue-100 font-sans leading-relaxed mb-4">
+                    <p className="text-xs text-blue-100 font-sans leading-relaxed mb-3.5">
                       {plan.description}
                     </p>
 
                     {/* Price Display */}
-                    <div className="p-4 rounded-2xl bg-white/10 backdrop-blur-md border border-white/20 mb-5 shadow-inner">
-                      <div className="text-3xl font-black font-mono text-white">
+                    <div className="p-3.5 rounded-xl sm:rounded-2xl bg-white/10 backdrop-blur-md border border-white/20 mb-4 shadow-inner">
+                      <div className="text-2xl sm:text-3xl font-black font-mono text-white">
                         {plan.price}
                       </div>
-                      <div className="text-[11px] font-mono text-sky-200 mt-0.5">
+                      <div className="text-[10px] sm:text-[11px] font-mono text-sky-200 mt-0.5">
                         {plan.priceNote}
                       </div>
                     </div>
 
                     {/* Features List */}
-                    <div className="space-y-2.5 mb-6">
+                    <div className="space-y-2 mb-5">
                       <div className="text-[10px] font-mono text-sky-300 uppercase tracking-wide font-black">
                         PAKET LENGKAP TERMASUK:
                       </div>
                       {plan.features.map((feat, idx) => (
-                        <div key={idx} className="flex items-start gap-2.5 text-xs font-sans text-white font-medium">
+                        <div key={idx} className="flex items-start gap-2 text-xs font-sans text-white font-medium">
                           <Check className="w-4 h-4 text-sky-300 shrink-0 mt-0.5" />
                           <span>{feat}</span>
                         </div>
@@ -171,7 +170,7 @@ export const PricingSection: React.FC = () => {
                   {/* Action Button */}
                   <button
                     onClick={() => handleSelectPlan(plan)}
-                    className="w-full py-4 rounded-xl font-mono text-xs font-black flex items-center justify-center gap-2 bg-gradient-to-r from-sky-400 to-blue-400 hover:from-sky-300 hover:to-blue-300 text-slate-950 shadow-xl shadow-sky-400/25 cursor-pointer active:scale-95 transition-all"
+                    className="w-full py-3.5 rounded-xl font-mono text-xs font-black flex items-center justify-center gap-2 bg-gradient-to-r from-sky-400 to-blue-400 hover:from-sky-300 hover:to-blue-300 text-slate-950 shadow-lg shadow-sky-400/25 cursor-pointer active:scale-95 transition-all"
                   >
                     <span>{plan.ctaText}</span>
                     <ArrowRight className="w-4 h-4" />
@@ -183,42 +182,38 @@ export const PricingSection: React.FC = () => {
             return (
               <div
                 key={plan.id}
-                className="rounded-3xl bg-white border-2 border-blue-200/80 p-6 sm:p-7 flex flex-col justify-between shadow-md hover:border-blue-500 hover:shadow-xl transition-all duration-300 relative overflow-hidden"
+                className="rounded-2xl sm:rounded-3xl bg-white border-2 border-blue-200/80 p-5 sm:p-7 flex flex-col justify-between shadow-sm hover:border-blue-500 hover:shadow-lg transition-all duration-300 relative overflow-hidden"
               >
-                {/* Top Accent Gradient Line */}
                 <div className="h-1.5 w-full bg-slate-200 absolute top-0 left-0 right-0" />
 
                 <div>
-                  {/* Badge */}
-                  <div className="flex items-center justify-between mb-4">
-                    <span className="text-[10px] font-mono px-2.5 py-0.5 rounded-full font-bold bg-blue-50 text-blue-800 border border-blue-200">
+                  <div className="flex items-center justify-between mb-3">
+                    <span className="text-[10px] font-mono px-2 py-0.5 rounded-full font-bold bg-blue-50 text-blue-800 border border-blue-200">
                       {plan.badge}
                     </span>
                     <div className="flex items-center gap-1 text-[11px] font-mono text-slate-500 font-semibold">
-                      <Clock className="w-3.5 h-3.5 text-blue-600" />
+                      <Clock className="w-3 h-3 text-blue-600" />
                       <span>{plan.timeline}</span>
                     </div>
                   </div>
 
-                  <h3 className="text-xl font-bold font-sans text-slate-900 mb-1.5">
+                  <h3 className="text-xl font-bold font-sans text-slate-900 mb-1">
                     {plan.name}
                   </h3>
-                  <p className="text-xs text-slate-600 font-sans leading-relaxed mb-4">
+                  <p className="text-xs text-slate-600 font-sans leading-relaxed mb-3.5">
                     {plan.description}
                   </p>
 
-                  {/* Price Display */}
-                  <div className="p-4 rounded-2xl bg-blue-50/70 border border-blue-200 mb-5">
+                  <div className="p-3.5 rounded-xl sm:rounded-2xl bg-blue-50/70 border border-blue-200 mb-4">
                     <div className="text-2xl sm:text-3xl font-black font-mono text-blue-900">
                       {plan.price}
                     </div>
-                    <div className="text-[11px] font-mono text-slate-600 mt-0.5 font-medium">
+                    <div className="text-[10px] sm:text-[11px] font-mono text-slate-600 mt-0.5 font-medium">
                       {plan.priceNote}
                     </div>
                   </div>
 
-                  {/* Features List */}
-                  <div className="space-y-2.5 mb-6">
+                  <div className="space-y-2 mb-5">
                     <div className="text-[10px] font-mono text-slate-400 uppercase tracking-wide font-bold">
                       TERMASUK LAYANAN:
                     </div>
@@ -231,13 +226,12 @@ export const PricingSection: React.FC = () => {
                   </div>
                 </div>
 
-                {/* Action Button */}
                 <button
                   onClick={() => handleSelectPlan(plan)}
                   className="w-full py-3.5 rounded-xl font-mono text-xs font-bold flex items-center justify-center gap-2 bg-blue-50 hover:bg-blue-600 text-blue-700 hover:text-white border border-blue-200 hover:border-blue-600 transition-all cursor-pointer active:scale-95"
                 >
                   <span>{plan.ctaText}</span>
-                  <ArrowRight className="w-3.5 h-3.5" />
+                  <ArrowRight className="w-4 h-4" />
                 </button>
               </div>
             );

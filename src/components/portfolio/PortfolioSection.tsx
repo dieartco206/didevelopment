@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import type { PortfolioItem } from '../../types';
 import { 
-  CheckCircle2, 
   ArrowUpRight,
   Briefcase,
   Zap,
@@ -47,7 +46,7 @@ const PORTFOLIO_DATA: PortfolioItem[] = [
       'Validasi Radius Titik Kantor / Proyek',
       'Export Rekap Gaji (Payroll) ke Excel',
     ],
-    results: 'Kecurangan 0%, Hemat 15 Jam Rekap Gaji Bulanan',
+    results: 'Kecurangan 0%, Hemat 15 Jam Rekap Gaji',
     isPopular: true,
   },
   {
@@ -65,7 +64,7 @@ const PORTFOLIO_DATA: PortfolioItem[] = [
       'Tanda Tangan Digital Penerima Paket',
       'Notifikasi Otomatis Status Pengiriman',
     ],
-    results: 'Komplain Turun 85%, Update Manifest 4x Lebih Cepat',
+    results: 'Komplain Turun 85%, Update 4x Lebih Cepat',
   },
   {
     id: 'cbt-exam',
@@ -82,7 +81,7 @@ const PORTFOLIO_DATA: PortfolioItem[] = [
       'Ujian Tetap Berjalan saat Internet Putus',
       'Koreksi Nilai Otomatis & Analisis Butir',
     ],
-    results: '1.200 Siswa Ujian Serentak Lancar Bebas Server Down',
+    results: '1.200 Siswa Ujian Serentak Bebas Down',
   },
 ];
 
@@ -100,28 +99,28 @@ export const PortfolioSection: React.FC = () => {
   };
 
   return (
-    <section id="portfolio" className="py-16 sm:py-20 bg-mesh-portfolio border-b border-blue-200/60 relative overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <section id="portfolio" className="py-12 sm:py-20 bg-mesh-portfolio border-b border-blue-200/60 relative overflow-hidden">
+      <div className="max-w-7xl mx-auto px-3.5 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10 sm:mb-12">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 sm:gap-6 mb-8 sm:mb-12">
           <div>
-            <div className="flex items-center gap-2 text-xs font-mono font-bold text-blue-700 uppercase tracking-wider mb-2">
-              <Briefcase className="w-4 h-4 text-blue-600" />
+            <div className="flex items-center gap-2 text-xs font-mono font-bold text-blue-700 uppercase tracking-wider mb-1.5">
+              <Briefcase className="w-3.5 h-3.5 text-blue-600" />
               <span>REKAM JEJAK SISTEM OPERASIONAL</span>
             </div>
             <h2 className="text-2xl sm:text-4xl font-black text-slate-900 tracking-tight font-sans">
-              STUDI KASUS & HASIL IMPLEMENTASI
+              STUDI KASUS SISTEM
             </h2>
-            <p className="mt-2 text-sm sm:text-base text-slate-600 max-w-2xl font-sans font-medium">
+            <p className="mt-1.5 text-xs sm:text-base text-slate-600 max-w-2xl font-sans font-medium">
               Sistem nyata yang aktif memproses transaksi dan data setiap hari:
             </p>
           </div>
 
           {/* Tab Filter */}
-          <div className="flex items-center gap-1.5 p-1.5 bg-white/90 shadow-xs rounded-2xl border border-blue-200">
+          <div className="flex items-center gap-1 p-1 bg-white/95 shadow-2xs rounded-xl border border-blue-200">
             <button
               onClick={() => { soundFx.playClick(650, 0.03); setActiveTab('all'); }}
-              className={`px-3.5 py-1.5 rounded-xl text-xs font-mono font-bold transition-all cursor-pointer ${
+              className={`px-3 py-1 rounded-lg text-xs font-mono font-bold transition-all cursor-pointer ${
                 activeTab === 'all' ? 'bg-blue-600 text-white shadow-xs' : 'text-slate-600 hover:text-blue-600'
               }`}
             >
@@ -129,7 +128,7 @@ export const PortfolioSection: React.FC = () => {
             </button>
             <button
               onClick={() => { soundFx.playClick(650, 0.03); setActiveTab('Full Ecosystem (Web + APK)'); }}
-              className={`px-3.5 py-1.5 rounded-xl text-xs font-mono font-bold transition-all cursor-pointer ${
+              className={`px-3 py-1 rounded-lg text-xs font-mono font-bold transition-all cursor-pointer ${
                 activeTab === 'Full Ecosystem (Web + APK)' ? 'bg-blue-600 text-white shadow-xs' : 'text-slate-600 hover:text-blue-600'
               }`}
             >
@@ -139,48 +138,47 @@ export const PortfolioSection: React.FC = () => {
         </div>
 
         {/* Portfolio Cards Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 sm:gap-8">
           {filtered.map((item) => (
             <div
               key={item.id}
-              className="group relative rounded-3xl bg-white border-2 border-blue-200/90 shadow-md hover:border-blue-600 hover:shadow-2xl hover:shadow-blue-500/15 transition-all duration-300 flex flex-col justify-between overflow-hidden"
+              className="group relative rounded-2xl sm:rounded-3xl bg-white border-2 border-blue-200/90 shadow-sm hover:border-blue-600 hover:shadow-xl transition-all duration-300 flex flex-col justify-between overflow-hidden"
             >
-              {/* Top Accent Gradient Line */}
-              <div className="h-2 w-full bg-gradient-to-r from-blue-600 via-sky-400 to-indigo-600" />
+              {/* Top Accent Line */}
+              <div className="h-1.5 sm:h-2 w-full bg-gradient-to-r from-blue-600 via-sky-400 to-indigo-600" />
 
-              <div className="p-6 sm:p-8">
+              <div className="p-4 sm:p-7">
                 {/* Header Pill */}
-                <div className="flex items-center justify-between gap-3 mb-3">
-                  <span className="px-2.5 py-1 rounded-full bg-blue-100 border border-blue-200 text-blue-900 text-[11px] font-mono font-bold">
+                <div className="flex items-center justify-between gap-3 mb-2.5">
+                  <span className="px-2.5 py-0.5 rounded-full bg-blue-100 border border-blue-200 text-blue-900 text-[10px] sm:text-[11px] font-mono font-bold">
                     {item.category}
                   </span>
                   {item.isPopular && (
-                    <span className="text-[11px] font-mono text-blue-700 font-bold flex items-center gap-1">
-                      <Zap className="w-3.5 h-3.5 fill-current text-blue-600" /> BEST CASE
+                    <span className="text-[10px] sm:text-[11px] font-mono text-blue-700 font-bold flex items-center gap-1">
+                      <Zap className="w-3 h-3 fill-current text-blue-600" /> BEST CASE
                     </span>
                   )}
                 </div>
 
-                <h3 className="text-xl sm:text-2xl font-bold font-sans text-slate-900 group-hover:text-blue-600 transition-colors mb-1">
+                <h3 className="text-lg sm:text-2xl font-bold font-sans text-slate-900 group-hover:text-blue-600 transition-colors mb-0.5">
                   {item.title}
                 </h3>
-                <div className="text-xs font-mono text-slate-500 mb-4 font-semibold">
+                <div className="text-[11px] sm:text-xs font-mono text-slate-500 mb-3.5 font-semibold">
                   Klien: <strong className="text-blue-900">{item.client}</strong>
                 </div>
 
-                {/* VISUAL DEVICE MOCKUP BOX (Anti-Polos & Super Impressive!) */}
+                {/* Device Mockup Screen */}
                 {item.id === 'kasir-pos' && (
-                  <div className="mb-5 p-3.5 rounded-2xl bg-gradient-to-r from-slate-900 to-blue-950 text-white font-mono text-xs border border-blue-800/80 shadow-inner">
-                    <div className="flex items-center justify-between pb-2 border-b border-blue-800/80 mb-2">
-                      <div className="flex items-center gap-2 text-sky-300 font-bold">
-                        <Printer className="w-4 h-4" />
+                  <div className="mb-4 p-3 rounded-xl bg-gradient-to-r from-slate-900 to-blue-950 text-white font-mono text-xs border border-blue-800/80 shadow-inner">
+                    <div className="flex items-center justify-between pb-1.5 border-b border-blue-800/80 mb-1.5">
+                      <div className="flex items-center gap-1.5 text-sky-300 font-bold text-[11px]">
+                        <Printer className="w-3.5 h-3.5" />
                         <span>KASIR KILAT POS 58MM</span>
                       </div>
-                      <span className="text-[10px] text-emerald-400 font-bold">STRUK TERCETAK</span>
+                      <span className="text-[9px] text-emerald-400 font-bold">STRUK TERCETAK</span>
                     </div>
-                    <div className="space-y-1 text-[11px] text-slate-300">
+                    <div className="space-y-1 text-[10px] sm:text-[11px] text-slate-300">
                       <div className="flex justify-between"><span>2x Cold Brew Latte</span><span>Rp 56.000</span></div>
-                      <div className="flex justify-between"><span>1x Butter Croissant</span><span>Rp 28.000</span></div>
                       <div className="flex justify-between font-bold text-white pt-1 border-t border-white/10">
                         <span>TOTAL BAYAR (QRIS)</span>
                         <span className="text-sky-300">Rp 84.000</span>
@@ -190,21 +188,21 @@ export const PortfolioSection: React.FC = () => {
                 )}
 
                 {item.id === 'absensi-gps' && (
-                  <div className="mb-5 p-3.5 rounded-2xl bg-gradient-to-r from-blue-950 to-slate-900 text-white font-mono text-xs border border-blue-800/80 shadow-inner">
-                    <div className="flex items-center justify-between pb-2 border-b border-blue-800/80 mb-2">
-                      <div className="flex items-center gap-2 text-sky-300 font-bold">
-                        <MapPin className="w-4 h-4 text-rose-400" />
+                  <div className="mb-4 p-3 rounded-xl bg-gradient-to-r from-blue-950 to-slate-900 text-white font-mono text-xs border border-blue-800/80 shadow-inner">
+                    <div className="flex items-center justify-between pb-1.5 border-b border-blue-800/80 mb-1.5">
+                      <div className="flex items-center gap-1.5 text-sky-300 font-bold text-[11px]">
+                        <MapPin className="w-3.5 h-3.5 text-rose-400" />
                         <span>GEOFENCING & FACE SCAN</span>
                       </div>
-                      <span className="text-[10px] text-emerald-400 font-bold">LOKASI VALID</span>
+                      <span className="text-[9px] text-emerald-400 font-bold">LOKASI VALID</span>
                     </div>
-                    <div className="grid grid-cols-2 gap-2 text-[11px]">
-                      <div className="p-1.5 rounded bg-white/10 text-center">
-                        <span className="text-slate-400 block text-[9px]">RADIUS KANTOR</span>
-                        <span className="font-bold text-sky-300">18m (Dalam Area)</span>
+                    <div className="grid grid-cols-2 gap-1.5 text-[10px] sm:text-[11px]">
+                      <div className="p-1 rounded bg-white/10 text-center">
+                        <span className="text-slate-400 block text-[8px]">RADIUS</span>
+                        <span className="font-bold text-sky-300">18m (Valid)</span>
                       </div>
-                      <div className="p-1.5 rounded bg-white/10 text-center">
-                        <span className="text-slate-400 block text-[9px]">VERIFIKASI WAJAH</span>
+                      <div className="p-1 rounded bg-white/10 text-center">
+                        <span className="text-slate-400 block text-[8px]">WAJAH</span>
                         <span className="font-bold text-emerald-400">Cocok 99.8%</span>
                       </div>
                     </div>
@@ -212,80 +210,67 @@ export const PortfolioSection: React.FC = () => {
                 )}
 
                 {item.id === 'logistik-tracking' && (
-                  <div className="mb-5 p-3.5 rounded-2xl bg-gradient-to-r from-slate-900 to-blue-950 text-white font-mono text-xs border border-blue-800/80 shadow-inner">
-                    <div className="flex items-center justify-between pb-2 border-b border-blue-800/80 mb-2">
-                      <div className="flex items-center gap-2 text-sky-300 font-bold">
-                        <Truck className="w-4 h-4" />
+                  <div className="mb-4 p-3 rounded-xl bg-gradient-to-r from-slate-900 to-blue-950 text-white font-mono text-xs border border-blue-800/80 shadow-inner">
+                    <div className="flex items-center justify-between pb-1.5 border-b border-blue-800/80 mb-1.5">
+                      <div className="flex items-center gap-1.5 text-sky-300 font-bold text-[11px]">
+                        <Truck className="w-3.5 h-3.5" />
                         <span>RESI: #KRG-882910</span>
                       </div>
-                      <span className="text-[10px] text-sky-300 font-bold">DALAM PENGIRIMAN</span>
+                      <span className="text-[9px] text-sky-300 font-bold">MENGANTAR</span>
                     </div>
-                    <div className="text-[11px] text-slate-300 flex items-center justify-between p-1.5 rounded bg-white/10">
-                      <span>Kurir: Ahmad S. (Motor)</span>
+                    <div className="text-[10px] sm:text-[11px] text-slate-300 flex items-center justify-between p-1 rounded bg-white/10">
+                      <span>Kurir: Ahmad S.</span>
                       <span className="text-emerald-400 font-bold">TTD Digital: OK</span>
                     </div>
                   </div>
                 )}
 
                 {item.id === 'cbt-exam' && (
-                  <div className="mb-5 p-3.5 rounded-2xl bg-gradient-to-r from-blue-950 to-indigo-950 text-white font-mono text-xs border border-blue-800/80 shadow-inner">
-                    <div className="flex items-center justify-between pb-2 border-b border-blue-800/80 mb-2">
-                      <div className="flex items-center gap-2 text-sky-300 font-bold">
-                        <Lock className="w-4 h-4 text-amber-400" />
-                        <span>KIOSK LOCK (LAYAR TERKUNCI)</span>
+                  <div className="mb-4 p-3 rounded-xl bg-gradient-to-r from-blue-950 to-indigo-950 text-white font-mono text-xs border border-blue-800/80 shadow-inner">
+                    <div className="flex items-center justify-between pb-1.5 border-b border-blue-800/80 mb-1.5">
+                      <div className="flex items-center gap-1.5 text-sky-300 font-bold text-[11px]">
+                        <Lock className="w-3.5 h-3.5 text-amber-400" />
+                        <span>KIOSK LOCK (TERKUNCI)</span>
                       </div>
-                      <span className="text-[10px] text-amber-300 font-bold">ANTI-SPLIT SCREEN</span>
+                      <span className="text-[9px] text-amber-300 font-bold">ANTI-CURANG</span>
                     </div>
-                    <div className="text-[11px] text-slate-300 flex items-center justify-between p-1.5 rounded bg-white/10">
-                      <span>Soal 32 / 50 • Acak</span>
-                      <span className="text-sky-300 font-bold">Sisa Waktu: 42:15</span>
+                    <div className="text-[10px] sm:text-[11px] text-slate-300 flex items-center justify-between p-1 rounded bg-white/10">
+                      <span>Soal 32 / 50</span>
+                      <span className="text-sky-300 font-bold">Waktu: 42:15</span>
                     </div>
                   </div>
                 )}
 
                 {/* Problem vs Solution */}
-                <div className="space-y-2 mb-5">
-                  <div className="p-3 rounded-xl bg-slate-50 border border-slate-200 text-xs font-sans text-slate-700">
+                <div className="space-y-1.5 mb-4">
+                  <div className="p-2.5 rounded-xl bg-slate-50 border border-slate-200 text-xs font-sans text-slate-700">
                     <strong className="text-rose-600 block mb-0.5">Tantangan Klien:</strong>
                     {item.problem}
                   </div>
 
-                  <div className="p-3 rounded-xl bg-blue-50/80 border border-blue-200 text-xs font-sans text-slate-800">
+                  <div className="p-2.5 rounded-xl bg-blue-50/80 border border-blue-200 text-xs font-sans text-slate-800">
                     <strong className="text-blue-800 block mb-0.5">Solusi DiDev:</strong>
                     {item.solution}
                   </div>
                 </div>
 
-                {/* Features */}
-                <div className="space-y-2 mb-5">
-                  <div className="text-[11px] font-mono text-slate-500 uppercase tracking-wide font-bold">
-                    FITUR UTAMA:
-                  </div>
-                  {item.features.map((feat, idx) => (
-                    <div key={idx} className="flex items-start gap-2 text-xs font-sans text-slate-800 font-medium">
-                      <CheckCircle2 className="w-3.5 h-3.5 text-blue-600 shrink-0 mt-0.5" />
-                      <span>{feat}</span>
-                    </div>
-                  ))}
-                </div>
-
                 {/* Big Result Badge */}
-                <div className="p-3.5 rounded-2xl bg-gradient-to-r from-blue-700 via-blue-600 to-indigo-700 text-white text-xs font-mono flex items-center gap-2.5 shadow-md shadow-blue-500/25">
-                  <TrendingUp className="w-5 h-5 shrink-0 text-sky-300" />
+                <div className="p-3 rounded-xl sm:rounded-2xl bg-gradient-to-r from-blue-700 via-blue-600 to-indigo-700 text-white text-xs font-mono flex items-center gap-2.5 shadow-md shadow-blue-500/25">
+                  <TrendingUp className="w-4 h-4 sm:w-5 sm:h-5 shrink-0 text-sky-300" />
                   <div>
-                    <span className="font-bold uppercase tracking-wider block text-[10px] text-sky-200">HASIL NYATA:</span>
+                    <span className="font-bold uppercase tracking-wider block text-[9px] sm:text-[10px] text-sky-200">HASIL NYATA:</span>
                     <span className="font-bold text-xs sm:text-sm text-white">{item.results}</span>
                   </div>
                 </div>
               </div>
 
               {/* Footer Tech Stack & Consultation Button */}
-              <div className="p-6 sm:p-8 pt-4 border-t border-blue-100 bg-blue-50/50 flex flex-col sm:flex-row items-center justify-between gap-3">
-                <div className="flex flex-wrap gap-1.5 self-start sm:self-auto">
+              <div className="p-4 sm:p-7 pt-3 border-t border-blue-100 bg-blue-50/50 flex flex-col sm:flex-row items-center justify-between gap-3">
+                <div className="flex flex-wrap gap-1 self-start sm:self-auto">
                   {item.techStack.map((tech, idx) => (
                     <span
                       key={idx}
-                      className="px-2 py-0.5 rounded bg-white border border-blue-200 text-[10px] font-mono text-blue-900 font-bold shadow-2xs"
+                      className="px-2 py-0.5 rounded bg-white border border-blue-200 text-[9px] sm:text-[10px] font-mono text-blue-900 font-bold"
                     >
                       {tech}
                     </span>
