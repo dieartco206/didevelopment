@@ -9,36 +9,32 @@ interface FaqItem {
 
 const FAQ_LIST: FaqItem[] = [
   {
-    q: 'Apakah seluruh source code diserahkan 100% jadi hak milik klien?',
-    a: 'Ya, mutlak! Seluruh source code aplikasi web, database, aset desain, dan master installer APK (.apk) diserahkan penuh ke Anda tanpa biaya sewa, royalti tahunan, atau keterikatan sepihak.',
-  },
-  {
-    q: 'Teknologi apa yang dipakai untuk membangun aplikasi web dan Android?',
-    a: 'Untuk web, kami menggunakan React, Next.js, dan RESTful API modern yang sangat responsif di semua resolusi layar. Untuk mobile, kami membangun aplikasi native/hybrid Android yang ringan, cepat, dan teruji stabil.',
-  },
-  {
-    q: 'Bisa install file APK langsung di smartphone tanpa masuk Google Play Store?',
-    a: 'Bisa sekali. Kami menyediakan file master APK release (.apk) yang bisa langsung dibagikan melalui WhatsApp atau link download internal. Pengguna tinggal klik untuk memasang di HP.',
-  },
-  {
-    q: 'Apakah dibantu jika perusahaan ingin rilis ke Google Play Store resmi?',
-    a: 'Tentu. Tim kami menyiapkan bundle (.aab), icon HD, screenshot display, hingga membantu konfigurasi Google Play Console sampai aplikasi berhasil diverifikasi dan terbit publik.',
-  },
-  {
-    q: 'Apakah ada masa garansi dan pemeliharaan setelah aplikasi selesai?',
-    a: 'Ya. Setiap proyek disertai masa garansi resmi 1 tahun. Kami memberikan jaminan perbaikan bug gratis dan pendampingan teknis agar implementasi di operasional Anda berjalan lancar.',
+    q: 'Apakah seluruh source code diserahkan 100% jadi hak milik kami?',
+    a: 'Ya, mutlak 100%! Seluruh source code aplikasi web, file database, aset desain, dan file master installer APK (.apk) diserahkan penuh tanpa biaya sewa, royalti tahunan, atau sistem sewa yang mengikat.',
   },
   {
     q: 'Berapa lama estimasi pengerjaan aplikasi web dan mobile?',
-    a: 'Website responsif umumnya memakan waktu 5-7 hari kerja. Aplikasi Android APK berkisar 10-14 hari kerja. Sedangkan paket komplit ekosistem terintegrasi (Web + APK) berkisar 14-21 hari kerja sesuai kompleksitas fitur.',
+    a: 'Untuk Website Toko / Landing Page umumnya selesai dalam 5-7 hari kerja. Aplikasi Android APK siap pakai berkisar 10-14 hari kerja. Sedangkan paket komplit Web + Mobile berkisar 14-21 hari kerja sesuai kompleksitas fitur yang Anda minta.',
+  },
+  {
+    q: 'Bagaimana jika di kemudian hari ditemukan error atau bug?',
+    a: 'Semua proyek kami bergaransi resmi 1 tahun penuh. Jika ada kendala teknis, fungsi error, atau bug yang tidak sesuai dengan kesepakatan awal, tim engineer kami perbaiki secara gratis dan cepat.',
+  },
+  {
+    q: 'Bagaimana cara instalasi aplikasi Android APK ke smartphone karyawan?',
+    a: 'Sangat mudah. Kami sediakan file master APK release (.apk) yang bisa dibagikan langsung melalui WhatsApp atau link download website. Karyawan tinggal klik untuk menginstal di HP tanpa harus menunggu proses approve jika dipakai internal.',
+  },
+  {
+    q: 'Apakah dibantu jika perusahaan ingin rilis ke Google Play Store resmi?',
+    a: 'Tentu saja! Kami siapkan bundle (.aab), ikon resolusi tinggi, screenshot display, hingga membantu proses konfigurasi di akun Google Play Console perusahaan Anda sampai aplikasi disetujui Google.',
+  },
+  {
+    q: 'Bagaimana skema pembayaran dan termin proyek di DiDev Studio?',
+    a: 'Skema sangat transparan: DP 50% di awal saat kick-off dan kesepakatan spesifikasi sistem, kemudian sisa pelunasan 50% dibayarkan setelah aplikasi selesai diuji coba bersama dan siap diserahterimakan.',
   },
   {
     q: 'Sistem lama perusahaan kami ingin diperbarui, apakah bisa?',
-    a: 'Bisa. Kami melayani jasa modernisasi teknologi dan integrasi sistem untuk menghubungkan database lama ke arsitektur cloud baru agar data operasional Anda tetap aman dan selaras.',
-  },
-  {
-    q: 'Bagaimana cara memulai konsultasi dan mendapatkan penawaran?',
-    a: 'Cukup klik tombol Dapatkan Penawaran atau hubungi kami melalui WhatsApp. Tim kami akan menganalisis kebutuhan Anda, menyusun rekomendasi alur, serta memberikan estimasi biaya transparan.',
+    a: 'Bisa sekali. Kami melayani jasa modernisasi teknologi dan integrasi sistem untuk memigrasikan database lama ke arsitektur cloud baru agar data riwayat transaksi Anda tetap aman dan performa aplikasi melonjak tajam.',
   },
 ];
 
@@ -52,69 +48,79 @@ export const FaqSection: React.FC = () => {
 
   const openWhatsAppFaq = () => {
     soundFx.playSuccess();
-    window.open('https://wa.me/6281234567890?text=Halo%20DiDev%2C%20saya%20ingin%20konsultasi%20pembuatan%20website%20dan%20aplikasi%20Android%20untuk%20bisnis%20saya.', '_blank');
+    window.open('https://wa.me/6281234567890?text=Halo%20DiDev%20Studio%2C%20saya%20ada%20pertanyaan%20seputar%20pembuatan%20website%20dan%20aplikasi%20Android.', '_blank');
   };
 
   return (
-    <section id="faq" className="py-16 sm:py-24 bg-white border-b border-slate-200">
+    <section id="faq" className="py-16 sm:py-24 bg-[#F8FAFC] border-b border-slate-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col lg:flex-row lg:items-start justify-between gap-10 lg:gap-16">
-          {/* Left Intro (Sekawan Media Style: 38%) */}
+          
+          {/* Sisi Kiri: Headline Ramah + Kotak Bantuan Langsung */}
           <div className="lg:w-[38%] flex flex-col justify-start">
-            <div className="inline-block text-xs font-bold text-[#256BE0] uppercase tracking-wider mb-2">
-              TANYA JAWAB UMUM
+            <div className="inline-block text-xs font-bold text-[#2563EB] uppercase tracking-wider mb-2">
+              TANYA JAWAB UMUM (FAQ)
             </div>
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-[#102E61] tracking-tight font-sans leading-tight">
-              Pertanyaan yang Sering Diajukan
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-[#0F172A] tracking-tight font-sans leading-tight">
+              Ada Pertanyaan Sebelum Memulai?
             </h2>
-            <p className="mt-4 text-sm sm:text-base text-[#48505E] leading-relaxed font-normal">
-              Ingin mendigitalkan proses bisnis dengan sistem yang dibuat khusus? Temukan jawaban seputar hak cipta kode, tahapan pengembangan, integrasi hardware, dan garansi resmi kami.
+            <p className="mt-4 text-sm sm:text-base text-[#475569] leading-relaxed font-normal">
+              Kami memahami bahwa setiap bisnis memiliki alur dan pertimbangan tersendiri. Di sini kami merangkum jawaban atas hal-hal yang paling sering ditanyakan calon klien kami.
             </p>
 
-            <div className="mt-6 sm:mt-8 p-5 rounded-xl bg-[#F4F8FE] border border-[#D6E4FB]">
-              <h4 className="text-sm font-bold text-[#102E61] mb-1">
-                Punya pertanyaan spesifik lainnya?
-              </h4>
-              <p className="text-xs text-[#48505E] mb-4">
-                Konsultasikan langsung dengan tim konsultan IT kami secara gratis tanpa ikatan.
+            {/* Kotak Bantuan Langsung WhatsApp */}
+            <div className="mt-8 p-6 rounded-2xl bg-white border-2 border-slate-200 shadow-sm">
+              <div className="flex items-center gap-3 mb-3">
+                <div className="w-10 h-10 rounded-xl bg-emerald-50 text-[#10B981] flex items-center justify-center">
+                  <MessageSquare className="w-5 h-5 fill-current" />
+                </div>
+                <div>
+                  <h4 className="text-sm font-bold text-[#0F172A]">
+                    Butuh Diskusi Teknis Khusus?
+                  </h4>
+                  <span className="text-[11px] text-slate-500 font-medium">Engineer kami siap menjawab via WA</span>
+                </div>
+              </div>
+              <p className="text-xs text-[#475569] mb-4 leading-relaxed">
+                Tanyakan langsung estimasi biaya, kecocokan fitur dengan alur usaha Anda, atau jadwal ketersediaan pengerjaan.
               </p>
               <button
                 onClick={openWhatsAppFaq}
-                className="w-full py-2.5 px-4 bg-[#256BE0] hover:bg-[#1D58BD] text-white rounded-lg font-semibold text-xs flex items-center justify-center gap-2 transition-colors cursor-pointer"
+                className="w-full py-3 px-4 bg-[#10B981] hover:bg-[#059669] text-white rounded-xl font-bold text-xs sm:text-sm flex items-center justify-center gap-2 shadow-md transition-all active:scale-98 cursor-pointer"
               >
-                <MessageSquare className="w-4 h-4" />
-                <span>Konsultasi via WhatsApp</span>
-                <ArrowRight className="w-3.5 h-3.5" />
+                <MessageSquare className="w-4 h-4 fill-current" />
+                <span>Tanya Engineer via WhatsApp</span>
+                <ArrowRight className="w-4 h-4" />
               </button>
             </div>
           </div>
 
-          {/* Right Accordion List (Sekawan Media Style: 60% with border-b) */}
-          <div className="lg:w-[60%] border-t border-slate-200 lg:border-t-0">
+          {/* Sisi Kanan: Accordion Bersih */}
+          <div className="lg:w-[60%] border-t border-slate-200 lg:border-t-0 space-y-3">
             {FAQ_LIST.map((faq, idx) => {
               const isOpen = openIndex === idx;
               return (
                 <div
                   key={idx}
-                  className="border-b border-[#D0D3D9] py-5 sm:py-6 transition-colors"
+                  className="rounded-xl bg-white border border-slate-200 overflow-hidden shadow-2xs transition-all duration-200"
                 >
                   <button
                     type="button"
                     onClick={() => toggleFaq(idx)}
-                    className="w-full text-left flex items-start justify-between gap-4 cursor-pointer group"
+                    className="w-full p-4 sm:p-5 text-left flex items-start justify-between gap-4 cursor-pointer group hover:bg-slate-50/50"
                   >
-                    <span className={`text-base sm:text-lg font-semibold font-sans leading-snug transition-colors ${
-                      isOpen ? 'text-[#256BE0]' : 'text-[#2B2F38] group-hover:text-[#256BE0]'
+                    <span className={`text-base font-bold font-sans leading-snug transition-colors ${
+                      isOpen ? 'text-[#2563EB]' : 'text-[#0F172A] group-hover:text-[#2563EB]'
                     }`}>
                       {faq.q}
                     </span>
-                    <div className="w-6 h-6 rounded-full bg-slate-100 flex items-center justify-center text-[#2B2F38] shrink-0 mt-0.5 group-hover:bg-blue-50 group-hover:text-[#256BE0] transition-colors">
-                      {isOpen ? <Minus className="w-3.5 h-3.5" /> : <Plus className="w-3.5 h-3.5" />}
+                    <div className="w-6 h-6 rounded-lg bg-slate-100 flex items-center justify-center text-[#0F172A] shrink-0 mt-0.5 group-hover:bg-blue-50 group-hover:text-[#2563EB] transition-colors">
+                      {isOpen ? <Minus className="w-4 h-4" /> : <Plus className="w-4 h-4" />}
                     </div>
                   </button>
 
                   {isOpen && (
-                    <div className="mt-3.5 pr-8 text-sm text-[#48505E] font-sans leading-relaxed">
+                    <div className="px-4 sm:px-5 pb-5 text-xs sm:text-sm text-[#475569] font-sans leading-relaxed border-t border-slate-100 pt-3">
                       {faq.a}
                     </div>
                   )}
@@ -122,6 +128,7 @@ export const FaqSection: React.FC = () => {
               );
             })}
           </div>
+
         </div>
       </div>
     </section>

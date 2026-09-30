@@ -1,38 +1,45 @@
 import React from 'react';
 import { 
+  Code2, 
   Smartphone, 
   Globe, 
-  Printer, 
   Database, 
-  Cpu, 
-  ShieldCheck, 
-  QrCode,
-  Terminal
+  Box, 
+  Layers, 
+  Terminal, 
+  Cpu 
 } from 'lucide-react';
 
-const TECH_ITEMS = [
-  { name: 'React 19 & Next.js', tag: 'WEB', icon: Globe },
-  { name: 'Android Native & APK', tag: 'MOBILE', icon: Smartphone },
-  { name: 'Bluetooth Thermal Print', tag: 'HARDWARE', icon: Printer },
-  { name: 'Three.js WebGL 3D', tag: '3D GRAPHICS', icon: Cpu },
-  { name: 'QRIS & Payment Gateway', tag: 'FINTECH', icon: QrCode },
-  { name: 'PostgreSQL & Cloud API', tag: 'DATABASE', icon: Database },
-  { name: '100% Full Source Code', tag: 'HAK MILIK', icon: Terminal },
-  { name: 'Garansi Resmi 1 Tahun', tag: 'WARRANTY', icon: ShieldCheck },
+interface TechItem {
+  name: string;
+  category: string;
+  brandColor: string;
+  icon: React.ElementType;
+}
+
+const TECH_ITEMS: TechItem[] = [
+  { name: 'Golang', category: 'High-Perf Backend', brandColor: '#00ADD8', icon: Terminal },
+  { name: 'Flutter', category: 'Cross-Platform Mobile', brandColor: '#02569B', icon: Smartphone },
+  { name: 'React.js', category: 'Modern Frontend', brandColor: '#0284C7', icon: Globe },
+  { name: 'Vue.js', category: 'Reactive UI', brandColor: '#10B981', icon: Layers },
+  { name: 'TypeScript', category: 'Type-Safe Logic', brandColor: '#2563EB', icon: Code2 },
+  { name: 'PostgreSQL', category: 'Relational Database', brandColor: '#336791', icon: Database },
+  { name: 'Docker', category: 'Cloud Deployment', brandColor: '#0284C7', icon: Box },
+  { name: 'Tailwind CSS', category: 'Modern Styling', brandColor: '#06B6D4', icon: Cpu },
 ];
 
 export const TechStackMarquee: React.FC = () => {
   return (
-    <div className="py-3.5 sm:py-4 bg-[#F8FAFC] border-y border-slate-200 text-slate-700 relative overflow-hidden">
+    <div className="py-4 bg-[#F8FAFC] border-y border-slate-200 text-slate-700 relative overflow-hidden">
       <div className="flex items-center">
         {/* Left Fixed Badge (Desktop only) */}
         <div className="hidden lg:flex items-center gap-2 pl-6 pr-4 shrink-0 border-r border-slate-200 bg-[#F8FAFC] z-10">
           <span className="flex h-2 w-2 relative">
-            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#256BE0] opacity-75"></span>
-            <span className="relative inline-flex rounded-full h-2 w-2 bg-[#256BE0]"></span>
+            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#2563EB] opacity-75"></span>
+            <span className="relative inline-flex rounded-full h-2 w-2 bg-[#2563EB]"></span>
           </span>
-          <span className="text-[11px] font-sans font-bold tracking-wider text-[#102E61] uppercase whitespace-nowrap">
-            TEKNOLOGI & STANDAR:
+          <span className="text-[11px] font-sans font-bold tracking-wider text-[#0F172A] uppercase whitespace-nowrap">
+            TEKNOLOGI RESMI:
           </span>
         </div>
 
@@ -44,12 +51,15 @@ export const TechStackMarquee: React.FC = () => {
               return (
                 <div
                   key={idx}
-                  className="flex items-center gap-2 px-3.5 py-1.5 rounded-lg bg-white border border-slate-200/80 text-xs font-sans font-medium text-slate-800 shrink-0 shadow-2xs"
+                  className="group flex items-center gap-2 px-3.5 py-1.5 rounded-lg bg-white border border-slate-200 text-xs font-sans font-medium text-slate-700 shrink-0 shadow-2xs hover:border-slate-400 hover:shadow-xs transition-all duration-200 cursor-default"
                 >
-                  <Icon className="w-3.5 h-3.5 text-[#256BE0] shrink-0" />
-                  <span className="font-semibold text-[#102E61] whitespace-nowrap">{item.name}</span>
-                  <span className="text-[10px] px-1.5 py-0.5 rounded bg-blue-50 text-[#256BE0] font-semibold">
-                    {item.tag}
+                  <Icon 
+                    className="w-4 h-4 text-slate-400 group-hover:scale-110 transition-transform duration-200" 
+                    style={{ color: item.brandColor }}
+                  />
+                  <span className="font-bold text-[#0F172A] whitespace-nowrap">{item.name}</span>
+                  <span className="text-[10px] px-1.5 py-0.5 rounded bg-slate-100 text-slate-500 font-medium">
+                    {item.category}
                   </span>
                 </div>
               );

@@ -5,82 +5,145 @@ import {
   Code2, 
   CheckCircle2, 
   Award, 
-  ShieldCheck 
+  ShieldCheck,
+  ArrowRight
 } from 'lucide-react';
+import { soundFx } from '../../utils/audio';
 
-const STEPS = [
+interface Step {
+  number: string;
+  title: string;
+  timeline: string;
+  desc: string;
+  icon: React.ElementType;
+}
+
+const STEPS: Step[] = [
   {
-    step: '01',
-    title: 'Konsultasi & Blueprint',
-    desc: 'Diskusi komprehensif mengenai alur proses bisnis, kebutuhan fitur, dan penyusunan blueprint sistem.',
+    number: '01',
+    title: 'Konsultasi & Bedah Kebutuhan',
+    timeline: 'Hari 1 - 2',
+    desc: 'Diskusi santai tanpa biaya seputar alur bisnis, masalah kasir/stok/lapangan, dan penyusunan blueprint spesifikasi.',
     icon: MessageSquare,
   },
   {
-    step: '02',
-    title: 'Perancangan UI/UX',
-    desc: 'Pembuatan konsep tampilan antarmuka yang bersih, intuitif, dan responsif di smartphone maupun laptop.',
+    number: '02',
+    title: 'Perancangan Alur & Desain UI/UX',
+    timeline: 'Hari 3 - 5',
+    desc: 'Pembuatan wireframe antarmuka yang bersih, mudah digunakan staf dari HP atau laptop tanpa kebingungan.',
     icon: Palette,
   },
   {
-    step: '03',
-    title: 'Pengembangan Sistem',
-    desc: 'Koding dengan standar arsitektur bersih (clean code), integrasi database, dan penyusunan build APK Android.',
+    number: '03',
+    title: 'Pengerjaan Sistem & Coding Kustom',
+    timeline: 'Hari 6 - 14',
+    desc: 'Penulisan kode bersih, arsitektur database aman, build installer APK Android, dan laporan progres berkala.',
     icon: Code2,
   },
   {
-    step: '04',
-    title: 'Quality Assurance',
-    desc: 'Pengujian multi-device di berbagai tipe HP Android dan browser web untuk memastikan sistem 100% bebas bug.',
+    number: '04',
+    title: 'Pengujian Bersama & Revisi',
+    timeline: 'Hari 15 - 17',
+    desc: 'Uji coba ketat di HP Android Anda, printer Bluetooth, dan skenario transaksi riil sampai benar-benar bebas bug.',
     icon: CheckCircle2,
   },
   {
-    step: '05',
-    title: 'Pelatihan & Garansi',
-    desc: 'Instalasi server, serah terima 100% source code, pelatihan tim Anda, dan masa garansi resmi 1 tahun.',
+    number: '05',
+    title: 'Serah Terima & Bimbingan Staf',
+    timeline: 'Hari 18+',
+    desc: '100% Full source code diserahkan, instalasi server resmi, pelatihan staf sampai mahir, dan masa garansi 1 tahun.',
     icon: Award,
   },
 ];
 
 export const WorkflowSection: React.FC = () => {
+  const openWhatsApp = () => {
+    soundFx.playSuccess();
+    window.open('https://wa.me/6281234567890?text=Halo%20DiDev%20Studio%2C%20saya%20ingin%20jadwalkan%20konsultasi%20awal%20bedah%20kebutuhan%20sistem%20saya.', '_blank');
+  };
+
   return (
-    <section id="workflow" className="py-14 sm:py-20 bg-[#F4F8FE] border-b border-slate-200">
+    <section id="workflow" className="py-16 sm:py-24 bg-white border-b border-slate-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header */}
-        <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-14">
-          <div className="inline-block text-xs font-bold text-[#256BE0] uppercase tracking-wider mb-2">
-            TAHAPAN PENGEMBANGAN SISTEM
+        
+        {/* Section Header */}
+        <div className="text-center max-w-3xl mx-auto mb-14 sm:mb-20">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 bg-blue-50 border border-blue-200 text-[#2563EB] rounded-full text-xs font-bold uppercase tracking-wider mb-3">
+            <span>ROADMAP KERJA TRANSPARAN</span>
           </div>
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#102E61] tracking-tight font-sans">
-            Proses Strategis untuk Hasil Terbaik
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#0F172A] tracking-tight font-sans">
+            5 Tahap Pasti Menuju Sistem Siap Pakai
           </h2>
-          <p className="mt-2 text-sm sm:text-base text-[#48505E] font-normal">
-            Alur kerja transparan dan terukur yang memastikan aplikasi selesai tepat waktu sesuai spesifikasi:
+          <p className="mt-3 text-base sm:text-lg text-[#475569] font-normal leading-relaxed">
+            Tidak ada kejutan biaya di tengah jalan. Anda mengawal setiap langkah mulai dari konsep hingga serah terima source code.
           </p>
         </div>
 
-        {/* Steps Grid: Responsive 1 -> 2 -> 5 cols */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-5">
+        {/* HORIZONTAL CONNECTED STEPPER / PROCESS ROADMAP (Desktop) */}
+        <div className="hidden lg:block relative mb-16">
+          {/* Continuous Connected Progress Line */}
+          <div className="absolute top-1/2 left-10 right-10 h-1 bg-slate-200 -translate-y-12 z-0" />
+
+          <div className="grid grid-cols-5 gap-6 relative z-10">
+            {STEPS.map((s, idx) => {
+              const Icon = s.icon;
+              return (
+                <div key={idx} className="flex flex-col items-center text-center group">
+                  {/* Step Circle with Number Badge */}
+                  <div className="w-16 h-16 rounded-2xl bg-white border-2 border-slate-200 group-hover:border-[#2563EB] text-[#2563EB] flex items-center justify-center shadow-md transition-all duration-200 mb-6 group-hover:scale-105 group-hover:shadow-lg">
+                    <Icon className="w-7 h-7" />
+                  </div>
+
+                  {/* Step Card */}
+                  <div className="w-full bg-[#F8FAFC] border border-slate-200 group-hover:border-[#2563EB] rounded-2xl p-5 shadow-2xs transition-all duration-200 flex flex-col justify-between h-[210px]">
+                    <div>
+                      <div className="flex items-center justify-between mb-2">
+                        <span className="text-xl font-extrabold font-mono text-[#2563EB]">
+                          {s.number}
+                        </span>
+                        <span className="text-[10px] font-bold px-2 py-0.5 rounded bg-blue-50 text-[#2563EB]">
+                          {s.timeline}
+                        </span>
+                      </div>
+                      <h3 className="font-bold text-sm text-[#0F172A] mb-2 leading-snug">
+                        {s.title}
+                      </h3>
+                      <p className="text-xs text-[#475569] leading-relaxed font-normal">
+                        {s.desc}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+
+        {/* VERTICAL TIMELINE FOR MOBILE / TABLET */}
+        <div className="lg:hidden space-y-6 relative before:absolute before:inset-0 before:left-6 before:w-0.5 before:bg-slate-200 mb-12">
           {STEPS.map((s, idx) => {
             const Icon = s.icon;
             return (
-              <div
-                key={idx}
-                className="bg-white rounded-2xl p-6 border border-[#D6E4FB] shadow-2xs hover:border-[#256BE0] hover:shadow-md transition-all duration-200 flex flex-col justify-between"
-              >
-                <div>
-                  <div className="flex items-center justify-between mb-4">
-                    <span className="text-3xl font-extrabold font-sans text-[#256BE0]">
-                      {s.step}
-                    </span>
-                    <div className="w-10 h-10 rounded-xl bg-blue-50 text-[#256BE0] flex items-center justify-center">
-                      <Icon className="w-5 h-5" />
-                    </div>
-                  </div>
+              <div key={idx} className="relative flex items-start gap-4 pl-2">
+                {/* Node icon */}
+                <div className="w-10 h-10 rounded-xl bg-white border-2 border-[#2563EB] text-[#2563EB] flex items-center justify-center shrink-0 z-10 shadow-sm">
+                  <Icon className="w-5 h-5" />
+                </div>
 
-                  <h3 className="font-bold text-base text-[#102E61] mb-2 leading-snug">
+                {/* Content Card */}
+                <div className="flex-1 bg-[#F8FAFC] border border-slate-200 rounded-xl p-4 shadow-2xs">
+                  <div className="flex items-center justify-between mb-1.5">
+                    <span className="text-base font-extrabold font-mono text-[#2563EB]">
+                      LANGKAH {s.number}
+                    </span>
+                    <span className="text-[10px] font-bold px-2 py-0.5 rounded bg-blue-50 text-[#2563EB]">
+                      {s.timeline}
+                    </span>
+                  </div>
+                  <h3 className="font-bold text-sm text-[#0F172A] mb-1.5">
                     {s.title}
                   </h3>
-                  <p className="text-xs text-[#48505E] leading-relaxed font-normal">
+                  <p className="text-xs text-[#475569] leading-relaxed">
                     {s.desc}
                   </p>
                 </div>
@@ -89,21 +152,31 @@ export const WorkflowSection: React.FC = () => {
           })}
         </div>
 
-        {/* Bottom Assurance Card */}
-        <div className="mt-10 sm:mt-12 p-6 rounded-2xl bg-white border border-[#D6E4FB] shadow-2xs flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
-          <div className="flex items-center gap-4">
-            <div className="w-12 h-12 rounded-xl bg-blue-50 text-[#256BE0] flex items-center justify-center shrink-0">
-              <ShieldCheck className="w-6 h-6" />
+        {/* Bottom Assurance Card with Immediate Consultation Button */}
+        <div className="p-6 sm:p-8 rounded-2xl bg-gradient-to-r from-blue-50 via-indigo-50 to-slate-50 border-2 border-blue-200 shadow-sm flex flex-col md:flex-row items-center justify-between gap-6">
+          <div className="flex items-center gap-4 text-center md:text-left">
+            <div className="w-14 h-14 rounded-2xl bg-[#2563EB] text-white flex items-center justify-center shrink-0 shadow-md">
+              <ShieldCheck className="w-8 h-8" />
             </div>
             <div>
-              <div className="text-base font-bold text-[#102E61]">Garansi Resmi 1 Tahun & Free Bug Fix</div>
-              <div className="text-xs text-[#48505E] mt-0.5">Seluruh aplikasi diuji ketat dan didampingi tim teknis setelah serah terima.</div>
+              <div className="text-lg font-extrabold text-[#0F172A]">
+                Garansi Resmi 1 Tahun & Pendampingan Purna Jual
+              </div>
+              <div className="text-sm text-[#475569] mt-0.5">
+                Jika ditemukan kendala teknis atau bug, tim kami perbaiki secara gratis dan responsif.
+              </div>
             </div>
           </div>
-          <div className="px-4 py-2 rounded-lg bg-blue-50 text-xs font-semibold text-[#256BE0] shrink-0">
-            SLA 99.8% Uptime Ready
-          </div>
+
+          <button
+            onClick={openWhatsApp}
+            className="w-full md:w-auto px-6 py-3.5 bg-[#10B981] hover:bg-[#059669] text-white rounded-xl font-bold text-sm flex items-center justify-center gap-2 shadow-md transition-all active:scale-98 cursor-pointer shrink-0"
+          >
+            <span>Mulai Konsultasi Langkah 01</span>
+            <ArrowRight className="w-4 h-4" />
+          </button>
         </div>
+
       </div>
     </section>
   );
