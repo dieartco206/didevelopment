@@ -9,28 +9,28 @@ interface FaqItem {
 
 const FAQ_LIST: FaqItem[] = [
   {
-    q: 'Apakah source code aplikasi akan diserahkan dan menjadi milik saya?',
-    a: 'Ya, 100% mutlak! Seluruh source code proyek, file desain, database, dan file master APK diserahkan kepada Anda setelah pelunasan. Anda bebas mengembangkannya di kemudian hari tanpa keterikatan royalti.',
+    q: 'Apakah source code diserahkan 100% jadi hak milik saya?',
+    a: 'Ya, mutlak! Seluruh source code, file desain, database, dan master APK diserahkan penuh ke Anda tanpa biaya sewa atau royalti lanjutan.',
   },
   {
-    q: 'Apakah file APK Android bisa langsung diinstall di HP tanpa masuk Play Store?',
-    a: 'Bisa sekali! Kami sediakan file installer master (.apk) yang bisa Anda kirimkan lewat WhatsApp atau link download website. Pengguna cukup mengklik file tersebut dan aplikasi langsung terpasang di HP Android mereka.',
+    q: 'Bisa install APK langsung di HP tanpa masuk Google Play Store?',
+    a: 'Bisa banget. Kami sediakan file installer (.apk) yang siap dikirim lewat WhatsApp atau website. Sekali klik langsung terpasang di HP.',
   },
   {
-    q: 'Apakah tim DiDev bisa membantu upload aplikasi ke Google Play Store?',
-    a: 'Tentu saja! Kami bantu persiapan file bundle (.aab), pembuatan icon HD, screenshot banner aplikasi, dan konfigurasi Google Play Console hingga aplikasi lolos review dan terbit di Google Play Store.',
+    q: 'Apakah dibantu jika ingin upload ke Google Play Store?',
+    a: 'Ya, tentu! Kami siapkan bundle (.aab), icon HD, screenshot banner, dan konfigurasi Google Play Console sampai disetujui Google.',
   },
   {
-    q: 'Bagaimana jika ada error atau kendala teknis setelah aplikasi selesai?',
-    a: 'Semua proyek kami lindungi dengan Garansi Bebas Bug Resmi selama 1 Tahun. Jika ditemukan kesalahan fungsi atau sistem bermasalah, tim kami akan memperbaikinya tanpa dipungut biaya tambahan.',
+    q: 'Bagaimana jika ada error atau bug setelah aplikasi selesai?',
+    a: 'Semua proyek bergaransi resmi 1 Tahun. Jika ada kendala teknis atau bug, tim kami perbaiki gratis dan cepat.',
   },
   {
-    q: 'Berapa lama estimasi waktu pengerjaan proyek?',
-    a: 'Waktu pengerjaan berkisar antara 5 hingga 7 hari kerja untuk Website Bisnis, 10 hingga 14 hari untuk Aplikasi Android APK, dan 14 hingga 21 hari untuk Paket Komplit Web + APK. Kami juga menyediakan opsi pengerjaan Express.',
+    q: 'Berapa lama estimasi pengerjaan proyek?',
+    a: 'Website: 5-7 hari kerja. Aplikasi APK: 10-14 hari kerja. Paket Komplit (Web+APK): 14-21 hari kerja. Tersedia jalur Express jika butuh cepat.',
   },
   {
-    q: 'Bagaimana mekanisme pembayaran proyek?',
-    a: 'Sistem pembayaran aman dan bertahap: Uang muka (DP) 50% saat kesepakatan fitur dan mulai pengerjaan, dan sisa pelunasan 50% dibayarkan setelah aplikasi selesai diuji coba dan siap diserahterimakan.',
+    q: 'Bagaimana skema pembayaran proyek?',
+    a: 'DP 50% di awal saat kick-off dan kesepakatan fitur. Pelunasan 50% sisanya dibayarkan setelah aplikasi lolos uji coba dan siap diserahterimakan.',
   },
 ];
 
@@ -48,19 +48,19 @@ export const FaqSection: React.FC = () => {
   };
 
   return (
-    <section id="faq" className="py-20 bg-[#F8FAFC] border-t border-slate-200 relative">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="faq" className="py-16 sm:py-20 bg-[#F8FAFC] border-t border-slate-200/80 relative overflow-hidden">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Header */}
-        <div className="text-center mb-12">
-          <div className="inline-flex items-center gap-2 px-3 py-1 bg-blue-50 border border-blue-200 rounded-full text-xs font-mono text-blue-700 shadow-2xs mb-3">
+        <div className="text-center mb-10 sm:mb-12">
+          <div className="inline-flex items-center gap-2 px-3 py-1 bg-white border border-blue-200 rounded-full text-xs font-mono font-bold text-blue-700 shadow-2xs mb-3">
             <HelpCircle className="w-3.5 h-3.5 text-blue-600" />
             <span>TANYA JAWAB UMUM (FAQ)</span>
           </div>
-          <h2 className="text-2xl sm:text-4xl font-extrabold text-slate-900 tracking-tight font-sans">
-            PERTANYAAN YANG SERING DIAJUKAN
+          <h2 className="text-2xl sm:text-4xl font-black text-slate-900 tracking-tight font-sans">
+            PERTANYAAN SERING DIAJUKAN
           </h2>
-          <p className="mt-3 text-sm text-slate-600 font-sans">
-            Berikut adalah beberapa hal yang sering ditanyakan oleh calon klien kami sebelum memulai kerja sama.
+          <p className="mt-2 text-sm text-slate-600 font-sans">
+            Semua hal penting yang perlu Anda ketahui sebelum memulai kerja sama:
           </p>
         </div>
 
@@ -71,23 +71,23 @@ export const FaqSection: React.FC = () => {
             return (
               <div
                 key={idx}
-                className="rounded-2xl border border-slate-200 bg-white overflow-hidden shadow-2xs transition-all"
+                className="rounded-2xl border border-slate-200 bg-white overflow-hidden shadow-2xs transition-all duration-200 hover:border-blue-300"
               >
                 <button
                   type="button"
                   onClick={() => toggleFaq(idx)}
-                  className="w-full p-5 text-left flex items-center justify-between gap-4 cursor-pointer hover:bg-slate-50/80 transition-colors"
+                  className="w-full p-4 sm:p-5 text-left flex items-center justify-between gap-4 cursor-pointer hover:bg-slate-50/80 transition-colors"
                 >
                   <span className="font-sans font-bold text-sm sm:text-base text-slate-900">
                     {faq.q}
                   </span>
-                  <div className="p-1 rounded-lg bg-blue-50 text-blue-600 shrink-0">
+                  <div className="p-1.5 rounded-lg bg-blue-50 text-blue-600 shrink-0">
                     {isOpen ? <ChevronUp className="w-4 h-4" /> : <ChevronDown className="w-4 h-4" />}
                   </div>
                 </button>
 
                 {isOpen && (
-                  <div className="px-5 pb-5 text-xs sm:text-sm text-slate-600 font-sans leading-relaxed border-t border-slate-100 pt-3">
+                  <div className="px-4 sm:px-5 pb-5 text-xs sm:text-sm text-slate-600 font-sans leading-relaxed border-t border-slate-100 pt-3">
                     {faq.a}
                   </div>
                 )}
@@ -97,21 +97,21 @@ export const FaqSection: React.FC = () => {
         </div>
 
         {/* Still have questions card */}
-        <div className="p-6 rounded-3xl bg-blue-50 border border-blue-200 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
+        <div className="p-6 sm:p-7 rounded-3xl bg-blue-50/80 border border-blue-200 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
           <div>
             <h4 className="font-sans font-bold text-base text-slate-900">
-              Punya pertanyaan lain yang belum terjawab?
+              Ada pertanyaan khusus terkait alur bisnis Anda?
             </h4>
             <p className="text-xs text-slate-600 font-sans mt-0.5">
-              Hubungi tim kami langsung lewat WhatsApp untuk konsultasi bebas biaya.
+              Konsultasikan langsung dengan senior engineer kami via WhatsApp.
             </p>
           </div>
           <button
             onClick={openWhatsAppFaq}
-            className="px-5 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-xl font-mono text-xs font-bold flex items-center gap-2 shadow-md shadow-blue-500/20 active:scale-98 transition-all shrink-0 cursor-pointer"
+            className="w-full sm:w-auto px-5 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-xl font-mono text-xs font-bold flex items-center justify-center gap-2 shadow-md shadow-blue-500/20 active:scale-98 transition-all shrink-0 cursor-pointer"
           >
             <MessageSquare className="w-4 h-4" />
-            <span>TANYA KAMI DI WHATSAPP</span>
+            <span>KONSULTASI GRATIS SEKARANG</span>
           </button>
         </div>
       </div>

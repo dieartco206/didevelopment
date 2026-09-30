@@ -4,89 +4,90 @@ import {
   CheckCircle2, 
   ArrowUpRight,
   Briefcase,
-  Zap
+  Zap,
+  TrendingUp
 } from 'lucide-react';
 import { soundFx } from '../../utils/audio';
 
 const PORTFOLIO_DATA: PortfolioItem[] = [
   {
     id: 'kasir-pos',
-    title: 'KasirKilat: Sistem POS Tablet & Web Cloud Inventori',
+    title: 'KasirKilat: Tablet POS & Web Cloud',
     category: 'Full Ecosystem (Web + APK)',
-    client: 'Jaringan Resto & Coffee Shop (12 Cabang)',
+    client: 'Jaringan Coffee Shop (12 Cabang)',
     thumbnail: 'pos',
-    problem: 'Pencatatan kasir manual rawan selisih uang, stok bahan baku sering hilang, dan owner kesulitan memantau omset saat sedang di luar kota.',
-    solution: 'Kami bangun aplikasi kasir Android APK untuk tablet kasir kasir dengan cetak struk Bluetooth, terhubung real-time ke Web Dashboard Admin untuk owner memantau penjualan dari mana saja.',
-    techStack: ['Android APK Native', 'React.js Web', 'Node.js', 'PostgreSQL', 'Bluetooth ESC/POS'],
+    problem: 'Pencatatan kasir manual rawan selisih uang dan stok bahan sering hilang.',
+    solution: 'Aplikasi Android APK tablet cetak struk Bluetooth + Web Dashboard pantau omset real-time.',
+    techStack: ['Android APK', 'React 19', 'Bluetooth Print', 'PostgreSQL'],
     features: [
       'Cetak Struk Thermal Bluetooth Cepat',
       'Manajemen Meja & Split Bill',
-      'Laporan Omset & Laba Bersih Otomatis',
-      'Deteksi Stok Menipis Real-time',
+      'Laporan Omset & Laba Otomatis',
+      'Peringatan Stok Habis Real-time',
     ],
-    results: 'Efisiensi waktu transaksi naik 3x lipat, selisih kas harian turun menjadi 0%.',
+    results: 'Transaksi 3x Lebih Cepat, Selisih Kas 0%',
     isPopular: true,
   },
   {
     id: 'absensi-gps',
-    title: 'HadirSmart: Absensi GPS & Face Selfie Anti-Fake GPS',
+    title: 'HadirSmart: Absensi Selfie Anti-Fake GPS',
     category: 'Full Ecosystem (Web + APK)',
-    client: 'Perusahaan Outsourcing & Konstruksi (350+ Pekerja)',
+    client: 'Perusahaan Konstruksi (350+ Pekerja)',
     thumbnail: 'attendance',
-    problem: 'Karyawan lapangan sering titip absen dan memakai aplikasi Fake GPS palsu untuk memanipulasi kehadiran.',
-    solution: 'Aplikasi Android APK dengan proteksi anti-mock location (blokir Fake GPS), validasi foto selfie wajah real-time, dan dashboard web rekap gaji otomatis.',
-    techStack: ['Kotlin Android', 'Face Detection AI On-Device', 'React Web', 'Go Backend'],
+    problem: 'Karyawan lapangan sering titip absen dan memakai aplikasi Fake GPS palsu.',
+    solution: 'Aplikasi APK Android deteksi mock GPS + swafoto wajah & Web Rekap Payroll otomatis.',
+    techStack: ['Kotlin Android', 'Face Selfie', 'Geofencing', 'Web Admin'],
     features: [
-      'Deteksi & Blokir Aplikasi Fake GPS',
+      'Blokir Otomatis Aplikasi Fake GPS',
       'Verifikasi Foto Wajah Langsung (Kamera HP)',
-      'Geofencing Radius Titik Kantor',
-      'Export Rekap Penggajian (Payroll) Excel',
+      'Validasi Radius Titik Kantor / Proyek',
+      'Export Rekap Gaji (Payroll) ke Excel',
     ],
-    results: 'Kecurangan absensi berkurang 100%, HRD hemat 15 jam kerja rekap gaji tiap akhir bulan.',
+    results: 'Kecurangan 0%, Hemat 15 Jam Rekap Gaji Bulanan',
     isPopular: true,
   },
   {
     id: 'logistik-tracking',
-    title: 'KargoNusantara: Portal Web Resi & APK Kurir Barcode',
+    title: 'KargoNusantara: Portal Resi & APK Kurir',
     category: 'Full Ecosystem (Web + APK)',
-    client: 'Perusahaan Ekspedisi & Forwarding Lokal',
+    client: 'Perusahaan Ekspedisi Logistik',
     thumbnail: 'logistics',
-    problem: 'Pelanggan sering komplain karena status resi lambat diperbarui dan kurir kesulitan mencatat bukti tanda terima barang.',
-    solution: 'Website publik untuk tracking nomor resi cepat, serta aplikasi Android APK khusus kurir dengan fitur scan barcode kamera dan tanda tangan digital penerima.',
-    techStack: ['Next.js Website', 'Android APK (Camera Barcode)', 'Cloud Database'],
+    problem: 'Pelanggan sering komplain status resi lambat dan bukti tanda terima tercecer.',
+    solution: 'Website tracking resi publik + APK kurir scan barcode kamera & tanda tangan digital di HP.',
+    techStack: ['Next.js Web', 'Camera Barcode', 'Digital Sign', 'Cloud API'],
     features: [
-      'Lacak Resi Real-time di Website',
-      'Scan Barcode Paket via Kamera HP',
+      'Cek Resi Real-time di Website',
+      'Scan Barcode Cepat via Kamera HP',
       'Tanda Tangan Digital Penerima Paket',
-      'Notifikasi WhatsApp Update Pengiriman',
+      'Notifikasi Otomatis Status Pengiriman',
     ],
-    results: 'Komplain status paket turun 85%, kecepatan update manifest naik 400%.',
+    results: 'Komplain Turun 85%, Update Manifest 4x Lebih Cepat',
   },
   {
     id: 'cbt-exam',
-    title: 'EduExam Pro: Aplikasi Ujian Siswa Anti-Curang & Web CBT',
+    title: 'EduExam: Ujian Sekolah Kiosk Anti-Curang',
     category: 'Full Ecosystem (Web + APK)',
-    client: 'Yayasan Pendidikan & SMK Swasta (1.200 Siswa)',
+    client: 'Yayasan Pendidikan & SMK (1.200 Siswa)',
     thumbnail: 'education',
-    problem: 'Siswa sering membuka tab browser lain atau chatting saat ujian online di smartphone.',
-    solution: 'Aplikasi APK Android siswa dengan Kiosk Lock Mode (layar terkunci saat ujian aktif) dan Web Admin Guru untuk bank soal acak & koreksi nilai otomatis.',
-    techStack: ['Android APK Kiosk', 'React.js', 'SQLite Local Cache', 'Socket.IO'],
+    problem: 'Siswa sering curang membuka Google atau chatting saat ujian daring di smartphone.',
+    solution: 'Aplikasi APK Android terkunci (Kiosk Lock) + Web Guru untuk bank soal acak & koreksi otomatis.',
+    techStack: ['Android Kiosk', 'React.js', 'SQLite Cache', 'Socket.IO'],
     features: [
-      'Kiosk Mode (Blokir tombol Home & Pindah Tab)',
+      'Kiosk Mode (Kunci tombol Home & Pindah Tab)',
       'Bank Soal Acak Pilihan Ganda & Esai',
-      'Ujian Tetap Berjalan saat Sinyal Terputus',
-      'Analisis Butir Soal & Nilai Otomatis',
+      'Ujian Tetap Berjalan saat Internet Putus',
+      'Koreksi Nilai Otomatis & Analisis Butir',
     ],
-    results: 'Ujian serentak 1.200 siswa berjalan mulus tanpa server down, integritas nilai terjamin.',
+    results: '1.200 Siswa Ujian Serentak Lancar Bebas Server Down',
   },
 ];
 
 export const PortfolioSection: React.FC = () => {
-  const [activeTab, setActiveTab] = useState<'all' | 'Full Ecosystem (Web + APK)' | 'Android APK'>('all');
+  const [activeTab, setActiveTab] = useState<'all' | 'Full Ecosystem (Web + APK)'>('all');
 
   const filtered = activeTab === 'all'
     ? PORTFOLIO_DATA
-    : PORTFOLIO_DATA.filter((p) => p.category.includes(activeTab));
+    : PORTFOLIO_DATA.filter((p) => p.category === activeTab);
 
   const consultProject = (title: string) => {
     soundFx.playClick(900, 0.04);
@@ -95,21 +96,20 @@ export const PortfolioSection: React.FC = () => {
   };
 
   return (
-    <section id="portfolio" className="py-20 bg-white border-t border-slate-200 relative">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="portfolio" className="py-16 sm:py-20 bg-white border-t border-slate-200/80 relative overflow-hidden">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10 sm:mb-12">
           <div>
-            <div className="flex items-center gap-2 text-xs font-mono text-blue-600 uppercase tracking-wider mb-2">
-              <Briefcase className="w-4 h-4" />
-              <span>BUKTI KERJA NYATA & REKAM JEJAK</span>
+            <div className="flex items-center gap-2 text-xs font-mono font-bold text-blue-600 uppercase tracking-wider mb-2">
+              <Briefcase className="w-4 h-4 text-blue-600" />
+              <span>REKAM JEJAK NYATA</span>
             </div>
-            <h2 className="text-2xl sm:text-4xl font-extrabold text-slate-900 tracking-tight font-sans">
-              PORTOFOLIO SISTEM WEBSITE & APK ANDROID
+            <h2 className="text-2xl sm:text-4xl font-black text-slate-900 tracking-tight font-sans">
+              PORTOFOLIO SISTEM YANG TELAH BEROPERASI
             </h2>
-            <p className="mt-3 text-sm sm:text-base text-slate-600 max-w-2xl font-sans">
-              Bukan sekadar desain mockup di atas kertas. Ini adalah sistem nyata yang sudah digunakan setiap hari
-              oleh ratusan staf dan ribuan pelanggan di berbagai sektor bisnis.
+            <p className="mt-2 text-sm sm:text-base text-slate-600 max-w-2xl font-sans">
+              Bukan sekadar konsep visual. Sistem ini dipakai setiap hari oleh ratusan karyawan dan ribuan pelanggan:
             </p>
           </div>
 
@@ -121,7 +121,7 @@ export const PortfolioSection: React.FC = () => {
                 activeTab === 'all' ? 'bg-blue-600 text-white shadow-xs' : 'text-slate-600 hover:text-blue-600'
               }`}
             >
-              Semua Proyek
+              Semua Studi Kasus
             </button>
             <button
               onClick={() => { soundFx.playClick(650, 0.03); setActiveTab('Full Ecosystem (Web + APK)'); }}
@@ -135,40 +135,43 @@ export const PortfolioSection: React.FC = () => {
         </div>
 
         {/* Portfolio Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8">
           {filtered.map((item) => (
             <div
               key={item.id}
-              className="p-7 rounded-3xl bg-[#F8FAFC] border border-slate-200 hover:border-blue-400 hover:shadow-xl hover:shadow-blue-500/5 transition-all flex flex-col justify-between"
+              className="group relative rounded-3xl bg-white border border-slate-200/90 shadow-sm hover:border-blue-500 hover:shadow-xl hover:shadow-blue-500/10 transition-all duration-300 flex flex-col justify-between overflow-hidden"
             >
-              <div>
-                {/* Header */}
+              {/* Top Accent Gradient Line */}
+              <div className="h-1.5 w-full bg-gradient-to-r from-blue-600 via-sky-400 to-indigo-600" />
+
+              <div className="p-6 sm:p-8">
+                {/* Header Pill */}
                 <div className="flex items-center justify-between gap-3 mb-3">
-                  <span className="px-3 py-1 rounded-lg bg-blue-50 border border-blue-200 text-blue-700 text-xs font-mono font-bold">
+                  <span className="px-2.5 py-1 rounded-md bg-blue-50 border border-blue-200 text-blue-700 text-[11px] font-mono font-bold">
                     {item.category}
                   </span>
                   {item.isPopular && (
-                    <span className="text-[11px] font-mono text-blue-600 font-semibold flex items-center gap-1">
-                      <Zap className="w-3 h-3 fill-current" /> BEST SELLER
+                    <span className="text-[11px] font-mono text-blue-600 font-bold flex items-center gap-1">
+                      <Zap className="w-3.5 h-3.5 fill-current" /> BEST CASE
                     </span>
                   )}
                 </div>
 
-                <h3 className="text-xl font-bold font-sans text-slate-900 mb-1">
+                <h3 className="text-xl sm:text-2xl font-bold font-sans text-slate-900 group-hover:text-blue-600 transition-colors mb-1">
                   {item.title}
                 </h3>
                 <div className="text-xs font-mono text-slate-500 mb-4">
                   Klien: <strong className="text-slate-700">{item.client}</strong>
                 </div>
 
-                {/* Problem vs Solution */}
-                <div className="space-y-3 mb-5">
-                  <div className="p-3.5 rounded-xl bg-white border border-slate-200 text-xs font-sans text-slate-700">
+                {/* Problem vs Solution (Punchy 1-Liners) */}
+                <div className="space-y-2.5 mb-5">
+                  <div className="p-3 rounded-xl bg-slate-50 border border-slate-200 text-xs font-sans text-slate-700">
                     <span className="font-bold text-rose-600 block mb-0.5">Tantangan Klien:</span>
                     {item.problem}
                   </div>
 
-                  <div className="p-3.5 rounded-xl bg-blue-50/70 border border-blue-200 text-xs font-sans text-slate-800">
+                  <div className="p-3 rounded-xl bg-blue-50/70 border border-blue-200 text-xs font-sans text-slate-800">
                     <span className="font-bold text-blue-700 block mb-0.5">Solusi DiDev:</span>
                     {item.solution}
                   </div>
@@ -176,8 +179,8 @@ export const PortfolioSection: React.FC = () => {
 
                 {/* Features */}
                 <div className="space-y-2 mb-5">
-                  <div className="text-[11px] font-mono text-slate-500 uppercase tracking-wide font-semibold">
-                    FITUR SISTEM:
+                  <div className="text-[11px] font-mono text-slate-400 uppercase tracking-wide font-bold">
+                    FITUR UTAMA:
                   </div>
                   {item.features.map((feat, idx) => (
                     <div key={idx} className="flex items-start gap-2 text-xs font-sans text-slate-700">
@@ -187,20 +190,23 @@ export const PortfolioSection: React.FC = () => {
                   ))}
                 </div>
 
-                {/* Result Highlights */}
-                <div className="p-3 rounded-xl bg-blue-600 text-white text-xs font-mono mb-6 shadow-xs">
-                  <span className="font-bold">HASIL NYATA: </span>
-                  {item.results}
+                {/* Big Result Badge */}
+                <div className="p-3.5 rounded-2xl bg-gradient-to-r from-blue-600 to-indigo-600 text-white text-xs font-mono flex items-center gap-2.5 shadow-md shadow-blue-500/20">
+                  <TrendingUp className="w-4 h-4 shrink-0" />
+                  <div>
+                    <span className="font-bold uppercase tracking-wider block text-[10px] text-blue-100">HASIL TERBUKTI:</span>
+                    <span className="font-bold text-xs sm:text-sm">{item.results}</span>
+                  </div>
                 </div>
               </div>
 
               {/* Footer Tech Stack & Consultation Button */}
-              <div className="pt-4 border-t border-slate-200 flex flex-col sm:flex-row items-center justify-between gap-3">
-                <div className="flex flex-wrap gap-1.5">
+              <div className="p-6 sm:p-8 pt-4 border-t border-slate-100 bg-slate-50/60 flex flex-col sm:flex-row items-center justify-between gap-3">
+                <div className="flex flex-wrap gap-1.5 self-start sm:self-auto">
                   {item.techStack.map((tech, idx) => (
                     <span
                       key={idx}
-                      className="px-2 py-0.5 rounded bg-white border border-slate-200 text-[10px] font-mono text-slate-600"
+                      className="px-2 py-0.5 rounded bg-white border border-slate-200 text-[10px] font-mono text-slate-700 font-medium"
                     >
                       {tech}
                     </span>
@@ -209,10 +215,10 @@ export const PortfolioSection: React.FC = () => {
 
                 <button
                   onClick={() => consultProject(item.title)}
-                  className="w-full sm:w-auto px-4 py-2.5 bg-blue-50 hover:bg-blue-600 text-blue-700 hover:text-white rounded-xl font-mono text-xs font-bold transition-all flex items-center justify-center gap-1.5 cursor-pointer"
+                  className="w-full sm:w-auto px-4 py-2.5 bg-blue-600 hover:bg-blue-700 text-white rounded-xl font-mono text-xs font-bold transition-all flex items-center justify-center gap-1.5 shadow-xs cursor-pointer active:scale-95"
                 >
-                  <span>KONSULTASI SISTEM INI</span>
-                  <ArrowUpRight className="w-3.5 h-3.5" />
+                  <span>BUAT SEPERTI INI</span>
+                  <ArrowUpRight className="w-4 h-4" />
                 </button>
               </div>
             </div>

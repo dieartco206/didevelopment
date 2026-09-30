@@ -11,81 +11,77 @@ import { soundFx } from '../../utils/audio';
 const PRICING_PLANS: PricingPlan[] = [
   {
     id: 'plan-web',
-    name: 'Paket Website Bisnis',
+    name: 'Website Bisnis',
     badge: 'STARTER UMKM',
     price: 'Rp 1.500.000',
-    priceNote: 'Sekali bayar, tanpa biaya bulanan',
-    description: 'Solusi tepat untuk profil usaha, personal branding, atau landing page promosi produk dengan kecepatan loading instan.',
+    priceNote: 'Sekali bayar, tanpa sewa bulanan',
+    description: 'Solusi profil usaha & landing page cepat, SEO ready, dan langsung terima order WA.',
     timeline: '5 - 7 Hari Kerja',
     features: [
-      'Website Multi-Halaman / Landing Page Konversi',
-      'Gratis Domain .COM / .ID & SSL 1 Tahun',
-      'Desain Responsif 100% Mobile & Desktop',
-      'Dashboard Admin Kelola Konten & Foto Produk',
-      'Integrasi Tombol WhatsApp Langsung ke CS',
-      'Full Source Code & Akses CPanel / Server',
-      'Garansi Perbaikan Bug 1 Tahun',
+      'Website Responsif Mobile & Laptop',
+      'Gratis Domain .COM & SSL 1 Tahun',
+      'Dashboard Admin Kelola Konten',
+      'Tombol WhatsApp Order ke CS',
+      '100% Hak Milik Source Code',
+      'Garansi Bebas Bug 1 Tahun',
     ],
-    ctaText: 'PILIH PAKET WEBSITE',
+    ctaText: 'PILIH WEBSITE',
   },
   {
     id: 'plan-apk',
-    name: 'Paket Android APK',
+    name: 'Aplikasi Android APK',
     badge: 'STANDALONE APP',
     price: 'Rp 2.500.000',
     priceNote: 'Sekali bayar, full source code',
-    description: 'Aplikasi Android native/hybrid fungsional untuk kasir toko, absensi internal, kurir, atau alat bantu kerja staf lapangan.',
+    description: 'Aplikasi Android untuk kasir POS, absensi internal, kurir, atau alat staf lapangan.',
     timeline: '10 - 14 Hari Kerja',
     features: [
-      'Master File APK Release (.apk) Siap Pasang',
-      'Dukungan Cetak Struk Printer Bluetooth',
-      'Dukungan Kamera Barcode / QR Scanner',
-      'Database Penyimpanan Offline di Smartphone',
-      'Bisa Diinstal di Semua HP Android (OS 8 - 15)',
-      'Bantuan Upload ke Google Play Console',
-      'Garansi Perbaikan Bug 1 Tahun',
+      'Master File APK Release Siap Pasang',
+      'Dukungan Cetak Struk Bluetooth',
+      'Scan Barcode / QR Kamera HP',
+      'Bisa Diinstal di Semua HP Android',
+      'Bantuan Upload Google Play Store',
+      'Garansi Bebas Bug 1 Tahun',
     ],
     ctaText: 'PILIH PAKET APK',
   },
   {
     id: 'plan-combo',
     name: 'Paket Komplit (Web + APK)',
-    badge: 'PALING LARIS & REKOMENDASI',
+    badge: 'PALING LARIS & LENGKAP',
     price: 'Rp 4.500.000',
-    priceNote: 'Investasi terbaik ekosistem bisnis',
-    description: 'Sistem terpadu: Pantau omset dan kelola data di Web Admin laptop, eksekusi transaksi di HP Android kasir/lapangan secara real-time.',
+    priceNote: 'Ekosistem bisnis paling terpadu',
+    description: 'Pantau omset di laptop, staf eksekusi di HP. Data tersinkron otomatis secara real-time.',
     isPopular: true,
     timeline: '14 - 21 Hari Kerja',
     features: [
-      'Website Admin Dashboard Monitoring di Laptop',
-      'Aplikasi Android (.apk) Siap Pasang di HP Klien',
-      'Sinkronisasi Data Real-time (Web & Mobile HP)',
-      'Multi-Role Hak Akses (Superadmin, Kasir, Kurir)',
-      'Laporan Keuangan & Penjualan Export Excel/PDF',
-      'Gratis Domain .COM & Setup Cloud Server 1 Tahun',
-      'Pelatihan Pemakaian Sistem sampai Bisa',
-      'Garansi Prioritas & Free Maintenance 1 Tahun',
+      'Web Admin Dashboard di Laptop',
+      'Aplikasi Android (.apk) Siap Pasang di HP',
+      'Sinkronisasi Data Real-time Otomatis',
+      'Multi-Role (Owner, Admin, Kasir, Kurir)',
+      'Laporan Omset Export Excel / PDF',
+      'Gratis Domain .COM & Server 1 Tahun',
+      'Garansi Prioritas & Free Maintenance',
     ],
     ctaText: 'PILIH PAKET KOMPLIT',
   },
   {
     id: 'plan-enterprise',
-    name: 'Paket Custom Enterprise',
-    badge: 'KUSTOM SKALA BESAR',
+    name: 'Custom Enterprise',
+    badge: 'SKALA BESAR',
     price: 'Mulai Rp 7.500.000',
-    priceNote: 'Disesuaikan dengan flow bisnis Anda',
-    description: 'Pengembangan sistem software khusus tingkat lanjut seperti ERP multi-cabang, marketplace, atau sistem lelang dengan arsitektur tangguh.',
+    priceNote: 'Sesuai alur bisnis & SOP Anda',
+    description: 'Sistem kustom advance: ERP multi-cabang, e-learning massal, atau sistem lelang terpadu.',
     timeline: '21 - 35 Hari Kerja',
     features: [
-      'Full Custom Arsitektur Sesuai SOP Bisnis',
-      'Integrasi Payment Gateway Otomatis (QRIS & VA)',
-      'WhatsApp Gateway Pengirim Notifikasi Otomatis',
-      'Optimasi Server VPS Tinggi Bebas Down',
-      'Audit Keamanan Data OWASP & Anti-Tampering',
-      'Source Code Git Repository & Dokumentasi API',
-      'Perjanjian Kerahasiaan (NDA) & Garansi Eksklusif',
+      'Full Custom Arsitektur Sesuai SOP',
+      'Integrasi Payment Gateway QRIS & VA',
+      'WhatsApp Gateway Kirim Notifikasi',
+      'Server VPS Tangguh Bebas Down',
+      'Source Code Git Repo & Dokumen API',
+      'Perjanjian Kerahasiaan (NDA) Resmi',
     ],
-    ctaText: 'KONSULTASI ENTERPRISE',
+    ctaText: 'KONSULTASI KHUSUS',
   },
 ];
 
@@ -99,53 +95,59 @@ export const PricingSection: React.FC = () => {
   };
 
   return (
-    <section id="pricing" className="py-20 bg-[#F8FAFC] border-t border-slate-200 relative">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="pricing" className="py-16 sm:py-20 bg-[#F8FAFC] border-t border-slate-200/80 relative overflow-hidden">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-14">
-          <div className="inline-flex items-center gap-2 px-3 py-1 bg-blue-50 border border-blue-200 rounded-full text-xs font-mono text-blue-700 shadow-2xs mb-3">
+        <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-14">
+          <div className="inline-flex items-center gap-2 px-3 py-1 bg-white border border-blue-200 rounded-full text-xs font-mono font-bold text-blue-700 shadow-2xs mb-3">
             <Tag className="w-3.5 h-3.5 text-blue-600" />
-            <span>HARGA TRANSPARAN & BEBAS BIAYA TERSEMBUNYI</span>
+            <span>HARGA TRANSPARAN TANPA BIAYA TERSEMBUNYI</span>
           </div>
-          <h2 className="text-2xl sm:text-4xl font-extrabold text-slate-900 tracking-tight font-sans">
-            PILIHAN PAKET INVESTASI SISTEM BISNIS
+          <h2 className="text-2xl sm:text-4xl font-black text-slate-900 tracking-tight font-sans">
+            PAKET INVESTASI SISTEM BISNIS
           </h2>
-          <p className="mt-3 text-sm sm:text-base text-slate-600 font-sans">
-            Sistem berkualitas tinggi dengan harga rasional untuk kemajuan bisnis Anda. 
-            Semua paket sudah termasuk garansi perbaikan bug dan penyerahan source code 100% hak milik.
+          <p className="mt-2 text-sm sm:text-base text-slate-600 font-sans">
+            Sekali bayar, 100% hak milik source code tanpa biaya langganan bulanan. Termasuk garansi perbaikan bug 1 tahun:
           </p>
         </div>
 
-        {/* Pricing Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch">
+        {/* Pricing Cards Grid (Responsive 1 -> 2 -> 4 cols) */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch">
           {PRICING_PLANS.map((plan) => (
             <div
               key={plan.id}
-              className={`p-6 rounded-3xl flex flex-col justify-between transition-all relative ${
+              className={`rounded-3xl flex flex-col justify-between transition-all duration-300 relative overflow-hidden ${
                 plan.isPopular
-                  ? 'bg-white border-2 border-blue-600 shadow-xl shadow-blue-500/10 scale-102 z-10'
-                  : 'bg-white border border-slate-200 shadow-sm hover:border-slate-300'
+                  ? 'bg-white border-2 border-blue-600 shadow-[0_20px_50px_-10px_rgba(37,99,235,0.22)] lg:-translate-y-2 z-10'
+                  : 'bg-white border border-slate-200 shadow-xs hover:border-blue-400 hover:shadow-lg'
               }`}
             >
-              <div>
+              {/* Top Accent Gradient Line */}
+              <div className={`h-1.5 w-full ${
+                plan.isPopular 
+                  ? 'bg-gradient-to-r from-blue-600 via-sky-400 to-indigo-600' 
+                  : 'bg-slate-200'
+              }`} />
+
+              <div className="p-6 sm:p-7">
                 {/* Popular Pill */}
-                <div className="flex items-center justify-between mb-3">
+                <div className="flex items-center justify-between mb-3.5">
                   <span
-                    className={`text-[10px] font-mono px-2 py-0.5 rounded font-bold ${
+                    className={`text-[10px] font-mono px-2.5 py-0.5 rounded-full font-bold ${
                       plan.isPopular
-                        ? 'bg-blue-600 text-white'
+                        ? 'bg-blue-600 text-white shadow-xs'
                         : 'bg-blue-50 text-blue-700 border border-blue-200'
                     }`}
                   >
                     {plan.badge}
                   </span>
-                  <div className="flex items-center gap-1 text-[11px] font-mono text-slate-500">
+                  <div className="flex items-center gap-1 text-[11px] font-mono text-slate-500 font-medium">
                     <Clock className="w-3 h-3 text-blue-600" />
                     <span>{plan.timeline}</span>
                   </div>
                 </div>
 
-                <h3 className="text-lg font-bold font-sans text-slate-900 mb-1">
+                <h3 className="text-xl font-bold font-sans text-slate-900 mb-1">
                   {plan.name}
                 </h3>
                 <p className="text-xs text-slate-500 font-sans leading-relaxed mb-4">
@@ -153,8 +155,8 @@ export const PricingSection: React.FC = () => {
                 </p>
 
                 {/* Price Display */}
-                <div className="p-3.5 rounded-2xl bg-[#F8FAFC] border border-slate-200 mb-5">
-                  <div className="text-2xl font-extrabold font-mono text-blue-700">
+                <div className="p-4 rounded-2xl bg-slate-50 border border-slate-200/80 mb-5">
+                  <div className="text-2xl sm:text-3xl font-black font-mono text-blue-700">
                     {plan.price}
                   </div>
                   <div className="text-[11px] font-mono text-slate-500 mt-0.5">
@@ -164,8 +166,8 @@ export const PricingSection: React.FC = () => {
 
                 {/* Features List */}
                 <div className="space-y-2.5 mb-6">
-                  <div className="text-[10px] font-mono text-slate-400 uppercase tracking-wide font-semibold">
-                    YANG ANDA DAPATKAN:
+                  <div className="text-[10px] font-mono text-slate-400 uppercase tracking-wide font-bold">
+                    TERMASUK LAYANAN:
                   </div>
                   {plan.features.map((feat, idx) => (
                     <div key={idx} className="flex items-start gap-2 text-xs font-sans text-slate-700">
@@ -177,17 +179,19 @@ export const PricingSection: React.FC = () => {
               </div>
 
               {/* Action Button */}
-              <button
-                onClick={() => handleSelectPlan(plan)}
-                className={`w-full py-3 rounded-xl font-mono text-xs font-bold flex items-center justify-center gap-2 transition-all cursor-pointer ${
-                  plan.isPopular
-                    ? 'bg-blue-600 hover:bg-blue-700 text-white shadow-md shadow-blue-500/25 active:scale-98'
-                    : 'bg-slate-100 hover:bg-blue-600 hover:text-white text-slate-800'
-                }`}
-              >
-                <span>{plan.ctaText}</span>
-                <ArrowRight className="w-3.5 h-3.5" />
-              </button>
+              <div className="p-6 sm:p-7 pt-0">
+                <button
+                  onClick={() => handleSelectPlan(plan)}
+                  className={`w-full py-3.5 rounded-xl font-mono text-xs font-bold flex items-center justify-center gap-2 transition-all cursor-pointer active:scale-95 ${
+                    plan.isPopular
+                      ? 'bg-blue-600 hover:bg-blue-700 text-white shadow-md shadow-blue-500/25'
+                      : 'bg-slate-100 hover:bg-blue-600 hover:text-white text-slate-800'
+                  }`}
+                >
+                  <span>{plan.ctaText}</span>
+                  <ArrowRight className="w-3.5 h-3.5" />
+                </button>
+              </div>
             </div>
           ))}
         </div>
