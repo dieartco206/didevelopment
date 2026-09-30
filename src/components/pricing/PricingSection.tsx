@@ -148,19 +148,17 @@ export const PricingSection: React.FC = () => {
   };
 
   return (
-    <section id="pricing" className="py-16 sm:py-24 bg-mesh-pricing border-b border-slate-200 relative overflow-hidden">
-      {/* Artistic Dot Grid & Radiant Ambient Orbs */}
-      <div className="absolute inset-0 artistic-dot-grid opacity-60 pointer-events-none" />
-      <div className="absolute top-10 left-1/2 -translate-x-1/2 w-[800px] h-[450px] bg-gradient-to-b from-blue-500/18 to-transparent rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-10 left-1/4 w-[400px] h-[400px] bg-indigo-500/10 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-10 right-1/4 w-[400px] h-[400px] bg-emerald-500/10 rounded-full blur-3xl pointer-events-none" />
+    <section id="pricing" className="py-16 sm:py-24 bg-white border-b border-slate-200 relative overflow-hidden">
+      {/* Subtle Dot Grid Texture on White */}
+      <div className="absolute inset-0 artistic-dot-grid opacity-25 pointer-events-none" />
+      <div className="absolute top-10 left-1/2 -translate-x-1/2 w-[700px] h-[350px] bg-gradient-to-b from-blue-500/10 to-transparent rounded-full blur-3xl pointer-events-none" />
 
       {/* Decorative Technical Coordinates */}
-      <div className="absolute top-8 left-8 hidden xl:flex items-center gap-2 text-[10px] font-mono text-slate-400/70 pointer-events-none">
+      <div className="absolute top-8 left-8 hidden xl:flex items-center gap-2 text-[10px] font-mono text-slate-400/60 pointer-events-none">
         <span className="text-[#2563EB] font-bold">TIER.SPEC</span>
         <span>// FULLY_MANAGED_INFRASTRUCTURE</span>
       </div>
-      <div className="absolute top-8 right-8 hidden xl:flex items-center gap-2 text-[10px] font-mono text-slate-400/70 pointer-events-none">
+      <div className="absolute top-8 right-8 hidden xl:flex items-center gap-2 text-[10px] font-mono text-slate-400/60 pointer-events-none">
         <span>SLA: 99.9% UPTIME</span>
         <span className="text-[#10B981] font-bold">● ACTIVE</span>
       </div>

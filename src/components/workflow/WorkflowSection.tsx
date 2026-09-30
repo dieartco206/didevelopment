@@ -63,18 +63,16 @@ export const WorkflowSection: React.FC = () => {
   };
 
   return (
-    <section id="workflow" className="py-16 sm:py-24 bg-mesh-workflow border-b border-slate-200 relative overflow-hidden">
-      {/* Artistic Blueprint Grid & Circuit Aura */}
-      <div className="absolute inset-0 artistic-blueprint-grid opacity-50 pointer-events-none" />
-      <div className="absolute inset-0 artistic-dot-grid opacity-40 pointer-events-none" />
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[450px] bg-gradient-to-r from-blue-400/12 via-sky-300/10 to-emerald-400/10 rounded-full blur-3xl pointer-events-none" />
+    <section id="workflow" className="py-16 sm:py-24 bg-white border-b border-slate-200 relative overflow-hidden">
+      {/* Subtle Dot Matrix & Blueprint Texture on White */}
+      <div className="absolute inset-0 artistic-dot-grid opacity-25 pointer-events-none" />
 
       {/* Decorative Technical Coordinates */}
-      <div className="absolute top-8 left-8 hidden xl:flex items-center gap-2 text-[10px] font-mono text-slate-400/70 pointer-events-none">
+      <div className="absolute top-8 left-8 hidden xl:flex items-center gap-2 text-[10px] font-mono text-slate-400/60 pointer-events-none">
         <span className="text-[#2563EB] font-bold">PIPELINE.SPEC</span>
         <span>// AGILE_DELIVERY_PROTOCOL</span>
       </div>
-      <div className="absolute top-8 right-8 hidden xl:flex items-center gap-2 text-[10px] font-mono text-slate-400/70 pointer-events-none">
+      <div className="absolute top-8 right-8 hidden xl:flex items-center gap-2 text-[10px] font-mono text-slate-400/60 pointer-events-none">
         <span>SLA: ON_TIME_GUARANTEE</span>
         <span className="text-[#10B981] font-bold">100%</span>
       </div>

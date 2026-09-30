@@ -19,20 +19,16 @@ export const ServicesSection: React.FC = () => {
   };
 
   return (
-    <section id="services" className="py-16 sm:py-24 bg-mesh-services border-b border-slate-200 relative overflow-hidden">
-      {/* Artistic Blueprint Grid & Ambient Radiant Orbs */}
-      <div className="absolute inset-0 artistic-blueprint-grid opacity-60 pointer-events-none" />
-      <div className="absolute inset-0 artistic-dot-grid opacity-40 pointer-events-none" />
-      <div className="absolute top-1/4 -left-32 w-[600px] h-[600px] bg-blue-500/12 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute top-2/3 -right-32 w-[600px] h-[600px] bg-sky-400/12 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute -bottom-20 left-1/3 w-[450px] h-[450px] bg-emerald-500/8 rounded-full blur-3xl pointer-events-none" />
+    <section id="services" className="py-16 sm:py-24 bg-white border-b border-slate-200 relative overflow-hidden">
+      {/* Subtle Texture & Blueprint Watermark on White */}
+      <div className="absolute inset-0 artistic-dot-grid opacity-25 pointer-events-none" />
 
       {/* Decorative Technical Coordinates */}
-      <div className="absolute top-8 left-8 hidden xl:flex items-center gap-2 text-[10px] font-mono text-slate-400/70 pointer-events-none">
+      <div className="absolute top-8 left-8 hidden xl:flex items-center gap-2 text-[10px] font-mono text-slate-400/60 pointer-events-none">
         <span className="text-[#2563EB] font-bold">#01</span>
         <span>MODULAR_SYSTEM_MATRIX // FULL_STACK</span>
       </div>
-      <div className="absolute top-8 right-8 hidden xl:flex items-center gap-2 text-[10px] font-mono text-slate-400/70 pointer-events-none">
+      <div className="absolute top-8 right-8 hidden xl:flex items-center gap-2 text-[10px] font-mono text-slate-400/60 pointer-events-none">
         <span>ARCH: MICRO_SERVICES</span>
         <span className="text-[#10B981] font-bold">✓ SCALABLE</span>
       </div>
