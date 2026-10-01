@@ -272,10 +272,10 @@ export const HeroPromo: React.FC<HeroPromoProps> = ({ onNavigate }) => {
                 {/* Inner Smartphone Screen */}
                 <div className="rounded-[32px] overflow-hidden bg-[#F8FAFC] border border-slate-900 flex flex-col justify-between h-full relative select-none">
                   {/* 1. Android Status Bar with Real Punch-Hole Camera */}
-                  <div className="px-3.5 pt-2 pb-1 bg-white flex items-center justify-between border-b border-slate-100 text-[9px] font-bold text-slate-800">
+                  <div className="relative px-3.5 pt-2 pb-1 bg-white flex items-center justify-between border-b border-slate-100 text-[9px] font-bold text-slate-800">
                     <span className="font-mono text-[9px] tracking-tight">07:42</span>
-                    {/* Centered Punch-Hole Camera */}
-                    <div className="w-2.5 h-2.5 rounded-full bg-slate-950 ring-1 ring-slate-800 flex items-center justify-center -mt-0.5">
+                    {/* Centered Punch-Hole Camera (Guaranteed 100% Dead-Center) */}
+                    <div className="absolute left-1/2 -translate-x-1/2 top-2 w-2.5 h-2.5 rounded-full bg-slate-950 ring-1 ring-slate-800 flex items-center justify-center pointer-events-none">
                       <span className="w-0.5 h-0.5 rounded-full bg-blue-900/90" />
                     </div>
                     {/* Real Android Status Icons */}

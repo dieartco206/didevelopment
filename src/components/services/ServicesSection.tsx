@@ -245,11 +245,11 @@ export const ServicesSection: React.FC = () => {
               <div className="rounded-[36px] overflow-hidden bg-[#F8FAFC] border border-slate-900 flex flex-col justify-between h-full relative select-none">
                 
                 {/* 1. Android Status Bar with Real Punch-Hole Camera */}
-                <div className="px-4 pt-2.5 pb-1 flex items-center justify-between bg-white text-slate-800 text-[10px] font-semibold border-b border-slate-100">
+                <div className="relative px-4 pt-2.5 pb-1 flex items-center justify-between bg-white text-slate-800 text-[10px] font-semibold border-b border-slate-100">
                   <span className="font-bold text-slate-900 tracking-tight">09:41</span>
                   
-                  {/* Punch Hole Front Camera */}
-                  <div className="w-3 h-3 rounded-full bg-slate-950 ring-1 ring-slate-800 flex items-center justify-center -mt-0.5">
+                  {/* Punch Hole Front Camera (Guaranteed 100% Dead-Center) */}
+                  <div className="absolute left-1/2 -translate-x-1/2 top-2.5 w-3 h-3 rounded-full bg-slate-950 ring-1 ring-slate-800 flex items-center justify-center pointer-events-none">
                     <span className="w-1 h-1 rounded-full bg-blue-900/90" />
                   </div>
 
