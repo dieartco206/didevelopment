@@ -18,53 +18,28 @@ import {
 } from 'lucide-react';
 import { soundFx } from '../../utils/audio';
 
-const HEADLINE_PHRASES = [
-  'Bikin Sistem Bisnis & Aplikasi Android Sesuai Alur Usaha Anda Sendiri.',
-  'Bikin Aplikasi Kasir POS Multi-Cabang Sesuai Alur Usaha Anda Sendiri.',
-  'Bikin Aplikasi Presensi Android GPS Sesuai Alur Usaha Anda Sendiri.',
-  'Bikin Sistem Digital Kustom 100% Hak Milik Anda Sendiri.',
-];
+const HEADLINE_TEXT = 'Bikin Sistem Bisnis & Aplikasi Android Sesuai Alur Usaha Anda Sendiri.';
 
 interface HeroPromoProps {
   onNavigate: (sectionId: string) => void;
 }
 
 export const HeroPromo: React.FC<HeroPromoProps> = ({ onNavigate }) => {
-  const [phraseIndex, setPhraseIndex] = useState(0);
   const [displayedText, setDisplayedText] = useState('');
-  const [isDeleting, setIsDeleting] = useState(false);
 
   useEffect(() => {
-    const currentPhrase = HEADLINE_PHRASES[phraseIndex % HEADLINE_PHRASES.length];
     let timer: ReturnType<typeof setTimeout>;
 
-    if (!isDeleting) {
-      if (displayedText.length < currentPhrase.length) {
-        timer = setTimeout(() => {
-          setDisplayedText(currentPhrase.slice(0, displayedText.length + 1));
-        }, 50);
-      } else {
-        // Jeda membaca saat teks sudah lengkap diketik
-        timer = setTimeout(() => {
-          setIsDeleting(true);
-        }, 2600);
-      }
-    } else {
-      if (displayedText.length > 0) {
-        timer = setTimeout(() => {
-          setDisplayedText(currentPhrase.slice(0, displayedText.length - 1));
-        }, 25);
-      } else {
-        // Jeda sejenak sebelum berganti ke kalimat berikutnya
-        timer = setTimeout(() => {
-          setIsDeleting(false);
-          setPhraseIndex((prev) => (prev + 1) % HEADLINE_PHRASES.length);
-        }, 450);
-      }
+    if (displayedText.length < HEADLINE_TEXT.length) {
+      // Jeda 250ms di awal agar terlihat jelas mulai ngetik, lalu 38ms per karakter
+      const delay = displayedText.length === 0 ? 250 : 38;
+      timer = setTimeout(() => {
+        setDisplayedText(HEADLINE_TEXT.slice(0, displayedText.length + 1));
+      }, delay);
     }
 
     return () => clearTimeout(timer);
-  }, [displayedText, isDeleting, phraseIndex]);
+  }, [displayedText]);
 
   const openWhatsApp = () => {
     soundFx.playSuccess();
@@ -100,7 +75,7 @@ export const HeroPromo: React.FC<HeroPromoProps> = ({ onNavigate }) => {
             <div className="min-h-[84px] sm:min-h-[115px] lg:min-h-[155px] flex flex-col justify-start">
               <h1 
                 className="text-2xl sm:text-4xl lg:text-[48px] font-extrabold tracking-tight text-[#0F172A] leading-tight font-sans"
-                aria-label={HEADLINE_PHRASES[phraseIndex % HEADLINE_PHRASES.length]}
+                aria-label={HEADLINE_TEXT}
               >
                 <span>{displayedText}</span>
                 <span 
