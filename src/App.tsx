@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { Navbar } from './components/navbar/Navbar';
 import { HeroPromo } from './components/hero/HeroPromo';
-import { TechStackMarquee } from './components/marquee/TechStackMarquee';
 import { ServicesSection } from './components/services/ServicesSection';
 import { ComparisonSection } from './components/comparison/ComparisonSection';
 import { PortfolioSection } from './components/portfolio/PortfolioSection';
@@ -35,10 +34,7 @@ export const App: React.FC = () => {
         {/* 1. Hero Section: Layered High-Fidelity UI Showcase + Strong Human Copywriting */}
         <HeroPromo onNavigate={handleNavigate} />
 
-        {/* 2. Tech Stack Marquee (Golang, Flutter, React, Vue, TS, PostgreSQL, Docker, Tailwind) */}
-        <TechStackMarquee />
-
-        {/* 3. Solusi & Fitur Unggulan: Format Zig-Zag Feature Spotlight (Tanpa Grid Kotak Membosankan) */}
+        {/* 2. Solusi & Fitur Unggulan: Format Zig-Zag Feature Spotlight (Tanpa Grid Kotak Membosankan) */}
         <ServicesSection />
 
         {/* 4. Matriks Komparasi Transparan: DiDevelopment vs Freelancer Lepas vs Hire In-House */}
