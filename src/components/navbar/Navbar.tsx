@@ -104,28 +104,28 @@ export const Navbar: React.FC<NavbarProps> = ({ onNavigate, activeSection }) => 
             <button
               onClick={toggleSound}
               title={isMuted ? 'Aktifkan Suara' : 'Matikan Suara'}
-              className="p-2.5 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-500 hover:text-[#2563EB] transition-colors cursor-pointer shrink-0"
-              aria-label="Toggle audio effects"
+              className="min-w-[44px] min-h-[44px] flex items-center justify-center rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-500 hover:text-[#2563EB] transition-colors cursor-pointer shrink-0"
+              aria-label={isMuted ? 'Aktifkan efek suara' : 'Matikan efek suara'}
             >
-              {isMuted ? <VolumeX className="w-4 h-4 text-slate-400 shrink-0" /> : <Volume2 className="w-4 h-4 text-[#2563EB] shrink-0" />}
+              {isMuted ? <VolumeX className="w-4 h-4 text-slate-400 shrink-0" aria-hidden="true" /> : <Volume2 className="w-4 h-4 text-[#2563EB] shrink-0" aria-hidden="true" />}
             </button>
 
             {/* Direct Emerald Green WhatsApp Button */}
             <button
               onClick={openWhatsApp}
-              className="hidden sm:inline-flex items-center gap-2 px-4 py-2.5 bg-[#10B981] hover:bg-[#059669] active:scale-98 text-white font-sans font-bold text-xs sm:text-sm rounded-xl transition-all shadow-md shadow-emerald-500/20 cursor-pointer whitespace-nowrap shrink-0"
+              className="hidden sm:inline-flex items-center gap-2 px-4 py-2.5 min-h-[44px] bg-[#10B981] hover:bg-[#059669] active:scale-98 text-white font-sans font-bold text-xs sm:text-sm rounded-xl transition-all shadow-md shadow-emerald-500/20 cursor-pointer whitespace-nowrap shrink-0"
             >
-              <MessageSquare className="w-4 h-4 fill-current shrink-0" />
+              <MessageSquare className="w-4 h-4 fill-current shrink-0" aria-hidden="true" />
               <span className="whitespace-nowrap">Chat WhatsApp</span>
             </button>
 
             {/* Mobile Menu Button */}
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="lg:hidden p-2.5 rounded-lg bg-slate-100 text-[#0F172A] hover:bg-slate-200 cursor-pointer shrink-0"
-              aria-label="Toggle menu"
+              className="lg:hidden min-w-[44px] min-h-[44px] flex items-center justify-center rounded-lg bg-slate-100 text-[#0F172A] hover:bg-slate-200 cursor-pointer shrink-0"
+              aria-label={mobileMenuOpen ? 'Tutup navigasi' : 'Buka navigasi'}
             >
-              {mobileMenuOpen ? <X className="w-5 h-5 shrink-0" /> : <Menu className="w-5 h-5 shrink-0" />}
+              {mobileMenuOpen ? <X className="w-5 h-5 shrink-0" aria-hidden="true" /> : <Menu className="w-5 h-5 shrink-0" aria-hidden="true" />}
             </button>
           </div>
         </div>

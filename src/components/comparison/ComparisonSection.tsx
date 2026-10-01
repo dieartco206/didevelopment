@@ -4,7 +4,7 @@ import {
   XCircle, 
   AlertTriangle, 
   ShieldCheck, 
-  Sparkles, 
+  Scale, 
   ArrowRight, 
   Lock, 
   Server, 
@@ -179,16 +179,15 @@ export const ComparisonSection: React.FC = () => {
 
   return (
     <section id="comparison" className="py-16 sm:py-24 bg-[#F8FAFC] border-b border-slate-200 relative overflow-hidden">
-      {/* Background Subtle Accent */}
+      {/* Background Subtle Blueprint Grid */}
       <div className="absolute inset-0 artistic-blueprint-grid opacity-35 pointer-events-none" />
-      <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[800px] h-[350px] bg-gradient-to-b from-blue-500/10 via-sky-400/5 to-transparent rounded-full blur-3xl pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-14 sm:mb-20">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 bg-blue-50 border border-blue-200 text-[#2563EB] rounded-full text-[11px] sm:text-xs font-bold uppercase tracking-wider mb-3 shadow-2xs">
-            <Sparkles className="w-3.5 h-3.5 shrink-0" />
+            <Scale className="w-3.5 h-3.5 shrink-0" aria-hidden="true" />
             <span>TRANSPARANSI KUALITAS & INVESTASI</span>
           </div>
           <h2 className="text-2xl sm:text-4xl lg:text-5xl font-extrabold text-[#0F172A] tracking-tight font-sans">
@@ -364,9 +363,9 @@ export const ComparisonSection: React.FC = () => {
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
-            <div className="p-4 rounded-xl bg-slate-50 border border-slate-200/80 flex items-start gap-3">
-              <div className="w-10 h-10 rounded-lg bg-blue-100 text-[#2563EB] flex items-center justify-center shrink-0 font-bold">
-                <ShieldCheck className="w-5 h-5" />
+            <div className="p-4 rounded-xl bg-white border border-slate-200 shadow-2xs hover:border-slate-300 transition-all flex items-start gap-3.5">
+              <div className="w-10 h-10 rounded-lg bg-[#0F172A] text-blue-400 flex items-center justify-center shrink-0 shadow-2xs">
+                <ShieldCheck className="w-5 h-5" aria-hidden="true" />
               </div>
               <div>
                 <h4 className="text-xs sm:text-sm font-extrabold text-[#0F172A]">Garansi Bebas Bug 365 Hari</h4>
@@ -376,9 +375,9 @@ export const ComparisonSection: React.FC = () => {
               </div>
             </div>
 
-            <div className="p-4 rounded-xl bg-slate-50 border border-slate-200/80 flex items-start gap-3">
-              <div className="w-10 h-10 rounded-lg bg-emerald-100 text-emerald-700 flex items-center justify-center shrink-0 font-bold">
-                <FileCode2 className="w-5 h-5" />
+            <div className="p-4 rounded-xl bg-white border border-slate-200 shadow-2xs hover:border-slate-300 transition-all flex items-start gap-3.5">
+              <div className="w-10 h-10 rounded-lg bg-[#0F172A] text-emerald-400 flex items-center justify-center shrink-0 shadow-2xs">
+                <FileCode2 className="w-5 h-5" aria-hidden="true" />
               </div>
               <div>
                 <h4 className="text-xs sm:text-sm font-extrabold text-[#0F172A]">100% Hak Milik Kode</h4>
@@ -388,9 +387,9 @@ export const ComparisonSection: React.FC = () => {
               </div>
             </div>
 
-            <div className="p-4 rounded-xl bg-slate-50 border border-slate-200/80 flex items-start gap-3">
-              <div className="w-10 h-10 rounded-lg bg-indigo-100 text-indigo-700 flex items-center justify-center shrink-0 font-bold">
-                <Server className="w-5 h-5" />
+            <div className="p-4 rounded-xl bg-white border border-slate-200 shadow-2xs hover:border-slate-300 transition-all flex items-start gap-3.5">
+              <div className="w-10 h-10 rounded-lg bg-[#0F172A] text-indigo-400 flex items-center justify-center shrink-0 shadow-2xs">
+                <Server className="w-5 h-5" aria-hidden="true" />
               </div>
               <div>
                 <h4 className="text-xs sm:text-sm font-extrabold text-[#0F172A]">Cloud Server Fully Managed</h4>
@@ -400,9 +399,9 @@ export const ComparisonSection: React.FC = () => {
               </div>
             </div>
 
-            <div className="p-4 rounded-xl bg-slate-50 border border-slate-200/80 flex items-start gap-3">
-              <div className="w-10 h-10 rounded-lg bg-amber-100 text-amber-700 flex items-center justify-center shrink-0 font-bold">
-                <Lock className="w-5 h-5" />
+            <div className="p-4 rounded-xl bg-white border border-slate-200 shadow-2xs hover:border-slate-300 transition-all flex items-start gap-3.5">
+              <div className="w-10 h-10 rounded-lg bg-[#0F172A] text-amber-400 flex items-center justify-center shrink-0 shadow-2xs">
+                <Lock className="w-5 h-5" aria-hidden="true" />
               </div>
               <div>
                 <h4 className="text-xs sm:text-sm font-extrabold text-[#0F172A]">NDA Kerahasiaan Bisnis</h4>

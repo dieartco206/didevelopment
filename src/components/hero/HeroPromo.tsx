@@ -16,6 +16,7 @@ import {
   Battery,
   Camera
 } from 'lucide-react';
+import { AndroidIcon } from '../icons/BrandIcons';
 import { soundFx } from '../../utils/audio';
 
 const HEADLINE_TEXT = 'Bikin Sistem Bisnis & Aplikasi Android Sesuai Alur Usaha Anda Sendiri.';
@@ -51,14 +52,9 @@ export const HeroPromo: React.FC<HeroPromoProps> = ({ onNavigate }) => {
 
   return (
     <section id="hero" className="relative pt-6 pb-14 sm:pt-10 sm:pb-20 lg:py-24 overflow-hidden bg-mesh-hero border-b border-slate-200">
-      {/* Artistic Background Layers */}
-      <div className="absolute inset-0 artistic-dot-grid opacity-70 pointer-events-none" />
-      <div className="absolute inset-0 artistic-blueprint-grid opacity-40 pointer-events-none" />
-      
-      {/* Luminous Ambient Glow Orbs */}
-      <div className="absolute -top-32 left-1/2 -translate-x-1/2 w-[850px] h-[550px] bg-gradient-to-b from-blue-500/20 via-sky-400/12 to-transparent rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute top-1/4 -right-24 w-[500px] h-[500px] bg-blue-600/12 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute -bottom-20 -left-20 w-[450px] h-[450px] bg-emerald-500/10 rounded-full blur-3xl pointer-events-none" />
+      {/* Blueprint Grid Architecture */}
+      <div className="absolute inset-0 artistic-dot-grid opacity-60 pointer-events-none" />
+      <div className="absolute inset-0 artistic-blueprint-grid opacity-35 pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
@@ -67,7 +63,7 @@ export const HeroPromo: React.FC<HeroPromoProps> = ({ onNavigate }) => {
           <div className="lg:col-span-6 flex flex-col justify-center text-center lg:text-left animate-enter-left">
             {/* Top Pill Badge */}
             <div className="inline-flex items-center gap-2 px-3 sm:px-3.5 py-1.5 bg-blue-50 border border-blue-200 text-[#2563EB] rounded-full text-xs font-bold w-fit mx-auto lg:mx-0 mb-4 shadow-2xs">
-              <span className="text-amber-500 font-extrabold shrink-0">⚡</span>
+              <ShieldCheck className="w-3.5 h-3.5 text-blue-600 shrink-0" aria-hidden="true" />
               <span className="tracking-wide text-[11px] sm:text-xs">Jasa Pembuatan Website & Aplikasi Android Kustom</span>
             </div>
 
@@ -136,9 +132,6 @@ export const HeroPromo: React.FC<HeroPromoProps> = ({ onNavigate }) => {
           {/* Kolom Kanan: Layered High-Fidelity UI Showcase (Datang dari Kanan ke Tengah) */}
           <div className="lg:col-span-6 relative w-full flex justify-center lg:justify-end animate-enter-right delay-100">
             <div className="relative w-full max-w-[540px]">
-              {/* Artistic Ambient Glow Behind Mockup */}
-              <div className="absolute -inset-3 bg-gradient-to-tr from-blue-600/20 via-sky-400/20 to-emerald-400/15 rounded-3xl blur-2xl -z-10 opacity-75 pointer-events-none" />
-              
               {/* Floating Live Transaction Badge */}
               <div className="hidden sm:flex absolute -top-4 -right-2 bg-white/95 backdrop-blur-md border border-slate-200 shadow-xl px-3.5 py-1.5 rounded-full items-center gap-2 text-[10px] font-bold text-slate-800 animate-float-badge z-20 whitespace-nowrap shrink-0">
                 <span className="w-2 h-2 rounded-full bg-emerald-500 animate-ping shrink-0" />
@@ -280,24 +273,24 @@ export const HeroPromo: React.FC<HeroPromoProps> = ({ onNavigate }) => {
                 <div className="rounded-[32px] overflow-hidden bg-[#F8FAFC] border border-slate-900 flex flex-col justify-between h-full relative select-none">
                   {/* 1. Android Status Bar with Real Punch-Hole Camera */}
                   <div className="px-3.5 pt-2 pb-1 bg-white flex items-center justify-between border-b border-slate-100 text-[9px] font-bold text-slate-800">
-                    <span>07:42</span>
+                    <span className="font-mono text-[9px] tracking-tight">07:42</span>
                     {/* Centered Punch-Hole Camera */}
                     <div className="w-2.5 h-2.5 rounded-full bg-slate-950 ring-1 ring-slate-800 flex items-center justify-center -mt-0.5">
                       <span className="w-0.5 h-0.5 rounded-full bg-blue-900/90" />
                     </div>
                     {/* Real Android Status Icons */}
-                    <div className="flex items-center gap-1 text-slate-700">
-                      <Signal className="w-2.5 h-2.5" />
-                      <Wifi className="w-2.5 h-2.5" />
-                      <Battery className="w-3 h-3 text-emerald-600 fill-emerald-500" />
+                    <div className="flex items-center gap-1.5 text-slate-700">
+                      <Signal className="w-2.5 h-2.5" aria-hidden="true" />
+                      <Wifi className="w-2.5 h-2.5" aria-hidden="true" />
+                      <Battery className="w-3 h-3 text-emerald-600 fill-emerald-500" aria-hidden="true" />
                     </div>
                   </div>
 
                   {/* 2. App Mini Header */}
                   <div className="px-3 py-1.5 bg-white border-b border-slate-100 flex items-center justify-between">
                     <div className="flex items-center gap-1.5">
-                      <div className="w-5 h-5 rounded-md bg-[#2563EB] text-white flex items-center justify-center font-bold text-[10px] shadow-2xs">
-                        ⚡
+                      <div className="w-5 h-5 rounded-md bg-[#2563EB] text-white flex items-center justify-center p-0.5 shadow-2xs">
+                        <AndroidIcon className="w-3.5 h-3.5" aria-hidden="true" />
                       </div>
                       <div className="text-[10px] font-extrabold text-[#0F172A] leading-tight">
                         HadirSmart APK
@@ -381,9 +374,9 @@ export const HeroPromo: React.FC<HeroPromoProps> = ({ onNavigate }) => {
 
         {/* Layanan Terukur & Berdampak (4 Poin Pencapaian - Staggered Cascade) */}
         <div className="mt-12 sm:mt-16 pt-8 border-t border-slate-200 grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6">
-          <div className="p-3 sm:p-5 bg-[#F8FAFC] border border-slate-200 rounded-xl flex items-center gap-2.5 sm:gap-3.5 hover:border-[#2563EB] hover:-translate-y-1.5 hover:shadow-lg transition-all duration-500 ease-out cursor-default animate-enter-up delay-100">
-            <div className="w-9 h-9 sm:w-11 sm:h-11 rounded-xl bg-blue-50 text-[#2563EB] flex items-center justify-center shrink-0">
-              <Laptop className="w-4 h-4 sm:w-5 sm:h-5" />
+          <div className="p-3 sm:p-5 bg-white border border-slate-200 shadow-2xs rounded-xl flex items-center gap-2.5 sm:gap-3.5 hover:border-[#2563EB] hover:-translate-y-1 hover:shadow-md transition-all duration-300 ease-out cursor-default animate-enter-up delay-100">
+            <div className="w-9 h-9 sm:w-11 sm:h-11 rounded-xl bg-[#0F172A] text-blue-400 flex items-center justify-center shrink-0 shadow-2xs">
+              <Laptop className="w-4 h-4 sm:w-5 sm:h-5" aria-hidden="true" />
             </div>
             <div className="min-w-0">
               <div className="text-lg sm:text-2xl font-extrabold text-[#0F172A] leading-tight whitespace-nowrap shrink-0">100+</div>
@@ -391,9 +384,9 @@ export const HeroPromo: React.FC<HeroPromoProps> = ({ onNavigate }) => {
             </div>
           </div>
 
-          <div className="p-3 sm:p-5 bg-[#F8FAFC] border border-slate-200 rounded-xl flex items-center gap-2.5 sm:gap-3.5 hover:border-[#2563EB] hover:-translate-y-1.5 hover:shadow-lg transition-all duration-500 ease-out cursor-default animate-enter-up delay-200">
-            <div className="w-9 h-9 sm:w-11 sm:h-11 rounded-xl bg-emerald-50 text-[#10B981] flex items-center justify-center shrink-0">
-              <ShieldCheck className="w-4 h-4 sm:w-5 sm:h-5" />
+          <div className="p-3 sm:p-5 bg-white border border-slate-200 shadow-2xs rounded-xl flex items-center gap-2.5 sm:gap-3.5 hover:border-[#2563EB] hover:-translate-y-1 hover:shadow-md transition-all duration-300 ease-out cursor-default animate-enter-up delay-200">
+            <div className="w-9 h-9 sm:w-11 sm:h-11 rounded-xl bg-[#0F172A] text-emerald-400 flex items-center justify-center shrink-0 shadow-2xs">
+              <ShieldCheck className="w-4 h-4 sm:w-5 sm:h-5" aria-hidden="true" />
             </div>
             <div className="min-w-0">
               <div className="text-lg sm:text-2xl font-extrabold text-[#0F172A] leading-tight whitespace-nowrap shrink-0">1 Tahun</div>
@@ -401,9 +394,9 @@ export const HeroPromo: React.FC<HeroPromoProps> = ({ onNavigate }) => {
             </div>
           </div>
 
-          <div className="p-3 sm:p-5 bg-[#F8FAFC] border border-slate-200 rounded-xl flex items-center gap-2.5 sm:gap-3.5 hover:border-[#2563EB] hover:-translate-y-1.5 hover:shadow-lg transition-all duration-500 ease-out cursor-default animate-enter-up delay-300">
-            <div className="w-9 h-9 sm:w-11 sm:h-11 rounded-xl bg-indigo-50 text-[#4F46E5] flex items-center justify-center shrink-0">
-              <Code2 className="w-4 h-4 sm:w-5 sm:h-5" />
+          <div className="p-3 sm:p-5 bg-white border border-slate-200 shadow-2xs rounded-xl flex items-center gap-2.5 sm:gap-3.5 hover:border-[#2563EB] hover:-translate-y-1 hover:shadow-md transition-all duration-300 ease-out cursor-default animate-enter-up delay-300">
+            <div className="w-9 h-9 sm:w-11 sm:h-11 rounded-xl bg-[#0F172A] text-indigo-400 flex items-center justify-center shrink-0 shadow-2xs">
+              <Code2 className="w-4 h-4 sm:w-5 sm:h-5" aria-hidden="true" />
             </div>
             <div className="min-w-0">
               <div className="text-lg sm:text-2xl font-extrabold text-[#0F172A] leading-tight whitespace-nowrap shrink-0">99.9%</div>
@@ -411,9 +404,9 @@ export const HeroPromo: React.FC<HeroPromoProps> = ({ onNavigate }) => {
             </div>
           </div>
 
-          <div className="p-3 sm:p-5 bg-[#F8FAFC] border border-slate-200 rounded-xl flex items-center gap-2.5 sm:gap-3.5 hover:border-[#2563EB] hover:-translate-y-1.5 hover:shadow-lg transition-all duration-500 ease-out cursor-default animate-enter-up delay-400">
-            <div className="w-9 h-9 sm:w-11 sm:h-11 rounded-xl bg-sky-50 text-[#0284C7] flex items-center justify-center shrink-0">
-              <Users className="w-4 h-4 sm:w-5 sm:h-5" />
+          <div className="p-3 sm:p-5 bg-white border border-slate-200 shadow-2xs rounded-xl flex items-center gap-2.5 sm:gap-3.5 hover:border-[#2563EB] hover:-translate-y-1 hover:shadow-md transition-all duration-300 ease-out cursor-default animate-enter-up delay-400">
+            <div className="w-9 h-9 sm:w-11 sm:h-11 rounded-xl bg-[#0F172A] text-sky-400 flex items-center justify-center shrink-0 shadow-2xs">
+              <Users className="w-4 h-4 sm:w-5 sm:h-5" aria-hidden="true" />
             </div>
             <div className="min-w-0">
               <div className="text-lg sm:text-2xl font-extrabold text-[#0F172A] leading-tight whitespace-nowrap shrink-0">99.8%</div>

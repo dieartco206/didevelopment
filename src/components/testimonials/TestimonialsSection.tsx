@@ -108,7 +108,6 @@ export const TestimonialsSection: React.FC = () => {
     <section id="testimonials" className="py-16 sm:py-24 bg-white border-b border-slate-200 relative overflow-hidden">
       {/* Subtle Dot Grid Texture on White */}
       <div className="absolute inset-0 artistic-dot-grid opacity-25 pointer-events-none" />
-      <div className="absolute -top-20 right-10 w-[600px] h-[350px] bg-gradient-to-b from-blue-500/10 via-emerald-400/5 to-transparent rounded-full blur-3xl pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         

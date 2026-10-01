@@ -3,7 +3,7 @@ import {
   Check, 
   ArrowRight, 
   Clock, 
-  Sparkles
+  ShieldCheck
 } from 'lucide-react';
 import { soundFx } from '../../utils/audio';
 
@@ -151,7 +151,6 @@ export const PricingSection: React.FC = () => {
     <section id="pricing" className="py-16 sm:py-24 bg-white border-b border-slate-200 relative overflow-hidden">
       {/* Subtle Dot Grid Texture on White */}
       <div className="absolute inset-0 artistic-dot-grid opacity-25 pointer-events-none" />
-      <div className="absolute top-10 left-1/2 -translate-x-1/2 w-[700px] h-[350px] bg-gradient-to-b from-blue-500/10 to-transparent rounded-full blur-3xl pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
@@ -194,11 +193,11 @@ export const PricingSection: React.FC = () => {
                     : 'bg-[#F8FAFC] border-2 border-slate-200 hover:border-blue-400 shadow-sm'
                 }`}
               >
-                {/* Popular Recommendation Header Ribbon */}
+                {/* Engineering Recommendation Header Ribbon (No AI Sparkles Slop) */}
                 {isFeatured && (
-                  <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-[#2563EB] text-white text-[11px] font-bold px-4 py-1 rounded-full uppercase tracking-wider shadow-md flex items-center justify-center gap-1.5 whitespace-nowrap shrink-0 shadow-blue-500/30">
-                    <Sparkles className="w-3.5 h-3.5 shrink-0 animate-spin" style={{ animationDuration: '8s' }} />
-                    <span className="whitespace-nowrap">{tier.badge}</span>
+                  <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-[#0F172A] text-white text-[10.5px] font-mono font-bold px-3.5 py-1 rounded-full uppercase tracking-wider shadow-md border border-slate-700 flex items-center justify-center gap-1.5 whitespace-nowrap shrink-0">
+                    <ShieldCheck className="w-3.5 h-3.5 text-[#10B981] shrink-0" aria-hidden="true" />
+                    <span className="text-white font-extrabold">{tier.badge}</span>
                   </div>
                 )}
 

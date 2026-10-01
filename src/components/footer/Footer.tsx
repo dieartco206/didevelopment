@@ -25,7 +25,7 @@ export const Footer: React.FC = () => {
           <div className="md:col-span-5">
             <div className="flex items-center gap-2.5 mb-3.5">
               <div className="w-9 h-9 rounded-xl bg-[#2563EB] flex items-center justify-center text-white shadow-md">
-                <Smartphone className="w-5 h-5" />
+                <Smartphone className="w-5 h-5" aria-hidden="true" />
               </div>
               <span className="text-white font-extrabold text-xl tracking-tight">
                 DiDev<span className="text-[#2563EB]">.Studio</span>
@@ -101,19 +101,19 @@ export const Footer: React.FC = () => {
                 onClick={openWhatsApp}
                 className="flex items-center gap-2.5 cursor-pointer text-emerald-400 font-bold hover:text-emerald-300 transition-colors"
               >
-                <MessageSquare className="w-4 h-4 fill-current shrink-0" />
+                <MessageSquare className="w-4 h-4 fill-current shrink-0" aria-hidden="true" />
                 <span>WhatsApp: +62 896-7375-7701 (Respon Cepat)</span>
               </li>
               <li className="flex items-center gap-2.5 text-slate-400">
-                <Mail className="w-4 h-4 text-slate-500 shrink-0" />
+                <Mail className="w-4 h-4 text-slate-500 shrink-0" aria-hidden="true" />
                 <span>Email: adieabay@gmail.com</span>
               </li>
               <li className="flex items-center gap-2.5 text-slate-400">
-                <MapPin className="w-4 h-4 text-slate-500 shrink-0" />
+                <MapPin className="w-4 h-4 text-slate-500 shrink-0" aria-hidden="true" />
                 <span>Layanan Klien: Seluruh Kota di Indonesia</span>
               </li>
               <li className="flex items-center gap-2.5 pt-2 text-slate-300 font-medium">
-                <ShieldCheck className="w-4 h-4 text-[#2563EB] shrink-0" />
+                <ShieldCheck className="w-4 h-4 text-[#2563EB] shrink-0" aria-hidden="true" />
                 <span>Cloud Server Terkelola, Backup Otomatis & Pemeliharaan Rutin</span>
               </li>
             </ul>

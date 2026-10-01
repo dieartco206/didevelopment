@@ -12,6 +12,7 @@ import {
   Battery,
   Signal
 } from 'lucide-react';
+import { AndroidIcon } from '../icons/BrandIcons';
 import { soundFx } from '../../utils/audio';
 
 export const ServicesSection: React.FC = () => {
@@ -48,7 +49,6 @@ export const ServicesSection: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center mb-20 sm:mb-28">
           {/* Mockup Antarmuka Web Dashboard Kasir & Stok */}
           <div className="lg:col-span-6 order-2 lg:order-1 relative animate-enter-left">
-            <div className="absolute -inset-3 bg-gradient-to-tr from-blue-600/15 via-sky-400/15 to-transparent rounded-3xl blur-2xl -z-10 opacity-75 pointer-events-none" />
             
             {/* Floating Bluetooth Thermal Printer Status */}
             <div className="hidden sm:flex absolute -bottom-3.5 -right-3 bg-white/95 backdrop-blur-md border border-slate-200 shadow-xl px-3.5 py-1.5 rounded-full items-center gap-2 text-[10px] font-bold text-slate-800 animate-float-badge z-20 whitespace-nowrap shrink-0">
@@ -221,9 +221,6 @@ export const ServicesSection: React.FC = () => {
 
           {/* Mockup Smartphone Android Flagship (Desain Realistis Flagship 19.5:9) */}
           <div className="lg:col-span-6 flex justify-center relative animate-enter-right delay-100">
-            {/* Ambient Aura Lighting with Breathing Animation */}
-            <div className="absolute -inset-4 bg-gradient-to-br from-emerald-500/20 via-teal-400/15 to-transparent rounded-full blur-2xl -z-10 opacity-75 pointer-events-none animate-aura-breathe" />
-            
             {/* Floating GPS Geofence Status Toast */}
             <div className="hidden sm:flex absolute -top-4 -right-3 bg-white/95 backdrop-blur-md border border-slate-200 shadow-xl px-3.5 py-1.5 rounded-full items-center gap-2 text-[10px] font-bold text-slate-800 animate-float-badge z-20 whitespace-nowrap shrink-0">
               <span className="w-2 h-2 rounded-full bg-emerald-500 animate-ping shrink-0" />
@@ -259,17 +256,17 @@ export const ServicesSection: React.FC = () => {
                   {/* Status Bar Icons */}
                   <div className="flex items-center gap-1.5 text-slate-700">
                     <span className="text-[8.5px] font-mono font-bold text-slate-500">5G</span>
-                    <Signal className="w-3 h-3 text-slate-700" />
-                    <Wifi className="w-3 h-3 text-slate-700" />
-                    <Battery className="w-3.5 h-3.5 text-emerald-600 fill-emerald-500" />
+                    <Signal className="w-3 h-3 text-slate-700" aria-hidden="true" />
+                    <Wifi className="w-3 h-3 text-slate-700" aria-hidden="true" />
+                    <Battery className="w-3.5 h-3.5 text-emerald-600 fill-emerald-500" aria-hidden="true" />
                   </div>
                 </div>
 
                 {/* 2. Mobile App Header */}
                 <div className="px-3.5 py-2 bg-white border-b border-slate-100 flex items-center justify-between">
                   <div className="flex items-center gap-2">
-                    <div className="w-7 h-7 rounded-lg bg-emerald-500 text-white flex items-center justify-center font-bold text-xs shadow-2xs">
-                      ⚡
+                    <div className="w-7 h-7 rounded-lg bg-emerald-600 text-white flex items-center justify-center p-1 shadow-2xs">
+                      <AndroidIcon className="w-4 h-4" aria-hidden="true" />
                     </div>
                     <div>
                       <div className="text-[11px] font-extrabold text-[#0F172A] leading-tight">
@@ -389,8 +386,6 @@ export const ServicesSection: React.FC = () => {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
             {/* Mockup Portal Web ERP / Company */}
             <div className="lg:col-span-6 order-2 lg:order-1 relative animate-enter-left">
-              <div className="absolute -inset-3 bg-gradient-to-tr from-indigo-600/18 via-blue-500/15 to-transparent rounded-3xl blur-2xl -z-10 opacity-75 pointer-events-none" />
-              
               {/* Floating High Speed Performance Toast */}
               <div className="hidden sm:flex absolute -top-3.5 -right-3 bg-white/95 backdrop-blur-md border border-slate-200 shadow-xl px-3.5 py-1.5 rounded-full items-center gap-2 text-[10px] font-bold text-slate-800 animate-float-badge z-20 whitespace-nowrap shrink-0">
                 <span className="w-2 h-2 rounded-full bg-emerald-500 animate-ping shrink-0" />

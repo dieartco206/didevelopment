@@ -13,11 +13,9 @@ export const CtaBanner: React.FC = () => {
 
   return (
     <section className="py-16 sm:py-24 bg-[#0A101D] text-white relative overflow-hidden border-t border-slate-800">
-      {/* Background Decorative Rings & Circuit Grid */}
+      {/* Background Decorative Circuit Grid */}
       <div className="absolute inset-0 bg-circuit-lines opacity-15 pointer-events-none" />
-      <div className="absolute -top-24 right-1/4 w-[500px] h-[500px] bg-blue-600/20 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute -bottom-24 left-1/4 w-[500px] h-[500px] bg-emerald-500/15 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[350px] bg-indigo-500/10 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute inset-0 artistic-blueprint-grid opacity-10 pointer-events-none" />
 
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
         
@@ -43,24 +41,24 @@ export const CtaBanner: React.FC = () => {
             onClick={openWhatsApp}
             className="w-full sm:w-auto px-6 sm:px-8 py-3.5 sm:py-4 bg-[#10B981] hover:bg-[#059669] text-white font-bold text-sm sm:text-base rounded-xl shadow-xl shadow-emerald-500/25 hover:shadow-emerald-500/35 transition-all flex items-center justify-center gap-2.5 sm:gap-3 cursor-pointer active:scale-98 shrink-0"
           >
-            <MessageSquare className="w-5 h-5 sm:w-6 sm:h-6 fill-current shrink-0" />
+            <MessageSquare className="w-5 h-5 sm:w-6 sm:h-6 fill-current shrink-0" aria-hidden="true" />
             <span>Chat WhatsApp Sekarang (Respon Cepat)</span>
-            <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 shrink-0" />
+            <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 shrink-0" aria-hidden="true" />
           </button>
         </div>
 
         {/* Trust Points */}
         <div className="mt-6 flex flex-wrap items-center justify-center gap-3 sm:gap-6 text-xs text-slate-400 font-medium">
           <span className="flex items-center gap-1.5 text-slate-300">
-            <ShieldCheck className="w-4 h-4 text-[#10B981] shrink-0" />
+            <ShieldCheck className="w-4 h-4 text-[#10B981] shrink-0" aria-hidden="true" />
             <span>Cloud Server Cepat & Terkelola</span>
           </span>
           <span className="flex items-center gap-1.5 text-slate-300">
-            <ShieldCheck className="w-4 h-4 text-[#10B981] shrink-0" />
+            <ShieldCheck className="w-4 h-4 text-[#10B981] shrink-0" aria-hidden="true" />
             <span>Backup Database Otomatis Rutin</span>
           </span>
           <span className="flex items-center gap-1.5 text-slate-300">
-            <ShieldCheck className="w-4 h-4 text-[#10B981] shrink-0" />
+            <ShieldCheck className="w-4 h-4 text-[#10B981] shrink-0" aria-hidden="true" />
             <span>Maintenance & Support Prioritas</span>
           </span>
         </div>

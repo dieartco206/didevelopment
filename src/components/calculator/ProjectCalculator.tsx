@@ -8,7 +8,9 @@ import {
   Layers,
   Building2,
   CheckCircle2,
-  Receipt
+  Receipt,
+  ShoppingCart,
+  Calculator
 } from 'lucide-react';
 import { soundFx } from '../../utils/audio';
 
@@ -30,7 +32,7 @@ interface FeatureAddon {
 
 const PROJECT_TYPES: ProjectType[] = [
   { id: 'web_company', name: 'Website Company Profile', basePrice: 1500000, days: 7, desc: 'Profil usaha, katalog produk, dan tombol order WhatsApp', icon: Globe },
-  { id: 'web_ecommerce', name: 'Website Toko Online (E-Commerce)', basePrice: 2800000, days: 14, desc: 'Katalog interaktif, keranjang belanja & hitung ongkir', icon: Globe },
+  { id: 'web_ecommerce', name: 'Website Toko Online (E-Commerce)', basePrice: 2800000, days: 14, desc: 'Katalog interaktif, keranjang belanja & hitung ongkir', icon: ShoppingCart },
   { id: 'apk_standalone', name: 'Aplikasi Android APK Standalone', basePrice: 2500000, days: 12, desc: 'Aplikasi kasir POS, absensi internal, atau kurir', icon: Smartphone },
   { id: 'combo_ecosystem', name: 'Paket Komplit (Web + Android APK)', basePrice: 4500000, days: 21, desc: 'Dashboard laptop + aplikasi HP tersinkronisasi otomatis', icon: Layers },
   { id: 'custom_saas', name: 'Sistem Custom Enterprise', basePrice: 6500000, days: 30, desc: 'ERP multi-cabang, HRIS, atau sistem logistik terpadu', icon: Building2 },
@@ -104,17 +106,16 @@ export const ProjectCalculator: React.FC = () => {
 
   return (
     <section id="calculator" className="py-16 sm:py-24 bg-mesh-calculator border-b border-slate-200 relative overflow-hidden">
-      {/* Artistic Blueprint Grid & Ambient Glowing Orbs */}
+      {/* Blueprint Grid Architecture */}
       <div className="absolute inset-0 artistic-blueprint-grid opacity-60 pointer-events-none" />
       <div className="absolute inset-0 artistic-dot-grid opacity-40 pointer-events-none" />
-      <div className="absolute top-10 left-10 w-[550px] h-[550px] bg-blue-500/12 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-10 right-10 w-[550px] h-[550px] bg-sky-400/12 rounded-full blur-3xl pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 bg-blue-50 border border-blue-200 text-[#2563EB] rounded-full text-[11px] sm:text-xs font-bold uppercase tracking-wider mb-3">
+            <Calculator className="w-3.5 h-3.5 shrink-0" aria-hidden="true" />
             <span>KALKULATOR ESTIMASI FINANSIAL</span>
           </div>
           <h2 className="text-2xl sm:text-4xl lg:text-5xl font-extrabold text-[#0F172A] tracking-tight font-sans">
