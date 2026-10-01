@@ -74,7 +74,7 @@ export const TestimonialsSection: React.FC = () => {
       id: 'smk-bina',
       name: 'Dra. Hj. Nurul Hidayah, M.Pd',
       role: 'Kepala Sekolah',
-      company: 'SMK Bina Mandiri Mandiri',
+      company: 'SMK Bina Mandiri',
       location: 'Jawa Timur',
       category: 'Aplikasi Android CBT Ujian Sekolah',
       categoryIcon: GraduationCap,

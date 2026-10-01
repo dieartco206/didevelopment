@@ -3,6 +3,12 @@ class SoundManager {
   private ctx: AudioContext | null = null;
   private isMuted: boolean = false;
 
+  constructor() {
+    if (typeof window !== 'undefined') {
+      this.isMuted = localStorage.getItem('didev_sound_muted') === 'true';
+    }
+  }
+
   private getContext(): AudioContext | null {
     if (this.isMuted) return null;
     if (typeof window === 'undefined') return null;
@@ -23,6 +29,9 @@ class SoundManager {
 
   public toggleMute(): boolean {
     this.isMuted = !this.isMuted;
+    if (typeof window !== 'undefined') {
+      localStorage.setItem('didev_sound_muted', String(this.isMuted));
+    }
     return this.isMuted;
   }
 
