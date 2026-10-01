@@ -12,7 +12,9 @@ import {
   Database,
   Zap,
   UserCheck,
-  Coins
+  Coins,
+  UserX,
+  Building2
 } from 'lucide-react';
 import { soundFx } from '../../utils/audio';
 
@@ -218,269 +220,191 @@ export const ComparisonSection: React.FC = () => {
           </p>
         </div>
 
-        {/* Comparison Table for Desktop / Tablet (Compact, Elegant, Space-Efficient) */}
-        <div className="hidden md:block max-w-5xl mx-auto relative rounded-2xl bg-white border border-slate-200/90 shadow-xl overflow-hidden">
-          <table className="w-full text-left border-collapse table-fixed">
-            <thead>
-              <tr className="border-b border-slate-200">
-                {/* Column 1: Parameters */}
-                <th className="py-3 px-3.5 lg:px-4 w-[28%] bg-slate-50/80 align-bottom">
-                  <div className="text-[9px] font-extrabold text-slate-400 uppercase tracking-wider">
-                    KOMPARASI
-                  </div>
-                  <div className="text-xs lg:text-sm font-extrabold text-[#0F172A] mt-0.5">
-                    Parameter Kebutuhan Bisnis
-                  </div>
-                </th>
+        {/* 3-Pillar Battle Comparison Cards (Spacious, High-Converting & Responsive) */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-6 xl:gap-8 max-w-6xl mx-auto items-stretch">
+          
+          {/* Pillar 1: Freelancer Lepas */}
+          <div className="relative flex flex-col justify-between rounded-2xl bg-white border border-slate-200/90 hover:border-rose-200 hover:shadow-md p-5 sm:p-6 transition-all duration-300">
+            <div>
+              <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-rose-50 border border-rose-200/80 text-rose-700 text-[10px] sm:text-[11px] font-bold uppercase tracking-wider mb-3">
+                <UserX className="w-3.5 h-3.5 shrink-0" aria-hidden="true" />
+                <span>Risiko Ghosting Tinggi</span>
+              </div>
+              <h3 className="text-lg sm:text-xl font-extrabold text-[#0F172A] tracking-tight">
+                Freelancer Lepas
+              </h3>
+              <p className="text-xs text-slate-500 mt-1 leading-relaxed">
+                Tampak murah di awal, berisiko mahal saat ditinggal pasca-launching tanpa pertanggungjawaban.
+              </p>
 
-                {/* Column 2: DiDevelopment Studio (The Champion Column) */}
-                <th className="py-3 px-3.5 lg:px-4 w-[32%] bg-gradient-to-b from-[#1D4ED8] to-[#2563EB] text-white relative shadow-sm">
-                  <div className="relative z-10">
-                    <div className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-white/20 backdrop-blur-md text-white text-[9px] font-extrabold uppercase tracking-wider border border-white/30 mb-1 shadow-2xs">
-                      <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-                      <span>PILIHAN TERBAIK</span>
+              <div className="my-5 border-t border-slate-100" />
+
+              <div className="space-y-4">
+                {comparisonData.slice(0, 6).map((item, idx) => (
+                  <div key={idx} className="flex items-start gap-2.5">
+                    <div className="w-5 h-5 rounded-full bg-rose-100 text-rose-600 flex items-center justify-center shrink-0 mt-0.5">
+                      <X className="w-3 h-3 stroke-[2.5]" aria-hidden="true" />
                     </div>
-                    <div className="text-xs lg:text-sm font-extrabold tracking-tight">
-                      DiDevelopment Studio
-                    </div>
-                    <div className="text-[10px] text-blue-100 font-normal">
-                      Layanan Resmi Software House • Garansi 1 Tahun
-                    </div>
-                  </div>
-                </th>
-
-                {/* Column 3: Freelancer Murahan */}
-                <th className="py-3 px-3.5 lg:px-4 w-[20%] bg-slate-50/90 border-l border-slate-200 align-bottom">
-                  <div className="inline-block px-1.5 py-0.2 rounded text-[8.5px] font-extrabold text-rose-700 bg-rose-50 border border-rose-200 mb-1">
-                    RISIKO TINGGI
-                  </div>
-                  <div className="text-xs lg:text-sm font-bold text-slate-800">
-                    Freelancer Murahan
-                  </div>
-                  <div className="text-[10px] text-slate-500 font-normal">
-                    Jasa Lepas Medsos
-                  </div>
-                </th>
-
-                {/* Column 4: Hire In-House Sendiri */}
-                <th className="py-3 px-3.5 lg:px-4 w-[20%] bg-slate-50/90 border-l border-slate-200 align-bottom">
-                  <div className="inline-block px-1.5 py-0.2 rounded text-[8.5px] font-extrabold text-amber-700 bg-amber-50 border border-amber-200 mb-1">
-                    BIAYA TINGGI
-                  </div>
-                  <div className="text-xs lg:text-sm font-bold text-slate-800">
-                    Hire In-House Sendiri
-                  </div>
-                  <div className="text-[10px] text-slate-500 font-normal">
-                    Programmer Kantor
-                  </div>
-                </th>
-              </tr>
-            </thead>
-
-            <tbody className="divide-y divide-slate-100">
-              {comparisonData.map((row, idx) => {
-                const Icon = row.icon;
-                return (
-                  <tr 
-                    key={idx} 
-                    className="group transition-colors duration-150 hover:bg-blue-50/20"
-                  >
-                    {/* Parameter Column */}
-                    <td className="py-2.5 px-3.5 align-middle bg-white group-hover:bg-slate-50/70 transition-colors">
-                      <div className="flex items-start gap-2.5">
-                        <div className="w-6 h-6 rounded-md bg-blue-50 border border-blue-100/80 text-[#2563EB] flex items-center justify-center shrink-0 mt-0.5 shadow-2xs group-hover:bg-[#2563EB] group-hover:text-white transition-colors duration-200">
-                          <Icon className="w-3 h-3 shrink-0" aria-hidden="true" />
-                        </div>
-                        <div className="min-w-0">
-                          <div className="font-extrabold text-[#0F172A] text-xs leading-snug group-hover:text-[#2563EB] transition-colors">
-                            {row.title}
-                          </div>
-                          <div className="text-[10px] text-slate-500 leading-tight mt-0.5">
-                            {row.description}
-                          </div>
-                        </div>
+                    <div className="min-w-0">
+                      <div className="text-[10px] sm:text-[11px] font-bold text-slate-400 uppercase tracking-wider">
+                        {item.title}
                       </div>
-                    </td>
-
-                    {/* DiDevelopment Column (Highlighted Champion) */}
-                    <td className="py-2.5 px-3.5 align-middle bg-blue-50/40 border-x-2 border-[#2563EB]/40 group-hover:bg-blue-50/70 transition-colors relative">
-                      <div className="flex items-start gap-2">
-                        <div className="w-4.5 h-4.5 rounded-full bg-emerald-500 text-white flex items-center justify-center shrink-0 mt-0.5 shadow-2xs">
-                          <Check className="w-2.5 h-2.5 stroke-[3]" aria-hidden="true" />
-                        </div>
-                        <div className="min-w-0">
-                          <div className="flex items-center gap-1.5 flex-wrap">
-                            <span className="font-extrabold text-[#0F172A] text-xs leading-tight">
-                              {row.didev.text}
-                            </span>
-                            {row.didev.badge && (
-                              <span className="px-1.5 py-0.2 rounded bg-emerald-100/90 border border-emerald-300 text-emerald-800 text-[8px] font-black font-mono tracking-tight uppercase whitespace-nowrap">
-                                {row.didev.badge}
-                              </span>
-                            )}
-                          </div>
-                          {row.didev.subtext && (
-                            <div className="text-[10px] text-slate-600 font-medium mt-0.5 leading-tight">
-                              {row.didev.subtext}
-                            </div>
-                          )}
-                        </div>
+                      <div className="text-xs font-semibold text-slate-800 leading-snug mt-0.5">
+                        {item.freelancer.text}
                       </div>
-                    </td>
-
-                    {/* Freelancer Column */}
-                    <td className="py-2.5 px-3.5 align-middle bg-white border-l border-slate-100 group-hover:bg-slate-50/70 transition-colors">
-                      <div className="flex items-start gap-2">
-                        <div className="w-4.5 h-4.5 rounded-full bg-rose-100 text-rose-600 flex items-center justify-center shrink-0 mt-0.5">
-                          <X className="w-2.5 h-2.5 stroke-[2.5]" aria-hidden="true" />
-                        </div>
-                        <div className="min-w-0">
-                          <div className="font-semibold text-slate-800 text-xs leading-tight">
-                            {row.freelancer.text}
-                          </div>
-                          {row.freelancer.subtext && (
-                            <div className="text-[10px] text-slate-500 mt-0.5 leading-tight">
-                              {row.freelancer.subtext}
-                            </div>
-                          )}
-                        </div>
-                      </div>
-                    </td>
-
-                    {/* In-House Column */}
-                    <td className="py-2.5 px-3.5 align-middle bg-white border-l border-slate-100 group-hover:bg-slate-50/70 transition-colors">
-                      <div className="flex items-start gap-2">
-                        {row.inhouse.status === 'good' ? (
-                          <div className="w-4.5 h-4.5 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center shrink-0 mt-0.5">
-                            <Check className="w-2.5 h-2.5 stroke-[2.5]" aria-hidden="true" />
-                          </div>
-                        ) : (
-                          <div className="w-4.5 h-4.5 rounded-full bg-amber-100 text-amber-700 flex items-center justify-center shrink-0 mt-0.5">
-                            <AlertTriangle className="w-2.5 h-2.5 stroke-[2.5]" aria-hidden="true" />
-                          </div>
-                        )}
-                        <div className="min-w-0">
-                          <div className="font-semibold text-slate-800 text-xs leading-tight">
-                            {row.inhouse.text}
-                          </div>
-                          {row.inhouse.subtext && (
-                            <div className="text-[10px] text-slate-500 mt-0.5 leading-tight">
-                              {row.inhouse.subtext}
-                            </div>
-                          )}
-                        </div>
-                      </div>
-                    </td>
-                  </tr>
-                );
-              })}
-            </tbody>
-
-            {/* Table Footer Action Row */}
-            <tfoot>
-              <tr className="border-t-2 border-slate-200 bg-slate-50/90">
-                <td className="py-2.5 px-3.5 text-[10px] text-slate-500 font-medium">
-                  🛡️ <span className="font-bold text-slate-700">Jaminan Legal:</span> Dicantumkan dalam SPK resmi bermaterai.
-                </td>
-                <td className="py-2.5 px-3.5 bg-blue-50/90 border-x-2 border-[#2563EB]/40 text-center">
-                  <button
-                    onClick={openWhatsApp}
-                    className="w-full py-2 px-3 bg-[#2563EB] hover:bg-[#1D4ED8] active:scale-98 text-white rounded-lg text-xs font-bold shadow-xs hover:shadow-sm transition-all flex items-center justify-center gap-1.5 cursor-pointer whitespace-nowrap"
-                  >
-                    <span>Pilih DiDevelopment</span>
-                    <ArrowRight className="w-3 h-3 shrink-0" aria-hidden="true" />
-                  </button>
-                  <span className="text-[9px] text-slate-500 mt-0.5 block font-medium">Konsultasi 100% Bebas Biaya</span>
-                </td>
-                <td className="py-2.5 px-3.5 border-l border-slate-200 text-center">
-                  <span className="text-[11px] text-rose-600 font-bold block">Risiko Ghosting</span>
-                  <span className="text-[9px] text-slate-400">Tanpa kantor resmi</span>
-                </td>
-                <td className="py-2.5 px-3.5 border-l border-slate-200 text-center">
-                  <span className="text-[11px] text-amber-700 font-bold block">Beban Gaji Bulanan</span>
-                  <span className="text-[9px] text-slate-400">Biaya tetap tinggi</span>
-                </td>
-              </tr>
-            </tfoot>
-          </table>
-        </div>
-
-        {/* Mobile Accordion / Stacked Cards View for Small Screens (Compact & Clean) */}
-        <div className="md:hidden max-w-md mx-auto space-y-3">
-          {comparisonData.map((row, idx) => {
-            const Icon = row.icon;
-            return (
-              <div key={idx} className="rounded-xl bg-white border border-slate-200/90 p-3 shadow-2xs space-y-2.5">
-                {/* Parameter Title with Micro-Icon */}
-                <div className="flex items-start gap-2">
-                  <div className="w-6 h-6 rounded-md bg-blue-50 text-[#2563EB] flex items-center justify-center shrink-0 mt-0.5 shadow-2xs">
-                    <Icon className="w-3 h-3 shrink-0" aria-hidden="true" />
-                  </div>
-                  <div>
-                    <h4 className="font-extrabold text-[#0F172A] text-xs">
-                      {row.title}
-                    </h4>
-                    <p className="text-[10px] text-slate-500 leading-tight">
-                      {row.description}
-                    </p>
-                  </div>
-                </div>
-
-                {/* Featured DiDev Pill Card */}
-                <div className="p-2.5 rounded-lg bg-gradient-to-r from-blue-50 via-indigo-50/50 to-blue-50 border-2 border-[#2563EB]/60 shadow-2xs">
-                  <div className="flex items-center justify-between mb-1">
-                    <span className="text-[9px] font-black text-[#2563EB] uppercase tracking-wide flex items-center gap-1">
-                      <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
-                      DiDevelopment Studio:
-                    </span>
-                    {row.didev.badge && (
-                      <span className="px-1 py-0.2 rounded bg-emerald-100 border border-emerald-300 text-emerald-800 text-[8px] font-bold font-mono uppercase">
-                        {row.didev.badge}
-                      </span>
-                    )}
-                  </div>
-                  <div className="flex items-start gap-2">
-                    <div className="w-4 h-4 rounded-full bg-emerald-500 text-white flex items-center justify-center shrink-0 mt-0.5 shadow-2xs">
-                      <Check className="w-2.5 h-2.5 stroke-[3]" aria-hidden="true" />
-                    </div>
-                    <div>
-                      <div className="text-xs font-extrabold text-[#0F172A] leading-tight">
-                        {row.didev.text}
-                      </div>
-                      {row.didev.subtext && (
-                        <div className="text-[10px] text-slate-600 font-medium mt-0.5 leading-tight">
-                          {row.didev.subtext}
+                      {item.freelancer.subtext && (
+                        <div className="text-[10px] text-slate-400 mt-0.5 leading-tight">
+                          {item.freelancer.subtext}
                         </div>
                       )}
                     </div>
                   </div>
-                </div>
-
-                {/* Comparison Chips (Freelancer vs In-house) */}
-                <div className="grid grid-cols-2 gap-2 text-xs pt-1 border-t border-slate-100">
-                  <div className="p-2 rounded-lg bg-rose-50/60 border border-rose-100 flex flex-col justify-between">
-                    <div>
-                      <span className="text-[8.5px] font-extrabold text-rose-700 block uppercase tracking-wider">Freelancer Lepas</span>
-                      <span className="font-semibold text-slate-800 text-[10px] block mt-0.5 leading-snug">{row.freelancer.text}</span>
-                    </div>
-                    {row.freelancer.subtext && (
-                      <span className="text-[9px] text-slate-500 block mt-0.5 leading-tight">{row.freelancer.subtext}</span>
-                    )}
-                  </div>
-
-                  <div className="p-2 rounded-lg bg-amber-50/60 border border-amber-100 flex flex-col justify-between">
-                    <div>
-                      <span className="text-[8.5px] font-extrabold text-amber-800 block uppercase tracking-wider">Hire In-House</span>
-                      <span className="font-semibold text-slate-800 text-[10px] block mt-0.5 leading-snug">{row.inhouse.text}</span>
-                    </div>
-                    {row.inhouse.subtext && (
-                      <span className="text-[9px] text-slate-500 block mt-0.5 leading-tight">{row.inhouse.subtext}</span>
-                    )}
-                  </div>
-                </div>
+                ))}
               </div>
-            );
-          })}
+            </div>
+
+            <div className="mt-6 pt-4 border-t border-slate-100 bg-slate-50/80 -mx-5 -mb-5 sm:-mx-6 sm:-mb-6 p-4 rounded-b-2xl">
+              <div className="text-[10px] font-bold text-slate-400 uppercase tracking-wider">
+                Estimasi Pengeluaran
+              </div>
+              <div className="text-sm sm:text-base font-extrabold text-slate-800 mt-0.5">
+                {comparisonData[6].freelancer.text}
+              </div>
+              <div className="text-[11px] text-rose-600 mt-1 flex items-center gap-1 font-medium">
+                <span>⚠️ {comparisonData[6].freelancer.subtext}</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Pillar 2: DiDevelopment Studio (The Champion Card) */}
+          <div className="relative flex flex-col justify-between rounded-2xl bg-[#0B132B] text-white border-2 border-blue-500 shadow-xl shadow-blue-950/40 lg:-translate-y-2 lg:scale-[1.02] p-5 sm:p-6 ring-4 ring-blue-500/20 transition-all duration-300 z-10 overflow-hidden pt-8 sm:pt-9">
+            {/* Top Floating Highlight Ribbon */}
+            <div className="absolute top-0 right-0 left-0 bg-gradient-to-r from-blue-600 via-indigo-600 to-blue-600 py-1.5 px-4 text-center">
+              <span className="text-[10px] sm:text-[11px] font-black uppercase tracking-wider text-white flex items-center justify-center gap-1.5">
+                <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping" />
+                ★ PILIHAN UTAMA BISNIS • GARANSI 1 TAHUN
+              </span>
+            </div>
+
+            <div>
+              <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-blue-500/20 border border-blue-400/40 text-blue-300 text-[10px] sm:text-[11px] font-bold uppercase tracking-wider mb-3">
+                <ShieldCheck className="w-3.5 h-3.5 text-blue-400 shrink-0" aria-hidden="true" />
+                <span>Software House Resmi</span>
+              </div>
+              <h3 className="text-lg sm:text-xl font-black text-white tracking-tight flex items-center gap-2">
+                <span>DiDevelopment Studio</span>
+              </h3>
+              <p className="text-xs text-blue-100/90 mt-1 leading-relaxed">
+                Sistem berkualitas siap pakai, bergaransi resmi, dan didampingi tim engineer bersertifikasi.
+              </p>
+
+              <div className="my-5 border-t border-slate-800" />
+
+              <div className="space-y-4">
+                {comparisonData.slice(0, 6).map((item, idx) => (
+                  <div key={idx} className="flex items-start gap-2.5">
+                    <div className="w-5 h-5 rounded-full bg-emerald-500 text-white flex items-center justify-center shrink-0 mt-0.5 shadow-sm shadow-emerald-500/30">
+                      <Check className="w-3 h-3 stroke-[3]" aria-hidden="true" />
+                    </div>
+                    <div className="min-w-0">
+                      <div className="flex items-center gap-1.5 flex-wrap">
+                        <span className="text-[10px] sm:text-[11px] font-bold text-blue-300 uppercase tracking-wider">
+                          {item.title}
+                        </span>
+                        {item.didev.badge && (
+                          <span className="px-1.5 py-0.2 rounded bg-emerald-500/20 text-emerald-300 border border-emerald-400/30 text-[8.5px] font-black font-mono">
+                            {item.didev.badge}
+                          </span>
+                        )}
+                      </div>
+                      <div className="text-xs font-bold text-white leading-snug mt-0.5">
+                        {item.didev.text}
+                      </div>
+                      {item.didev.subtext && (
+                        <div className="text-[10px] text-blue-200/80 mt-0.5 leading-tight">
+                          {item.didev.subtext}
+                        </div>
+                      )}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="mt-6 pt-4 border-t border-slate-800/80 bg-blue-950/70 -mx-5 -mb-5 sm:-mx-6 sm:-mb-6 p-4 rounded-b-2xl">
+              <div className="flex items-baseline justify-between mb-1">
+                <span className="text-[10px] font-bold text-blue-300 uppercase tracking-wider">Investasi All-In</span>
+                <span className="px-1.5 py-0.5 rounded bg-emerald-500/20 text-emerald-300 border border-emerald-400/30 text-[9px] font-bold">Resmi & Transparan</span>
+              </div>
+              <div className="text-xl sm:text-2xl font-black text-white tracking-tight">
+                {comparisonData[6].didev.text}
+              </div>
+              <p className="text-[10px] text-blue-200/80 mt-0.5 mb-3.5">
+                {comparisonData[6].didev.subtext}
+              </p>
+              <button
+                onClick={openWhatsApp}
+                className="w-full py-2.5 px-3.5 bg-blue-600 hover:bg-blue-500 active:scale-[0.98] text-white font-bold rounded-xl text-xs sm:text-sm shadow-lg shadow-blue-600/30 hover:shadow-blue-500/40 transition-all flex items-center justify-center gap-2 cursor-pointer group"
+              >
+                <span>Konsultasi & Pilih DiDevelopment</span>
+                <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+              </button>
+            </div>
+          </div>
+
+          {/* Pillar 3: Rekrut Tim In-House */}
+          <div className="relative flex flex-col justify-between rounded-2xl bg-white border border-slate-200/90 hover:border-amber-200 hover:shadow-md p-5 sm:p-6 transition-all duration-300">
+            <div>
+              <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-amber-50 border border-amber-200/80 text-amber-800 text-[10px] sm:text-[11px] font-bold uppercase tracking-wider mb-3">
+                <Building2 className="w-3.5 h-3.5 shrink-0" aria-hidden="true" />
+                <span>Overhead Tinggi</span>
+              </div>
+              <h3 className="text-lg sm:text-xl font-extrabold text-[#0F172A] tracking-tight">
+                Rekrut Tim In-House
+              </h3>
+              <p className="text-xs text-slate-500 mt-1 leading-relaxed">
+                Bagus untuk korporasi mapan, namun membebani cashflow UKM & bisnis berkembang.
+              </p>
+
+              <div className="my-5 border-t border-slate-100" />
+
+              <div className="space-y-4">
+                {comparisonData.slice(0, 6).map((item, idx) => (
+                  <div key={idx} className="flex items-start gap-2.5">
+                    <div className="w-5 h-5 rounded-full bg-amber-100 text-amber-700 flex items-center justify-center shrink-0 mt-0.5">
+                      <AlertTriangle className="w-3 h-3 stroke-[2.5]" aria-hidden="true" />
+                    </div>
+                    <div className="min-w-0">
+                      <div className="text-[10px] sm:text-[11px] font-bold text-slate-400 uppercase tracking-wider">
+                        {item.title}
+                      </div>
+                      <div className="text-xs font-semibold text-slate-800 leading-snug mt-0.5">
+                        {item.inhouse.text}
+                      </div>
+                      {item.inhouse.subtext && (
+                        <div className="text-[10px] text-slate-400 mt-0.5 leading-tight">
+                          {item.inhouse.subtext}
+                        </div>
+                      )}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="mt-6 pt-4 border-t border-slate-100 bg-slate-50/80 -mx-5 -mb-5 sm:-mx-6 sm:-mb-6 p-4 rounded-b-2xl">
+              <div className="text-[10px] font-bold text-slate-400 uppercase tracking-wider">
+                Estimasi Pengeluaran
+              </div>
+              <div className="text-sm sm:text-base font-extrabold text-slate-800 mt-0.5">
+                {comparisonData[6].inhouse.text}
+              </div>
+              <div className="text-[11px] text-amber-800 mt-1 flex items-center gap-1 font-medium">
+                <span>⚠️ {comparisonData[6].inhouse.subtext}</span>
+              </div>
+            </div>
+          </div>
+
         </div>
 
         {/* 4 Pillars Trust & Legal Guarantee Bar */}
