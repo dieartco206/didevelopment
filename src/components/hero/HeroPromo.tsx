@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { 
   ArrowRight, 
   MessageSquare, 
@@ -18,11 +18,54 @@ import {
 } from 'lucide-react';
 import { soundFx } from '../../utils/audio';
 
+const HEADLINE_PHRASES = [
+  'Bikin Sistem Bisnis & Aplikasi Android Sesuai Alur Usaha Anda Sendiri.',
+  'Bikin Aplikasi Kasir POS Multi-Cabang Sesuai Alur Usaha Anda Sendiri.',
+  'Bikin Aplikasi Presensi Android GPS Sesuai Alur Usaha Anda Sendiri.',
+  'Bikin Sistem Digital Kustom 100% Hak Milik Anda Sendiri.',
+];
+
 interface HeroPromoProps {
   onNavigate: (sectionId: string) => void;
 }
 
 export const HeroPromo: React.FC<HeroPromoProps> = ({ onNavigate }) => {
+  const [phraseIndex, setPhraseIndex] = useState(0);
+  const [displayedText, setDisplayedText] = useState('');
+  const [isDeleting, setIsDeleting] = useState(false);
+
+  useEffect(() => {
+    const currentPhrase = HEADLINE_PHRASES[phraseIndex % HEADLINE_PHRASES.length];
+    let timer: ReturnType<typeof setTimeout>;
+
+    if (!isDeleting) {
+      if (displayedText.length < currentPhrase.length) {
+        timer = setTimeout(() => {
+          setDisplayedText(currentPhrase.slice(0, displayedText.length + 1));
+        }, 50);
+      } else {
+        // Jeda membaca saat teks sudah lengkap diketik
+        timer = setTimeout(() => {
+          setIsDeleting(true);
+        }, 2600);
+      }
+    } else {
+      if (displayedText.length > 0) {
+        timer = setTimeout(() => {
+          setDisplayedText(currentPhrase.slice(0, displayedText.length - 1));
+        }, 25);
+      } else {
+        // Jeda sejenak sebelum berganti ke kalimat berikutnya
+        timer = setTimeout(() => {
+          setIsDeleting(false);
+          setPhraseIndex((prev) => (prev + 1) % HEADLINE_PHRASES.length);
+        }, 450);
+      }
+    }
+
+    return () => clearTimeout(timer);
+  }, [displayedText, isDeleting, phraseIndex]);
+
   const openWhatsApp = () => {
     soundFx.playSuccess();
     window.open(
@@ -53,10 +96,19 @@ export const HeroPromo: React.FC<HeroPromoProps> = ({ onNavigate }) => {
               <span className="tracking-wide text-[11px] sm:text-xs">Jasa Pembuatan Website & Aplikasi Android Kustom</span>
             </div>
 
-            {/* Headline Kuat & Tegas */}
-            <h1 className="text-2xl sm:text-4xl lg:text-[48px] font-extrabold tracking-tight text-[#0F172A] leading-tight font-sans">
-              Bikin Sistem Bisnis & Aplikasi Android Sesuai Alur Usaha Anda Sendiri.
-            </h1>
+            {/* Headline Kuat & Tegas dengan Animasi Typewriter */}
+            <div className="min-h-[84px] sm:min-h-[115px] lg:min-h-[155px] flex flex-col justify-start">
+              <h1 
+                className="text-2xl sm:text-4xl lg:text-[48px] font-extrabold tracking-tight text-[#0F172A] leading-tight font-sans"
+                aria-label={HEADLINE_PHRASES[phraseIndex % HEADLINE_PHRASES.length]}
+              >
+                <span>{displayedText}</span>
+                <span 
+                  className="inline-block w-[3px] sm:w-[4px] h-[0.82em] bg-[#2563EB] ml-1 sm:ml-1.5 align-baseline animate-blink rounded-full shadow-xs shadow-blue-500/50" 
+                  aria-hidden="true"
+                />
+              </h1>
+            </div>
 
             {/* Subheadline Solutif */}
             <p className="mt-4 text-sm sm:text-base lg:text-lg text-[#475569] leading-relaxed max-w-xl mx-auto lg:mx-0 font-normal">
