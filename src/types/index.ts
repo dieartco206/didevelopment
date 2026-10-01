@@ -41,12 +41,3 @@ export interface FaqItem {
   question: string;
   answer: string;
 }
-
-export interface ProposalInquiry {
-  clientName: string;
-  companyName: string;
-  contactNumber: string;
-  systemType: string;
-  budgetRange: string;
-  projectBrief: string;
-}

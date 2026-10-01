@@ -11,11 +11,9 @@ import {
   Receipt,
   ShoppingCart,
   Calculator,
-  FileText,
   Copy,
   Check
 } from 'lucide-react';
-import { QuickInquiryModal } from '../proposal/QuickInquiryModal';
 import { soundFx } from '../../utils/audio';
 
 interface ProjectType {
@@ -56,7 +54,6 @@ export const ProjectCalculator: React.FC = () => {
   const [selectedAddons, setSelectedAddons] = useState<string[]>(['qris_payment', 'wa_gateway']);
   const [isExpress, setIsExpress] = useState(false);
   const [copied, setCopied] = useState(false);
-  const [isInquiryOpen, setIsInquiryOpen] = useState(false);
 
   const toggleAddon = (id: string) => {
     soundFx.playClick(750, 0.03);
@@ -362,35 +359,23 @@ export const ProjectCalculator: React.FC = () => {
                 <ArrowRight className="w-4 h-4 shrink-0" />
               </button>
 
-              {/* Secondary Actions: Proposal & Copy Quote */}
-              <div className="flex items-center gap-2 mt-2.5">
-                <button
-                  onClick={() => {
-                    soundFx.playClick(750, 0.04);
-                    setIsInquiryOpen(true);
-                  }}
-                  type="button"
-                  className="flex-1 py-2.5 px-3 bg-blue-50 hover:bg-blue-100 border border-blue-200 text-[#2563EB] rounded-xl font-bold text-xs flex items-center justify-center gap-1.5 transition-colors cursor-pointer"
-                >
-                  <FileText className="w-3.5 h-3.5" />
-                  <span>Minta Proposal Resmi</span>
-                </button>
-
+              {/* Secondary Action: Copy Quote */}
+              <div className="mt-2.5">
                 <button
                   onClick={copySummary}
                   type="button"
-                  className="py-2.5 px-3 bg-white hover:bg-slate-100 border border-slate-300 text-slate-700 rounded-xl font-semibold text-xs flex items-center justify-center gap-1.5 transition-colors cursor-pointer"
+                  className="w-full py-2.5 px-3 bg-white hover:bg-slate-100 border border-slate-300 text-slate-700 rounded-xl font-semibold text-xs flex items-center justify-center gap-1.5 transition-colors cursor-pointer"
                   title="Salin Rangkuman Estimasi ke Clipboard"
                 >
                   {copied ? (
                     <>
                       <Check className="w-3.5 h-3.5 text-emerald-600" />
-                      <span className="text-emerald-700">Tersalin!</span>
+                      <span className="text-emerald-700 font-bold">Tersalin ke Clipboard!</span>
                     </>
                   ) : (
                     <>
                       <Copy className="w-3.5 h-3.5" />
-                      <span>Salin Rincian</span>
+                      <span>Salin Rincian Estimasi</span>
                     </>
                   )}
                 </button>
@@ -405,13 +390,6 @@ export const ProjectCalculator: React.FC = () => {
         </div>
 
       </div>
-
-      {/* Proposal Inquiry Modal */}
-      <QuickInquiryModal
-        isOpen={isInquiryOpen}
-        onClose={() => setIsInquiryOpen(false)}
-        defaultSystemType={selectedType.name}
-      />
     </section>
   );
 };

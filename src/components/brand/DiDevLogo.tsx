@@ -231,7 +231,6 @@ interface DiDevLogoProps {
   variant?: 'light' | 'dark';
   concept?: LogoConcept;
   showSubtitle?: boolean;
-  showBadge?: boolean;
   className?: string;
   onClick?: () => void;
 }
@@ -244,7 +243,6 @@ export const DiDevLogo: React.FC<DiDevLogoProps> = ({
   variant = 'light',
   concept,
   showSubtitle = true,
-  showBadge = true,
   className = '',
   onClick
 }) => {
@@ -274,15 +272,6 @@ export const DiDevLogo: React.FC<DiDevLogoProps> = ({
           <span className={`font-sans font-extrabold ${titleClass} tracking-tight whitespace-nowrap ${isDark ? 'text-white' : 'text-[#0F172A]'}`}>
             DiDev<span className="text-[#2563EB]">.Studio</span>
           </span>
-          {showBadge && (
-            <span className={`hidden sm:inline-block px-1.5 py-0.2 text-[9px] font-bold rounded whitespace-nowrap shrink-0 ${
-              isDark 
-                ? 'bg-emerald-500/20 text-emerald-300 border border-emerald-400/30' 
-                : 'bg-emerald-50 border border-emerald-200 text-emerald-700'
-            }`}>
-              OFFICIAL
-            </span>
-          )}
         </div>
         {showSubtitle && (
           <div className={`text-[9px] sm:text-[10px] font-medium tracking-wide uppercase whitespace-nowrap ${isDark ? 'text-slate-400' : 'text-slate-500'}`}>
