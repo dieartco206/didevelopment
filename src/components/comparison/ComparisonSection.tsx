@@ -293,7 +293,7 @@ export const ComparisonSection: React.FC = () => {
                 <span>Software House Resmi</span>
               </div>
               <h3 className="text-lg sm:text-xl font-black text-[#0F172A] tracking-tight flex items-center gap-2">
-                <DiDevMark size={22} className="shadow-xs" />
+                <DiDevMark size={22} />
                 <span>DiDevelopment Studio</span>
               </h3>
               <p className="text-xs text-slate-600 mt-1 leading-relaxed">

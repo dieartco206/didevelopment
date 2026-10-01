@@ -1,26 +1,26 @@
-<svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+<svg viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <linearGradient id="didev-bg-grad" x1="0" y1="0" x2="48" y2="48" gradientUnits="userSpaceOnUse">
+    <linearGradient id="didev-bg-grad" x1="2" y1="2" x2="50" y2="50" gradientUnits="userSpaceOnUse">
       <stop offset="0%" stop-color="#2563EB" />
       <stop offset="100%" stop-color="#1D4ED8" />
     </linearGradient>
-    <linearGradient id="didev-cyan-grad" x1="18" y1="16" x2="30" y2="32" gradientUnits="userSpaceOnUse">
+    <linearGradient id="didev-cyan-grad" x1="20" y1="18" x2="32" y2="34" gradientUnits="userSpaceOnUse">
       <stop offset="0%" stop-color="#38BDF8" />
       <stop offset="100%" stop-color="#00D8FF" />
     </linearGradient>
   </defs>
 
-  <!-- Squircle Base -->
-  <rect width="48" height="48" rx="13" fill="url(#didev-bg-grad)" />
-  <rect x="0.75" y="0.75" width="46.5" height="46.5" rx="12.25" stroke="white" stroke-opacity="0.22" stroke-width="1.5" />
+  <!-- Squircle Base with smooth 2px transparent padding -->
+  <rect x="2" y="2" width="48" height="48" rx="13" fill="url(#didev-bg-grad)" />
+  <rect x="2.75" y="2.75" width="46.5" height="46.5" rx="12.25" stroke="white" stroke-opacity="0.22" stroke-width="1.5" />
 
   <!-- Monogram D -->
-  <rect x="11" y="11" width="5" height="26" rx="2.5" fill="white" />
-  <path d="M15 11 H25 C32.732 11 39 16.82 39 24 C39 31.18 32.732 37 25 37 H15" stroke="white" stroke-width="4.8" stroke-linecap="round" stroke-linejoin="round" />
+  <rect x="13" y="13" width="5" height="26" rx="2.5" fill="white" />
+  <path d="M17 13 H27 C34.732 13 41 18.82 41 26 C41 33.18 34.732 39 27 39 H17" stroke="white" stroke-width="4.8" stroke-linecap="round" stroke-linejoin="round" />
 
   <!-- Inner Chevron > -->
-  <path d="M19.5 17.5 L26 24 L19.5 30.5" stroke="url(#didev-cyan-grad)" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" />
+  <path d="M21.5 19.5 L28 26 L21.5 32.5" stroke="url(#didev-cyan-grad)" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" />
 
   <!-- Emerald Live Dot -->
-  <circle cx="30.5" cy="24" r="2" fill="#10B981" />
+  <circle cx="32.5" cy="26" r="2" fill="#10B981" />
 </svg>

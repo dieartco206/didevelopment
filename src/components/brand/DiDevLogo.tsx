@@ -191,6 +191,20 @@ export const DiDevMark: React.FC<DiDevMarkProps> = ({
 
   const activeConcept = propConcept || subscribedConcept;
 
+  // Use official transparent PNG by default for pixel-perfect zero-artifact rendering
+  if (!propConcept || activeConcept === 'concept-1') {
+    return (
+      <img
+        src="/logo.png"
+        alt="DiDev Logo"
+        width={size}
+        height={size}
+        className={`shrink-0 select-none object-contain ${className}`}
+        {...(props as React.ImgHTMLAttributes<HTMLImageElement>)}
+      />
+    );
+  }
+
   switch (activeConcept) {
     case 'concept-2':
       return <Concept2Mark size={size} className={className} {...props} />;
@@ -198,9 +212,17 @@ export const DiDevMark: React.FC<DiDevMarkProps> = ({
       return <Concept3Mark size={size} className={className} {...props} />;
     case 'concept-4':
       return <Concept4Mark size={size} className={className} {...props} />;
-    case 'concept-1':
     default:
-      return <Concept1Mark size={size} className={className} {...props} />;
+      return (
+        <img
+          src="/logo.png"
+          alt="DiDev Logo"
+          width={size}
+          height={size}
+          className={`shrink-0 select-none object-contain ${className}`}
+          {...(props as React.ImgHTMLAttributes<HTMLImageElement>)}
+        />
+      );
   }
 };
 
@@ -241,9 +263,9 @@ export const DiDevLogo: React.FC<DiDevLogoProps> = ({
       onClick={onClick}
       className={`flex items-center gap-2.5 sm:gap-3 group ${onClick ? 'cursor-pointer' : ''} ${className}`}
     >
-      {/* Brand Icon Mark with subtle lift on hover */}
-      <div className="group-hover:scale-105 transition-transform duration-200 shrink-0">
-        <DiDevMark size={markSize} concept={concept} className="shadow-md shadow-blue-500/25" />
+      {/* Brand Icon Mark with subtle lift on hover (Zero square shadow artifacts) */}
+      <div className="group-hover:scale-105 transition-transform duration-200 shrink-0 flex items-center justify-center">
+        <DiDevMark size={markSize} concept={concept} />
       </div>
 
       {/* Brand Typography */}
