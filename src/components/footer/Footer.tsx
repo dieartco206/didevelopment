@@ -1,5 +1,6 @@
 import React from 'react';
-import { Smartphone, ShieldCheck, Mail, MapPin, MessageSquare } from 'lucide-react';
+import { ShieldCheck, Mail, MapPin, MessageSquare } from 'lucide-react';
+import { DiDevLogo } from '../brand/DiDevLogo';
 import { soundFx } from '../../utils/audio';
 
 export const Footer: React.FC = () => {
@@ -23,13 +24,8 @@ export const Footer: React.FC = () => {
           
           {/* Col 1: Brand & Profile (5 cols) */}
           <div className="md:col-span-5">
-            <div className="flex items-center gap-2.5 mb-3.5">
-              <div className="w-9 h-9 rounded-xl bg-[#2563EB] flex items-center justify-center text-white shadow-md">
-                <Smartphone className="w-5 h-5" aria-hidden="true" />
-              </div>
-              <span className="text-white font-extrabold text-xl tracking-tight">
-                DiDev<span className="text-[#2563EB]">.Studio</span>
-              </span>
+            <div className="mb-4">
+              <DiDevLogo variant="dark" onClick={() => scrollTo('hero')} />
             </div>
             
             <p className="text-slate-400 font-normal text-xs sm:text-sm leading-relaxed max-w-sm mb-5">

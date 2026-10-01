@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import { 
-  Smartphone, 
   MessageSquare, 
   Volume2, 
   VolumeX, 
   Menu, 
   X
 } from 'lucide-react';
+import { DiDevLogo } from '../brand/DiDevLogo';
 import { soundFx } from '../../utils/audio';
 
 interface NavbarProps {
@@ -56,27 +56,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onNavigate, activeSection }) => 
         <div className="flex items-center justify-between h-16 sm:h-20">
           
           {/* Logo Brand: DiDev.Studio */}
-          <div 
-            onClick={() => handleNavClick('hero')}
-            className="flex items-center gap-2 sm:gap-3 cursor-pointer group"
-          >
-            <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-[#2563EB] text-white flex items-center justify-center shadow-md shadow-blue-500/20 group-hover:scale-105 transition-transform duration-200 shrink-0">
-              <Smartphone className="w-4 h-4 sm:w-5 sm:h-5" />
-            </div>
-            <div>
-              <div className="flex items-center gap-1.5">
-                <span className="font-sans font-extrabold text-base sm:text-xl text-[#0F172A] tracking-tight whitespace-nowrap">
-                  DiDev<span className="text-[#2563EB]">.Studio</span>
-                </span>
-                <span className="hidden sm:inline-block px-1.5 py-0.2 bg-emerald-50 border border-emerald-200 text-emerald-700 text-[9px] font-bold rounded whitespace-nowrap shrink-0">
-                  OFFICIAL
-                </span>
-              </div>
-              <div className="text-[9px] sm:text-[10px] font-medium text-slate-500 tracking-wide uppercase whitespace-nowrap">
-                Web & Android App Studio
-              </div>
-            </div>
-          </div>
+          <DiDevLogo onClick={() => handleNavClick('hero')} />
 
           {/* Desktop Nav Items */}
           <nav className="hidden lg:flex items-center gap-1">
