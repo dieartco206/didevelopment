@@ -5,10 +5,10 @@ import {
   VolumeX, 
   Menu, 
   X,
-  Sparkles
+  FileText
 } from 'lucide-react';
 import { DiDevLogo } from '../brand/DiDevLogo';
-import { LogoStudioModal } from '../brand/LogoStudioModal';
+import { QuickInquiryModal } from '../proposal/QuickInquiryModal';
 import { soundFx } from '../../utils/audio';
 
 interface NavbarProps {
@@ -19,7 +19,7 @@ interface NavbarProps {
 export const Navbar: React.FC<NavbarProps> = ({ onNavigate, activeSection }) => {
   const [isMuted, setIsMuted] = useState(soundFx.getMuted());
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [isLogoStudioOpen, setIsLogoStudioOpen] = useState(false);
+  const [isInquiryModalOpen, setIsInquiryModalOpen] = useState(false);
 
   const toggleSound = () => {
     const muted = soundFx.toggleMute();
@@ -83,17 +83,17 @@ export const Navbar: React.FC<NavbarProps> = ({ onNavigate, activeSection }) => 
 
           {/* Right Action Bar */}
           <div className="flex items-center gap-2.5 shrink-0">
-            {/* Logo Studio Switcher Button */}
+            {/* Quick Proposal Button (B2B & Desktop Friendly) */}
             <button
               onClick={() => {
                 soundFx.playClick(850, 0.04);
-                setIsLogoStudioOpen(true);
+                setIsInquiryModalOpen(true);
               }}
-              title="Eksplorasi & Pilih Desain Logo"
+              title="Ajukan Kebutuhan & Minta Proposal Resmi"
               className="inline-flex items-center gap-1.5 px-3 py-2 min-h-[44px] rounded-lg bg-blue-50 hover:bg-blue-100 border border-blue-200 text-[#2563EB] text-xs font-bold transition-all cursor-pointer shadow-2xs hover:shadow-xs shrink-0"
             >
-              <Sparkles className="w-3.5 h-3.5 text-[#2563EB]" />
-              <span className="hidden md:inline">Opsi Logo</span>
+              <FileText className="w-3.5 h-3.5 text-[#2563EB]" />
+              <span className="hidden sm:inline">Minta Proposal</span>
             </button>
 
             {/* Audio Toggle */}
@@ -150,12 +150,12 @@ export const Navbar: React.FC<NavbarProps> = ({ onNavigate, activeSection }) => 
               <button
                 onClick={() => {
                   setMobileMenuOpen(false);
-                  setIsLogoStudioOpen(true);
+                  setIsInquiryModalOpen(true);
                 }}
                 className="w-full py-2.5 px-3 bg-blue-50 border border-blue-200 text-[#2563EB] font-bold text-xs rounded-xl flex items-center justify-center gap-2 cursor-pointer"
               >
-                <Sparkles className="w-4 h-4" />
-                <span>Pilih Desain Logo (4 Opsi)</span>
+                <FileText className="w-4 h-4" />
+                <span>Minta Proposal & Estimasi Resmi</span>
               </button>
 
               <button
@@ -170,10 +170,10 @@ export const Navbar: React.FC<NavbarProps> = ({ onNavigate, activeSection }) => 
         )}
       </div>
 
-      {/* Logo Studio Modal */}
-      <LogoStudioModal 
-        isOpen={isLogoStudioOpen} 
-        onClose={() => setIsLogoStudioOpen(false)} 
+      {/* Quick Inquiry Modal */}
+      <QuickInquiryModal 
+        isOpen={isInquiryModalOpen} 
+        onClose={() => setIsInquiryModalOpen(false)} 
       />
     </header>
   );

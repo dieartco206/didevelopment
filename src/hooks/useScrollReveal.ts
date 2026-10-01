@@ -2,17 +2,13 @@ import { useEffect, useRef, useState } from 'react';
 
 export function useScrollReveal<T extends HTMLElement = HTMLDivElement>(threshold = 0.1) {
   const ref = useRef<T>(null);
-  const [isRevealed, setIsRevealed] = useState(false);
+  const [isRevealed, setIsRevealed] = useState(() => {
+    return typeof window === 'undefined' || !('IntersectionObserver' in window);
+  });
 
   useEffect(() => {
     const el = ref.current;
-    if (!el) {
-      setIsRevealed(true);
-      return;
-    }
-
-    if (typeof window === 'undefined' || !('IntersectionObserver' in window)) {
-      setIsRevealed(true);
+    if (!el || typeof window === 'undefined' || !('IntersectionObserver' in window)) {
       return;
     }
 

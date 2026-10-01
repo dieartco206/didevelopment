@@ -142,7 +142,7 @@ export const PortfolioSection: React.FC = () => {
                   soundFx.playClick(650, 0.03);
                   setActiveTab(tab.id as PortfolioCategory);
                 }}
-                className={`px-3.5 py-1.5 rounded-lg text-xs font-bold transition-all whitespace-nowrap shrink-0 cursor-pointer ${
+                className={`min-h-[44px] px-4 py-2 rounded-lg text-xs sm:text-sm font-bold transition-all whitespace-nowrap shrink-0 cursor-pointer flex items-center justify-center ${
                   activeTab === tab.id
                     ? 'bg-[#2563EB] text-white shadow-xs'
                     : 'text-slate-600 hover:text-[#2563EB] hover:bg-slate-50'

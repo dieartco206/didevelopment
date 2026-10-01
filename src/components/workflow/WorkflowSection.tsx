@@ -8,6 +8,7 @@ import {
   ShieldCheck,
   ArrowRight
 } from 'lucide-react';
+import { useScrollReveal } from '../../hooks/useScrollReveal';
 import { soundFx } from '../../utils/audio';
 
 interface Step {
@@ -57,13 +58,21 @@ const STEPS: Step[] = [
 ];
 
 export const WorkflowSection: React.FC = () => {
+  const { ref, isRevealed } = useScrollReveal<HTMLElement>();
+
   const openWhatsApp = () => {
     soundFx.playSuccess();
     window.open('https://wa.me/6289673757701?text=Halo%20DiDev%20Studio%2C%20saya%20ingin%20jadwalkan%20konsultasi%20awal%20bedah%20kebutuhan%20sistem%20saya.', '_blank');
   };
 
   return (
-    <section id="workflow" className="py-16 sm:py-24 bg-white border-b border-slate-200 relative overflow-hidden">
+    <section 
+      id="workflow" 
+      ref={ref}
+      className={`py-16 sm:py-24 bg-white border-b border-slate-200 relative overflow-hidden transition-all duration-700 ease-out ${
+        isRevealed ? 'opacity-100 translate-y-0' : 'opacity-90 translate-y-3'
+      }`}
+    >
       {/* Subtle Dot Matrix & Blueprint Texture on White */}
       <div className="absolute inset-0 artistic-dot-grid opacity-25 pointer-events-none" />
 

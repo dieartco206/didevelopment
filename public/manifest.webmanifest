@@ -1,0 +1,16 @@
+{
+  "name": "DiDevelopment Studio",
+  "short_name": "DiDev Studio",
+  "description": "Jasa Pembuatan Website & Aplikasi Android APK Profesional Bergaransi 1 Tahun",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#F8FAFC",
+  "theme_color": "#2563EB",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}

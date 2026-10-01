@@ -10,8 +10,12 @@ import {
   CheckCircle2,
   Receipt,
   ShoppingCart,
-  Calculator
+  Calculator,
+  FileText,
+  Copy,
+  Check
 } from 'lucide-react';
+import { QuickInquiryModal } from '../proposal/QuickInquiryModal';
 import { soundFx } from '../../utils/audio';
 
 interface ProjectType {
@@ -51,12 +55,39 @@ export const ProjectCalculator: React.FC = () => {
   const [selectedType, setSelectedType] = useState<ProjectType>(PROJECT_TYPES[3]);
   const [selectedAddons, setSelectedAddons] = useState<string[]>(['qris_payment', 'wa_gateway']);
   const [isExpress, setIsExpress] = useState(false);
+  const [copied, setCopied] = useState(false);
+  const [isInquiryOpen, setIsInquiryOpen] = useState(false);
 
   const toggleAddon = (id: string) => {
     soundFx.playClick(750, 0.03);
     setSelectedAddons((prev) => 
       prev.includes(id) ? prev.filter((item) => item !== id) : [...prev, id]
     );
+  };
+
+  const copySummary = () => {
+    soundFx.playClick(900, 0.04);
+    const addonNames = selectedAddons
+      .map((id) => ADDONS.find((a) => a.id === id)?.name)
+      .filter(Boolean)
+      .join('\n- ');
+
+    const summary = [
+      `ESTIMASI BIAYA PEMBUATAN APLIKASI - DIDEV STUDIO`,
+      `━━━━━━━━━━━━━━━━━━━━━━━━━━`,
+      `• Kategori Sistem: ${selectedType.name}`,
+      `• Jalur Pengerjaan: ${isExpress ? 'Express Prioritas (+25%)' : 'Standar Reguler'}`,
+      `• Modul Tambahan:\n- ${addonNames || 'Tanpa modul tambahan'}`,
+      `• Estimasi Biaya Setup: ${formatRupiah(price)}`,
+      `• Cloud Server & Maintenance: Mulai Rp 500.000 / bulan`,
+      `• Estimasi Durasi: ${days} Hari Kerja`,
+      `━━━━━━━━━━━━━━━━━━━━━━━━━━`,
+      `https://didevelopment.com`
+    ].join('\n');
+
+    navigator.clipboard.writeText(summary);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2500);
   };
 
   const calculateTotal = () => {
@@ -331,6 +362,40 @@ export const ProjectCalculator: React.FC = () => {
                 <ArrowRight className="w-4 h-4 shrink-0" />
               </button>
 
+              {/* Secondary Actions: Proposal & Copy Quote */}
+              <div className="flex items-center gap-2 mt-2.5">
+                <button
+                  onClick={() => {
+                    soundFx.playClick(750, 0.04);
+                    setIsInquiryOpen(true);
+                  }}
+                  type="button"
+                  className="flex-1 py-2.5 px-3 bg-blue-50 hover:bg-blue-100 border border-blue-200 text-[#2563EB] rounded-xl font-bold text-xs flex items-center justify-center gap-1.5 transition-colors cursor-pointer"
+                >
+                  <FileText className="w-3.5 h-3.5" />
+                  <span>Minta Proposal Resmi</span>
+                </button>
+
+                <button
+                  onClick={copySummary}
+                  type="button"
+                  className="py-2.5 px-3 bg-white hover:bg-slate-100 border border-slate-300 text-slate-700 rounded-xl font-semibold text-xs flex items-center justify-center gap-1.5 transition-colors cursor-pointer"
+                  title="Salin Rangkuman Estimasi ke Clipboard"
+                >
+                  {copied ? (
+                    <>
+                      <Check className="w-3.5 h-3.5 text-emerald-600" />
+                      <span className="text-emerald-700">Tersalin!</span>
+                    </>
+                  ) : (
+                    <>
+                      <Copy className="w-3.5 h-3.5" />
+                      <span>Salin Rincian</span>
+                    </>
+                  )}
+                </button>
+              </div>
+
               <p className="text-[11px] text-center text-slate-500 mt-3 font-normal">
                 Konsultasi & diskusi kebutuhan 100% Bebas Biaya tanpa ikatan.
               </p>
@@ -340,6 +405,13 @@ export const ProjectCalculator: React.FC = () => {
         </div>
 
       </div>
+
+      {/* Proposal Inquiry Modal */}
+      <QuickInquiryModal
+        isOpen={isInquiryOpen}
+        onClose={() => setIsInquiryOpen(false)}
+        defaultSystemType={selectedType.name}
+      />
     </section>
   );
 };

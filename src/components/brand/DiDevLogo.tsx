@@ -180,17 +180,16 @@ export const DiDevMark: React.FC<DiDevMarkProps> = ({
   concept: propConcept,
   ...props 
 }) => {
-  const [activeConcept, setActiveConcept] = useState<LogoConcept>(propConcept || getActiveLogoConcept());
+  const [subscribedConcept, setSubscribedConcept] = useState<LogoConcept>(getActiveLogoConcept);
 
   useEffect(() => {
-    if (propConcept) {
-      setActiveConcept(propConcept);
-      return;
-    }
+    if (propConcept) return;
     return subscribeLogoConcept((newConcept) => {
-      setActiveConcept(newConcept);
+      setSubscribedConcept(newConcept);
     });
   }, [propConcept]);
+
+  const activeConcept = propConcept || subscribedConcept;
 
   switch (activeConcept) {
     case 'concept-2':

@@ -219,7 +219,12 @@ export const TestimonialsSection: React.FC = () => {
                     </div>
                   </div>
 
-                  <CheckCircle2 className="w-5 h-5 text-emerald-600 shrink-0" />
+                  <div className="flex flex-col items-end shrink-0">
+                    <span className="inline-flex items-center gap-1 text-[10px] text-emerald-700 font-bold bg-emerald-50 px-2 py-0.5 rounded-md border border-emerald-200 shadow-2xs">
+                      <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
+                      <span>Terverifikasi</span>
+                    </span>
+                  </div>
                 </div>
               </div>
             );

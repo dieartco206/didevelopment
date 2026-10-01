@@ -14,9 +14,11 @@ import {
   Signal,
   Wifi,
   Battery,
-  Camera
+  Camera,
+  FileText
 } from 'lucide-react';
 import { AndroidIcon } from '../icons/BrandIcons';
+import { QuickInquiryModal } from '../proposal/QuickInquiryModal';
 import { soundFx } from '../../utils/audio';
 
 const HEADLINE_TEXT = 'Bikin Sistem Bisnis & Aplikasi Android Sesuai Alur Usaha Anda Sendiri.';
@@ -27,6 +29,7 @@ interface HeroPromoProps {
 
 export const HeroPromo: React.FC<HeroPromoProps> = ({ onNavigate }) => {
   const [displayedText, setDisplayedText] = useState('');
+  const [isInquiryOpen, setIsInquiryOpen] = useState(false);
 
   useEffect(() => {
     let timer: ReturnType<typeof setTimeout>;
@@ -67,17 +70,19 @@ export const HeroPromo: React.FC<HeroPromoProps> = ({ onNavigate }) => {
               <span className="tracking-wide text-[11px] sm:text-xs">Jasa Pembuatan Website & Aplikasi Android Kustom</span>
             </div>
 
-            {/* Headline Kuat & Tegas dengan Animasi Typewriter */}
+            {/* Headline Kuat & Tegas dengan Animasi Typewriter & SEO Full-Text Guard */}
             <div className="min-h-[84px] sm:min-h-[115px] lg:min-h-[155px] flex flex-col justify-start">
               <h1 
                 className="text-2xl sm:text-4xl lg:text-[48px] font-extrabold tracking-tight text-[#0F172A] leading-tight font-sans"
-                aria-label={HEADLINE_TEXT}
               >
-                <span>{displayedText}</span>
-                <span 
-                  className="inline-block w-[3px] sm:w-[4px] h-[0.82em] bg-[#2563EB] ml-1 sm:ml-1.5 align-baseline animate-blink rounded-full shadow-xs shadow-blue-500/50" 
-                  aria-hidden="true"
-                />
+                {/* Accessible text for web search bots & screen readers */}
+                <span className="sr-only">{HEADLINE_TEXT}</span>
+                <span aria-hidden="true">
+                  <span>{displayedText}</span>
+                  <span 
+                    className="inline-block w-[3px] sm:w-[4px] h-[0.82em] bg-[#2563EB] ml-1 sm:ml-1.5 align-baseline animate-blink rounded-full shadow-xs shadow-blue-500/50" 
+                  />
+                </span>
               </h1>
             </div>
 
@@ -105,6 +110,21 @@ export const HeroPromo: React.FC<HeroPromoProps> = ({ onNavigate }) => {
                 className="w-full sm:w-auto inline-flex items-center justify-center px-5 py-3.5 sm:py-4 bg-white hover:bg-slate-50 text-[#0F172A] border-2 border-slate-200 hover:border-[#2563EB] font-sans font-bold text-sm sm:text-base rounded-xl transition-all duration-200 cursor-pointer shadow-2xs whitespace-nowrap shrink-0"
               >
                 <span className="whitespace-nowrap">Hitung Estimasi Biaya</span>
+              </button>
+            </div>
+
+            {/* Alternative B2B Proposal Link */}
+            <div className="mt-3.5 text-center lg:text-left text-xs text-slate-500 flex flex-wrap items-center justify-center lg:justify-start gap-1.5">
+              <span>Butuh dokumen penawaran formal untuk kantor?</span>
+              <button
+                onClick={() => {
+                  soundFx.playClick(750, 0.04);
+                  setIsInquiryOpen(true);
+                }}
+                className="inline-flex items-center gap-1 text-[#2563EB] hover:text-blue-700 font-bold underline cursor-pointer"
+              >
+                <FileText className="w-3.5 h-3.5" aria-hidden="true" />
+                <span>Minta Proposal & Estimasi Spesifikasi</span>
               </button>
             </div>
 
@@ -416,6 +436,12 @@ export const HeroPromo: React.FC<HeroPromoProps> = ({ onNavigate }) => {
         </div>
 
       </div>
+
+      {/* Proposal Inquiry Modal */}
+      <QuickInquiryModal
+        isOpen={isInquiryOpen}
+        onClose={() => setIsInquiryOpen(false)}
+      />
     </section>
   );
 };

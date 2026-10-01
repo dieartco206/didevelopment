@@ -5,7 +5,10 @@ class SoundManager {
 
   constructor() {
     if (typeof window !== 'undefined') {
-      this.isMuted = localStorage.getItem('didev_sound_muted') === 'true';
+      // Default to MUTED (true) on first visit to respect quiet office/meeting environments
+      this.isMuted = localStorage.getItem('didev_sound_muted') !== 'false';
+    } else {
+      this.isMuted = true;
     }
   }
 

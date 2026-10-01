@@ -3,6 +3,8 @@ import { ShieldCheck, Mail, MapPin, MessageSquare } from 'lucide-react';
 import { DiDevLogo } from '../brand/DiDevLogo';
 import { soundFx } from '../../utils/audio';
 
+const CURRENT_YEAR = 2026;
+
 export const Footer: React.FC = () => {
   const openWhatsApp = () => {
     soundFx.playSuccess();
@@ -120,7 +122,7 @@ export const Footer: React.FC = () => {
         {/* Bottom Bar */}
         <div className="pt-8 border-t border-slate-800/80 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500 text-center sm:text-left">
           <div>
-            © {new Date().getFullYear()} DiDev Studio. All rights reserved. Fully Managed Digital Platform & Cloud Infrastructure.
+            © {CURRENT_YEAR} DiDev Studio. All rights reserved. Fully Managed Digital Platform & Cloud Infrastructure.
           </div>
           <div className="flex flex-wrap items-center justify-center sm:justify-end gap-2 text-slate-400 font-medium">
             <span>React.js • Golang • Flutter • Android Native</span>
