@@ -84,16 +84,21 @@ export const WorkflowSection: React.FC = () => {
 
         {/* HORIZONTAL CONNECTED STEPPER / PROCESS ROADMAP (Desktop) */}
         <div className="hidden lg:block relative mb-16">
-          {/* Continuous Connected Progress Line with Glowing Circuit Gradient */}
-          <div className="absolute top-1/2 left-12 right-12 h-1.5 bg-gradient-to-r from-blue-500 via-sky-400 to-emerald-500 rounded-full -translate-y-12 z-0 opacity-80 shadow-xs shadow-blue-500/25" />
+          {/* Continuous Connected Progress Line connecting the icon nodes */}
+          <div className="absolute top-8 left-[10%] right-[10%] -translate-y-1/2 z-0 pointer-events-none">
+            {/* Base track */}
+            <div className="h-0.5 w-full bg-slate-200" />
+            {/* Gradient active progress track */}
+            <div className="h-1 w-full bg-gradient-to-r from-blue-500 via-sky-400 to-emerald-500 rounded-full -mt-0.5 opacity-90 shadow-xs shadow-blue-500/20" />
+          </div>
 
           <div className="grid grid-cols-5 gap-6 relative z-10">
             {STEPS.map((s, idx) => {
               const Icon = s.icon;
               return (
                 <div key={idx} className="flex flex-col items-center text-center group">
-                  {/* Step Circle with Number Badge */}
-                  <div className="w-16 h-16 rounded-2xl bg-white border-2 border-slate-200 group-hover:border-[#2563EB] text-[#2563EB] flex items-center justify-center shadow-md transition-all duration-200 mb-6 group-hover:scale-105 group-hover:shadow-lg">
+                  {/* Step Node Circle (Centered on connecting line) */}
+                  <div className="w-16 h-16 rounded-2xl bg-white border-2 border-slate-200 group-hover:border-[#2563EB] text-[#2563EB] flex items-center justify-center shadow-md transition-all duration-200 mb-6 group-hover:scale-105 group-hover:shadow-lg relative z-10">
                     <Icon className="w-7 h-7" />
                   </div>
 
@@ -123,7 +128,7 @@ export const WorkflowSection: React.FC = () => {
         </div>
 
         {/* VERTICAL TIMELINE FOR MOBILE / TABLET */}
-        <div className="lg:hidden space-y-6 relative before:absolute before:inset-0 before:left-6 before:w-0.5 before:bg-slate-200 mb-12">
+        <div className="lg:hidden space-y-6 relative before:absolute before:inset-y-0 before:left-7 before:w-0.5 before:bg-slate-200 mb-12">
           {STEPS.map((s, idx) => {
             const Icon = s.icon;
             return (
