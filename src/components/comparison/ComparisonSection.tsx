@@ -187,11 +187,11 @@ export const ComparisonSection: React.FC = () => {
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-14 sm:mb-20">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 bg-blue-50 border border-blue-200 text-[#2563EB] rounded-full text-xs font-bold uppercase tracking-wider mb-3 whitespace-nowrap shrink-0 shadow-2xs">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 bg-blue-50 border border-blue-200 text-[#2563EB] rounded-full text-[11px] sm:text-xs font-bold uppercase tracking-wider mb-3 shadow-2xs">
             <Sparkles className="w-3.5 h-3.5 shrink-0" />
-            <span className="whitespace-nowrap">TRANSPARANSI KUALITAS & INVESTASI</span>
+            <span>TRANSPARANSI KUALITAS & INVESTASI</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#0F172A] tracking-tight font-sans">
+          <h2 className="text-2xl sm:text-4xl lg:text-5xl font-extrabold text-[#0F172A] tracking-tight font-sans">
             Kenapa DiDevelopment Jauh Lebih Menguntungkan?
           </h2>
           <p className="mt-4 text-sm sm:text-base lg:text-lg text-[#475569] leading-relaxed max-w-2xl mx-auto font-normal">
@@ -369,7 +369,7 @@ export const ComparisonSection: React.FC = () => {
                 <ShieldCheck className="w-5 h-5" />
               </div>
               <div>
-                <h4 className="text-xs sm:text-sm font-extrabold text-[#0F172A] whitespace-nowrap">Garansi Bebas Bug 365 Hari</h4>
+                <h4 className="text-xs sm:text-sm font-extrabold text-[#0F172A]">Garansi Bebas Bug 365 Hari</h4>
                 <p className="text-[11px] text-slate-500 mt-1 leading-relaxed">
                   Perbaikan error teknis ditangani gratis selama 1 tahun penuh.
                 </p>
@@ -381,7 +381,7 @@ export const ComparisonSection: React.FC = () => {
                 <FileCode2 className="w-5 h-5" />
               </div>
               <div>
-                <h4 className="text-xs sm:text-sm font-extrabold text-[#0F172A] whitespace-nowrap">100% Hak Milik Kode</h4>
+                <h4 className="text-xs sm:text-sm font-extrabold text-[#0F172A]">100% Hak Milik Kode</h4>
                 <p className="text-[11px] text-slate-500 mt-1 leading-relaxed">
                   Source code dan database diserahkan penuh tanpa biaya lisensi per user.
                 </p>
@@ -393,7 +393,7 @@ export const ComparisonSection: React.FC = () => {
                 <Server className="w-5 h-5" />
               </div>
               <div>
-                <h4 className="text-xs sm:text-sm font-extrabold text-[#0F172A] whitespace-nowrap">Cloud Server Fully Managed</h4>
+                <h4 className="text-xs sm:text-sm font-extrabold text-[#0F172A]">Cloud Server Fully Managed</h4>
                 <p className="text-[11px] text-slate-500 mt-1 leading-relaxed">
                   Server berkecepatan tinggi, domain, dan backup kami yang tangani penuh.
                 </p>
@@ -405,7 +405,7 @@ export const ComparisonSection: React.FC = () => {
                 <Lock className="w-5 h-5" />
               </div>
               <div>
-                <h4 className="text-xs sm:text-sm font-extrabold text-[#0F172A] whitespace-nowrap">NDA Kerahasiaan Bisnis</h4>
+                <h4 className="text-xs sm:text-sm font-extrabold text-[#0F172A]">NDA Kerahasiaan Bisnis</h4>
                 <p className="text-[11px] text-slate-500 mt-1 leading-relaxed">
                   Data transaksi, alur SOP, dan data pelanggan dijamin aman secara hukum.
                 </p>
@@ -426,9 +426,9 @@ export const ComparisonSection: React.FC = () => {
 
             <button
               onClick={openWhatsApp}
-              className="inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-[#2563EB] hover:bg-[#1D4ED8] text-white rounded-xl text-xs sm:text-sm font-bold shadow-md shadow-blue-500/20 hover:shadow-blue-500/30 transition-all cursor-pointer whitespace-nowrap shrink-0"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-[#2563EB] hover:bg-[#1D4ED8] text-white rounded-xl text-xs sm:text-sm font-bold shadow-md shadow-blue-500/20 hover:shadow-blue-500/30 transition-all cursor-pointer shrink-0"
             >
-              <span className="whitespace-nowrap">Konsultasi Kebutuhan Sistem</span>
+              <span>Konsultasi Kebutuhan Sistem</span>
               <ArrowRight className="w-4 h-4 shrink-0" />
             </button>
           </div>

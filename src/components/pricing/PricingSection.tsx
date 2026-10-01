@@ -156,21 +156,21 @@ export const PricingSection: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Section Header with Bold Value Proposition */}
-        <div className="text-center max-w-3xl mx-auto mb-14 sm:mb-20">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 bg-blue-50 border border-blue-200 text-[#2563EB] rounded-full text-xs font-bold uppercase tracking-wider mb-3 whitespace-nowrap shrink-0">
-            <span className="whitespace-nowrap">PAKET INVESTASI RESMI</span>
+        <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-20">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 bg-blue-50 border border-blue-200 text-[#2563EB] rounded-full text-[11px] sm:text-xs font-bold uppercase tracking-wider mb-3">
+            <span>PAKET INVESTASI RESMI</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#0F172A] tracking-tight font-sans">
+          <h2 className="text-2xl sm:text-4xl lg:text-5xl font-extrabold text-[#0F172A] tracking-tight font-sans">
             Pilihan Paket Transparan Tanpa Biaya Tersembunyi
           </h2>
           
           {/* Key Value Guarantee Badge */}
-          <div className="mt-4 inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-slate-100 text-[#0F172A] font-mono text-xs sm:text-sm font-bold border border-slate-200 whitespace-nowrap shrink-0 overflow-x-auto max-w-full">
-            <span className="text-[#10B981] shrink-0">✓</span> <span className="whitespace-nowrap shrink-0">FULLY MANAGED</span>
-            <span className="text-slate-300 shrink-0">•</span>
-            <span className="text-[#10B981] shrink-0">✓</span> <span className="whitespace-nowrap shrink-0">CLOUD SERVER CEPAT</span>
-            <span className="text-slate-300 shrink-0">•</span>
-            <span className="text-[#10B981] shrink-0">✓</span> <span className="whitespace-nowrap shrink-0">MAINTENANCE & BACKUP RUTIN</span>
+          <div className="mt-4 flex flex-wrap items-center justify-center gap-x-3 gap-y-1.5 px-4 py-2.5 rounded-xl bg-slate-100 text-[#0F172A] font-mono text-[11px] sm:text-xs md:text-sm font-bold border border-slate-200 max-w-full">
+            <span className="flex items-center gap-1"><span className="text-[#10B981]">✓</span> FULLY MANAGED</span>
+            <span className="text-slate-300 hidden sm:inline">•</span>
+            <span className="flex items-center gap-1"><span className="text-[#10B981]">✓</span> CLOUD SERVER CEPAT</span>
+            <span className="text-slate-300 hidden sm:inline">•</span>
+            <span className="flex items-center gap-1"><span className="text-[#10B981]">✓</span> MAINTENANCE & BACKUP RUTIN</span>
           </div>
         </div>
 
@@ -188,7 +188,7 @@ export const PricingSection: React.FC = () => {
             return (
               <div
                 key={tier.id}
-                className={`rounded-2xl p-6 sm:p-7 flex flex-col justify-between transition-all duration-500 ease-out hover:-translate-y-2 hover:shadow-2xl relative ${entranceAnim} ${
+                className={`rounded-2xl p-5 sm:p-7 flex flex-col justify-between transition-all duration-500 ease-out hover:-translate-y-2 hover:shadow-2xl relative ${entranceAnim} ${
                   isFeatured
                     ? 'bg-white border-2 border-[#2563EB] shadow-xl ring-2 ring-blue-500/10 lg:-translate-y-3 hover:lg:-translate-y-5 z-10'
                     : 'bg-[#F8FAFC] border-2 border-slate-200 hover:border-blue-400 shadow-sm'
@@ -218,7 +218,7 @@ export const PricingSection: React.FC = () => {
                   </div>
 
                   {/* Title & Target Audience */}
-                  <h3 className="text-2xl font-extrabold text-[#0F172A] mb-2 leading-snug">
+                  <h3 className="text-xl sm:text-2xl font-extrabold text-[#0F172A] mb-2 leading-snug">
                     {tier.name}
                   </h3>
                   <p className="text-xs text-[#475569] leading-relaxed mb-6 font-normal">
@@ -267,13 +267,13 @@ export const PricingSection: React.FC = () => {
 
                   <button
                     onClick={() => handleSelectPlan(tier)}
-                    className={`w-full py-3.5 rounded-xl font-bold text-sm flex items-center justify-center gap-2 transition-all cursor-pointer active:scale-98 whitespace-nowrap shrink-0 ${
+                    className={`w-full py-3.5 px-4 rounded-xl font-bold text-xs sm:text-sm flex items-center justify-center gap-2 transition-all cursor-pointer active:scale-98 shrink-0 ${
                       isFeatured
                         ? 'bg-[#10B981] hover:bg-[#059669] text-white shadow-lg shadow-emerald-500/25'
                         : 'bg-white hover:bg-slate-50 text-[#0F172A] border-2 border-slate-200 hover:border-[#2563EB]'
                     }`}
                   >
-                    <span className="whitespace-nowrap">{tier.ctaText}</span>
+                    <span>{tier.ctaText}</span>
                     <ArrowRight className="w-4 h-4 shrink-0" />
                   </button>
                 </div>

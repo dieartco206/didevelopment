@@ -162,15 +162,15 @@ export const ServicesSection: React.FC = () => {
               </div>
             </div>
 
-            <div className="mt-8 flex items-center gap-4">
+            <div className="mt-8 flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-4">
               <button
                 onClick={() => openWhatsApp('Sistem Kasir POS & Web Dashboard Toko')}
-                className="inline-flex items-center gap-2 px-5 py-3 bg-[#2563EB] hover:bg-[#1D4ED8] text-white rounded-xl font-sans font-bold text-xs sm:text-sm shadow-md transition-colors cursor-pointer whitespace-nowrap shrink-0"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-3 bg-[#2563EB] hover:bg-[#1D4ED8] text-white rounded-xl font-sans font-bold text-xs sm:text-sm shadow-md transition-colors cursor-pointer whitespace-nowrap shrink-0"
               >
                 <span className="whitespace-nowrap">Konsultasi Sistem Kasir Toko</span>
                 <ArrowRight className="w-4 h-4 shrink-0" />
               </button>
-              <span className="text-xs text-slate-500 font-medium whitespace-nowrap shrink-0">Mulai Rp 1.500.000</span>
+              <span className="text-xs text-slate-500 font-medium whitespace-nowrap shrink-0 text-center sm:text-left">Mulai Rp 1.500.000</span>
             </div>
           </div>
         </div>
@@ -207,15 +207,15 @@ export const ServicesSection: React.FC = () => {
               </div>
             </div>
 
-            <div className="mt-8 flex items-center gap-4">
+            <div className="mt-8 flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-4">
               <button
                 onClick={() => openWhatsApp('Aplikasi Android Lapangan (Absensi / Kurir / Sales)')}
-                className="inline-flex items-center gap-2 px-5 py-3 bg-[#10B981] hover:bg-[#059669] text-white rounded-xl font-sans font-bold text-xs sm:text-sm shadow-md transition-colors cursor-pointer whitespace-nowrap shrink-0"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-3 bg-[#10B981] hover:bg-[#059669] text-white rounded-xl font-sans font-bold text-xs sm:text-sm shadow-md transition-colors cursor-pointer whitespace-nowrap shrink-0"
               >
                 <span className="whitespace-nowrap">Konsultasi Aplikasi Android</span>
                 <ArrowRight className="w-4 h-4 shrink-0" />
               </button>
-              <span className="text-xs text-slate-500 font-medium whitespace-nowrap shrink-0">Mulai Rp 2.500.000</span>
+              <span className="text-xs text-slate-500 font-medium whitespace-nowrap shrink-0 text-center sm:text-left">Mulai Rp 2.500.000</span>
             </div>
           </div>
 
@@ -232,7 +232,7 @@ export const ServicesSection: React.FC = () => {
             </div>
 
             {/* Real Flagship Android Chassis (True 19.5:9 Tall Slender Proportions with Floating Motion) */}
-            <div className="w-[285px] sm:w-[295px] h-[585px] sm:h-[605px] relative rounded-[44px] bg-slate-950 p-2 shadow-[0_25px_60px_-15px_rgba(15,23,42,0.45)] ring-1 ring-slate-800 border-[2.5px] border-slate-700/90 flex flex-col justify-between animate-float-slow">
+            <div className="w-[265px] xs:w-[285px] sm:w-[295px] h-[550px] sm:h-[605px] max-w-full relative rounded-[44px] bg-slate-950 p-2 shadow-[0_25px_60px_-15px_rgba(15,23,42,0.45)] ring-1 ring-slate-800 border-[2.5px] border-slate-700/90 flex flex-col justify-between animate-float-slow">
               
               {/* Hardware Physical Buttons */}
               {/* Volume Buttons (Left) */}
@@ -483,15 +483,15 @@ export const ServicesSection: React.FC = () => {
               </div>
             </div>
 
-            <div className="mt-8 flex items-center gap-4">
+            <div className="mt-8 flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-4">
               <button
                 onClick={() => openWhatsApp('Portal ERP / Company Profile / Web E-Commerce')}
-                className="inline-flex items-center gap-2 px-5 py-3 bg-[#4F46E5] hover:bg-[#4338CA] text-white rounded-xl font-sans font-bold text-xs sm:text-sm shadow-md transition-colors cursor-pointer whitespace-nowrap shrink-0"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-3 bg-[#4F46E5] hover:bg-[#4338CA] text-white rounded-xl font-sans font-bold text-xs sm:text-sm shadow-md transition-colors cursor-pointer whitespace-nowrap shrink-0"
               >
                 <span className="whitespace-nowrap">Konsultasi Portal Perusahaan</span>
                 <ArrowRight className="w-4 h-4 shrink-0" />
               </button>
-              <span className="text-xs text-slate-500 font-medium whitespace-nowrap shrink-0">Mulai Rp 3.000.000</span>
+              <span className="text-xs text-slate-500 font-medium whitespace-nowrap shrink-0 text-center sm:text-left">Mulai Rp 3.000.000</span>
             </div>
           </div>
         </div>

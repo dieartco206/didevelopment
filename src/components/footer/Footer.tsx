@@ -126,9 +126,9 @@ export const Footer: React.FC = () => {
           <div>
             © {new Date().getFullYear()} DiDev Studio. All rights reserved. Fully Managed Digital Platform & Cloud Infrastructure.
           </div>
-          <div className="flex items-center gap-3 text-slate-400 font-medium">
+          <div className="flex flex-wrap items-center justify-center sm:justify-end gap-2 text-slate-400 font-medium">
             <span>React.js • Golang • Flutter • Android Native</span>
-            <span>•</span>
+            <span className="hidden sm:inline">•</span>
             <span className="text-emerald-400">Software House Resmi</span>
           </div>
         </div>

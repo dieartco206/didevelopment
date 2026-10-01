@@ -114,13 +114,13 @@ export const ProjectCalculator: React.FC = () => {
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 bg-blue-50 border border-blue-200 text-[#2563EB] rounded-full text-xs font-bold uppercase tracking-wider mb-3 whitespace-nowrap shrink-0">
-            <span className="whitespace-nowrap">KALKULATOR ESTIMASI FINANSIAL</span>
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 bg-blue-50 border border-blue-200 text-[#2563EB] rounded-full text-[11px] sm:text-xs font-bold uppercase tracking-wider mb-3">
+            <span>KALKULATOR ESTIMASI FINANSIAL</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#0F172A] tracking-tight font-sans">
+          <h2 className="text-2xl sm:text-4xl lg:text-5xl font-extrabold text-[#0F172A] tracking-tight font-sans">
             Hitung Estimasi Biaya Pembuatan Aplikasi
           </h2>
-          <p className="mt-3 text-base sm:text-lg text-[#475569] font-normal leading-relaxed">
+          <p className="mt-3 text-sm sm:text-base lg:text-lg text-[#475569] font-normal leading-relaxed">
             Sesuaikan kebutuhan modul dengan budget perusahaan Anda. Dapatkan gambaran investasi yang transparan sebelum mulai.
           </p>
         </div>
@@ -131,8 +131,8 @@ export const ProjectCalculator: React.FC = () => {
           <div className="lg:col-span-7 space-y-6">
             
             {/* Step 1: Base System Package */}
-            <div className="p-6 bg-white border-2 border-slate-200 rounded-2xl shadow-sm">
-              <label className="block text-xs font-extrabold text-[#0F172A] uppercase mb-4 tracking-wider whitespace-nowrap">
+            <div className="p-4 sm:p-6 bg-white border-2 border-slate-200 rounded-2xl shadow-sm">
+              <label className="block text-xs font-extrabold text-[#0F172A] uppercase mb-4 tracking-wider">
                 1. PILIH KATEGORI SISTEM UTAMA:
               </label>
               <div className="space-y-3">
@@ -143,14 +143,14 @@ export const ProjectCalculator: React.FC = () => {
                     <div
                       key={pt.id}
                       onClick={() => { soundFx.playClick(650, 0.03); setSelectedType(pt); }}
-                      className={`p-4 rounded-xl border-2 text-left cursor-pointer transition-all duration-200 flex items-center justify-between gap-3 ${
+                      className={`p-3.5 sm:p-4 rounded-xl border-2 text-left cursor-pointer transition-all duration-200 flex flex-col sm:flex-row sm:items-center justify-between gap-3 ${
                         isSelected
                           ? 'bg-blue-50/90 border-[#2563EB] shadow-xs ring-1 ring-blue-500/20'
                           : 'bg-white border-slate-200 hover:border-slate-300 hover:bg-slate-50'
                       }`}
                     >
-                      <div className="flex items-center gap-3.5">
-                        <div className={`w-11 h-11 rounded-xl flex items-center justify-center shrink-0 ${
+                      <div className="flex items-start sm:items-center gap-3">
+                        <div className={`w-10 h-10 sm:w-11 sm:h-11 rounded-xl flex items-center justify-center shrink-0 ${
                           isSelected ? 'bg-[#2563EB] text-white shadow-sm' : 'bg-slate-100 text-slate-600'
                         }`}>
                           <Icon className="w-5 h-5" />
@@ -165,11 +165,11 @@ export const ProjectCalculator: React.FC = () => {
                         </div>
                       </div>
 
-                      <div className="text-right shrink-0 whitespace-nowrap">
-                        <div className="text-sm sm:text-base font-extrabold text-[#2563EB] font-mono whitespace-nowrap">
+                      <div className="text-left sm:text-right shrink-0 pt-1 sm:pt-0 border-t sm:border-t-0 border-slate-100">
+                        <div className="text-sm sm:text-base font-extrabold text-[#2563EB] font-mono">
                           {formatRupiah(pt.basePrice)}
                         </div>
-                        <div className="text-[11px] text-slate-500 font-medium whitespace-nowrap">
+                        <div className="text-[11px] text-slate-500 font-medium">
                           ~{pt.days} hari kerja
                         </div>
                       </div>
@@ -180,8 +180,8 @@ export const ProjectCalculator: React.FC = () => {
             </div>
 
             {/* Step 2: Addon Modules */}
-            <div className="p-6 bg-white border-2 border-slate-200 rounded-2xl shadow-sm">
-              <label className="block text-xs font-extrabold text-[#0F172A] uppercase mb-4 tracking-wider whitespace-nowrap">
+            <div className="p-4 sm:p-6 bg-white border-2 border-slate-200 rounded-2xl shadow-sm">
+              <label className="block text-xs font-extrabold text-[#0F172A] uppercase mb-4 tracking-wider">
                 2. PILIH MODUL TAMBAHAN (OPSIONAL):
               </label>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
@@ -191,7 +191,7 @@ export const ProjectCalculator: React.FC = () => {
                     <div
                       key={addon.id}
                       onClick={() => toggleAddon(addon.id)}
-                      className={`p-4 rounded-xl border-2 cursor-pointer transition-all duration-200 flex items-start gap-3 ${
+                      className={`p-3.5 sm:p-4 rounded-xl border-2 cursor-pointer transition-all duration-200 flex items-start gap-3 ${
                         isChecked
                           ? 'bg-blue-50/90 border-[#2563EB] shadow-2xs'
                           : 'bg-white border-slate-200 hover:border-slate-300'
@@ -210,7 +210,7 @@ export const ProjectCalculator: React.FC = () => {
                         <div className="text-[11px] text-[#475569] mt-1">
                           {addon.desc}
                         </div>
-                        <div className="text-xs font-extrabold text-[#2563EB] mt-1.5 font-mono whitespace-nowrap shrink-0">
+                        <div className="text-xs font-extrabold text-[#2563EB] mt-1.5 font-mono shrink-0">
                           +{formatRupiah(addon.price)}
                         </div>
                       </div>
@@ -221,36 +221,36 @@ export const ProjectCalculator: React.FC = () => {
             </div>
 
             {/* Step 3: Pacing Priority */}
-            <div className="p-6 bg-white border-2 border-slate-200 rounded-2xl shadow-sm">
-              <label className="block text-xs font-extrabold text-[#0F172A] uppercase mb-4 tracking-wider whitespace-nowrap">
+            <div className="p-4 sm:p-6 bg-white border-2 border-slate-200 rounded-2xl shadow-sm">
+              <label className="block text-xs font-extrabold text-[#0F172A] uppercase mb-4 tracking-wider">
                 3. PRIORITAS KECEPATAN PENGERJAAN:
               </label>
-              <div className="grid grid-cols-2 gap-3">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 <button
                   type="button"
                   onClick={() => { soundFx.playClick(650, 0.03); setIsExpress(false); }}
-                  className={`p-4 rounded-xl border-2 text-left cursor-pointer transition-all ${
+                  className={`p-3.5 sm:p-4 rounded-xl border-2 text-left cursor-pointer transition-all ${
                     !isExpress
                       ? 'bg-blue-50/90 border-[#2563EB] shadow-xs'
                       : 'bg-white border-slate-200 text-slate-700 hover:bg-slate-50'
                   }`}
                 >
-                  <div className="text-sm font-bold text-[#0F172A] whitespace-nowrap">Standar Reguler</div>
+                  <div className="text-sm font-bold text-[#0F172A]">Standar Reguler</div>
                   <div className="text-xs text-[#475569] mt-0.5">Alur jadwal standar terstruktur</div>
                 </button>
 
                 <button
                   type="button"
                   onClick={() => { soundFx.playClick(650, 0.03); setIsExpress(true); }}
-                  className={`p-4 rounded-xl border-2 text-left cursor-pointer transition-all ${
+                  className={`p-3.5 sm:p-4 rounded-xl border-2 text-left cursor-pointer transition-all ${
                     isExpress
                       ? 'bg-blue-50/90 border-[#2563EB] shadow-xs'
                       : 'bg-white border-slate-200 text-slate-700 hover:bg-slate-50'
                   }`}
                 >
                   <div className="text-sm font-bold text-[#0F172A] flex items-center justify-between">
-                    <span className="whitespace-nowrap">Express Prioritas</span>
-                    <span className="px-2 py-0.5 rounded text-[10px] bg-[#2563EB] text-white font-bold whitespace-nowrap shrink-0">+25%</span>
+                    <span>Express Prioritas</span>
+                    <span className="px-2 py-0.5 rounded text-[10px] bg-[#2563EB] text-white font-bold shrink-0">+25%</span>
                   </div>
                   <div className="text-xs text-[#475569] mt-0.5">Diselesaikan ~40% lebih kilat</div>
                 </button>
@@ -261,15 +261,15 @@ export const ProjectCalculator: React.FC = () => {
 
           {/* Sticky Summary Card (Right 5 Cols) */}
           <div className="lg:col-span-5 lg:sticky lg:top-24">
-            <div className="rounded-2xl bg-white border-2 border-slate-300 p-6 sm:p-7 shadow-lg">
+            <div className="rounded-2xl bg-white border-2 border-slate-300 p-4 sm:p-7 shadow-lg">
               
               {/* Header Quote */}
               <div className="border-b border-slate-200 pb-4 mb-5 flex items-center justify-between">
                 <div>
-                  <span className="text-[11px] font-bold text-[#2563EB] uppercase tracking-wider block whitespace-nowrap shrink-0">
+                  <span className="text-[11px] font-bold text-[#2563EB] uppercase tracking-wider block shrink-0">
                     ESTIMASI RESMI DIDEV STUDIO
                   </span>
-                  <h3 className="text-lg font-bold text-[#0F172A] mt-0.5">
+                  <h3 className="text-base sm:text-lg font-bold text-[#0F172A] mt-0.5">
                     {selectedType.name}
                   </h3>
                 </div>
@@ -277,26 +277,26 @@ export const ProjectCalculator: React.FC = () => {
               </div>
 
               {/* Total Investment Box */}
-              <div className="p-5 sm:p-6 rounded-2xl bg-blue-50/80 border-2 border-blue-200 mb-6 text-center">
-                <div className="text-xs font-bold text-slate-500 uppercase tracking-wider whitespace-nowrap">
+              <div className="p-4 sm:p-6 rounded-2xl bg-blue-50/80 border-2 border-blue-200 mb-6 text-center">
+                <div className="text-xs font-bold text-slate-500 uppercase tracking-wider">
                   Estimasi Biaya Setup Pembuatan:
                 </div>
-                <div className="text-3xl sm:text-4xl font-extrabold text-[#0F172A] font-sans tracking-tight mt-1.5 whitespace-nowrap">
+                <div className="text-2xl sm:text-4xl font-extrabold text-[#0F172A] font-sans tracking-tight mt-1.5">
                   {formatRupiah(price)}
                 </div>
 
-                <div className="mt-4 pt-4 border-t border-blue-200/70 text-left bg-white/80 rounded-xl p-3.5 border border-blue-100 shadow-2xs">
-                  <div className="text-[11px] font-bold text-slate-500 uppercase tracking-wider whitespace-nowrap">
+                <div className="mt-4 pt-4 border-t border-blue-200/70 text-left bg-white/80 rounded-xl p-3 sm:p-3.5 border border-blue-100 shadow-2xs">
+                  <div className="text-[11px] font-bold text-slate-500 uppercase tracking-wider">
                     Cloud Server & Maintenance:
                   </div>
-                  <div className="text-lg font-extrabold text-[#2563EB] font-sans tracking-tight mt-0.5 whitespace-nowrap">
+                  <div className="text-base sm:text-lg font-extrabold text-[#2563EB] font-sans tracking-tight mt-0.5">
                     Mulai Rp 500.000 / bln
                   </div>
                 </div>
 
-                <div className="text-xs font-bold text-[#2563EB] mt-4 flex items-center justify-center gap-1.5 whitespace-nowrap shrink-0">
+                <div className="text-xs font-bold text-[#2563EB] mt-4 flex items-center justify-center gap-1.5 shrink-0">
                   <Clock className="w-4 h-4 shrink-0" />
-                  <span className="whitespace-nowrap">Estimasi Pengerjaan: {days} Hari Kerja</span>
+                  <span>Estimasi Pengerjaan: {days} Hari Kerja</span>
                 </div>
               </div>
 
@@ -323,10 +323,10 @@ export const ProjectCalculator: React.FC = () => {
               {/* Action Button: Send Quote to WhatsApp */}
               <button
                 onClick={sendToWhatsApp}
-                className="w-full py-4 bg-[#10B981] hover:bg-[#059669] text-white rounded-xl font-bold text-sm flex items-center justify-center gap-2 shadow-md hover:shadow-lg transition-all active:scale-98 cursor-pointer whitespace-nowrap shrink-0"
+                className="w-full py-3.5 sm:py-4 px-4 bg-[#10B981] hover:bg-[#059669] text-white rounded-xl font-bold text-xs sm:text-sm flex items-center justify-center gap-2 shadow-md hover:shadow-lg transition-all active:scale-98 cursor-pointer shrink-0"
               >
                 <MessageSquare className="w-5 h-5 fill-current shrink-0" />
-                <span className="whitespace-nowrap">Konsultasikan Estimasi Ini via WA</span>
+                <span>Konsultasikan Estimasi Ini via WA</span>
                 <ArrowRight className="w-4 h-4 shrink-0" />
               </button>
 

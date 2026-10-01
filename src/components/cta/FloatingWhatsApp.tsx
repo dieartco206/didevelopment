@@ -12,10 +12,10 @@ export const FloatingWhatsApp: React.FC = () => {
   };
 
   return (
-    <div className="fixed bottom-6 right-6 z-50">
+    <div className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-50">
       <button
         onClick={handleClick}
-        className="group flex items-center gap-2.5 px-4 py-3 bg-[#10B981] hover:bg-[#059669] active:scale-95 text-white rounded-full shadow-2xl shadow-emerald-500/40 border-2 border-white transition-all cursor-pointer hover:scale-105 whitespace-nowrap shrink-0"
+        className="group flex items-center gap-2 sm:gap-2.5 p-3 sm:px-4 sm:py-3 bg-[#10B981] hover:bg-[#059669] active:scale-95 text-white rounded-full shadow-2xl shadow-emerald-500/40 border-2 border-white transition-all cursor-pointer hover:scale-105 shrink-0"
         title="Chat via WhatsApp"
       >
         <span className="relative flex h-3 w-3 shrink-0">

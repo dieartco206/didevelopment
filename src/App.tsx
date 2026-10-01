@@ -26,7 +26,7 @@ export const App: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-[#F8FAFC] text-[#0F172A] selection:bg-[#2563EB] selection:text-white font-sans antialiased">
+    <div className="min-h-screen w-full overflow-x-hidden bg-[#F8FAFC] text-[#0F172A] selection:bg-[#2563EB] selection:text-white font-sans antialiased">
       {/* Top Header Navigation */}
       <Navbar onNavigate={handleNavigate} activeSection={activeSection} />
 

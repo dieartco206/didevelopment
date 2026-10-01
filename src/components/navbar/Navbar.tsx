@@ -58,21 +58,21 @@ export const Navbar: React.FC<NavbarProps> = ({ onNavigate, activeSection }) => 
           {/* Logo Brand: DiDev.Studio */}
           <div 
             onClick={() => handleNavClick('hero')}
-            className="flex items-center gap-3 cursor-pointer group"
+            className="flex items-center gap-2 sm:gap-3 cursor-pointer group"
           >
-            <div className="w-10 h-10 rounded-xl bg-[#2563EB] text-white flex items-center justify-center shadow-md shadow-blue-500/20 group-hover:scale-105 transition-transform duration-200">
-              <Smartphone className="w-5 h-5" />
+            <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-[#2563EB] text-white flex items-center justify-center shadow-md shadow-blue-500/20 group-hover:scale-105 transition-transform duration-200 shrink-0">
+              <Smartphone className="w-4 h-4 sm:w-5 sm:h-5" />
             </div>
             <div>
               <div className="flex items-center gap-1.5">
-                <span className="font-sans font-extrabold text-lg sm:text-xl text-[#0F172A] tracking-tight whitespace-nowrap">
+                <span className="font-sans font-extrabold text-base sm:text-xl text-[#0F172A] tracking-tight whitespace-nowrap">
                   DiDev<span className="text-[#2563EB]">.Studio</span>
                 </span>
                 <span className="hidden sm:inline-block px-1.5 py-0.2 bg-emerald-50 border border-emerald-200 text-emerald-700 text-[9px] font-bold rounded whitespace-nowrap shrink-0">
                   OFFICIAL
                 </span>
               </div>
-              <div className="text-[10px] font-medium text-slate-500 tracking-wide uppercase whitespace-nowrap">
+              <div className="text-[9px] sm:text-[10px] font-medium text-slate-500 tracking-wide uppercase whitespace-nowrap">
                 Web & Android App Studio
               </div>
             </div>
@@ -153,10 +153,10 @@ export const Navbar: React.FC<NavbarProps> = ({ onNavigate, activeSection }) => 
             <div className="pt-2 px-3">
               <button
                 onClick={openWhatsApp}
-                className="w-full py-3 bg-[#10B981] hover:bg-[#059669] text-white font-sans font-bold text-sm rounded-xl flex items-center justify-center gap-2 shadow-md shadow-emerald-500/20 active:scale-98 cursor-pointer whitespace-nowrap shrink-0"
+                className="w-full py-3 px-3 bg-[#10B981] hover:bg-[#059669] text-white font-sans font-bold text-xs sm:text-sm rounded-xl flex items-center justify-center gap-2 shadow-md shadow-emerald-500/20 active:scale-98 cursor-pointer shrink-0"
               >
                 <MessageSquare className="w-4 h-4 fill-current shrink-0" />
-                <span className="whitespace-nowrap">Konsultasi Gratis via WhatsApp</span>
+                <span>Konsultasi Gratis via WhatsApp</span>
               </button>
             </div>
           </div>

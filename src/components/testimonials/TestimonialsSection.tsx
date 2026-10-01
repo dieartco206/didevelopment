@@ -114,11 +114,11 @@ export const TestimonialsSection: React.FC = () => {
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-14 sm:mb-20">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 bg-emerald-50 border border-emerald-200 text-emerald-800 rounded-full text-xs font-bold uppercase tracking-wider mb-3 whitespace-nowrap shrink-0 shadow-2xs">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 bg-emerald-50 border border-emerald-200 text-emerald-800 rounded-full text-[11px] sm:text-xs font-bold uppercase tracking-wider mb-3 shadow-2xs">
             <span className="w-2 h-2 rounded-full bg-emerald-500 animate-ping shrink-0" />
-            <span className="whitespace-nowrap">BUKTI KEPUASAN KLIEN NYATA</span>
+            <span>BUKTI KEPUASAN KLIEN NYATA</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#0F172A] tracking-tight font-sans">
+          <h2 className="text-2xl sm:text-4xl lg:text-5xl font-extrabold text-[#0F172A] tracking-tight font-sans">
             Apa Kata Pemilik Usaha yang Menggunakan Sistem Kami?
           </h2>
           <p className="mt-4 text-sm sm:text-base lg:text-lg text-[#475569] leading-relaxed max-w-2xl mx-auto font-normal">
@@ -127,29 +127,29 @@ export const TestimonialsSection: React.FC = () => {
 
           {/* Social Proof Key Stats Strip */}
           <div className="mt-8 grid grid-cols-2 md:grid-cols-4 gap-3 max-w-4xl mx-auto">
-            <div className="p-3.5 rounded-xl bg-slate-50 border border-slate-200/80 text-center">
+            <div className="p-3 sm:p-3.5 rounded-xl bg-slate-50 border border-slate-200/80 text-center">
               <div className="flex items-center justify-center gap-1 text-amber-500 mb-1">
                 {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="w-4 h-4 fill-amber-400 text-amber-400" />
+                  <Star key={i} className="w-3.5 h-3.5 sm:w-4 sm:h-4 fill-amber-400 text-amber-400" />
                 ))}
               </div>
-              <div className="text-lg sm:text-xl font-extrabold text-[#0F172A] font-mono leading-none">4.9 / 5.0</div>
-              <div className="text-[11px] text-slate-500 mt-1 font-medium whitespace-nowrap">Kepuasan Klien Resmi</div>
+              <div className="text-base sm:text-xl font-extrabold text-[#0F172A] font-mono leading-none">4.9 / 5.0</div>
+              <div className="text-[10px] sm:text-[11px] text-slate-500 mt-1 font-medium">Kepuasan Klien Resmi</div>
             </div>
 
-            <div className="p-3.5 rounded-xl bg-slate-50 border border-slate-200/80 text-center">
-              <div className="text-lg sm:text-xl font-extrabold text-[#2563EB] font-mono leading-none mt-1">100+ Proyek</div>
-              <div className="text-[11px] text-slate-500 mt-2 font-medium whitespace-nowrap">Web & APK Selesai</div>
+            <div className="p-3 sm:p-3.5 rounded-xl bg-slate-50 border border-slate-200/80 text-center">
+              <div className="text-base sm:text-xl font-extrabold text-[#2563EB] font-mono leading-none mt-1">100+ Proyek</div>
+              <div className="text-[10px] sm:text-[11px] text-slate-500 mt-1.5 sm:mt-2 font-medium">Web & APK Selesai</div>
             </div>
 
-            <div className="p-3.5 rounded-xl bg-slate-50 border border-slate-200/80 text-center">
-              <div className="text-lg sm:text-xl font-extrabold text-emerald-600 font-mono leading-none mt-1">99.8%</div>
-              <div className="text-[11px] text-slate-500 mt-2 font-medium whitespace-nowrap">Tingkat Retensi Mitra</div>
+            <div className="p-3 sm:p-3.5 rounded-xl bg-slate-50 border border-slate-200/80 text-center">
+              <div className="text-base sm:text-xl font-extrabold text-emerald-600 font-mono leading-none mt-1">99.8%</div>
+              <div className="text-[10px] sm:text-[11px] text-slate-500 mt-1.5 sm:mt-2 font-medium">Tingkat Retensi Mitra</div>
             </div>
 
-            <div className="p-3.5 rounded-xl bg-slate-50 border border-slate-200/80 text-center">
-              <div className="text-lg sm:text-xl font-extrabold text-indigo-600 font-mono leading-none mt-1">1 Tahun Penuh</div>
-              <div className="text-[11px] text-slate-500 mt-2 font-medium whitespace-nowrap">Garansi Bebas Bug</div>
+            <div className="p-3 sm:p-3.5 rounded-xl bg-slate-50 border border-slate-200/80 text-center">
+              <div className="text-base sm:text-xl font-extrabold text-indigo-600 font-mono leading-none mt-1">1 Tahun Penuh</div>
+              <div className="text-[10px] sm:text-[11px] text-slate-500 mt-1.5 sm:mt-2 font-medium">Garansi Bebas Bug</div>
             </div>
           </div>
         </div>
@@ -240,9 +240,9 @@ export const TestimonialsSection: React.FC = () => {
 
           <button
             onClick={openWhatsApp}
-            className="inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-[#10B981] hover:bg-[#059669] text-white rounded-xl text-xs sm:text-sm font-bold shadow-lg shadow-emerald-500/25 transition-all cursor-pointer whitespace-nowrap shrink-0 hover:scale-102"
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-[#10B981] hover:bg-[#059669] text-white rounded-xl text-xs sm:text-sm font-bold shadow-lg shadow-emerald-500/25 transition-all cursor-pointer shrink-0 hover:scale-102"
           >
-            <span className="whitespace-nowrap">Konsultasi Gratis via WhatsApp</span>
+            <span>Konsultasi Gratis via WhatsApp</span>
             <ArrowRight className="w-4 h-4 shrink-0" />
           </button>
         </div>

@@ -70,14 +70,14 @@ export const WorkflowSection: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-14 sm:mb-20">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 bg-blue-50 border border-blue-200 text-[#2563EB] rounded-full text-xs font-bold uppercase tracking-wider mb-3 whitespace-nowrap shrink-0">
-            <span className="whitespace-nowrap">ROADMAP KERJA TRANSPARAN</span>
+        <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-20">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 bg-blue-50 border border-blue-200 text-[#2563EB] rounded-full text-[11px] sm:text-xs font-bold uppercase tracking-wider mb-3">
+            <span>ROADMAP KERJA TRANSPARAN</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#0F172A] tracking-tight font-sans">
+          <h2 className="text-2xl sm:text-4xl lg:text-5xl font-extrabold text-[#0F172A] tracking-tight font-sans">
             5 Tahap Pasti Menuju Sistem Siap Pakai
           </h2>
-          <p className="mt-3 text-base sm:text-lg text-[#475569] font-normal leading-relaxed">
+          <p className="mt-3 text-sm sm:text-base lg:text-lg text-[#475569] font-normal leading-relaxed">
             Tidak ada kejutan biaya di tengah jalan. Anda mengawal setiap langkah mulai dari konsep hingga serah terima source code.
           </p>
         </div>
@@ -156,16 +156,16 @@ export const WorkflowSection: React.FC = () => {
         </div>
 
         {/* Bottom Assurance Card with Immediate Consultation Button */}
-        <div className="p-6 sm:p-8 rounded-2xl bg-gradient-to-r from-blue-50 via-indigo-50 to-slate-50 border-2 border-blue-200 shadow-sm flex flex-col md:flex-row items-center justify-between gap-6">
-          <div className="flex items-center gap-4 text-center md:text-left">
-            <div className="w-14 h-14 rounded-2xl bg-[#2563EB] text-white flex items-center justify-center shrink-0 shadow-md">
-              <ShieldCheck className="w-8 h-8" />
+        <div className="p-4 sm:p-8 rounded-2xl bg-gradient-to-r from-blue-50 via-indigo-50 to-slate-50 border-2 border-blue-200 shadow-sm flex flex-col md:flex-row items-center justify-between gap-6">
+          <div className="flex flex-col sm:flex-row items-center gap-4 text-center sm:text-left">
+            <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-[#2563EB] text-white flex items-center justify-center shrink-0 shadow-md">
+              <ShieldCheck className="w-7 h-7 sm:w-8 sm:h-8" />
             </div>
             <div>
-              <div className="text-lg font-extrabold text-[#0F172A]">
+              <div className="text-base sm:text-lg font-extrabold text-[#0F172A]">
                 Garansi Resmi 1 Tahun & Pendampingan Purna Jual
               </div>
-              <div className="text-sm text-[#475569] mt-0.5">
+              <div className="text-xs sm:text-sm text-[#475569] mt-0.5">
                 Jika ditemukan kendala teknis atau bug, tim kami perbaiki secara gratis dan responsif.
               </div>
             </div>
@@ -173,9 +173,9 @@ export const WorkflowSection: React.FC = () => {
 
           <button
             onClick={openWhatsApp}
-            className="w-full md:w-auto px-6 py-3.5 bg-[#10B981] hover:bg-[#059669] text-white rounded-xl font-bold text-sm flex items-center justify-center gap-2 shadow-md transition-all active:scale-98 cursor-pointer shrink-0 whitespace-nowrap"
+            className="w-full md:w-auto px-6 py-3.5 bg-[#10B981] hover:bg-[#059669] text-white rounded-xl font-bold text-xs sm:text-sm flex items-center justify-center gap-2 shadow-md transition-all active:scale-98 cursor-pointer shrink-0"
           >
-            <span className="whitespace-nowrap">Mulai Konsultasi Langkah 01</span>
+            <span>Mulai Konsultasi Langkah 01</span>
             <ArrowRight className="w-4 h-4 shrink-0" />
           </button>
         </div>

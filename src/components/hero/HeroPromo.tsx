@@ -48,13 +48,13 @@ export const HeroPromo: React.FC<HeroPromoProps> = ({ onNavigate }) => {
           {/* Kolom Kiri: Pitch Tajam, Human-First Copywriting */}
           <div className="lg:col-span-6 flex flex-col justify-center text-center lg:text-left animate-enter-left">
             {/* Top Pill Badge */}
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 bg-blue-50 border border-blue-200 text-[#2563EB] rounded-full text-xs font-bold w-fit mx-auto lg:mx-0 mb-4 shadow-2xs whitespace-nowrap shrink-0">
+            <div className="inline-flex items-center gap-2 px-3 sm:px-3.5 py-1.5 bg-blue-50 border border-blue-200 text-[#2563EB] rounded-full text-xs font-bold w-fit mx-auto lg:mx-0 mb-4 shadow-2xs">
               <span className="text-amber-500 font-extrabold shrink-0">⚡</span>
-              <span className="tracking-wide whitespace-nowrap">Jasa Pembuatan Website & Aplikasi Android Kustom</span>
+              <span className="tracking-wide text-[11px] sm:text-xs">Jasa Pembuatan Website & Aplikasi Android Kustom</span>
             </div>
 
             {/* Headline Kuat & Tegas */}
-            <h1 className="text-3xl sm:text-4xl lg:text-[48px] font-extrabold tracking-tight text-[#0F172A] leading-[1.18] font-sans">
+            <h1 className="text-2xl sm:text-4xl lg:text-[48px] font-extrabold tracking-tight text-[#0F172A] leading-tight font-sans">
               Bikin Sistem Bisnis & Aplikasi Android Sesuai Alur Usaha Anda Sendiri.
             </h1>
 
@@ -64,10 +64,10 @@ export const HeroPromo: React.FC<HeroPromoProps> = ({ onNavigate }) => {
             </p>
 
             {/* CTA Ganda: WhatsApp Hijau + Tombol Hitung Biaya */}
-            <div className="mt-6 sm:mt-8 flex flex-wrap items-center justify-center lg:justify-start gap-3 sm:gap-4">
+            <div className="mt-6 sm:mt-8 flex flex-col sm:flex-row items-stretch sm:items-center justify-center lg:justify-start gap-3 sm:gap-4 w-full">
               <button
                 onClick={openWhatsApp}
-                className="inline-flex items-center justify-center gap-2.5 px-6 py-3.5 sm:py-4 bg-[#10B981] hover:bg-[#059669] text-white font-sans font-bold text-sm sm:text-base rounded-xl shadow-lg shadow-emerald-500/25 hover:shadow-emerald-500/35 transition-all duration-200 active:scale-98 cursor-pointer whitespace-nowrap shrink-0"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-6 py-3.5 sm:py-4 bg-[#10B981] hover:bg-[#059669] text-white font-sans font-bold text-sm sm:text-base rounded-xl shadow-lg shadow-emerald-500/25 hover:shadow-emerald-500/35 transition-all duration-200 active:scale-98 cursor-pointer whitespace-nowrap shrink-0"
               >
                 <MessageSquare className="w-5 h-5 fill-current shrink-0" />
                 <span className="whitespace-nowrap">Konsultasi Gratis via WhatsApp</span>
@@ -79,14 +79,14 @@ export const HeroPromo: React.FC<HeroPromoProps> = ({ onNavigate }) => {
                   soundFx.playClick(600, 0.05);
                   onNavigate('calculator');
                 }}
-                className="inline-flex items-center justify-center px-5 py-3.5 sm:py-4 bg-white hover:bg-slate-50 text-[#0F172A] border-2 border-slate-200 hover:border-[#2563EB] font-sans font-bold text-sm sm:text-base rounded-xl transition-all duration-200 cursor-pointer shadow-2xs whitespace-nowrap shrink-0"
+                className="w-full sm:w-auto inline-flex items-center justify-center px-5 py-3.5 sm:py-4 bg-white hover:bg-slate-50 text-[#0F172A] border-2 border-slate-200 hover:border-[#2563EB] font-sans font-bold text-sm sm:text-base rounded-xl transition-all duration-200 cursor-pointer shadow-2xs whitespace-nowrap shrink-0"
               >
                 <span className="whitespace-nowrap">Hitung Estimasi Biaya</span>
               </button>
             </div>
 
             {/* Trust Checklist Bar */}
-            <div className="mt-6 pt-5 border-t border-slate-200/80 grid grid-cols-2 sm:flex sm:flex-wrap items-center justify-center lg:justify-start gap-3 sm:gap-5 text-xs text-[#334155] font-semibold">
+            <div className="mt-6 pt-5 border-t border-slate-200/80 grid grid-cols-2 sm:flex sm:flex-wrap items-center justify-center lg:justify-start gap-2.5 sm:gap-5 text-[11px] sm:text-xs text-[#334155] font-semibold">
               <span className="flex items-center gap-1.5 whitespace-nowrap shrink-0">
                 <CheckCircle2 className="w-4 h-4 text-[#10B981] shrink-0" />
                 <span className="whitespace-nowrap">Cloud Server Cepat</span>
@@ -128,9 +128,9 @@ export const HeroPromo: React.FC<HeroPromoProps> = ({ onNavigate }) => {
                     <span className="w-2.5 h-2.5 rounded-full bg-amber-400 inline-block" />
                     <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 inline-block" />
                   </div>
-                  <div className="flex items-center gap-1.5 bg-white border border-slate-200 rounded-md px-3 py-0.5 text-[10px] sm:text-[11px] text-slate-600 font-mono font-medium max-w-[240px] truncate shadow-2xs">
-                    <Lock className="w-3 h-3 text-[#10B981]" />
-                    <span>pos.didev.studio/dashboard</span>
+                  <div className="flex items-center gap-1.5 bg-white border border-slate-200 rounded-md px-2 sm:px-3 py-0.5 text-[9.5px] sm:text-[11px] text-slate-600 font-mono font-medium max-w-[140px] sm:max-w-[240px] truncate shadow-2xs">
+                    <Lock className="w-3 h-3 text-[#10B981] shrink-0" />
+                    <span className="truncate">pos.didev.studio/dashboard</span>
                   </div>
                   <div className="flex items-center gap-1 whitespace-nowrap shrink-0">
                     <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse shrink-0" />
@@ -353,44 +353,44 @@ export const HeroPromo: React.FC<HeroPromoProps> = ({ onNavigate }) => {
         </div>
 
         {/* Layanan Terukur & Berdampak (4 Poin Pencapaian - Staggered Cascade) */}
-        <div className="mt-12 sm:mt-16 pt-8 border-t border-slate-200 grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
-          <div className="p-4 sm:p-5 bg-[#F8FAFC] border border-slate-200 rounded-xl flex items-center gap-3.5 hover:border-[#2563EB] hover:-translate-y-1.5 hover:shadow-lg transition-all duration-500 ease-out cursor-default animate-enter-up delay-100">
-            <div className="w-11 h-11 rounded-xl bg-blue-50 text-[#2563EB] flex items-center justify-center shrink-0">
-              <Laptop className="w-5 h-5" />
+        <div className="mt-12 sm:mt-16 pt-8 border-t border-slate-200 grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6">
+          <div className="p-3 sm:p-5 bg-[#F8FAFC] border border-slate-200 rounded-xl flex items-center gap-2.5 sm:gap-3.5 hover:border-[#2563EB] hover:-translate-y-1.5 hover:shadow-lg transition-all duration-500 ease-out cursor-default animate-enter-up delay-100">
+            <div className="w-9 h-9 sm:w-11 sm:h-11 rounded-xl bg-blue-50 text-[#2563EB] flex items-center justify-center shrink-0">
+              <Laptop className="w-4 h-4 sm:w-5 sm:h-5" />
             </div>
-            <div>
-              <div className="text-xl sm:text-2xl font-extrabold text-[#0F172A] leading-tight whitespace-nowrap shrink-0">100+</div>
-              <div className="text-xs text-[#475569] font-medium mt-0.5 whitespace-nowrap">Proyek Web & APK Selesai</div>
-            </div>
-          </div>
-
-          <div className="p-4 sm:p-5 bg-[#F8FAFC] border border-slate-200 rounded-xl flex items-center gap-3.5 hover:border-[#2563EB] hover:-translate-y-1.5 hover:shadow-lg transition-all duration-500 ease-out cursor-default animate-enter-up delay-200">
-            <div className="w-11 h-11 rounded-xl bg-emerald-50 text-[#10B981] flex items-center justify-center shrink-0">
-              <ShieldCheck className="w-5 h-5" />
-            </div>
-            <div>
-              <div className="text-xl sm:text-2xl font-extrabold text-[#0F172A] leading-tight whitespace-nowrap shrink-0">1 Tahun</div>
-              <div className="text-xs text-[#475569] font-medium mt-0.5 whitespace-nowrap">Garansi Resmi Bebas Bug</div>
+            <div className="min-w-0">
+              <div className="text-lg sm:text-2xl font-extrabold text-[#0F172A] leading-tight whitespace-nowrap shrink-0">100+</div>
+              <div className="text-[11px] sm:text-xs text-[#475569] font-medium mt-0.5 truncate">Proyek Web & APK</div>
             </div>
           </div>
 
-          <div className="p-4 sm:p-5 bg-[#F8FAFC] border border-slate-200 rounded-xl flex items-center gap-3.5 hover:border-[#2563EB] hover:-translate-y-1.5 hover:shadow-lg transition-all duration-500 ease-out cursor-default animate-enter-up delay-300">
-            <div className="w-11 h-11 rounded-xl bg-indigo-50 text-[#4F46E5] flex items-center justify-center shrink-0">
-              <Code2 className="w-5 h-5" />
+          <div className="p-3 sm:p-5 bg-[#F8FAFC] border border-slate-200 rounded-xl flex items-center gap-2.5 sm:gap-3.5 hover:border-[#2563EB] hover:-translate-y-1.5 hover:shadow-lg transition-all duration-500 ease-out cursor-default animate-enter-up delay-200">
+            <div className="w-9 h-9 sm:w-11 sm:h-11 rounded-xl bg-emerald-50 text-[#10B981] flex items-center justify-center shrink-0">
+              <ShieldCheck className="w-4 h-4 sm:w-5 sm:h-5" />
             </div>
-            <div>
-              <div className="text-xl sm:text-2xl font-extrabold text-[#0F172A] leading-tight whitespace-nowrap shrink-0">99.9%</div>
-              <div className="text-xs text-[#475569] font-medium mt-0.5 whitespace-nowrap">Uptime Server & Monitoring</div>
+            <div className="min-w-0">
+              <div className="text-lg sm:text-2xl font-extrabold text-[#0F172A] leading-tight whitespace-nowrap shrink-0">1 Tahun</div>
+              <div className="text-[11px] sm:text-xs text-[#475569] font-medium mt-0.5 truncate">Garansi Bebas Bug</div>
             </div>
           </div>
 
-          <div className="p-4 sm:p-5 bg-[#F8FAFC] border border-slate-200 rounded-xl flex items-center gap-3.5 hover:border-[#2563EB] hover:-translate-y-1.5 hover:shadow-lg transition-all duration-500 ease-out cursor-default animate-enter-up delay-400">
-            <div className="w-11 h-11 rounded-xl bg-sky-50 text-[#0284C7] flex items-center justify-center shrink-0">
-              <Users className="w-5 h-5" />
+          <div className="p-3 sm:p-5 bg-[#F8FAFC] border border-slate-200 rounded-xl flex items-center gap-2.5 sm:gap-3.5 hover:border-[#2563EB] hover:-translate-y-1.5 hover:shadow-lg transition-all duration-500 ease-out cursor-default animate-enter-up delay-300">
+            <div className="w-9 h-9 sm:w-11 sm:h-11 rounded-xl bg-indigo-50 text-[#4F46E5] flex items-center justify-center shrink-0">
+              <Code2 className="w-4 h-4 sm:w-5 sm:h-5" />
             </div>
-            <div>
-              <div className="text-xl sm:text-2xl font-extrabold text-[#0F172A] leading-tight whitespace-nowrap shrink-0">99.8%</div>
-              <div className="text-xs text-[#475569] font-medium mt-0.5 whitespace-nowrap">Tingkat Kepuasan Klien</div>
+            <div className="min-w-0">
+              <div className="text-lg sm:text-2xl font-extrabold text-[#0F172A] leading-tight whitespace-nowrap shrink-0">99.9%</div>
+              <div className="text-[11px] sm:text-xs text-[#475569] font-medium mt-0.5 truncate">Uptime Monitoring</div>
+            </div>
+          </div>
+
+          <div className="p-3 sm:p-5 bg-[#F8FAFC] border border-slate-200 rounded-xl flex items-center gap-2.5 sm:gap-3.5 hover:border-[#2563EB] hover:-translate-y-1.5 hover:shadow-lg transition-all duration-500 ease-out cursor-default animate-enter-up delay-400">
+            <div className="w-9 h-9 sm:w-11 sm:h-11 rounded-xl bg-sky-50 text-[#0284C7] flex items-center justify-center shrink-0">
+              <Users className="w-4 h-4 sm:w-5 sm:h-5" />
+            </div>
+            <div className="min-w-0">
+              <div className="text-lg sm:text-2xl font-extrabold text-[#0F172A] leading-tight whitespace-nowrap shrink-0">99.8%</div>
+              <div className="text-[11px] sm:text-xs text-[#475569] font-medium mt-0.5 truncate">Kepuasan Klien</div>
             </div>
           </div>
         </div>
