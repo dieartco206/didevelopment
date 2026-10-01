@@ -4,9 +4,11 @@ import {
   Volume2, 
   VolumeX, 
   Menu, 
-  X
+  X,
+  Sparkles
 } from 'lucide-react';
 import { DiDevLogo } from '../brand/DiDevLogo';
+import { LogoStudioModal } from '../brand/LogoStudioModal';
 import { soundFx } from '../../utils/audio';
 
 interface NavbarProps {
@@ -17,6 +19,7 @@ interface NavbarProps {
 export const Navbar: React.FC<NavbarProps> = ({ onNavigate, activeSection }) => {
   const [isMuted, setIsMuted] = useState(soundFx.getMuted());
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [isLogoStudioOpen, setIsLogoStudioOpen] = useState(false);
 
   const toggleSound = () => {
     const muted = soundFx.toggleMute();
@@ -80,6 +83,19 @@ export const Navbar: React.FC<NavbarProps> = ({ onNavigate, activeSection }) => 
 
           {/* Right Action Bar */}
           <div className="flex items-center gap-2.5 shrink-0">
+            {/* Logo Studio Switcher Button */}
+            <button
+              onClick={() => {
+                soundFx.playClick(850, 0.04);
+                setIsLogoStudioOpen(true);
+              }}
+              title="Eksplorasi & Pilih Desain Logo"
+              className="inline-flex items-center gap-1.5 px-3 py-2 min-h-[44px] rounded-lg bg-blue-50 hover:bg-blue-100 border border-blue-200 text-[#2563EB] text-xs font-bold transition-all cursor-pointer shadow-2xs hover:shadow-xs shrink-0"
+            >
+              <Sparkles className="w-3.5 h-3.5 text-[#2563EB]" />
+              <span className="hidden md:inline">Opsi Logo</span>
+            </button>
+
             {/* Audio Toggle */}
             <button
               onClick={toggleSound}
@@ -130,7 +146,18 @@ export const Navbar: React.FC<NavbarProps> = ({ onNavigate, activeSection }) => 
                 </button>
               );
             })}
-            <div className="pt-2 px-3">
+            <div className="pt-2 px-3 flex flex-col gap-2">
+              <button
+                onClick={() => {
+                  setMobileMenuOpen(false);
+                  setIsLogoStudioOpen(true);
+                }}
+                className="w-full py-2.5 px-3 bg-blue-50 border border-blue-200 text-[#2563EB] font-bold text-xs rounded-xl flex items-center justify-center gap-2 cursor-pointer"
+              >
+                <Sparkles className="w-4 h-4" />
+                <span>Pilih Desain Logo (4 Opsi)</span>
+              </button>
+
               <button
                 onClick={openWhatsApp}
                 className="w-full py-3 px-3 bg-[#10B981] hover:bg-[#059669] text-white font-sans font-bold text-xs sm:text-sm rounded-xl flex items-center justify-center gap-2 shadow-md shadow-emerald-500/20 active:scale-98 cursor-pointer shrink-0"
@@ -142,6 +169,12 @@ export const Navbar: React.FC<NavbarProps> = ({ onNavigate, activeSection }) => 
           </div>
         )}
       </div>
+
+      {/* Logo Studio Modal */}
+      <LogoStudioModal 
+        isOpen={isLogoStudioOpen} 
+        onClose={() => setIsLogoStudioOpen(false)} 
+      />
     </header>
   );
 };
