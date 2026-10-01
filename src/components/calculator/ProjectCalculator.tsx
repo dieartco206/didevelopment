@@ -99,7 +99,7 @@ export const ProjectCalculator: React.FC = () => {
       `⏱️ *Estimasi Durasi:* ${days} Hari Kerja%0A%0A` +
       `Boleh minta info jadwal ketersediaan pengerjaan dan detail paket layanannya? Terima kasih!`;
 
-    window.open(`https://wa.me/6281234567890?text=${text}`, '_blank');
+    window.open(`https://wa.me/6289673757701?text=${text}`, '_blank');
   };
 
   return (

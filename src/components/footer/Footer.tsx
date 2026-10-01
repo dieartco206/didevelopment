@@ -5,7 +5,7 @@ import { soundFx } from '../../utils/audio';
 export const Footer: React.FC = () => {
   const openWhatsApp = () => {
     soundFx.playSuccess();
-    window.open('https://wa.me/6281234567890?text=Halo%20DiDev%20Studio%2C%20saya%20mau%20konsultasi%20pembuatan%20website%20atau%20aplikasi%20Android.', '_blank');
+    window.open('https://wa.me/6289673757701?text=Halo%20DiDev%20Studio%2C%20saya%20mau%20konsultasi%20pembuatan%20website%20atau%20aplikasi%20Android.', '_blank');
   };
 
   const scrollTo = (id: string) => {
@@ -59,8 +59,18 @@ export const Footer: React.FC = () => {
                 </button>
               </li>
               <li>
+                <button onClick={() => scrollTo('comparison')} className="hover:text-white transition-colors cursor-pointer text-left">
+                  Keunggulan & Komparasi
+                </button>
+              </li>
+              <li>
                 <button onClick={() => scrollTo('portfolio')} className="hover:text-white transition-colors cursor-pointer text-left">
                   Studi Kasus Portofolio
+                </button>
+              </li>
+              <li>
+                <button onClick={() => scrollTo('testimonials')} className="hover:text-white transition-colors cursor-pointer text-left">
+                  Ulasan & Testimoni Klien
                 </button>
               </li>
               <li>
@@ -92,11 +102,11 @@ export const Footer: React.FC = () => {
                 className="flex items-center gap-2.5 cursor-pointer text-emerald-400 font-bold hover:text-emerald-300 transition-colors"
               >
                 <MessageSquare className="w-4 h-4 fill-current shrink-0" />
-                <span>WhatsApp: +62 812-3456-7890 (Respon Cepat)</span>
+                <span>WhatsApp: +62 896-7375-7701 (Respon Cepat)</span>
               </li>
               <li className="flex items-center gap-2.5 text-slate-400">
                 <Mail className="w-4 h-4 text-slate-500 shrink-0" />
-                <span>Email: halo@didevelopment.dev</span>
+                <span>Email: adieabay@gmail.com</span>
               </li>
               <li className="flex items-center gap-2.5 text-slate-400">
                 <MapPin className="w-4 h-4 text-slate-500 shrink-0" />

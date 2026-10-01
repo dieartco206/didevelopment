@@ -26,7 +26,7 @@ export const HeroPromo: React.FC<HeroPromoProps> = ({ onNavigate }) => {
   const openWhatsApp = () => {
     soundFx.playSuccess();
     window.open(
-      'https://wa.me/6281234567890?text=Halo%20DiDev%20Studio%2C%20saya%20tertarik%20konsultasi%20jasa%20pembuatan%20Website%20dan%20Aplikasi%20Android%20APK%20untuk%20usaha%20saya.',
+      'https://wa.me/6289673757701?text=Halo%20DiDev%20Studio%2C%20saya%20tertarik%20konsultasi%20jasa%20pembuatan%20Website%20dan%20Aplikasi%20Android%20APK%20untuk%20usaha%20saya.',
       '_blank'
     );
   };

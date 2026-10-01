@@ -3,7 +3,9 @@ import { Navbar } from './components/navbar/Navbar';
 import { HeroPromo } from './components/hero/HeroPromo';
 import { TechStackMarquee } from './components/marquee/TechStackMarquee';
 import { ServicesSection } from './components/services/ServicesSection';
+import { ComparisonSection } from './components/comparison/ComparisonSection';
 import { PortfolioSection } from './components/portfolio/PortfolioSection';
+import { TestimonialsSection } from './components/testimonials/TestimonialsSection';
 import { WorkflowSection } from './components/workflow/WorkflowSection';
 import { ProjectCalculator } from './components/calculator/ProjectCalculator';
 import { PricingSection } from './components/pricing/PricingSection';
@@ -39,22 +41,28 @@ export const App: React.FC = () => {
         {/* 3. Solusi & Fitur Unggulan: Format Zig-Zag Feature Spotlight (Tanpa Grid Kotak Membosankan) */}
         <ServicesSection />
 
-        {/* 4. Portofolio Produksi dengan Preview UI Nyata & Filter Kategori */}
+        {/* 4. Matriks Komparasi Transparan: DiDevelopment vs Freelancer Lepas vs Hire In-House */}
+        <ComparisonSection />
+
+        {/* 5. Portofolio Produksi dengan Preview UI Nyata & Filter Kategori */}
         <PortfolioSection />
 
-        {/* 5. Alur Kerja: Horizontal Connected Stepper / Process Roadmap */}
+        {/* 6. Ulasan & Testimoni Klien Bintang 5: Bukti Nyata Kepuasan Pemilik Usaha */}
+        <TestimonialsSection />
+
+        {/* 7. Alur Kerja: Horizontal Connected Stepper / Process Roadmap */}
         <WorkflowSection />
 
-        {/* 6. Kalkulator Estimasi Biaya Finansial Interaktif & Sticky Quote */}
+        {/* 8. Kalkulator Estimasi Biaya Finansial Interaktif & Sticky Quote */}
         <ProjectCalculator />
 
-        {/* 7. Paket Investasi / Pricing Terstruktur (Biaya Setup + Server & Maintenance Bulanan) */}
+        {/* 9. Paket Investasi / Pricing Terstruktur (Biaya Setup + Server & Maintenance Bulanan) */}
         <PricingSection />
 
-        {/* 8. FAQ Accordion 2 Kolom dengan Dukungan WhatsApp Langsung */}
+        {/* 10. FAQ Accordion 2 Kolom dengan Dukungan WhatsApp Langsung */}
         <FaqSection />
 
-        {/* 9. Closing High-Contrast CTA Banner */}
+        {/* 11. Closing High-Contrast CTA Banner */}
         <CtaBanner />
       </main>
 

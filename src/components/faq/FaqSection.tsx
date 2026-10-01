@@ -52,7 +52,7 @@ export const FaqSection: React.FC = () => {
 
   const openWhatsAppFaq = () => {
     soundFx.playSuccess();
-    window.open('https://wa.me/6281234567890?text=Halo%20DiDev%20Studio%2C%20saya%20ada%20pertanyaan%20seputar%20pembuatan%20website%20dan%20aplikasi%20Android.', '_blank');
+    window.open('https://wa.me/6289673757701?text=Halo%20DiDev%20Studio%2C%20saya%20ada%20pertanyaan%20seputar%20pembuatan%20website%20dan%20aplikasi%20Android.', '_blank');
   };
 
   return (

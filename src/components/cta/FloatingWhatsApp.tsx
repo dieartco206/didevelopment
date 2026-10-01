@@ -6,7 +6,7 @@ export const FloatingWhatsApp: React.FC = () => {
   const handleClick = () => {
     soundFx.playSuccess();
     window.open(
-      'https://wa.me/6281234567890?text=Halo%20DiDev%2C%20saya%20tertarik%20untuk%20konsultasi%20jasa%20pembuatan%20Website%20atau%20Aplikasi%20Android%20APK.',
+      'https://wa.me/6289673757701?text=Halo%20DiDev%2C%20saya%20tertarik%20untuk%20konsultasi%20jasa%20pembuatan%20Website%20atau%20Aplikasi%20Android%20APK.',
       '_blank'
     );
   };

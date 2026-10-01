@@ -81,7 +81,7 @@ export const PortfolioSection: React.FC = () => {
   const consultProject = (title: string) => {
     soundFx.playClick(900, 0.04);
     const msg = encodeURIComponent(`Halo DiDev Studio, saya melihat studi kasus "${title}" dan tertarik membuat sistem serupa untuk usaha saya. Boleh diskusi detailnya?`);
-    window.open(`https://wa.me/6281234567890?text=${msg}`, '_blank');
+    window.open(`https://wa.me/6289673757701?text=${msg}`, '_blank');
   };
 
   return (

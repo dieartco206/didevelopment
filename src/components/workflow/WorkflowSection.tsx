@@ -59,7 +59,7 @@ const STEPS: Step[] = [
 export const WorkflowSection: React.FC = () => {
   const openWhatsApp = () => {
     soundFx.playSuccess();
-    window.open('https://wa.me/6281234567890?text=Halo%20DiDev%20Studio%2C%20saya%20ingin%20jadwalkan%20konsultasi%20awal%20bedah%20kebutuhan%20sistem%20saya.', '_blank');
+    window.open('https://wa.me/6289673757701?text=Halo%20DiDev%20Studio%2C%20saya%20ingin%20jadwalkan%20konsultasi%20awal%20bedah%20kebutuhan%20sistem%20saya.', '_blank');
   };
 
   return (

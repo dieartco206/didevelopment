@@ -18,7 +18,7 @@ export const ServicesSection: React.FC = () => {
   const openWhatsApp = (topic: string) => {
     soundFx.playClick(900, 0.04);
     const msg = encodeURIComponent(`Halo DiDev Studio, saya ingin konsultasi mengenai "${topic}". Boleh minta estimasi biaya dan portofolio serupa?`);
-    window.open(`https://wa.me/6281234567890?text=${msg}`, '_blank');
+    window.open(`https://wa.me/6289673757701?text=${msg}`, '_blank');
   };
 
   return (

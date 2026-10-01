@@ -6,7 +6,7 @@ export const CtaBanner: React.FC = () => {
   const openWhatsApp = () => {
     soundFx.playSuccess();
     window.open(
-      'https://wa.me/6281234567890?text=Halo%20DiDev%20Studio%2C%20saya%20siap%20digitalisasi%20bisnis%20saya%20dan%20mau%20konsultasi%20pembuatan%20website%20%2F%20aplikasi%20Android.',
+      'https://wa.me/6289673757701?text=Halo%20DiDev%20Studio%2C%20saya%20siap%20digitalisasi%20bisnis%20saya%20dan%20mau%20konsultasi%20pembuatan%20website%20%2F%20aplikasi%20Android.',
       '_blank'
     );
   };

@@ -102,7 +102,7 @@ export const PricingSection: React.FC = () => {
     const text = encodeURIComponent(
       `Halo DiDev Studio, saya tertarik memesan "${plan.name}" (Setup ${plan.price} + Server & Maintenance ${plan.monthlyMaintenance}). Mohon informasi jadwal ketersediaan pengerjaan dan detail layanannya.`
     );
-    window.open(`https://wa.me/6281234567890?text=${text}`, '_blank');
+    window.open(`https://wa.me/6289673757701?text=${text}`, '_blank');
   };
 
   const renderPrice = (priceStr: string) => {

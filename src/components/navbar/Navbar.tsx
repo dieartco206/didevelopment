@@ -28,8 +28,9 @@ export const Navbar: React.FC<NavbarProps> = ({ onNavigate, activeSection }) => 
 
   const navItems = [
     { id: 'services', label: 'Solusi & Fitur' },
+    { id: 'comparison', label: 'Keunggulan' },
     { id: 'portfolio', label: 'Portofolio' },
-    { id: 'workflow', label: 'Alur Kerja' },
+    { id: 'testimonials', label: 'Ulasan Klien' },
     { id: 'calculator', label: 'Hitung Biaya' },
     { id: 'pricing', label: 'Paket Harga' },
     { id: 'faq', label: 'FAQ' },
@@ -44,7 +45,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onNavigate, activeSection }) => 
   const openWhatsApp = () => {
     soundFx.playSuccess();
     window.open(
-      'https://wa.me/6281234567890?text=Halo%20DiDev%20Studio%2C%20saya%20tertarik%20konsultasi%20jasa%20pembuatan%20Website%20dan%20Aplikasi%20Android%20APK%20untuk%20bisnis%20saya.',
+      'https://wa.me/6289673757701?text=Halo%20DiDev%20Studio%2C%20saya%20tertarik%20konsultasi%20jasa%20pembuatan%20Website%20dan%20Aplikasi%20Android%20APK%20untuk%20bisnis%20saya.',
       '_blank'
     );
   };
